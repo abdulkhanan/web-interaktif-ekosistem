@@ -1,0 +1,7 @@
+streamlit
+pandas
+matplotlib
+authlib
+requests
+supabase
+streamlit-cookies-controller
