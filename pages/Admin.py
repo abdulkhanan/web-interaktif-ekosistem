@@ -183,14 +183,43 @@ def admin_navigation():
     st.markdown(
         '''
         <style>
+
+.admin-nav-spacer {
+            height: 28px !important;
+        }
+
+        .main-title {
+            margin-top: 0 !important;
+            margin-bottom: 8px !important;
+        }
+
+        .sub-text {
+            margin-bottom: 22px !important;
+        }
+
+        @media (max-width: 768px) {
             .admin-nav-spacer {
-                height: 28px;
+                height: 14px !important;
             }
-            @media (max-width: 992px) {
-                .admin-nav-spacer {
-                    height: 20px;
-                }
+
+            .block-container {
+                padding-top: 0.2rem !important;
             }
+
+            .main-title {
+                font-size: 36px !important;
+                line-height: 1.1 !important;
+                margin-top: 0 !important;
+                margin-bottom: 12px !important;
+            }
+
+            .sub-text {
+                font-size: 17px !important;
+                line-height: 1.7 !important;
+                margin-bottom: 28px !important;
+            }
+        }
+
         </style>
         <div class="admin-nav-spacer"></div>
         ''',
