@@ -184,7 +184,7 @@ def admin_navigation():
         '''
         <style>
 
-.admin-nav-spacer {
+        .admin-nav-spacer {
             height: 28px !important;
         }
 
