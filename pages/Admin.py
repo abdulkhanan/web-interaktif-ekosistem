@@ -221,7 +221,6 @@ def admin_navigation():
         }
 
         </style>
-        <div class="admin-nav-spacer"></div>
         ''',
         unsafe_allow_html=True
     )
