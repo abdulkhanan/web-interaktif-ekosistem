@@ -13,6 +13,51 @@ GOOGLE_SCOPE = "openid email profile"
 def init_auth():
     from urllib.parse import unquote
 
+    st.markdown(
+        """
+        <style>
+            /* Sembunyikan loading skeleton dari komponen cookie */
+            .st-key-hidden_cookies,
+            .st-key-hidden_cookies_logout,
+            .st-key-hidden_cookies *,
+            .st-key-hidden_cookies_logout *,
+            div[data-testid="stSkeleton"],
+            [data-testid="stSkeleton"],
+            .stSkeleton,
+            .element-container:has(iframe[height="0"]),
+            .element-container:has(iframe[height="0px"]),
+            iframe[height="0"],
+            iframe[height="0px"] {
+                display: none !important;
+                visibility: hidden !important;
+                height: 0 !important;
+                min-height: 0 !important;
+                max-height: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                pointer-events: none !important;
+            }
+
+            header[data-testid="stHeader"],
+            div[data-testid="stToolbar"],
+            div[data-testid="stDecoration"],
+            div[data-testid="stStatusWidget"],
+            #MainMenu,
+            footer {
+                display: none !important;
+                visibility: hidden !important;
+                height: 0 !important;
+            }
+
+            .block-container {
+                padding-top: 0rem !important;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
     default_state = {
         "logged_in": False,
         "logout_triggered": False,
