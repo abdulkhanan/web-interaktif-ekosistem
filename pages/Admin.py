@@ -1319,7 +1319,13 @@ if st.session_state["admin_menu"] == "Dashboard":
 # MENU 2: INFORMASI ADMIN
 # =========================
 elif st.session_state["admin_menu"] == "Informasi Admin":
-    st.subheader("Informasi Admin")
+    st.markdown(
+        """
+        <div class="admin-section-title">Informasi Admin</div>
+        <div class="admin-section-subtitle">Data Admin</div>
+        """,
+        unsafe_allow_html=True
+    )
 
     admin_id = int(admin_data.get("id_user", current_user_id))
     admin_nama = str(admin_data.get("nama", current_name))
@@ -1330,7 +1336,6 @@ elif st.session_state["admin_menu"] == "Informasi Admin":
     col_info, col_edit = st.columns([1.3, 1], gap="large")
 
     with col_info:
-        st.markdown("### Data Admin")
 
         st.markdown('<div class="admin-label">Nama Admin</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="admin-value">{escape(admin_nama)}</div>', unsafe_allow_html=True)
@@ -1357,7 +1362,10 @@ elif st.session_state["admin_menu"] == "Informasi Admin":
             )
 
     with col_edit:
-        st.markdown("### Edit Nama Admin")
+        st.markdown(
+            '<div class="admin-section-title" style="font-size:24px;">Edit Nama Admin</div>',
+            unsafe_allow_html=True
+        )
 
         nama_baru = st.text_input(
             "Nama Admin",
@@ -1383,8 +1391,16 @@ elif st.session_state["admin_menu"] == "Informasi Admin":
 # =========================
 # MENU 3: DAFTAR PENGGUNA
 # =========================
-elif st.session_state["admin_menu"] == "Daftar Pengguna":
-    st.subheader("Daftar Pengguna")
+    elif st.session_state["admin_menu"] == "Daftar Pengguna":
+        st.markdown(
+            """
+            <div class="admin-section-title">Daftar Pengguna</div>
+            <div class="admin-section-subtitle">
+                Kelola data akun, role, status, dan akses pengguna pada web pembelajaran ekosistem.
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     if df_users.empty:
         st.info("Belum ada pengguna yang terdaftar.")
@@ -1491,7 +1507,10 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
             if not selected_rows.empty:
                 selected_user = selected_rows.iloc[0]
 
-                st.subheader("Edit Pengguna")
+                st.markdown(
+                    '<div class="admin-section-title" style="font-size:24px;margin-top:24px;">Edit Pengguna</div>',
+                    unsafe_allow_html=True
+                )
 
                 with st.form("form_edit_pengguna"):
                     nama_baru = st.text_input(
