@@ -142,24 +142,27 @@ st.markdown(
     """
     <style>
         /* Paksa sidebar/menu kiri tetap tampil */
-        section[data-testid="stSidebar"] {
-            display: block !important;
-            visibility: visible !important;
-            min-width: 320px !important;
-            width: 320px !important;
-            transform: translateX(0px) !important;
-            left: 0 !important;
-            opacity: 1 !important;
-        }
-        
+
         /* Jangan sembunyikan area sidebar */
         div[data-testid="stSidebarContent"] {
             display: block !important;
             visibility: visible !important;
             opacity: 1 !important;
         }
-        /* Hilangkan header dan toolbar bawaan Streamlit */
-        header[data-testid="stHeader"],
+
+        /* Header tetap ditampilkan karena tombol buka/tutup sidebar ada di sini */
+        header[data-testid="stHeader"] {
+            background: transparent !important;
+        }
+        
+        /* Tombol buka/tutup sidebar jangan disembunyikan */
+        [data-testid="collapsedControl"] {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        /* Yang disembunyikan hanya toolbar/menu bawaan, bukan tombol sidebar */
         div[data-testid="stToolbar"],
         div[data-testid="stDecoration"],
         div[data-testid="stStatusWidget"],
@@ -167,7 +170,6 @@ st.markdown(
         footer {
             display: none !important;
             visibility: hidden !important;
-            height: 0 !important;
         }
         
         .main .block-container {
