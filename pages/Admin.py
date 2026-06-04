@@ -141,13 +141,21 @@ with st.sidebar:
 st.markdown(
     """
     <style>
-        /* Header jangan dihapus agar tombol sidebar bawaan Streamlit tetap muncul */
-        header[data-testid="stHeader"] {
-            background: transparent !important;
-        }
-
-        [data-testid="stDecoration"] {
+        /* Hilangkan header dan toolbar bawaan Streamlit */
+        header[data-testid="stHeader"],
+        div[data-testid="stToolbar"],
+        div[data-testid="stDecoration"],
+        div[data-testid="stStatusWidget"],
+        #MainMenu,
+        footer {
             display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+        }
+        
+        .main .block-container {
+            padding-top: 0rem !important;
+            margin-top: 0rem !important;
         }
 
         .stApp {
