@@ -1320,10 +1320,8 @@ if st.session_state["admin_menu"] == "Dashboard":
 # =========================
 elif st.session_state["admin_menu"] == "Informasi Admin":
     st.markdown(
-        """
-        <div class="admin-section-title">Informasi Admin</div>
-        <div class="admin-section-subtitle">Data Admin</div>
-        """,
+        '<div style="color:#0f172a !important;font-size:30px;font-weight:900;margin:8px 0 6px 0;">Informasi Admin</div>'
+        '<div style="color:#64748b !important;font-size:16px;font-weight:700;margin-bottom:22px;">Data Admin</div>',
         unsafe_allow_html=True
     )
 
@@ -1393,12 +1391,10 @@ elif st.session_state["admin_menu"] == "Informasi Admin":
 # =========================
 elif st.session_state["admin_menu"] == "Daftar Pengguna":
     st.markdown(
-        """
-        <div class="admin-section-title">Daftar Pengguna</div>
-        <div class="admin-section-subtitle">
-            Kelola data akun, role, status, dan akses pengguna pada web pembelajaran ekosistem.
-        </div>
-        """,
+        '<div style="color:#0f172a !important;font-size:30px;font-weight:900;margin:8px 0 6px 0;">Daftar Pengguna</div>'
+        '<div style="color:#64748b !important;font-size:16px;font-weight:700;margin-bottom:22px;">'
+        'Kelola data akun, role, status, dan akses pengguna pada web pembelajaran ekosistem.'
+        '</div>',
         unsafe_allow_html=True
     )
 
@@ -1449,31 +1445,28 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
                 }.get(role_raw, "👤")
 
                 with st.container(key=f"user_card_{row_id}"):
-                    st.markdown(
-                        f"""
-                        <div class="user-card-grid">
-                            <div class="user-main-info">
-                                <div class="user-avatar">{avatar_icon}</div>
-                                <div>
-                                    <div class="user-field-label">Pengguna</div>
-                                    <div class="user-name">{nama}</div>
-                                    <div class="user-email">{email}</div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="user-field-label">Role</div>
-                                <span class="user-role-badge {role_class}">{role_raw.capitalize()}</span>
-                            </div>
-
-                            <div>
-                                <div class="user-field-label">Status</div>
-                                <span class="user-status-badge {status_class}">{status_raw.capitalize()}</span>
-                            </div>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
+                    card_html = (
+                        '<div class="user-card-grid">'
+                        '<div class="user-main-info">'
+                        f'<div class="user-avatar">{avatar_icon}</div>'
+                        '<div>'
+                        '<div class="user-field-label">Pengguna</div>'
+                        f'<div class="user-name">{nama}</div>'
+                        f'<div class="user-email">{email}</div>'
+                        '</div>'
+                        '</div>'
+                        '<div>'
+                        '<div class="user-field-label">Role</div>'
+                        f'<span class="user-role-badge {role_class}">{role_raw.capitalize()}</span>'
+                        '</div>'
+                        '<div>'
+                        '<div class="user-field-label">Status</div>'
+                        f'<span class="user-status-badge {status_class}">{status_raw.capitalize()}</span>'
+                        '</div>'
+                        '</div>'
                     )
+                
+                    st.markdown(card_html, unsafe_allow_html=True)
 
                     col_edit, col_empty = st.columns([1, 3])
 
