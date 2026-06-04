@@ -454,7 +454,7 @@ st.markdown(
         }
 
         .block-container {
-            padding-top: 1.2rem !important;
+            padding-top: 0.4rem !important;
             padding-bottom: 2rem !important;
             max-width: 1200px;
         }
@@ -470,7 +470,7 @@ st.markdown(
             font-size: 28px;
             font-weight: 900;
             line-height: 1.25;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
             font-family: 'Outfit', sans-serif;
         }
 
@@ -544,7 +544,7 @@ st.markdown(
             font-size: 17px;
             color: #64748b;
             line-height: 1.7;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
             max-width: 850px;
         }
 
@@ -1391,16 +1391,16 @@ elif st.session_state["admin_menu"] == "Informasi Admin":
 # =========================
 # MENU 3: DAFTAR PENGGUNA
 # =========================
-    elif st.session_state["admin_menu"] == "Daftar Pengguna":
-        st.markdown(
-            """
-            <div class="admin-section-title">Daftar Pengguna</div>
-            <div class="admin-section-subtitle">
-                Kelola data akun, role, status, dan akses pengguna pada web pembelajaran ekosistem.
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+elif st.session_state["admin_menu"] == "Daftar Pengguna":
+    st.markdown(
+        """
+        <div class="admin-section-title">Daftar Pengguna</div>
+        <div class="admin-section-subtitle">
+            Kelola data akun, role, status, dan akses pengguna pada web pembelajaran ekosistem.
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     if df_users.empty:
         st.info("Belum ada pengguna yang terdaftar.")
@@ -1426,74 +1426,58 @@ elif st.session_state["admin_menu"] == "Informasi Admin":
             st.warning("Data pengguna tidak ditemukan.")
 
         else:
-            # Header tabel
-            h1, h2, h3, h4 = st.columns([4.4, 1.4, 1.4, 0.8], gap="xxsmall")
-
-            with h1:
-                st.markdown('<div class="user-table-head">Pengguna</div>', unsafe_allow_html=True)
-
-            with h2:
-                st.markdown('<div class="user-table-head">Role</div>', unsafe_allow_html=True)
-
-            with h3:
-                st.markdown('<div class="user-table-head">Status</div>', unsafe_allow_html=True)
-
-            with h4:
-                st.markdown('<div class="user-table-head">Aksi</div>', unsafe_allow_html=True)
-
-            # Isi tabel
+            # Tampilan pengguna dibuat card agar rapi di desktop dan HP
             for _, row in display_df.iterrows():
                 row_id = int(row["id_user"])
                 nama = escape(str(row["nama"]))
                 email = escape(str(row["email"]))
-                role = escape(str(row["role"]).lower())
-                status = escape(str(row["status"]).lower())
+                role_raw = str(row["role"]).lower()
+                status_raw = str(row["status"]).lower()
 
-                c1, c2, c3, c4 = st.columns([4.4, 1.4, 1.4, 0.8], gap="xxsmall")
+                role_class = {
+                    "admin": "role-admin",
+                    "guru": "role-guru",
+                    "siswa": "role-siswa"
+                }.get(role_raw, "role-siswa")
 
-                with c1:
+                status_class = "status-aktif" if status_raw == "aktif" else "status-nonaktif"
+
+                avatar_icon = {
+                    "admin": "🛠️",
+                    "guru": "👨‍🏫",
+                    "siswa": "🎓"
+                }.get(role_raw, "👤")
+
+                with st.container(key=f"user_card_{row_id}"):
                     st.markdown(
                         f"""
-                        <div class="user-table-cell">
-                            <div class="user-name-text">{nama}</div>
-                            <div class="user-email-text">{email}</div>
+                        <div class="user-card-grid">
+                            <div class="user-main-info">
+                                <div class="user-avatar">{avatar_icon}</div>
+                                <div>
+                                    <div class="user-field-label">Pengguna</div>
+                                    <div class="user-name">{nama}</div>
+                                    <div class="user-email">{email}</div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="user-field-label">Role</div>
+                                <span class="user-role-badge {role_class}">{role_raw.capitalize()}</span>
+                            </div>
+
+                            <div>
+                                <div class="user-field-label">Status</div>
+                                <span class="user-status-badge {status_class}">{status_raw.capitalize()}</span>
+                            </div>
                         </div>
                         """,
                         unsafe_allow_html=True
                     )
 
-                with c2:
-                    st.markdown(
-                        f"""
-                        <div class="user-table-cell">
-                            <span class="role-pill">{role.capitalize()}</span>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+                    col_edit, col_empty = st.columns([1, 3])
 
-                with c3:
-                    if status == "aktif":
-                        st.markdown(
-                            f"""
-                            <div class="user-table-cell">
-                                <span class="status-pill-aktif">{status.capitalize()}</span>
-                            </div>
-                            """,
-                            unsafe_allow_html=True
-                        )
-                    else:
-                        st.markdown(
-                            f"""
-                            <div class="user-table-cell">
-                                <span class="status-pill-nonaktif">{status.capitalize()}</span>
-                            </div>
-                            """,
-                            unsafe_allow_html=True
-                        )
-
-                with c4:
-                    with st.container(key=f"user_action_cell_{row_id}"):
+                    with col_edit:
                         if st.button("Edit", key=f"btn_edit_user_{row_id}", use_container_width=True):
                             st.session_state["selected_edit_user_id"] = row_id
                             st.rerun()
