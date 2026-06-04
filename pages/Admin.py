@@ -9,8 +9,8 @@ from modules.auth import require_role
 
 
 st.set_page_config(
-    page_title="Admin - Web Ekosistem",
-    page_icon="🛠️",
+    page_title="Dashboard Admin",
+    page_icon="🌿",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -141,6 +141,23 @@ with st.sidebar:
 st.markdown(
     """
     <style>
+        /* Paksa sidebar/menu kiri tetap tampil */
+        section[data-testid="stSidebar"] {
+            display: block !important;
+            visibility: visible !important;
+            min-width: 320px !important;
+            width: 320px !important;
+            transform: translateX(0px) !important;
+            left: 0 !important;
+            opacity: 1 !important;
+        }
+        
+        /* Jangan sembunyikan area sidebar */
+        div[data-testid="stSidebarContent"] {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
         /* Hilangkan header dan toolbar bawaan Streamlit */
         header[data-testid="stHeader"],
         div[data-testid="stToolbar"],
