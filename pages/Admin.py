@@ -224,7 +224,7 @@ def admin_navigation():
             font-family: 'Outfit', sans-serif;
             font-size: 30px;
             font-weight: 900;
-            color: #0f172a !important;
+            color: #000000 !important;
             margin: 8px 0 8px 0;
             line-height: 1.2;
         }
@@ -380,7 +380,7 @@ def admin_navigation():
         @media (max-width: 768px) {
             .admin-section-title {
                 font-size: 28px;
-                color: #0f172a !important;
+                color: #000000 !important;
             }
 
             .admin-section-subtitle {
