@@ -95,47 +95,6 @@ current_status = str(admin_data.get("status", "aktif"))
 
 
 # =========================
-# SIDEBAR BAWAAN STREAMLIT
-# =========================
-with st.sidebar:
-    st.title("🌿 Pembelajaran")
-
-    current_menu = st.session_state.get("admin_menu", "Dashboard")
-
-    if st.button(
-        "📊 Dashboard",
-        use_container_width=True,
-        key="active_sidebar_dashboard" if current_menu == "Dashboard" else "sidebar_dashboard"
-    ):
-        st.session_state["admin_menu"] = "Dashboard"
-        st.rerun()
-
-    if st.button(
-        "👤 Informasi Admin",
-        use_container_width=True,
-        key="active_sidebar_info" if current_menu == "Informasi Admin" else "sidebar_info"
-    ):
-        st.session_state["admin_menu"] = "Informasi Admin"
-        st.rerun()
-
-    if st.button(
-        "👥 Daftar Pengguna",
-        use_container_width=True,
-        key="active_sidebar_users" if current_menu == "Daftar Pengguna" else "sidebar_users"
-    ):
-        st.session_state["admin_menu"] = "Daftar Pengguna"
-        st.rerun()
-
-    if st.button(
-        "🚪 Logout",
-        use_container_width=True,
-        key="sidebar_logout"
-    ):
-        from modules.auth import logout
-        logout()
-
-
-# =========================
 # STYLE TEMA LOGIN
 # =========================
 st.markdown(
@@ -705,6 +664,79 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# =========================
+# ADMIN TOP NAVIGATION
+# =========================
+st.markdown(
+    """
+    <style>
+        div[class*="st-key-admin_nav_"] button {
+            border-radius: 14px !important;
+            min-height: 46px !important;
+            font-size: 15px !important;
+            font-weight: 800 !important;
+            background: #ffffff !important;
+            color: #475569 !important;
+            border: 1px solid rgba(226, 232, 240, 0.9) !important;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+        }
+
+        div[class*="st-key-admin_nav_"] button:hover {
+            background: #f8fafc !important;
+            color: #0284c7 !important;
+            border-color: rgba(2, 132, 199, 0.35) !important;
+        }
+
+        div[class*="st-key-admin_nav_active_"] button {
+            background: linear-gradient(135deg, #059669 0%, #0284c7 100%) !important;
+            color: #ffffff !important;
+            border: none !important;
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.25) !important;
+        }
+
+        div[class*="st-key-admin_logout"] button {
+            color: #ef4444 !important;
+            border-color: rgba(239, 68, 68, 0.25) !important;
+        }
+
+        div[class*="st-key-admin_logout"] button:hover {
+            background: rgba(239, 68, 68, 0.06) !important;
+            color: #dc2626 !important;
+        }
+
+        .admin-nav-space {
+            margin-bottom: 28px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+admin_nav_items = [
+    ("📊 Dashboard", "Dashboard", "dashboard"),
+    ("👤 Informasi Admin", "Informasi Admin", "info"),
+    ("👥 Daftar Pengguna", "Daftar Pengguna", "users"),
+]
+
+nav_cols = st.columns([1, 1, 1, 0.8])
+
+for col, (label, value, slug) in zip(nav_cols[:3], admin_nav_items):
+    with col:
+        active = st.session_state.get("admin_menu", "Dashboard") == value
+        container_key = f"admin_nav_active_{slug}" if active else f"admin_nav_{slug}"
+
+        with st.container(key=container_key):
+            if st.button(label, use_container_width=True, key=f"btn_admin_{slug}"):
+                st.session_state["admin_menu"] = value
+                st.rerun()
+
+with nav_cols[3]:
+    with st.container(key="admin_logout"):
+        if st.button("🚪 Logout", use_container_width=True, key="btn_admin_logout"):
+            from modules.auth import logout
+            logout()
+
+st.markdown('<div class="admin-nav-space"></div>', unsafe_allow_html=True)
 
 # =========================
 # HEADER
