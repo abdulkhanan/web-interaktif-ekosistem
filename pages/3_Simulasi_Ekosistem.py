@@ -128,16 +128,24 @@ def tampilkan_grafik_kurva(df, x_col, y_cols, warna_map, judul, ylabel="Nilai Pa
             anchor='start',
             color='#0f172a'
         ),
-        height=320
+        height=320,
+        background='#ffffff'
     ).configure_view(
-        stroke=None
+        stroke=None,
+        fill='#ffffff'
     ).configure_axis(
         domainColor='#cbd5e1',
         tickColor='#cbd5e1',
-        labelColor='#64748b',
-        titleColor='#475569',
+        labelColor='#334155',
+        titleColor='#0f172a',
         gridColor='#e2e8f0',
         gridDash=[4, 4]
+    ).configure_legend(
+        labelColor='#334155',
+        titleColor='#0f172a',
+        orient='bottom'
+    ).configure_title(
+        color='#0f172a'
     )
     
     st.altair_chart(chart, use_container_width=True)
