@@ -6,13 +6,14 @@ import streamlit as st
 from database.init_db import init_db
 from database.queries import get_users_df, get_user_counts, get_dashboard_counts_with_status, get_progress_siswa_df, update_user_name, update_user_data as update_user_data_db
 from modules.auth import require_role
+from components.ui import load_css
 
 
 st.set_page_config(
-    page_title="Dashboard Admin",
-    page_icon="🌿",
+    page_title="Admin - Web Ekosistem",
+    page_icon="🛠️",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 
@@ -21,6 +22,7 @@ st.set_page_config(
 # =========================
 init_db()
 require_role(["admin"])
+load_css()
 
 
 
@@ -95,45 +97,123 @@ current_status = str(admin_data.get("status", "aktif"))
 
 
 # =========================
+# ADMIN RESPONSIVE NAVIGATION
+# =========================
+def admin_navigation():
+    menu_items = [
+        ("📊 Dashboard", "Dashboard"),
+        ("👤 Informasi Admin", "Informasi Admin"),
+        ("👥 Daftar Pengguna", "Daftar Pengguna"),
+    ]
+
+    current_menu = st.session_state.get("admin_menu", "Dashboard")
+
+    st.markdown(
+        '<input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" style="display:none;">',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        '<label for="menu-toggle" class="menu-backdrop-label"></label>',
+        unsafe_allow_html=True
+    )
+
+    # Mobile header, tampil sebagai burger menu di layar kecil
+    with st.container(key="mobile_nav"):
+        st.markdown(
+            '''
+            <div class="mobile-header-container">
+                <label for="menu-toggle" class="hamburger-label-btn">☰</label>
+                <div class="mobile-header-brand">🌿 ECOSYSTEM</div>
+            </div>
+            ''',
+            unsafe_allow_html=True
+        )
+
+    # Mobile drawer menu
+    with st.container(key="mobile_menu_items"):
+        st.markdown(
+            '''
+            <div class="drawer-header-container">
+                <div class="drawer-brand">🌿 ECOSYSTEM</div>
+                <label for="menu-toggle" class="drawer-close-label-btn">✕</label>
+            </div>
+            ''',
+            unsafe_allow_html=True
+        )
+
+        st.markdown("<div style='margin-bottom: 8px;'></div>", unsafe_allow_html=True)
+
+        for index, (label, value) in enumerate(menu_items):
+            active = current_menu == value
+            if st.button(
+                label,
+                key=f"admin_mnav_{index}_{value}",
+                use_container_width=True,
+                disabled=active
+            ):
+                st.session_state["admin_menu"] = value
+                st.rerun()
+
+        if st.button("🚪 Keluar", key="admin_mlogout", use_container_width=True):
+            from modules.auth import logout
+            logout()
+
+    # Desktop navigation, tampil horizontal di layar besar
+    with st.container(key="nav_bar"):
+        columns = st.columns(len(menu_items) + 1)
+
+        for index, (label, value) in enumerate(menu_items):
+            with columns[index]:
+                active = current_menu == value
+                if st.button(
+                    label,
+                    key=f"admin_nav_{index}_{value}",
+                    use_container_width=True,
+                    disabled=active
+                ):
+                    st.session_state["admin_menu"] = value
+                    st.rerun()
+
+        with columns[-1]:
+            if st.button("🚪 Keluar", key="admin_logout", use_container_width=True):
+                from modules.auth import logout
+                logout()
+
+    st.markdown(
+        '''
+        <style>
+            .admin-nav-spacer {
+                height: 92px;
+            }
+            @media (max-width: 992px) {
+                .admin-nav-spacer {
+                    height: 112px;
+                }
+            }
+        </style>
+        <div class="admin-nav-spacer"></div>
+        ''',
+        unsafe_allow_html=True
+    )
+
+
+admin_navigation()
+
+
+# =========================
 # STYLE TEMA LOGIN
 # =========================
 st.markdown(
     """
     <style>
-        /* Paksa sidebar/menu kiri tetap tampil */
-
-        /* Jangan sembunyikan area sidebar */
-        div[data-testid="stSidebarContent"] {
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-
-        /* Header tetap ditampilkan karena tombol buka/tutup sidebar ada di sini */
+        /* Header jangan dihapus agar tombol sidebar bawaan Streamlit tetap muncul */
         header[data-testid="stHeader"] {
             background: transparent !important;
         }
-        
-        /* Tombol buka/tutup sidebar jangan disembunyikan */
-        [data-testid="collapsedControl"] {
-            display: flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-        
-        /* Yang disembunyikan hanya toolbar/menu bawaan, bukan tombol sidebar */
-        div[data-testid="stToolbar"],
-        div[data-testid="stDecoration"],
-        div[data-testid="stStatusWidget"],
-        #MainMenu,
-        footer {
+
+        [data-testid="stDecoration"] {
             display: none !important;
-            visibility: hidden !important;
-        }
-        
-        .main .block-container {
-            padding-top: 0rem !important;
-            margin-top: 0rem !important;
         }
 
         .stApp {
@@ -664,79 +744,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# =========================
-# ADMIN TOP NAVIGATION
-# =========================
-st.markdown(
-    """
-    <style>
-        div[class*="st-key-admin_nav_"] button {
-            border-radius: 14px !important;
-            min-height: 46px !important;
-            font-size: 15px !important;
-            font-weight: 800 !important;
-            background: #ffffff !important;
-            color: #475569 !important;
-            border: 1px solid rgba(226, 232, 240, 0.9) !important;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
-        }
-
-        div[class*="st-key-admin_nav_"] button:hover {
-            background: #f8fafc !important;
-            color: #0284c7 !important;
-            border-color: rgba(2, 132, 199, 0.35) !important;
-        }
-
-        div[class*="st-key-admin_nav_active_"] button {
-            background: linear-gradient(135deg, #059669 0%, #0284c7 100%) !important;
-            color: #ffffff !important;
-            border: none !important;
-            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.25) !important;
-        }
-
-        div[class*="st-key-admin_logout"] button {
-            color: #ef4444 !important;
-            border-color: rgba(239, 68, 68, 0.25) !important;
-        }
-
-        div[class*="st-key-admin_logout"] button:hover {
-            background: rgba(239, 68, 68, 0.06) !important;
-            color: #dc2626 !important;
-        }
-
-        .admin-nav-space {
-            margin-bottom: 28px;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-admin_nav_items = [
-    ("📊 Dashboard", "Dashboard", "dashboard"),
-    ("👤 Informasi Admin", "Informasi Admin", "info"),
-    ("👥 Daftar Pengguna", "Daftar Pengguna", "users"),
-]
-
-nav_cols = st.columns([1, 1, 1, 0.8])
-
-for col, (label, value, slug) in zip(nav_cols[:3], admin_nav_items):
-    with col:
-        active = st.session_state.get("admin_menu", "Dashboard") == value
-        container_key = f"admin_nav_active_{slug}" if active else f"admin_nav_{slug}"
-
-        with st.container(key=container_key):
-            if st.button(label, use_container_width=True, key=f"btn_admin_{slug}"):
-                st.session_state["admin_menu"] = value
-                st.rerun()
-
-with nav_cols[3]:
-    with st.container(key="admin_logout"):
-        if st.button("🚪 Logout", use_container_width=True, key="btn_admin_logout"):
-            from modules.auth import logout
-            logout()
-
-st.markdown('<div class="admin-nav-space"></div>', unsafe_allow_html=True)
 
 # =========================
 # HEADER
