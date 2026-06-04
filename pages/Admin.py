@@ -973,6 +973,59 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown(
+    """
+    <style>
+        /* Paksa tulisan halaman Admin jadi hitam */
+        .admin-section-title,
+        .admin-section-subtitle,
+        .admin-label,
+        .admin-value,
+        .user-field-label,
+        .user-name,
+        .user-email,
+        .user-role-badge,
+        .user-status-badge,
+        .role-admin,
+        .role-guru,
+        .role-siswa,
+        .status-aktif,
+        .status-nonaktif {
+            color: #0f172a !important;
+        }
+
+        /* Judul Informasi Admin dan Daftar Pengguna */
+        .admin-section-title {
+            color: #0f172a !important;
+        }
+
+        /* Teks kecil di bawah judul */
+        .admin-section-subtitle {
+            color: #0f172a !important;
+        }
+
+        /* Label Role dan Status */
+        .user-field-label {
+            color: #0f172a !important;
+        }
+
+        /* Isi badge siswa, admin, guru, aktif */
+        .user-role-badge,
+        .user-status-badge {
+            color: #0f172a !important;
+        }
+
+        /* Label input seperti Cari pengguna */
+        div[data-testid="stTextInput"] label,
+        div[data-testid="stTextInput"] label p,
+        div[data-testid="stSelectbox"] label,
+        div[data-testid="stSelectbox"] label p {
+            color: #0f172a !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # =========================
 # HEADER
