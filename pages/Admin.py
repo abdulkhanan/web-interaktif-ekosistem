@@ -183,14 +183,257 @@ def admin_navigation():
     st.markdown(
         '''
         <style>
+
+# =========================
+# PATCH STYLE ADMIN
+# Tempel setelah blok CSS besar di pages/Admin.py
+# =========================
+st.markdown(
+    """
+    <style>
+        /* Kurangi jarak navbar ke judul Dashboard Admin */
+        .admin-nav-spacer {
+            height: 28px !important;
+        }
+
+        .main-title {
+            margin-top: 0 !important;
+            margin-bottom: 8px !important;
+        }
+
+        .sub-text {
+            margin-bottom: 22px !important;
+        }
+
+        @media (max-width: 768px) {
             .admin-nav-spacer {
-                height: 30px;
+                height: 14px !important;
             }
-            @media (max-width: 992px) {
-                .admin-nav-spacer {
-                    height: 30px;
-                }
+
+            .block-container {
+                padding-top: 0.2rem !important;
             }
+
+            .main-title {
+                font-size: 36px !important;
+                line-height: 1.1 !important;
+                margin-top: 0 !important;
+                margin-bottom: 12px !important;
+            }
+
+            .sub-text {
+                font-size: 17px !important;
+                line-height: 1.7 !important;
+                margin-bottom: 28px !important;
+            }
+        }
+
+        /* Judul section agar tidak putih */
+        .admin-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 900;
+            color: #0f172a !important;
+            margin: 8px 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .admin-section-subtitle {
+            color: #64748b !important;
+            font-size: 16px;
+            margin-bottom: 22px;
+            line-height: 1.6;
+        }
+
+        /* Label dan input pencarian */
+        div[data-testid="stTextInput"] label,
+        div[data-testid="stTextInput"] label p {
+            color: #334155 !important;
+            font-weight: 800 !important;
+            font-size: 15px !important;
+        }
+
+        div[data-testid="stTextInput"] input {
+            background: #ffffff !important;
+            color: #0f172a !important;
+            border: 1.5px solid rgba(15, 23, 42, 0.18) !important;
+            border-radius: 14px !important;
+            min-height: 48px !important;
+            font-size: 15px !important;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04) !important;
+        }
+
+        div[data-testid="stTextInput"] input::placeholder {
+            color: #94a3b8 !important;
+            opacity: 1 !important;
+        }
+
+        div[data-testid="stTextInput"] input:focus {
+            border-color: #0284c7 !important;
+            box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12) !important;
+        }
+
+        /* Card daftar pengguna */
+        div[class*="st-key-user_card_"] {
+            background: rgba(255, 255, 255, 0.92) !important;
+            border: 1px solid rgba(226, 232, 240, 0.95) !important;
+            border-radius: 22px !important;
+            padding: 20px 22px !important;
+            margin-bottom: 16px !important;
+            box-shadow: 0 12px 28px -16px rgba(15, 23, 42, 0.18) !important;
+        }
+
+        .user-card-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.8fr) minmax(160px, 0.55fr) minmax(160px, 0.55fr);
+            gap: 18px;
+            align-items: center;
+        }
+
+        .user-main-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+        }
+
+        .user-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.12), rgba(2, 132, 199, 0.12));
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .user-name {
+            color: #0f172a !important;
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+
+        .user-email {
+            color: #64748b !important;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 4px;
+            word-break: break-word;
+        }
+
+        .user-field-label {
+            color: #64748b !important;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .user-role-badge,
+        .user-status-badge {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 900;
+            text-transform: capitalize;
+        }
+
+        .role-admin {
+            background: rgba(124, 58, 237, 0.12);
+            color: #6d28d9;
+        }
+
+        .role-guru {
+            background: rgba(2, 132, 199, 0.12);
+            color: #0369a1;
+        }
+
+        .role-siswa {
+            background: rgba(5, 150, 105, 0.12);
+            color: #047857;
+        }
+
+        .status-aktif {
+            background: rgba(22, 163, 74, 0.12);
+            color: #15803d;
+        }
+
+        .status-nonaktif {
+            background: rgba(239, 68, 68, 0.12);
+            color: #b91c1c;
+        }
+
+        div[class*="st-key-user_card_"] button {
+            border-radius: 14px !important;
+            min-height: 40px !important;
+            background: linear-gradient(135deg, #059669 0%, #0284c7 100%) !important;
+            color: #ffffff !important;
+            border: none !important;
+            font-weight: 900 !important;
+            box-shadow: 0 8px 18px rgba(5, 150, 105, 0.22) !important;
+        }
+
+        div[class*="st-key-user_card_"] button:hover {
+            transform: translateY(-1px) !important;
+            box-shadow: 0 10px 22px rgba(2, 132, 199, 0.28) !important;
+        }
+
+        @media (max-width: 768px) {
+            .admin-section-title {
+                font-size: 28px;
+                color: #0f172a !important;
+            }
+
+            .admin-section-subtitle {
+                color: #64748b !important;
+            }
+
+            div[class*="st-key-user_card_"] {
+                padding: 18px !important;
+                border-radius: 20px !important;
+            }
+
+            .user-card-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .user-main-info {
+                align-items: flex-start;
+            }
+
+            .user-avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 16px;
+                font-size: 22px;
+            }
+
+            .user-name {
+                font-size: 17px;
+            }
+
+            .user-email {
+                font-size: 13px;
+            }
+
+            .user-field-label {
+                margin-bottom: 6px;
+            }
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
         </style>
         <div class="admin-nav-spacer"></div>
         ''',
@@ -1154,8 +1397,17 @@ elif st.session_state["admin_menu"] == "Informasi Admin":
 # =========================
 # MENU 3: DAFTAR PENGGUNA
 # =========================
+
 elif st.session_state["admin_menu"] == "Daftar Pengguna":
-    st.subheader("Daftar Pengguna")
+    st.markdown(
+        """
+        <div class="admin-section-title">Daftar Pengguna</div>
+        <div class="admin-section-subtitle">
+            Kelola data akun, role, status, dan akses pengguna pada web pembelajaran ekosistem.
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     if df_users.empty:
         st.info("Belum ada pengguna yang terdaftar.")
@@ -1181,79 +1433,67 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
             st.warning("Data pengguna tidak ditemukan.")
 
         else:
-            # Header tabel
-            h1, h2, h3, h4 = st.columns([4.4, 1.4, 1.4, 0.8], gap="xxsmall")
-
-            with h1:
-                st.markdown('<div class="user-table-head">Pengguna</div>', unsafe_allow_html=True)
-
-            with h2:
-                st.markdown('<div class="user-table-head">Role</div>', unsafe_allow_html=True)
-
-            with h3:
-                st.markdown('<div class="user-table-head">Status</div>', unsafe_allow_html=True)
-
-            with h4:
-                st.markdown('<div class="user-table-head">Aksi</div>', unsafe_allow_html=True)
-
-            # Isi tabel
             for _, row in display_df.iterrows():
                 row_id = int(row["id_user"])
                 nama = escape(str(row["nama"]))
                 email = escape(str(row["email"]))
-                role = escape(str(row["role"]).lower())
-                status = escape(str(row["status"]).lower())
+                role_raw = str(row["role"]).lower()
+                status_raw = str(row["status"]).lower()
 
-                c1, c2, c3, c4 = st.columns([4.4, 1.4, 1.4, 0.8], gap="xxsmall")
+                role = escape(role_raw)
+                status = escape(status_raw)
 
-                with c1:
+                role_class = {
+                    "admin": "role-admin",
+                    "guru": "role-guru",
+                    "siswa": "role-siswa"
+                }.get(role_raw, "role-siswa")
+
+                status_class = "status-aktif" if status_raw == "aktif" else "status-nonaktif"
+
+                avatar_icon = {
+                    "admin": "🛠️",
+                    "guru": "👨‍🏫",
+                    "siswa": "🎓"
+                }.get(role_raw, "👤")
+
+                with st.container(key=f"user_card_{row_id}"):
                     st.markdown(
                         f"""
-                        <div class="user-table-cell">
-                            <div class="user-name-text">{nama}</div>
-                            <div class="user-email-text">{email}</div>
+                        <div class="user-card-grid">
+                            <div class="user-main-info">
+                                <div class="user-avatar">{avatar_icon}</div>
+                                <div>
+                                    <div class="user-field-label">Pengguna</div>
+                                    <div class="user-name">{nama}</div>
+                                    <div class="user-email">{email}</div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="user-field-label">Role</div>
+                                <span class="user-role-badge {role_class}">{role.capitalize()}</span>
+                            </div>
+
+                            <div>
+                                <div class="user-field-label">Status</div>
+                                <span class="user-status-badge {status_class}">{status.capitalize()}</span>
+                            </div>
                         </div>
                         """,
                         unsafe_allow_html=True
                     )
 
-                with c2:
-                    st.markdown(
-                        f"""
-                        <div class="user-table-cell">
-                            <span class="role-pill">{role.capitalize()}</span>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+                    edit_col, empty_col = st.columns([1, 3])
 
-                with c3:
-                    if status == "aktif":
-                        st.markdown(
-                            f"""
-                            <div class="user-table-cell">
-                                <span class="status-pill-aktif">{status.capitalize()}</span>
-                            </div>
-                            """,
-                            unsafe_allow_html=True
-                        )
-                    else:
-                        st.markdown(
-                            f"""
-                            <div class="user-table-cell">
-                                <span class="status-pill-nonaktif">{status.capitalize()}</span>
-                            </div>
-                            """,
-                            unsafe_allow_html=True
-                        )
-
-                with c4:
-                    with st.container(key=f"user_action_cell_{row_id}"):
-                        if st.button("Edit", key=f"btn_edit_user_{row_id}", use_container_width=True):
+                    with edit_col:
+                        if st.button(
+                            "Edit",
+                            key=f"btn_edit_user_{row_id}",
+                            use_container_width=True
+                        ):
                             st.session_state["selected_edit_user_id"] = row_id
                             st.rerun()
-
-        st.divider()
 
         if "selected_edit_user_id" in st.session_state:
             selected_id = int(st.session_state["selected_edit_user_id"])
@@ -1262,7 +1502,14 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
             if not selected_rows.empty:
                 selected_user = selected_rows.iloc[0]
 
-                st.subheader("Edit Pengguna")
+                st.markdown(
+                    """
+                    <div class="admin-section-title" style="font-size:24px;margin-top:28px;">
+                        Edit Pengguna
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
 
                 with st.form("form_edit_pengguna"):
                     nama_baru = st.text_input(
@@ -1297,10 +1544,16 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
                     col_simpan, col_batal = st.columns(2)
 
                     with col_simpan:
-                        simpan = st.form_submit_button("Simpan Perubahan", use_container_width=True)
+                        simpan = st.form_submit_button(
+                            "Simpan Perubahan",
+                            use_container_width=True
+                        )
 
                     with col_batal:
-                        batal = st.form_submit_button("Batal", use_container_width=True)
+                        batal = st.form_submit_button(
+                            "Batal",
+                            use_container_width=True
+                        )
 
                     if simpan:
                         if not nama_baru.strip():
