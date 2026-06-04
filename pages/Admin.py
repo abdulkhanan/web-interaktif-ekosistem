@@ -184,11 +184,11 @@ def admin_navigation():
         '''
         <style>
             .admin-nav-spacer {
-                height: 40px;
+                height: 30px;
             }
             @media (max-width: 992px) {
                 .admin-nav-spacer {
-                    height: 40px;
+                    height: 30px;
                 }
             }
         </style>
