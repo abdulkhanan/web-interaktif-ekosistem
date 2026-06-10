@@ -211,7 +211,19 @@ st.markdown(
 df_tanggapan = get_tanggapan_by_nama_df(nama_siswa)
 df_feedback = get_feedback_by_nama_df(nama_siswa)
 df_progress = get_progress_by_nama(nama_siswa)
-df_selesai = get__selesai_codes(nama_siswa)
+materi_selesai = get_materi_selesai_codes(nama_siswa)
+
+if df_progress.empty:
+    simulasi_dijalankan = False
+    tanggapan_dikirim = not df_tanggapan.empty
+    feedback_diterima = not df_feedback.empty
+else:
+    progress = df_progress.iloc[0]
+    simulasi_dijalankan = progress["simulasi_dijalankan"] == 1
+    tanggapan_dikirim = progress["tanggapan_dikirim"] == 1 or not df_tanggapan.empty
+    feedback_diterima = progress["feedback_diterima"] == 1 or not df_feedback.empty
+
+materi_ada = len(materi_selesai) > 0
 
 if df_progress.empty:
     simulasi_dijalankan = False
