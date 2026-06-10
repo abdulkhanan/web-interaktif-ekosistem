@@ -225,19 +225,19 @@ else:
 
 materi_ada = len(materi_selesai) > 0
 
-# Tentukan status progress
-step1_done = materi_ada
-step2_done = simulasi_dijalankan
+# Tentukan status progress sesuai alur guided inquiry
+step1_done = simulasi_dijalankan
+step2_done = materi_ada
 step3_done = tanggapan_dikirim
 step4_done = feedback_diterima
 
-# Logic Next Action
+# Logic Next Action sesuai alur guided inquiry
 if not step1_done:
-    next_action = "Membaca <strong>Materi Ekosistem</strong>"
-    next_link = "Materi Ekosistem"
-elif not step2_done:
     next_action = "Menjalankan <strong>Simulasi Ekosistem</strong>"
     next_link = "Simulasi Ekosistem"
+elif not step2_done:
+    next_action = "Membaca <strong>Materi Ekosistem sebagai Bahan Penyelidikan</strong>"
+    next_link = "Materi Ekosistem"
 elif not step3_done:
     next_action = "Mengirim <strong>Tanggapan Analisis</strong>"
     next_link = "Simulasi Ekosistem / Tanggapan"
@@ -270,12 +270,12 @@ st.markdown(
             <div class="tracker-line-fill" style="width: {bar_width}%;"></div>
         </div>
         <div class="tracker-step {'done' if step1_done else ('active' if not step1_done else '')}">
-            <div class="tracker-icon">📖</div>
-            <div class="tracker-label">Materi</div>
-        </div>
-        <div class="tracker-step {'done' if step2_done else ('active' if step1_done and not step2_done else '')}">
             <div class="tracker-icon">🔬</div>
             <div class="tracker-label">Simulasi</div>
+        </div>
+        <div class="tracker-step {'done' if step2_done else ('active' if step1_done and not step2_done else '')}">
+            <div class="tracker-icon">📖</div>
+            <div class="tracker-label">Materi</div>
         </div>
         <div class="tracker-step {'done' if step3_done else ('active' if step2_done and not step3_done else '')}">
             <div class="tracker-icon">📝</div>
@@ -293,9 +293,9 @@ st.markdown(
 col_mat_l, col_mat_r = st.columns([1, 1], gap="large")
 
 with col_mat_l:
-    st.markdown('<div class="dashboard-section-title">📚 Materi Diselesaikan</div>', unsafe_allow_html=True)
+    st.markdown('<div class="dashboard-section-title">📚 Materi sebagai Bahan Penyelidikan</div>', unsafe_allow_html=True)
     if len(materi_selesai) == 0:
-        info_card("Belum Ada", "Kamu belum menyelesaikan materi apapun.", "yellow-card")
+        info_card("Belum Ada", "Kamu belum membaca materi sebagai bahan penyelidikan.", "yellow-card")
     else:
         daftar = "".join([f"<li style='margin-bottom:8px; color:#334155;'><strong>✅ {format_nama_materi(kode)}</strong></li>" for kode in materi_selesai])
         st.markdown(f"""
