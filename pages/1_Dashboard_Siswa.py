@@ -211,7 +211,7 @@ st.markdown(
 df_tanggapan = get_tanggapan_by_nama_df(nama_siswa)
 df_feedback = get_feedback_by_nama_df(nama_siswa)
 df_progress = get_progress_by_nama(nama_siswa)
-_selesai = get__selesai_codes(nama_siswa)
+df_selesai = get__selesai_codes(nama_siswa)
 
 if df_progress.empty:
     simulasi_dijalankan = False
@@ -275,7 +275,7 @@ st.markdown(
         </div>
         <div class="tracker-step {'done' if step2_done else ('active' if step1_done and not step2_done else '')}">
             <div class="tracker-icon">📖</div>
-            <div class="tracker-label">Materi</div>
+            <div class="tracker-label">Materi Penyelidikan</div>
         </div>
         <div class="tracker-step {'done' if step3_done else ('active' if step2_done and not step3_done else '')}">
             <div class="tracker-icon">📝</div>
