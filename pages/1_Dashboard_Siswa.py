@@ -275,7 +275,7 @@ st.markdown(
         </div>
         <div class="tracker-step {'done' if step2_done else ('active' if step1_done and not step2_done else '')}">
             <div class="tracker-icon">📖</div>
-            <div class="tracker-label">Materi Penyelidikan</div>
+            <div class="tracker-label">Materi</div>
         </div>
         <div class="tracker-step {'done' if step3_done else ('active' if step2_done and not step3_done else '')}">
             <div class="tracker-icon">📝</div>
