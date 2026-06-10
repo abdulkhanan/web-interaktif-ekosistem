@@ -1420,7 +1420,10 @@ def _get_caller_page_name():
 
 
 def role_navigation():
-       role_pages = {
+    role = st.session_state.get("role")
+    current_page = _get_caller_page_name()
+
+    role_pages = {
         "admin": [
             ("🛠️ Admin", "pages/Admin.py"),
             ("📖 Panduan", "pages/10_Panduan_Penggunaan.py"),
@@ -1444,15 +1447,13 @@ def role_navigation():
 
     pages = role_pages.get(role, [])
 
-    # === Mobile hamburger navigation (hidden on desktop via CSS) ===
+    # === Mobile hamburger navigation ===
     if pages:
-        # Checkbox for CSS-only state
         st.markdown(
             '<input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" style="display:none;">',
             unsafe_allow_html=True
         )
-        
-        # Backdrop (acting as a label to close the drawer)
+
         st.markdown(
             '<label for="menu-toggle" class="menu-backdrop-label"></label>',
             unsafe_allow_html=True
@@ -1469,9 +1470,7 @@ def role_navigation():
                 unsafe_allow_html=True
             )
 
-        # Always render the drawer container in Python so it exists in DOM, and let CSS handle show/hide
         with st.container(key="mobile_menu_items"):
-            # Drawer Header with Brand and Close Button
             st.markdown(
                 '''
                 <div class="drawer-header-container">
@@ -1481,7 +1480,7 @@ def role_navigation():
                 ''',
                 unsafe_allow_html=True
             )
-            
+
             st.markdown("<div style='margin-bottom: 8px;'></div>", unsafe_allow_html=True)
 
             for index, (label, target) in enumerate(pages):
@@ -1503,7 +1502,7 @@ def role_navigation():
                 from modules.auth import logout
                 logout()
 
-    # === Desktop navigation (hidden on mobile via CSS) ===
+    # === Desktop navigation ===
     if pages:
         with st.container(key="nav_bar"):
             columns = st.columns(len(pages) + 1)
