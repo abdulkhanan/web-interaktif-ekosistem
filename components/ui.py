@@ -1430,10 +1430,10 @@ def role_navigation():
         ],
         "guru": [
             ("📊 Dashboard", "pages/6_Dashboard_Guru.py"),
+            ("📖 Panduan Guru", "pages/10_Panduan_Penggunaan.py"),
             ("👥 Data Siswa", "pages/7_Data_Siswa.py"),
             ("📝 Jawaban", "pages/8_Jawaban_Siswa.py"),
             ("💬 Feedback", "pages/9_Feedback_Guru.py"),
-            ("📖 Panduan Guru", "pages/10_Panduan_Penggunaan.py"),
         ],
         "siswa": [
             ("📊 Dashboard", "pages/1_Dashboard_Siswa.py"),
