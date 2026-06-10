@@ -187,30 +187,52 @@ def tampilkan_simulasi_guru():
     section_title("Informasi Simulasi yang Dipantau Guru")
 
     info_card(
-        "1. Simulasi Pencemaran Sungai",
+        "1. Simulasi Pencemaran Sungai Akibat Limbah Pabrik",
         """
-        Guru dapat meninjau hasil simulasi siswa terkait pencemaran sungai,
-        seperti tingkat pencemaran, perubahan kualitas air, DO, makroinvertebrata,
-        dan kondisi ekosistem.
+        Guru dapat meninjau hasil penyelidikan siswa terkait fenomena pencemaran sungai
+        akibat limbah pabrik. Data yang dapat diamati meliputi tingkat pencemaran,
+        kualitas air, oksigen terlarut atau DO, populasi ikan, indeks makroinvertebrata,
+        dan kondisi ekosistem sungai. Melalui simulasi ini, guru dapat melihat kemampuan
+        siswa dalam menghubungkan perubahan komponen abiotik dengan dampaknya terhadap
+        organisme perairan.
         """,
         "blue-card"
     )
 
     info_card(
-        "2. Simulasi Aliran Energi dan Piramida Ekologi",
+        "2. Simulasi Rantai Makanan Saat Kemarau",
         """
-        Guru dapat meninjau pemahaman siswa tentang perpindahan energi pada tingkat trofik.
-        Hasil simulasi ini membantu guru melihat apakah siswa memahami bahwa energi
-        semakin berkurang pada tingkat trofik yang lebih tinggi.
+        Guru dapat meninjau pemahaman siswa tentang pengaruh kemarau terhadap ketersediaan
+        produsen dalam rantai makanan. Data yang dapat diamati meliputi energi produsen,
+        penurunan rumput akibat kemarau, efisiensi perpindahan energi, serta energi pada
+        konsumen I, konsumen II, dan konsumen III. Simulasi ini membantu guru melihat
+        apakah siswa memahami bahwa perubahan pada produsen dapat memengaruhi tingkat
+        trofik berikutnya.
         """,
         "blue-card"
     )
 
     info_card(
-        "3. Simulasi Daur Biogeokimia: Daur Air",
+        "3. Simulasi Daur Air, Karbon Dioksida, dan Oksigen Saat Pohon Berkurang",
         """
-        Guru dapat meninjau hasil pengamatan siswa terkait proses evaporasi, kondensasi,
-        presipitasi, infiltrasi, dan limpasan permukaan pada simulasi daur air.
+        Guru dapat meninjau hasil penyelidikan siswa tentang pengaruh berkurangnya pohon
+        atau tutupan vegetasi terhadap keseimbangan lingkungan. Data yang dapat diamati
+        meliputi curah hujan, tutupan vegetasi, infiltrasi, limpasan permukaan,
+        penyerapan karbon dioksida atau CO2, dan produksi oksigen atau O2. Simulasi ini
+        membantu guru menilai kemampuan siswa dalam memahami peran tumbuhan terhadap
+        daur air, siklus karbon, dan ketersediaan oksigen.
+        """,
+        "blue-card"
+    )
+
+    info_card(
+        "4. Simulasi Peningkatan Alga Akibat Pupuk Berlebih",
+        """
+        Guru dapat meninjau hasil penyelidikan siswa tentang masuknya pupuk pertanian
+        secara berlebihan ke perairan. Data yang dapat diamati meliputi kadar nitrogen,
+        fosfor, pertumbuhan alga, oksigen air, dan kondisi organisme air. Simulasi ini
+        membantu guru melihat pemahaman siswa mengenai proses eutrofikasi dan dampaknya
+        terhadap keseimbangan ekosistem perairan.
         """,
         "blue-card"
     )
