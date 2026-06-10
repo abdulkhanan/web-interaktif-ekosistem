@@ -38,32 +38,47 @@ def tampilkan_simulasi_siswa():
     section_title("Jenis Simulasi yang Dapat Digunakan Siswa")
 
     info_card(
-        "1. Simulasi Pencemaran Sungai",
+        "1. Simulasi Pencemaran Sungai Akibat Limbah Pabrik",
         """
-        Siswa menggunakan simulasi ini untuk menyelidiki pengaruh pencemaran terhadap ekosistem sungai.
-        Siswa dapat mengatur tingkat pencemaran limbah pabrik, lalu mengamati perubahan DO,
-        kualitas air, makroinvertebrata, dan kondisi ekosistem sungai.
+        Pada simulasi ini, siswa mengamati fenomena pencemaran sungai akibat masuknya limbah pabrik.
+        Siswa dapat mengubah tingkat limbah industri, lalu melihat pengaruhnya terhadap kualitas air,
+        oksigen terlarut atau DO, populasi ikan, indeks makroinvertebrata, dan kondisi ekosistem sungai.
+        Simulasi ini membantu siswa memahami hubungan antara komponen abiotik dan biotik dalam ekosistem perairan.
         """,
         "blue-card"
     )
 
     info_card(
-        "2. Simulasi Aliran Energi dan Piramida Ekologi",
+        "2. Simulasi Rantai Makanan Saat Kemarau",
         """
-        Siswa menggunakan simulasi ini untuk menyelidiki perpindahan energi dari produsen
-        ke konsumen tingkat I, konsumen tingkat II, dan konsumen tingkat III. Melalui simulasi ini,
-        siswa dapat melihat bahwa energi semakin berkurang pada tingkat trofik yang lebih tinggi.
+        Pada simulasi ini, siswa mengamati fenomena berkurangnya rumput saat kemarau panjang.
+        Rumput berperan sebagai produsen yang menjadi sumber energi bagi tingkat trofik berikutnya.
+        Siswa dapat mengubah jumlah energi produsen, persentase penurunan rumput akibat kemarau,
+        dan efisiensi perpindahan energi. Hasil simulasi menunjukkan perubahan energi pada produsen,
+        konsumen I, konsumen II, dan konsumen III.
         """,
         "blue-card"
     )
 
     info_card(
-        "3. Simulasi Daur Biogeokimia: Daur Air",
+        "3. Simulasi Daur Air, CO2, dan O2 Saat Pohon Berkurang",
         """
-        Siswa menggunakan simulasi ini untuk menyelidiki proses daur air dalam ekosistem.
-        Siswa dapat mengatur intensitas panas matahari, curah hujan, dan tutupan vegetasi,
-        lalu mengamati perubahan evaporasi, kondensasi, presipitasi, infiltrasi,
-        dan limpasan permukaan.
+        Pada simulasi ini, siswa mengamati fenomena berkurangnya pohon atau tutupan vegetasi.
+        Siswa dapat mengubah curah hujan dan tutupan vegetasi setelah penebangan, lalu melihat pengaruhnya
+        terhadap infiltrasi, limpasan permukaan, penyerapan karbon dioksida atau CO2, dan produksi oksigen atau O2.
+        Simulasi ini membantu siswa memahami peran tumbuhan dalam menjaga keseimbangan daur air,
+        karbon dioksida, dan oksigen.
+        """,
+        "blue-card"
+    )
+
+    info_card(
+        "4. Simulasi Peningkatan Alga Akibat Pupuk Berlebih",
+        """
+        Pada simulasi ini, siswa mengamati fenomena masuknya pupuk pertanian secara berlebihan ke perairan.
+        Siswa dapat mengubah kadar nitrogen dan fosfor dari pupuk, lalu melihat pengaruhnya terhadap
+        zat hara, pertumbuhan alga, oksigen air, dan kondisi organisme air.
+        Simulasi ini membantu siswa memahami peristiwa eutrofikasi dan dampaknya terhadap keseimbangan ekosistem perairan.
         """,
         "blue-card"
     )
