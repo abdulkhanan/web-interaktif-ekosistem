@@ -24,11 +24,11 @@ def tampilkan_tujuan_umum():
         Web ini dibuat sebagai media pembelajaran interaktif materi ekosistem berbasis guided inquiry.
         Alur pembelajaran dimulai dari penyajian fenomena atau masalah pada halaman simulasi.
         Siswa mengamati fenomena tersebut melalui pertanyaan pemantik, kemudian menjalankan simulasi
-        untuk memperoleh data. Selama proses penyelidikan, siswa dapat menggunakan materi sebagai
-        bahan pendukung untuk memahami konsep ekosistem dan menafsirkan hasil simulasi.
-        Setelah melakukan penyelidikan, siswa menulis tanggapan berupa hasil pengamatan,
-        analisis, dan kesimpulan. Tanggapan tersebut kemudian ditinjau oleh guru,
-        lalu siswa menerima feedback sebagai bahan refleksi dan perbaikan pemahaman.
+        untuk memperoleh data. Selama proses penyelidikan, siswa dapat menggunakan materi ekosistem
+        sebagai bahan pendukung untuk memahami konsep dan menafsirkan hasil simulasi. Setelah melakukan
+        penyelidikan, siswa menulis tanggapan berupa hasil pengamatan, analisis, dan kesimpulan.
+        Tanggapan tersebut kemudian ditinjau oleh guru, lalu siswa menerima feedback sebagai bahan
+        refleksi dan perbaikan pemahaman.
         """,
         "green-card"
     )
@@ -40,7 +40,7 @@ def tampilkan_simulasi_siswa():
     info_card(
         "1. Simulasi Pencemaran Sungai",
         """
-        Siswa menggunakan simulasi ini untuk memahami pengaruh pencemaran terhadap ekosistem sungai.
+        Siswa menggunakan simulasi ini untuk menyelidiki pengaruh pencemaran terhadap ekosistem sungai.
         Siswa dapat mengatur tingkat pencemaran limbah pabrik, lalu mengamati perubahan DO,
         kualitas air, makroinvertebrata, dan kondisi ekosistem sungai.
         """,
@@ -50,9 +50,9 @@ def tampilkan_simulasi_siswa():
     info_card(
         "2. Simulasi Aliran Energi dan Piramida Ekologi",
         """
-        Siswa menggunakan simulasi ini untuk memahami perpindahan energi dari produsen
-        ke konsumen tingkat I, konsumen tingkat II, dan konsumen tingkat III.
-        Siswa dapat melihat bahwa energi semakin berkurang pada tingkat trofik yang lebih tinggi.
+        Siswa menggunakan simulasi ini untuk menyelidiki perpindahan energi dari produsen
+        ke konsumen tingkat I, konsumen tingkat II, dan konsumen tingkat III. Melalui simulasi ini,
+        siswa dapat melihat bahwa energi semakin berkurang pada tingkat trofik yang lebih tinggi.
         """,
         "blue-card"
     )
@@ -60,7 +60,7 @@ def tampilkan_simulasi_siswa():
     info_card(
         "3. Simulasi Daur Biogeokimia: Daur Air",
         """
-        Siswa menggunakan simulasi ini untuk memahami proses daur air dalam ekosistem.
+        Siswa menggunakan simulasi ini untuk menyelidiki proses daur air dalam ekosistem.
         Siswa dapat mengatur intensitas panas matahari, curah hujan, dan tutupan vegetasi,
         lalu mengamati perubahan evaporasi, kondensasi, presipitasi, infiltrasi,
         dan limpasan permukaan.
@@ -113,7 +113,7 @@ def tampilkan_panduan_siswa():
     info_card(
         "4. Menggunakan Materi sebagai Bahan Penyelidikan",
         """
-        Selama proses penyelidikan, siswa dapat membuka halaman Bahan Penyelidikan.
+        Selama proses penyelidikan, siswa dapat membuka halaman Materi Ekosistem.
         Materi pada halaman tersebut digunakan untuk membantu siswa memahami konsep ekosistem,
         menghubungkan teori dengan hasil simulasi, dan memperkuat analisis terhadap fenomena.
         """,
@@ -124,9 +124,9 @@ def tampilkan_panduan_siswa():
         "5. Mengirim Tanggapan",
         """
         Setelah menjalankan simulasi dan melakukan penyelidikan, siswa membuka halaman Tanggapan Siswa.
-        Pertanyaan guided inquiry akan menyesuaikan jenis simulasi yang dipilih.
-        Siswa mengisi hasil pengamatan, analisis, dan kesimpulan berdasarkan data simulasi
-        serta pemahaman dari bahan penyelidikan.
+        Pertanyaan guided inquiry akan menyesuaikan jenis simulasi yang dipilih. Siswa mengisi hasil
+        pengamatan, analisis, dan kesimpulan berdasarkan data simulasi serta pemahaman dari materi
+        ekosistem sebagai bahan penyelidikan.
         """,
         "green-card"
     )
@@ -141,19 +141,20 @@ def tampilkan_panduan_siswa():
         "green-card"
     )
 
-section_title("Urutan Penggunaan untuk Siswa")
+    section_title("Urutan Penggunaan untuk Siswa")
 
-info_card(
-    "Alur Belajar Berbasis Guided Inquiry",
-    """
-    Siswa memulai kegiatan belajar dengan mengamati fenomena pada halaman simulasi.
-    Setelah itu, siswa menjalankan simulasi untuk memperoleh data dan menggunakan bahan penyelidikan
-    untuk membantu memahami konsep yang berkaitan dengan fenomena tersebut. Setelah proses penyelidikan
-    selesai, siswa menulis tanggapan berdasarkan hasil pengamatan, analisis, dan kesimpulan.
-    Siswa baru dapat mengirim tanggapan setelah memilih dan menjalankan salah satu simulasi.
-    """,
-    "danger-card"
-)
+    info_card(
+        "Alur Belajar Berbasis Guided Inquiry",
+        """
+        Siswa memulai kegiatan belajar dengan mengamati fenomena pada halaman simulasi.
+        Setelah itu, siswa menjalankan simulasi untuk memperoleh data dan menggunakan materi ekosistem
+        sebagai bahan penyelidikan untuk membantu memahami konsep yang berkaitan dengan fenomena tersebut.
+        Setelah proses penyelidikan selesai, siswa menulis tanggapan berdasarkan hasil pengamatan,
+        analisis, dan kesimpulan. Siswa baru dapat mengirim tanggapan setelah memilih dan menjalankan
+        salah satu simulasi.
+        """,
+        "danger-card"
+    )
 
     section_title("Catatan Penting untuk Siswa")
 
@@ -233,7 +234,7 @@ def tampilkan_panduan_guru():
         "3. Melihat Progres Siswa",
         """
         Guru membuka halaman Data Siswa untuk melihat progres belajar setiap siswa.
-        Progres mencakup status membaca materi, menjalankan simulasi, mengirim tanggapan,
+        Progres mencakup status menjalankan simulasi, mengirim tanggapan,
         dan menerima feedback.
         """,
         "yellow-card"
@@ -261,18 +262,20 @@ def tampilkan_panduan_guru():
 
     section_title("Alur Guided Inquiry yang Dipantau Guru")
 
-    st.markdown("""
-    | Tahap Guided Inquiry | Implementasi di Web |
-    |---|---|
-    | Orientasi masalah | Siswa mengamati fenomena atau masalah pada halaman simulasi |
-    | Pertanyaan pemantik | Siswa membaca pertanyaan yang berkaitan dengan fenomena ekosistem |
-    | Penyelidikan | Siswa menjalankan simulasi dengan mengatur variabel yang tersedia |
-    | Pengumpulan data | Siswa mengamati hasil perubahan data dari simulasi |
-    | Penguatan konsep | Siswa menggunakan bahan penyelidikan untuk memahami konsep yang berkaitan |
-    | Analisis data | Siswa menjawab pertanyaan pada halaman tanggapan siswa |
-    | Kesimpulan | Siswa menuliskan kesimpulan berdasarkan hasil simulasi dan bahan penyelidikan |
-    | Feedback dan refleksi | Guru memberi feedback, lalu siswa menggunakan feedback untuk memperbaiki pemahaman |
-    """)
+    st.markdown(
+        """
+        | Tahap Guided Inquiry | Implementasi di Web |
+        |---|---|
+        | Orientasi masalah | Siswa mengamati fenomena atau masalah pada halaman simulasi |
+        | Pertanyaan pemantik | Siswa membaca pertanyaan yang berkaitan dengan fenomena ekosistem |
+        | Penyelidikan | Siswa menjalankan simulasi dengan mengatur variabel yang tersedia |
+        | Pengumpulan data | Siswa mengamati hasil perubahan data dari simulasi |
+        | Penguatan konsep | Siswa menggunakan materi ekosistem sebagai bahan penyelidikan |
+        | Analisis data | Siswa menjawab pertanyaan pada halaman Tanggapan Siswa |
+        | Kesimpulan | Siswa menuliskan kesimpulan berdasarkan hasil simulasi dan materi pendukung |
+        | Feedback dan refleksi | Guru memberi feedback, lalu siswa menggunakan feedback untuk memperbaiki pemahaman |
+        """
+    )
 
     section_title("Catatan Penting untuk Guru")
 
@@ -290,31 +293,26 @@ def tampilkan_panduan_guru():
 def tampilkan_panduan_admin():
     page_title(
         "📌 Panduan Admin",
-        "Halaman ini menampilkan ringkasan panduan untuk admin, guru, dan siswa."
+        "Admin dapat memilih jenis panduan yang ingin ditinjau."
     )
 
-    info_card(
-        "Catatan Admin",
-        """
-        Admin dapat melihat panduan ini untuk memastikan alur penggunaan web sudah sesuai
-        dengan kebutuhan pembelajaran. Panduan siswa dan guru tetap dipisahkan ketika pengguna
-        login sesuai role masing-masing.
-        """,
-        "blue-card"
+    pilihan_panduan = st.radio(
+        "Pilih panduan yang ingin ditampilkan:",
+        ["Panduan Siswa", "Panduan Guru"],
+        horizontal=True
     )
 
-    tampilkan_panduan_siswa()
-    tampilkan_panduan_guru()
+    if pilihan_panduan == "Panduan Siswa":
+        tampilkan_panduan_siswa()
+    else:
+        tampilkan_panduan_guru()
 
 
 if role == "siswa":
     tampilkan_panduan_siswa()
-
 elif role == "guru":
     tampilkan_panduan_guru()
-
 elif role == "admin":
     tampilkan_panduan_admin()
-
 else:
     st.warning("Role pengguna tidak dikenali. Silakan login ulang.")
