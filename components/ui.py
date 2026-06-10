@@ -1420,30 +1420,27 @@ def _get_caller_page_name():
 
 
 def role_navigation():
-    role = st.session_state.get("role")
-    current_page = _get_caller_page_name()
-
-    role_pages = {
-        "admin": [
-            ("🛠️ Admin", "pages/Admin.py"),
-            ("📖 Panduan", "pages/10_Panduan_Penggunaan.py"),
-        ],
-        "guru": [
-            ("📊 Dashboard", "pages/6_Dashboard_Guru.py"),
-            ("👥 Data Siswa", "pages/7_Data_Siswa.py"),
-            ("📝 Jawaban", "pages/8_Jawaban_Siswa.py"),
-            ("💬 Feedback", "pages/9_Feedback_Guru.py"),
-            ("📖 Panduan", "pages/10_Panduan_Penggunaan.py"),
-        ],
-        "siswa": [
-            ("📊 Dashboard", "pages/1_Dashboard_Siswa.py"),
-            ("📚 Materi", "pages/2_Materi_Ekosistem.py"),
-            ("🔬 Simulasi", "pages/3_Simulasi_Ekosistem.py"),
-            ("✍️ Tanggapan", "pages/4_Tanggapan_Siswa.py"),
-            ("💬 Feedback", "pages/5_Feedback_Siswa.py"),
-            ("📖 Panduan", "pages/10_Panduan_Penggunaan.py"),
-        ],
-    }
+   role_pages = {
+    "admin": [
+        ("🛠️ Admin", "pages/Admin.py"),
+        ("📖 Panduan", "pages/10_Panduan_Penggunaan.py"),
+    ],
+    "guru": [
+        ("📊 Dashboard", "pages/6_Dashboard_Guru.py"),
+        ("👥 Data Siswa", "pages/7_Data_Siswa.py"),
+        ("📝 Jawaban", "pages/8_Jawaban_Siswa.py"),
+        ("💬 Feedback", "pages/9_Feedback_Guru.py"),
+        ("📖 Panduan Guru", "pages/10_Panduan_Penggunaan.py"),
+    ],
+    "siswa": [
+        ("📊 Dashboard", "pages/1_Dashboard_Siswa.py"),
+        ("📚 Materi", "pages/2_Materi_Ekosistem.py"),
+        ("🔬 Simulasi", "pages/3_Simulasi_Ekosistem.py"),
+        ("✍️ Tanggapan", "pages/4_Tanggapan_Siswa.py"),
+        ("💬 Feedback", "pages/5_Feedback_Siswa.py"),
+        ("📖 Panduan Siswa", "pages/10_Panduan_Penggunaan.py"),
+    ],
+}
 
     pages = role_pages.get(role, [])
 
