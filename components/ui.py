@@ -1436,11 +1436,9 @@ def role_navigation():
             ("💬 Feedback", "pages/9_Feedback_Guru.py"),
         ],
         "siswa": [
-            ("📊 Dashboard", "pages/1_Dashboard_Siswa.py"),
-            ("📖 Panduan Siswa", "pages/10_Panduan_Penggunaan.py"),
-            ("🔬 Simulasi", "pages/3_Simulasi_Ekosistem.py"),
-            ("📚 Materi", "pages/2_Materi_Ekosistem.py"),
-            ("✍️ Tanggapan", "pages/4_Tanggapan_Siswa.py"),
+            ("🏠 Beranda", "pages/1_Dashboard_Siswa.py"),
+            ("🔬 Misi Penyelidikan", "pages/2_Misi_Penyelidikan.py"),
+            ("📊 Hasil Saya", "pages/3_Hasil_Saya.py"),
             ("💬 Feedback", "pages/5_Feedback_Siswa.py"),
         ],
     }
@@ -1529,11 +1527,11 @@ def role_navigation():
                     from modules.auth import logout
                     logout()
 
-    login_status_card()
+    login_status_card(compact=(role == "siswa"))
 
     st.divider()
 
-def login_status_card():
+def login_status_card(compact=False):
     role = st.session_state.get("role", "pengguna")
     nama = (
         st.session_state.get("nama_pengguna")
@@ -1587,6 +1585,31 @@ def login_status_card():
     safe_email = escape(str(email))
     safe_label = escape(str(config["label"]))
     safe_icon = escape(str(config["icon"]))
+
+    if compact:
+        kelas = escape(str(st.session_state.get("kelas") or ""))
+        detail = f"Kelas {kelas}" if kelas else safe_label
+        compact_html = (
+            "<div style='"
+            "background:#ffffff;"
+            "border:1px solid #e2e8f0;"
+            "border-radius:16px;"
+            "padding:10px 14px;"
+            "margin-bottom:16px;"
+            "box-shadow:0 5px 18px rgba(15,23,42,.03);"
+            "display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;"
+            "'>"
+            "<div style='display:flex;align-items:center;gap:11px;'>"
+            f"<div style='width:40px;height:40px;border-radius:12px;background:{config['text']}15;color:{config['text']};display:flex;align-items:center;justify-content:center;font-size:21px;'>{safe_icon}</div>"
+            "<div>"
+            f"<div style='font-size:15px;font-weight:850;color:#0f172a;line-height:1.2;'>{safe_nama}</div>"
+            f"<div style='font-size:12px;color:#64748b;margin-top:3px;'>{detail}</div>"
+            "</div></div>"
+            f"<div style='background:{config['text']}12;color:{config['text']};border:1px solid {config['border']};border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;'>{safe_label}</div>"
+            "</div>"
+        )
+        st.markdown(compact_html, unsafe_allow_html=True)
+        return
 
     card_html = (
         f"<div class='identity-card-hover' style='"

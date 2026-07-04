@@ -14,6 +14,7 @@ from modules.simulation import (
 )
 
 from modules.auth import require_role
+from modules.missions import MISSIONS
 from database.init_db import init_db
 from database.queries import update_progress
 from components.ui import load_css, page_title, section_title, info_card, role_navigation
@@ -33,6 +34,14 @@ cached_init_db()
 load_css()
 require_role(["siswa"])
 role_navigation()
+
+selected_mission_code = st.session_state.get("selected_mission_code")
+if selected_mission_code in MISSIONS:
+    selected_mission = MISSIONS[selected_mission_code]
+    st.info(
+        f"Misi aktif: {selected_mission['icon']} **{selected_mission['title']}**. "
+        "Gunakan simulasi yang sesuai dengan fokus misi ini."
+    )
 
 
 nama_siswa = (
