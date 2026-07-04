@@ -915,3 +915,17 @@ def has_minimum_experiment_runs(id_user, mission_code):
     minimum_trials = int(MISSIONS[mission_code]["minimum_trials"])
     return count_experiment_runs(id_user, mission_code) >= minimum_trials
 
+
+def clear_experiment_runs(id_user, mission_code):
+    """Menghapus seluruh percobaan pada satu misi milik satu siswa.
+
+    Fungsi ini dipakai ketika siswa masih berada pada tahap penyelidikan dan
+    ingin mengulang rancangan percobaannya dari awal.
+    """
+    id_user = _validate_id_user(id_user)
+    mission_code = _validate_mission_code(mission_code)
+    client().table("experiment_runs").delete().eq(
+        "id_user", id_user
+    ).eq("mission_code", mission_code).execute()
+    return get_experiment_runs_df(id_user, mission_code)
+

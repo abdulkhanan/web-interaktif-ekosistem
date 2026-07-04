@@ -13,6 +13,9 @@ from components.mission_ui import (
 )
 
 
+AVAILABLE_MISSION_CODES = {"misi_1"}
+
+
 st.set_page_config(
     page_title="Dashboard Siswa",
     page_icon="🌿",
@@ -60,7 +63,8 @@ active_code = next(
     (
         code
         for code in MISSION_CODES
-        if progress_by_code.get(code, {}).get("status") == "sedang_dikerjakan"
+        if code in AVAILABLE_MISSION_CODES
+        and progress_by_code.get(code, {}).get("status") == "sedang_dikerjakan"
     ),
     None,
 )
@@ -69,7 +73,8 @@ if active_code is None:
         (
             code
             for code in MISSION_CODES
-            if progress_by_code.get(code, {}).get("status") == "belum_dimulai"
+            if code in AVAILABLE_MISSION_CODES
+            and progress_by_code.get(code, {}).get("status") == "belum_dimulai"
         ),
         None,
     )
@@ -128,11 +133,16 @@ for row_start in range(0, len(codes), 2):
             {"status": "belum_dimulai", "current_stage": "fenomena"},
         )
         status = progress.get("status", "belum_dimulai")
-        button_label = {
-            "belum_dimulai": "Mulai Misi",
-            "sedang_dikerjakan": "Lanjutkan Misi",
-            "selesai": "Lihat Hasil",
-        }.get(status, "Buka Misi")
+        is_available = mission_code in AVAILABLE_MISSION_CODES
+        button_label = (
+            {
+                "belum_dimulai": "Mulai Misi",
+                "sedang_dikerjakan": "Lanjutkan Misi",
+                "selesai": "Lihat Misi",
+            }.get(status, "Buka Misi")
+            if is_available
+            else "Segera Hadir"
+        )
 
         with column:
             with st.container(border=True, key=f"mission_card_{mission_code}"):
@@ -146,6 +156,7 @@ for row_start in range(0, len(codes), 2):
                     key=f"open_{mission_code}",
                     use_container_width=True,
                     type="primary" if mission_code == active_code else "secondary",
+                    disabled=not is_available,
                 ):
                     st.session_state["selected_mission_code"] = mission_code
                     st.query_params["misi"] = mission_code

@@ -15,6 +15,9 @@ from components.mission_ui import (
 )
 
 
+AVAILABLE_MISSION_CODES = {"misi_1"}
+
+
 st.set_page_config(
     page_title="Misi Penyelidikan",
     page_icon="🔬",
@@ -85,10 +88,12 @@ if not selected_code:
                         mission_card_html(mission_code, mission, progress),
                         unsafe_allow_html=True,
                     )
+                    is_available = mission_code in AVAILABLE_MISSION_CODES
                     if st.button(
-                        "Pilih Misi",
+                        "Pilih Misi" if is_available else "Segera Hadir",
                         key=f"select_{mission_code}",
                         use_container_width=True,
+                        disabled=not is_available,
                     ):
                         st.session_state["selected_mission_code"] = mission_code
                         st.query_params["misi"] = mission_code
@@ -103,6 +108,14 @@ progress = progress_by_code.get(
 status = progress.get("status", "belum_dimulai")
 current_stage = progress.get("current_stage", "fenomena")
 status_meta = get_status_meta(status)
+
+if selected_code not in AVAILABLE_MISSION_CODES:
+    st.info("Aktivitas lengkap misi ini akan diaktifkan pada tahap pengembangan berikutnya.")
+    if st.button("← Pilih Misi Lain", use_container_width=True):
+        st.session_state.pop("selected_mission_code", None)
+        st.query_params.clear()
+        st.rerun()
+    st.stop()
 
 back_col, _ = st.columns([1, 4])
 with back_col:
@@ -150,22 +163,27 @@ with button_col1:
         if st.button("Mulai Misi", type="primary", use_container_width=True):
             try:
                 start_mission(id_user, selected_code)
-                st.success("Misi dimulai. Tahap aktif: Fenomena.")
-                st.rerun()
+                st.session_state["selected_mission_code"] = selected_code
+                st.switch_page("pages/3_Simulasi_Ekosistem.py")
             except Exception as exc:
                 st.error("Misi belum dapat dimulai.")
                 st.code(str(exc))
     elif status == "selesai":
-        if st.button("Lihat Hasil Saya", type="primary", use_container_width=True):
-            st.switch_page("pages/3_Hasil_Saya.py")
+        if st.button("Buka Penguatan & Refleksi", type="primary", use_container_width=True):
+            st.session_state["selected_mission_code"] = selected_code
+            st.switch_page("pages/3_Simulasi_Ekosistem.py")
     else:
         if st.button("Masuk ke Aktivitas", type="primary", use_container_width=True):
             st.session_state["selected_mission_code"] = selected_code
             st.switch_page("pages/3_Simulasi_Ekosistem.py")
 
 with button_col2:
-    if st.button("Kembali ke Dashboard", use_container_width=True):
-        st.switch_page("pages/1_Dashboard_Siswa.py")
+    if status == "selesai":
+        if st.button("Lihat Hasil Saya", use_container_width=True):
+            st.switch_page("pages/3_Hasil_Saya.py")
+    else:
+        if st.button("Kembali ke Dashboard", use_container_width=True):
+            st.switch_page("pages/1_Dashboard_Siswa.py")
 
 if status == "sedang_dikerjakan":
     st.caption(
