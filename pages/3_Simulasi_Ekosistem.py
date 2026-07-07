@@ -240,64 +240,6 @@ def tampilkan_grafik_kurva(df, x_col, y_cols, warna_map, judul, ylabel="Nilai Pa
     st.altair_chart(chart, use_container_width=True)
 
 
-def tampilkan_grafik_batang(df, x_col, y_col, judul, ylabel="Nilai"):
-    """Menampilkan grafik batang sederhana untuk membandingkan kategori."""
-    chart = alt.Chart(df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6).encode(
-        x=alt.X(f'{x_col}:N', sort=None, axis=alt.Axis(title=None, labelAngle=0)),
-        y=alt.Y(f'{y_col}:Q', axis=alt.Axis(title=ylabel), scale=alt.Scale(zero=True)),
-        tooltip=[
-            alt.Tooltip(f'{x_col}:N', title='Komponen'),
-            alt.Tooltip(f'{y_col}:Q', title=ylabel, format=',.2f')
-        ]
-    ).properties(
-        title=alt.TitleParams(
-            text=judul,
-            fontSize=14,
-            fontWeight='bold',
-            anchor='start',
-            color='#0f172a'
-        ),
-        height=320,
-        background='#ffffff'
-    ).configure_view(
-        stroke=None,
-        fill='#ffffff'
-    ).configure_axis(
-        domainColor='#cbd5e1',
-        tickColor='#cbd5e1',
-        labelColor='#334155',
-        titleColor='#0f172a',
-        gridColor='#e2e8f0',
-        gridDash=[4, 4]
-    ).configure_title(
-        color='#0f172a'
-    )
-    st.altair_chart(chart, use_container_width=True)
-
-
-def tampilkan_pertanyaan_analisis(daftar_pertanyaan):
-    """Pertanyaan pengarah agar siswa membaca grafik tanpa diberi jawaban jadi."""
-    st.markdown("### Pertanyaan Analisis Data")
-    daftar_html = "".join([f"<li>{q}</li>" for q in daftar_pertanyaan])
-    st.markdown(
-        f"""
-        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:16px; padding:16px; margin:8px 0 18px 0;">
-            <div style="font-weight:800; color:#0f172a; margin-bottom:8px;">Gunakan pertanyaan ini untuk membaca data, bukan sebagai jawaban akhir.</div>
-            <ol style="margin:0; padding-left:22px; color:#334155; line-height:1.7; font-size:15px;">
-                {daftar_html}
-            </ol>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-
-def tampilkan_data_lengkap(df, label="📊 Lihat Data Lengkap Simulasi"):
-    """Data lengkap disembunyikan agar tampilan utama tidak terasa seperti spreadsheet."""
-    with st.expander(label, expanded=False):
-        st.dataframe(df, width="stretch", hide_index=True)
-
-
 def status_pencemaran_card(hasil):
     indeks_invertebrata = float(hasil["makroinvertebrata"])
 
@@ -589,49 +531,28 @@ with tab1:
         st.markdown("### 4. Simulasi dan Data")
         status_pencemaran_card(hasil)
 
-        st.markdown("### Grafik Pola Data")
-        st.caption("Grafik dipisah agar siswa membaca pola bertahap: kondisi abiotik lebih dulu, lalu dampaknya pada organisme.")
-
         tampilkan_grafik_kurva(
             df=df_tren,
             x_col="Waktu (hari)",
             y_cols=[
                 "Indeks Limbah",
                 "Kualitas Air",
-                "Indeks DO"
-            ],
-            warna_map={
-                "Indeks Limbah": "#ef4444",
-                "Kualitas Air": "#10b981",
-                "Indeks DO": "#0284c7"
-            },
-            judul="Grafik 1. Limbah, Kualitas Air, dan DO",
-            ylabel="Nilai Indeks"
-        )
-
-        tampilkan_grafik_kurva(
-            df=df_tren,
-            x_col="Waktu (hari)",
-            y_cols=[
+                "Indeks DO",
                 "Populasi Ikan",
                 "Indeks Invertebrata"
             ],
             warna_map={
+                "Indeks Limbah": "#ef4444",
+                "Kualitas Air": "#10b981",
+                "Indeks DO": "#0284c7",
                 "Populasi Ikan": "#8b5cf6",
                 "Indeks Invertebrata": "#eab308"
             },
-            judul="Grafik 2. Respons Organisme Air",
+            judul="Tren Parameter Ekosistem Sungai dari Waktu ke Waktu",
             ylabel="Nilai Indeks"
         )
 
-        tampilkan_pertanyaan_analisis([
-            "Parameter abiotik apa yang berubah paling jelas saat tingkat limbah meningkat?",
-            "Bagaimana arah perubahan DO dibandingkan dengan perubahan kualitas air?",
-            "Bagaimana respons populasi ikan dan invertebrata terhadap perubahan kondisi air?",
-            "Data mana yang paling kuat untuk mendukung klaim ilmiahmu?"
-        ])
-
-        tampilkan_data_lengkap(df_tren)
+        st.dataframe(df_tren, width="stretch", hide_index=True)
 
         info_card(
             "Kondisi Ekosistem",
@@ -763,26 +684,9 @@ with tab2:
             ]
         })
 
-        st.markdown("### Grafik Pola Data")
-        tampilkan_grafik_batang(
-            df=data,
-            x_col="Tingkatan Rantai Makanan",
-            y_col="Energi",
-            judul="Energi pada Setiap Tingkat Trofik",
-            ylabel="Energi (kkal)"
-        )
+        st.dataframe(data, width="stretch", hide_index=True)
 
-        tampilkan_pertanyaan_analisis([
-            "Tingkat trofik mana yang memiliki energi terbesar dan terkecil?",
-            "Bagaimana perubahan energi dari produsen ke konsumen berikutnya?",
-            "Mengapa berkurangnya produsen dapat memengaruhi konsumen pada tingkat lebih tinggi?",
-            "Data mana yang dapat dijadikan bukti utama untuk menjelaskan aliran energi?"
-        ])
-
-        tampilkan_data_lengkap(data, "📊 Lihat Tabel Energi Tiap Tingkat Trofik")
-
-        with st.expander("Catatan konsep singkat", expanded=False):
-            st.write(hasil["keterangan"])
+        info_card("Keterangan", hasil["keterangan"], "yellow-card")
 
     if st.button("✅ Gunakan Data Ini untuk Klaim Ilmiah", key="pilih_rantai"):
         simpan_hasil_simulasi(
@@ -887,16 +791,18 @@ with tab3:
         status_daur_air_card(hasil)
 
         info_card(
-            "Fokus Membaca Ringkasan",
+            "Alur Sebab-Akibat",
             """
-            Bandingkan nilai infiltrasi, limpasan permukaan, CO2 diserap, dan O2 dihasilkan.
-            Gunakan perubahan nilai tersebut untuk menentukan apakah kondisi ekosistem masih seimbang atau mulai terganggu.
+            Curah hujan dan tutupan vegetasi memengaruhi kondisi lingkungan.
+            Jika vegetasi berkurang, akar tumbuhan yang membantu penyerapan air juga berkurang.
+            Akibatnya, infiltrasi menurun dan limpasan permukaan meningkat.
+            Pada saat yang sama, jumlah tumbuhan yang menyerap CO2 dan menghasilkan O2 juga menurun.
             """,
             "yellow-card"
         )
 
         info_card(
-            "Status Umum",
+            "Status",
             hasil["status"],
             "green-card"
             if hasil["status"] == "Baik"
@@ -905,8 +811,11 @@ with tab3:
             else "danger-card"
         )
 
-        with st.expander("Catatan konsep singkat", expanded=False):
-            st.write(hasil["keterangan"])
+        info_card(
+            "Keterangan",
+            hasil["keterangan"],
+            "yellow-card"
+        )
 
     data_tren_air = buat_tren_daur_air(
         curah_hujan=curah_hujan,
@@ -936,7 +845,11 @@ with tab3:
             ylabel="Nilai Indeks"
         )
 
-        st.caption("Baca arah perubahan infiltrasi dan limpasan permukaan pada grafik ini.")
+        st.info(
+            """
+            Ketika tutupan vegetasi berkurang, infiltrasi menurun dan limpasan permukaan meningkat.
+            """
+        )
 
     with col_grafik2:
         st.markdown("### Grafik 2. CO2 dan O2")
@@ -956,16 +869,18 @@ with tab3:
             ylabel="Nilai Indeks"
         )
 
-        st.caption("Baca arah perubahan CO2 yang diserap dan O2 yang dihasilkan pada grafik ini.")
+        st.info(
+            """
+            Semakin sedikit tutupan vegetasi, semakin rendah CO2 yang diserap dan O2 yang dihasilkan.
+            """
+        )
 
-    tampilkan_pertanyaan_analisis([
-        "Bagaimana pola infiltrasi dan limpasan permukaan ketika tutupan vegetasi berubah?",
-        "Bagaimana pola CO2 yang diserap dan O2 yang dihasilkan pada grafik kedua?",
-        "Parameter mana yang paling jelas menunjukkan peran vegetasi dalam ekosistem?",
-        "Data mana yang dapat kamu gunakan untuk menyusun klaim ilmiah tentang dampak penebangan pohon?"
-    ])
-
-    tampilkan_data_lengkap(df_tren_air)
+    with st.expander("📊 Lihat Data Lengkap Simulasi"):
+        st.dataframe(
+            df_tren_air,
+            width="stretch",
+            hide_index=True
+        )
 
     if st.button("✅ Gunakan Data Ini untuk Klaim Ilmiah", key="pilih_daur_air"):
         simpan_hasil_simulasi(
@@ -1053,47 +968,26 @@ with tab4:
         st.markdown("### 4. Simulasi dan Data")
         status_eutrofikasi_card(hasil)
 
-        st.markdown("### Grafik Pola Data")
-        st.caption("Grafik dipisah agar siswa membedakan pemicu eutrofikasi dan dampaknya pada organisme air.")
-
         tampilkan_grafik_kurva(
             df=df_tren,
             x_col="Waktu (hari)",
             y_cols=[
                 "Zat Hara",
-                "Pertumbuhan Alga"
-            ],
-            warna_map={
-                "Zat Hara": "#eab308",
-                "Pertumbuhan Alga": "#10b981"
-            },
-            judul="Grafik 1. Zat Hara dan Pertumbuhan Alga",
-            ylabel="Nilai Parameter"
-        )
-
-        tampilkan_grafik_kurva(
-            df=df_tren,
-            x_col="Waktu (hari)",
-            y_cols=[
+                "Pertumbuhan Alga",
                 "Oksigen Air",
                 "Organisme Air"
             ],
             warna_map={
+                "Zat Hara": "#eab308",
+                "Pertumbuhan Alga": "#10b981",
                 "Oksigen Air": "#0284c7",
                 "Organisme Air": "#ef4444"
             },
-            judul="Grafik 2. Oksigen Air dan Organisme Air",
+            judul="Tren Peningkatan Alga dari Waktu ke Waktu",
             ylabel="Nilai Parameter"
         )
 
-        tampilkan_pertanyaan_analisis([
-            "Bagaimana hubungan zat hara dengan pertumbuhan alga?",
-            "Bagaimana perubahan oksigen air ketika pertumbuhan alga meningkat?",
-            "Bagaimana kondisi organisme air pada akhir simulasi?",
-            "Data mana yang paling kuat untuk membuktikan adanya gangguan ekosistem perairan?"
-        ])
-
-        tampilkan_data_lengkap(df_tren)
+        st.dataframe(df_tren, width="stretch", hide_index=True)
 
         info_card(
             "Status Peningkatan Alga",
@@ -1105,8 +999,15 @@ with tab4:
             else "danger-card"
         )
 
-        with st.expander("Catatan kondisi ekosistem", expanded=False):
-            st.write(hasil["kondisi"])
+        info_card(
+            "Kondisi Ekosistem",
+            hasil["kondisi"],
+            "green-card"
+            if hasil["indeks_nutrien"] <= 35
+            else "yellow-card"
+            if hasil["indeks_nutrien"] <= 70
+            else "danger-card"
+        )
 
     if st.button("✅ Gunakan Data Ini untuk Klaim Ilmiah", key="pilih_alga"):
         simpan_hasil_simulasi(
