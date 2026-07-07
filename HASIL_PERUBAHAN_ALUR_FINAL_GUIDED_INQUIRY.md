@@ -98,4 +98,4 @@ Perubahan utama:
 
 ## Revisi Tambahan
 
-Bagian **Ringkasan Hasil Simulasi** pada halaman simulasi telah dikembalikan seperti tampilan pada `awal.zip`, yaitu menggunakan judul **Hasil Pengamatan**, grafik/tabel langsung tampil, dan susunan status/keterangan mengikuti dokumen awal. Alur guided inquiry final tetap dipertahankan.
+Bagian **Hasil Pengamatan** pada halaman simulasi telah dikembalikan seperti tampilan pada `awal.zip`, yaitu menggunakan judul **Hasil Pengamatan**, grafik/tabel langsung tampil, dan susunan status/keterangan mengikuti dokumen awal. Alur guided inquiry final tetap dipertahankan.
