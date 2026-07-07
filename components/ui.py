@@ -1202,27 +1202,27 @@ def generic_simulation_result_view(row):
 
 
 def get_guided_questions(jenis_simulasi):
-    """Pertanyaan guided inquiry untuk siswa SMA: terbuka, analitis, dan berbasis data."""
+    """Pertanyaan investigasi untuk siswa SMA: terbuka, analitis, dan tidak menyuapi jawaban."""
     data = {
         "Pencemaran Sungai Akibat Limbah Pabrik": {
-            "fokus": "pencemaran air dan perubahan komponen biotik-abiotik",
-            "konsep": "kadar oksigen terlarut, kualitas air, toleransi organisme, dan keseimbangan ekosistem"
+            "fokus": "hubungan limbah industri dengan kualitas air dan organisme sungai",
+            "konsep": "oksigen terlarut, kualitas air, toleransi organisme, faktor pembatas, dan keseimbangan ekosistem"
         },
         "Rantai Makanan Saat Kemarau": {
-            "fokus": "penurunan produsen dan dampaknya pada aliran energi",
+            "fokus": "hubungan penurunan produsen dengan energi pada tingkat trofik",
             "konsep": "produsen, konsumen, tingkat trofik, piramida energi, dan efisiensi perpindahan energi"
         },
         "Daur Air Saat Pohon Berkurang": {
-            "fokus": "perubahan tutupan vegetasi terhadap siklus air dan pertukaran gas",
-            "konsep": "infiltrasi, limpasan permukaan, fotosintesis, penyerapan CO2, dan produksi O2"
+            "fokus": "hubungan tutupan vegetasi dengan daur air dan pertukaran CO2-O2",
+            "konsep": "infiltrasi, limpasan permukaan, fotosintesis, penyerapan CO2, produksi O2, dan jasa ekosistem"
         },
         "Daur Air, Karbon Dioksida, dan Oksigen Saat Pohon Berkurang": {
-            "fokus": "perubahan tutupan vegetasi terhadap siklus air dan pertukaran gas",
-            "konsep": "infiltrasi, limpasan permukaan, fotosintesis, penyerapan CO2, dan produksi O2"
+            "fokus": "hubungan tutupan vegetasi dengan daur air dan pertukaran CO2-O2",
+            "konsep": "infiltrasi, limpasan permukaan, fotosintesis, penyerapan CO2, produksi O2, dan jasa ekosistem"
         },
         "Peningkatan Alga Akibat Pupuk Berlebih": {
-            "fokus": "nutrien berlebih dan perubahan kualitas perairan",
-            "konsep": "nitrogen, fosfor, eutrofikasi, ledakan alga, oksigen terlarut, dan kematian organisme air"
+            "fokus": "hubungan nutrien berlebih dengan pertumbuhan alga, oksigen air, dan organisme perairan",
+            "konsep": "nitrogen, fosfor, eutrofikasi, ledakan alga, oksigen terlarut, dan kualitas ekosistem perairan"
         }
     }
     item = data.get(jenis_simulasi, {
@@ -1231,30 +1231,29 @@ def get_guided_questions(jenis_simulasi):
     })
 
     return {
-        "q1": "1. Rumusan masalah penyelidikan",
-        "p1": f"Rumuskan satu pertanyaan ilmiah berdasarkan fokus: {item['fokus']}.",
-        "q2": "2. Hipotesis dan dasar teori",
-        "p2": f"Susun hipotesis awal dan hubungkan dengan konsep: {item['konsep']}.",
-        "q3": "3. Analisis data dan uji hipotesis",
-        "p3": "Gunakan data pada tabel/grafik. Bandingkan perubahan antarparameter, lalu tentukan apakah data mendukung hipotesis.",
-        "q4": "4. Kesimpulan berbasis bukti",
-        "p4": "Tuliskan kesimpulan yang menjawab rumusan masalah. Sertakan bukti data dan refleksi singkat terhadap fenomena ekosistem."
+        "q1": "1. Fokus dan rumusan masalah investigasi",
+        "p1": f"Rumuskan masalah ilmiah yang ingin dijawab dari fokus investigasi: {item['fokus']}.",
+        "q2": "2. Dugaan awal dan dasar konsep",
+        "p2": f"Nyatakan dugaan awalmu dan jelaskan dasar konsep yang digunakan: {item['konsep']}.",
+        "q3": "3. Pola data dan uji dugaan",
+        "p3": "Uraikan pola penting dari data/grafik. Tunjukkan data mana yang mendukung, melemahkan, atau memperjelas dugaan awalmu.",
+        "q4": "4. Klaim ilmiah, bukti, alasan, dan implikasi",
+        "p4": "Tulis klaim utama berdasarkan data, sertakan bukti, alasan ekologis, dan implikasi terhadap masalah ekosistem."
     }
 
-
 def guided_inquiry_answer_view_generic(row):
-    st.markdown("### Jawaban Guided Inquiry Siswa")
+    st.markdown("### Klaim Ilmiah Siswa")
 
-    with st.expander("1. Rumusan Masalah Penyelidikan", expanded=True):
+    with st.expander("1. Fokus dan Rumusan Masalah Investigasi", expanded=True):
         st.write(row["jawaban_1"])
 
-    with st.expander("2. Hipotesis dan Dasar Teori", expanded=True):
+    with st.expander("2. Dugaan Awal dan Dasar Konsep", expanded=True):
         st.write(row["jawaban_2"])
 
-    with st.expander("3. Analisis Data dan Uji Hipotesis", expanded=True):
+    with st.expander("3. Pola Data dan Uji Dugaan", expanded=True):
         st.write(row["jawaban_3"])
 
-    with st.expander("4. Kesimpulan Berbasis Bukti", expanded=True):
+    with st.expander("4. Klaim Ilmiah, Bukti, Alasan, dan Implikasi", expanded=True):
         st.write(row["kesimpulan"])
 
 

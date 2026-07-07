@@ -29,8 +29,8 @@ role_navigation()
 nama_siswa = st.session_state.get("nama_pengguna", "")
 
 page_title(
-    "📝 Tanggapan Siswa",
-    "Tulis hasil penyelidikan berdasarkan rumusan masalah, hipotesis, analisis data, dan kesimpulan."
+    "📝 Klaim Ilmiah Siswa",
+    "Susun hasil investigasi dalam bentuk rumusan masalah, dugaan awal, pola data, dan klaim ilmiah berbasis bukti."
 )
 
 materi_sudah = is_progress_done(nama_siswa, "materi_dibaca")
@@ -46,7 +46,7 @@ if not simulasi_sudah or hasil is None:
         "Data Simulasi Belum Tersedia",
         """
         Kamu harus menjalankan dan memilih salah satu simulasi terlebih dahulu sebelum menulis tanggapan.
-        Silakan kembali ke halaman Simulasi Ekosistem, lalu klik tombol **Pilih Hasil Ini untuk Dianalisis** pada salah satu simulasi.
+        Silakan kembali ke halaman Investigasi Ekosistem, lalu klik tombol **Gunakan Data Ini untuk Klaim Ilmiah** pada salah satu simulasi.
         """,
         "danger-card"
     )
@@ -80,16 +80,25 @@ generic_simulation_result_view(row_preview)
 
 
 
-section_title("Lembar Jawaban Guided Inquiry")
+section_title("Lembar Klaim Ilmiah")
 
 info_card(
     "Petunjuk Mengisi Jawaban",
     """
-    Gunakan bahasa ilmiah yang ringkas. Jawaban tidak perlu menyalin petunjuk;
-    yang dinilai adalah ketepatan rumusan masalah, alasan hipotesis, penggunaan data,
-    dan kesimpulan yang menjawab masalah penyelidikan.
+    Tulis seperti laporan investigasi singkat. Jangan menyalin teks pada halaman simulasi.
+    Gunakan data yang dipilih untuk membangun klaim: apa pernyataan ilmiahmu, bukti datanya apa,
+    dan alasan ekologinya bagaimana.
     """,
     "blue-card"
+)
+
+st.markdown(
+    """
+    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:16px; margin:6px 0 20px 0;">
+        <b>Struktur jawaban:</b> Rumusan masalah → Dugaan awal → Pola data → Klaim, bukti, alasan, dan implikasi.
+    </div>
+    """,
+    unsafe_allow_html=True
 )
 
 questions = get_guided_questions(jenis_simulasi)
@@ -148,10 +157,10 @@ with st.form(key=form_key):
             update_progress(nama_siswa, "tanggapan_dikirim")
 
             info_card(
-                "Tanggapan Berhasil Dikirim",
+                "Klaim Ilmiah Berhasil Dikirim",
                 """
-                Tanggapan kamu sudah tersimpan. Guru dapat membaca rumusan masalah,
-                hipotesis, analisis data, dan kesimpulan yang kamu tulis.
+                Jawaban kamu sudah tersimpan. Guru dapat membaca rumusan masalah,
+                dugaan awal, analisis pola data, dan klaim ilmiah yang kamu tulis.
                 """,
                 "green-card"
             )

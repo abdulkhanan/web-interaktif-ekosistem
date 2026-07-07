@@ -16,7 +16,7 @@ from components.ui import (
 init_db()
 
 st.set_page_config(
-    page_title="Jawaban Siswa",
+    page_title="Klaim Ilmiah Siswa",
     page_icon="📖",
     layout="wide"
 )

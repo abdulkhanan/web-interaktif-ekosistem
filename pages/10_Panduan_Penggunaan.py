@@ -19,7 +19,7 @@ def tampilkan_tujuan_umum():
     section_title("Tujuan Web")
 
     info_card(
-        "Media Pembelajaran Ekosistem Berbasis Guided Inquiry",
+        "Media Pembelajaran Ekosistem Berbasis Guided Inquiry / Investigasi Terbimbing",
         """
         Web ini dibuat sebagai media pembelajaran interaktif materi ekosistem berbasis guided inquiry.
         Alur pembelajaran dimulai dari penyajian fenomena atau masalah pada halaman simulasi.
@@ -107,7 +107,7 @@ def tampilkan_panduan_siswa():
     info_card(
         "2. Mengamati Fenomena pada Simulasi",
         """
-        Setelah login, siswa membuka halaman Simulasi Ekosistem. Pada halaman tersebut,
+        Setelah login, siswa membuka halaman Investigasi Ekosistem. Pada halaman tersebut,
         siswa akan menemukan fenomena atau permasalahan ekosistem yang harus diamati.
         Fenomena ini menjadi dasar awal bagi siswa untuk melakukan penyelidikan.
         """,
@@ -138,7 +138,7 @@ def tampilkan_panduan_siswa():
     info_card(
         "5. Mengirim Tanggapan",
         """
-        Setelah menjalankan simulasi dan melakukan penyelidikan, siswa membuka halaman Tanggapan Siswa.
+        Setelah menjalankan simulasi dan melakukan penyelidikan, siswa membuka halaman Klaim Ilmiah Siswa.
         Pertanyaan guided inquiry akan menyesuaikan jenis simulasi yang dipilih. Siswa mengisi hasil
         pengamatan, analisis, dan kesimpulan berdasarkan data simulasi serta pemahaman dari materi
         ekosistem sebagai bahan penyelidikan.
@@ -159,7 +159,7 @@ def tampilkan_panduan_siswa():
     section_title("Urutan Penggunaan untuk Siswa")
 
     info_card(
-        "Alur Belajar Berbasis Guided Inquiry yang Ramah Siswa",
+        "Alur Belajar Berbasis Guided Inquiry / Investigasi Terbimbing yang Ramah Siswa",
         """
         Siswa memulai kegiatan belajar dengan mengamati fenomena pada halaman simulasi.
         Setelah itu, siswa menjalankan simulasi untuk memperoleh data dan menggunakan materi ekosistem
@@ -297,11 +297,11 @@ def tampilkan_panduan_guru():
         "yellow-card"
     )
 
-    section_title("Alur Guided Inquiry")
+    section_title("Alur Guided Inquiry / Investigasi Terbimbing")
 
     st.markdown(
         """
-        | Tahap Guided Inquiry | Implementasi di Web |
+        | Tahap Guided Inquiry / Investigasi Terbimbing | Implementasi di Web |
         |---|---|
         | Orientasi | Siswa menelaah fenomena ekosistem yang disajikan pada halaman simulasi. |
         | Merumuskan masalah | Siswa merumuskan sendiri pertanyaan ilmiah berdasarkan fenomena dan variabel yang tersedia. |
