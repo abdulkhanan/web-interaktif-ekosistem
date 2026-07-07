@@ -35,7 +35,7 @@ df = get_tanggapan_status_df()
 if df.empty:
     info_card(
         "Belum Ada Tanggapan",
-        "Belum ada siswa yang mengirim tanggapan.",
+        "Belum ada siswa yang mengirim hasil penyelidikan.",
         "yellow-card"
     )
 
@@ -62,7 +62,7 @@ else:
     if df.empty:
         info_card(
             "Data Tidak Ditemukan",
-            "Tidak ada tanggapan pada filter yang dipilih.",
+            "Tidak ada hasil penyelidikan pada filter yang dipilih.",
             "yellow-card"
         )
 
@@ -73,9 +73,9 @@ else:
         if pilihan_siswa != "Semua":
             df = df[df["nama"] == pilihan_siswa]
 
-        section_title("Daftar Tanggapan")
+        section_title("Daftar Hasil Penyelidikan")
 
-        st.write(f"Jumlah tanggapan: **{len(df)}**")
+        st.write(f"Jumlah hasil penyelidikan: **{len(df)}**")
 
         for index, row in df.iterrows():
             status_label = "✅ Sudah diberi feedback" if row["status_feedback"] == "Sudah diberi feedback" else "⏳ Belum diberi feedback"

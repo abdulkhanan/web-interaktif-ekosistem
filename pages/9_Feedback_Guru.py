@@ -34,7 +34,7 @@ nama_guru = st.session_state.get("nama_pengguna", "")
 
 page_title(
     "✍️ Feedback Guru",
-    "Guru memberikan feedback terhadap literasi sains dan sikap peduli lingkungan siswa."
+    "Guru memberikan feedback terhadap proses guided inquiry siswa: uji hipotesis, penggunaan bukti data, kesimpulan ilmiah, dan tindakan nyata."
 )
 
 info_card(
@@ -53,10 +53,10 @@ if df_tanggapan.empty:
     )
 
 else:
-    section_title("Pilih Tanggapan")
+    section_title("Pilih Hasil Penyelidikan")
 
     status_filter = st.selectbox(
-        "Tampilkan tanggapan",
+        "Tampilkan hasil penyelidikan",
         ["Belum diberi feedback", "Semua", "Sudah diberi feedback"],
         key="feedback_guru_status_filter"
     )
@@ -69,7 +69,7 @@ else:
     if df_tanggapan.empty:
         info_card(
             "Tidak Ada Data",
-            "Tidak ada tanggapan pada status feedback yang dipilih.",
+            "Tidak ada hasil penyelidikan pada status feedback yang dipilih.",
             "yellow-card"
         )
         st.stop()
@@ -92,7 +92,7 @@ else:
     if df_tanggapan.empty:
         info_card(
             "Tidak Ada Data",
-            "Tidak ada tanggapan pada jenis simulasi yang dipilih.",
+            "Tidak ada hasil penyelidikan pada jenis simulasi yang dipilih.",
             "yellow-card"
         )
         st.stop()
@@ -110,7 +110,7 @@ else:
         daftar_tanggapan.append(label)
 
     pilihan = st.selectbox(
-        "Pilih tanggapan siswa",
+        "Pilih hasil penyelidikan siswa",
         daftar_tanggapan,
         key="feedback_guru_pilih_tanggapan"
     )
@@ -149,10 +149,10 @@ else:
                 "yellow-card"
             )
 
-        section_title("Ringkasan Simulasi")
+        section_title("Rencana Investigasi dan Data Simulasi")
         generic_simulation_result_view(data_terpilih)
 
-        section_title("Jawaban Siswa")
+        section_title("Uji Hipotesis dan Kesimpulan Siswa")
         guided_inquiry_answer_view_generic(data_terpilih)
 
         section_title("Panduan Feedback Guru")
@@ -161,20 +161,20 @@ else:
 
         with col1:
             info_card(
-                "Literasi Siswa ",
+                "Proses Guided Inquiry",
                 """
-                Berikan komentar tentang kemampuan siswa dalam menjelaskan fenomena,
-                membaca data, menggunakan bukti, dan menarik kesimpulan ilmiah.
+                Berikan komentar tentang kejelasan uji hipotesis, pemilihan bukti data,
+                hubungan data dengan konsep ekosistem, dan ketepatan kesimpulan ilmiah.
                 """,
                 "blue-card"
             )
 
         with col2:
             info_card(
-                "Sikap Siswa Terhadap Lingkungan",
+                "Tindakan Nyata",
                 """
-                Berikan komentar tentang kepedulian siswa terhadap masalah lingkungan,
-                tindakan nyata, dan komitmen menjaga lingkungan.
+                Berikan komentar tentang relevansi tindakan nyata dengan masalah ekosistem,
+                kelayakan penerapan, dan kepedulian siswa terhadap lingkungan.
                 """,
                 "green-card"
             )
@@ -185,14 +185,14 @@ else:
 
         with st.form(key=form_key):
             feedback_literasi = st.text_area(
-                "Literasi Siswa",
-                placeholder="Contoh: Siswa sudah mampu membaca hubungan antara limbah dan penurunan DO, tetapi perlu menambahkan bukti data dari grafik.",
+                "Feedback Proses Guided Inquiry / Literasi Sains",
+                placeholder="Contoh: Uji hipotesis sudah sesuai dengan data simulasi, tetapi bukti angka dari grafik/tabel perlu ditulis lebih jelas.",
                 key=f"feedback_literasi_{id_terpilih}"
             )
 
             feedback_sikap = st.text_area(
-                "Sikap Siswa Terhadap Lingkungan",
-                placeholder="Contoh: Siswa sudah menunjukkan kepedulian lingkungan, tetapi tindakan nyata perlu dibuat lebih spesifik.",
+                "Feedback Tindakan Nyata / Sikap Lingkungan",
+                placeholder="Contoh: Tindakan nyata sudah relevan dengan masalah ekosistem, tetapi perlu dibuat lebih operasional dan dekat dengan kehidupan sehari-hari.",
                 key=f"feedback_sikap_{id_terpilih}"
             )
 
@@ -201,13 +201,13 @@ else:
             if submit:
                 if not feedback_literasi or not feedback_sikap:
                     st.error(
-                        "Feedback literasi sains dan feedback sikap peduli lingkungan harus diisi."
+                        "Feedback proses guided inquiry dan feedback tindakan nyata harus diisi."
                     )
                 else:
                     isi_feedback = (
-                        "Aspek Literasi Sains:\n"
+                        "Aspek Proses Guided Inquiry / Literasi Sains:\n"
                         f"{feedback_literasi}\n\n"
-                        "Aspek Sikap Peduli Lingkungan:\n"
+                        "Aspek Tindakan Nyata / Sikap Lingkungan:\n"
                         f"{feedback_sikap}"
                     )
 

@@ -27,7 +27,7 @@ role_navigation()
 
 page_title(
     "📋 Data dan Progres Siswa",
-    "Halaman ini menampilkan progres siswa berdasarkan alur guided inquiry."
+    "Halaman ini menampilkan progres siswa berdasarkan alur: rencana investigasi, simulasi/data, materi pendukung, uji hipotesis, kesimpulan, dan feedback."
 )
 
 df = get_progress_siswa_df()
@@ -35,15 +35,15 @@ df = get_progress_siswa_df()
 if df.empty:
     info_card(
         "Belum Ada Data",
-        "Belum ada data progres siswa. Data akan muncul setelah siswa mulai membaca materi atau menjalankan aktivitas pembelajaran.",
+        "Belum ada data progres siswa. Data akan muncul setelah siswa mulai merancang investigasi, menjalankan simulasi, membuka materi pendukung, atau mengirim hasil penyelidikan.",
         "yellow-card"
     )
 
 else:
-    section_title("Ringkasan Progres")
+    section_title("Ringkasan Progres Guided Inquiry")
     progress_summary(df)
 
-    section_title("Tabel Progres Siswa")
+    section_title("Tabel Progres Penyelidikan Siswa")
     progress_table(df)
 
     section_title("Keterangan Status")

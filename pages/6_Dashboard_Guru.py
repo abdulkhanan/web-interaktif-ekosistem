@@ -163,7 +163,7 @@ nama_guru = st.session_state.get("nama_pengguna", "")
 
 page_title(
     "👩‍🏫 Dashboard Guru",
-    f"Selamat datang, {nama_guru}. Dashboard ini digunakan untuk memantau proses guided inquiry siswa."
+    f"Selamat datang, {nama_guru}. Dashboard ini digunakan untuk memantau alur penyelidikan siswa: rencana investigasi, simulasi/data, uji hipotesis, kesimpulan, dan feedback."
 )
 
 (
@@ -183,19 +183,23 @@ try:
 except Exception:
     progress_df = pd.DataFrame()
 
+# Jumlah siswa pada dashboard guru dibuat lebih stabil: gunakan data progress jika tersedia.
+if not progress_df.empty and "nama" in progress_df.columns:
+    jumlah_siswa = max(jumlah_siswa, int(progress_df["nama"].astype(str).str.strip().replace("", pd.NA).dropna().nunique()))
+
 # Alert jika ada tanggapan menunggu
 if jumlah_belum_feedback > 0:
     st.markdown(
         f"""
         <div class="alert-banner">
-            ⚠️ Terdapat <strong>{jumlah_belum_feedback} tanggapan siswa</strong> yang membutuhkan
+            ⚠️ Terdapat <strong>{jumlah_belum_feedback} hasil penyelidikan siswa</strong> yang membutuhkan
             feedback. Silakan menuju ke halaman <strong>Feedback Guru</strong> untuk memberi nilai.
         </div>
         """,
         unsafe_allow_html=True
     )
 
-st.markdown('<div class="dashboard-section-title">📊 Ringkasan Aktivitas</div>', unsafe_allow_html=True)
+st.markdown('<div class="dashboard-section-title">📊 Ringkasan Penyelidikan</div>', unsafe_allow_html=True)
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -215,7 +219,7 @@ with col2:
         <div class="metric-card-v2 mc-purple">
             <div class="mc-icon">📝</div>
             <div class="mc-content">
-                <div class="mc-label">Tanggapan Masuk</div>
+                <div class="mc-label">Hasil Penyelidikan</div>
                 <div class="mc-value">{jumlah_tanggapan}</div>
             </div>
         </div>
@@ -226,7 +230,7 @@ with col3:
         <div class="metric-card-v2 mc-green">
             <div class="mc-icon">✅</div>
             <div class="mc-content">
-                <div class="mc-label">Sudah Dinilai</div>
+                <div class="mc-label">Sudah Feedback</div>
                 <div class="mc-value">{jumlah_sudah_feedback}</div>
             </div>
         </div>
@@ -244,7 +248,7 @@ with col4:
     """, unsafe_allow_html=True)
 
 st.write("")
-st.markdown('<div class="dashboard-section-title">📋 Aksi & Pantauan Kelas</div>', unsafe_allow_html=True)
+st.markdown('<div class="dashboard-section-title">📋 Pantauan Guided Inquiry Kelas</div>', unsafe_allow_html=True)
 
 detail_col1, detail_col2 = st.columns([1, 1], gap="large")
 
@@ -271,7 +275,7 @@ with detail_col1:
         
         st.markdown(f"""
             <div class="info-card">
-                <div class="info-card-title">⚠️ Siswa Menunggu Feedback</div>
+                <div class="info-card-title">⚠️ Hasil Penyelidikan Menunggu Feedback</div>
                 {list_html}
             </div>
         """, unsafe_allow_html=True)
@@ -279,7 +283,7 @@ with detail_col1:
         st.markdown("""
             <div class="info-card">
                 <div class="info-card-title">🎉 Semua Tugas Telah Dinilai</div>
-                <p style="color:#64748b; font-size:14px;">Tidak ada tanggapan siswa yang menunggu feedback. Kerja bagus!</p>
+                <p style="color:#64748b; font-size:14px;">Tidak ada hasil penyelidikan siswa yang menunggu feedback. Kerja bagus!</p>
             </div>
         """, unsafe_allow_html=True)
 
@@ -290,29 +294,22 @@ with detail_col2:
         p_materi = int((progress_df["materi_dibaca"].astype(int) == 1).sum())
         p_simulasi = int((progress_df["simulasi_dijalankan"].astype(int) == 1).sum())
         p_tanggapan = int((progress_df["tanggapan_dikirim"].astype(int) == 1).sum())
+        p_feedback = int((progress_df["feedback_diterima"].astype(int) == 1).sum())
     else:
-        p_materi = p_simulasi = p_tanggapan = 0
+        p_materi = p_simulasi = p_tanggapan = p_feedback = 0
 
     pct_materi = min(int((p_materi / total) * 100), 100)
     pct_simulasi = min(int((p_simulasi / total) * 100), 100)
     pct_tanggapan = min(int((p_tanggapan / total) * 100), 100)
+    pct_feedback = min(int((p_feedback / total) * 100), 100)
 
     st.markdown(
         f"""
         <div class="info-card">
-            <div class="info-card-title">📈 Progress Pembelajaran Kelas</div>
+            <div class="info-card-title">📈 Progress Guided Inquiry Kelas</div>
             <div class="progress-item">
                 <div class="progress-label">
-                    <span class="progress-text">📖 Membaca Materi</span>
-                    <span class="progress-count">{p_materi}/{total} Siswa</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill pb-green" style="width:{pct_materi}%;"></div>
-                </div>
-            </div>
-            <div class="progress-item">
-                <div class="progress-label">
-                    <span class="progress-text">🔬 Menjalankan Simulasi</span>
+                    <span class="progress-text">🧭 Rencana Investigasi & Data Simulasi</span>
                     <span class="progress-count">{p_simulasi}/{total} Siswa</span>
                 </div>
                 <div class="progress-bar-bg">
@@ -321,16 +318,34 @@ with detail_col2:
             </div>
             <div class="progress-item">
                 <div class="progress-label">
-                    <span class="progress-text">📝 Mengirim Tanggapan</span>
+                    <span class="progress-text">📘 Membuka Materi Pendukung</span>
+                    <span class="progress-count">{p_materi}/{total} Siswa</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill pb-green" style="width:{pct_materi}%;"></div>
+                </div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span class="progress-text">📝 Uji Hipotesis & Kesimpulan</span>
                     <span class="progress-count">{p_tanggapan}/{total} Siswa</span>
                 </div>
                 <div class="progress-bar-bg">
                     <div class="progress-bar-fill pb-purple" style="width:{pct_tanggapan}%;"></div>
                 </div>
             </div>
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span class="progress-text">✅ Feedback Diterima</span>
+                    <span class="progress-count">{p_feedback}/{total} Siswa</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill pb-green" style="width:{pct_feedback}%;"></div>
+                </div>
+            </div>
             <hr style="border:0; border-top:1px dashed #cbd5e1; margin:20px 0;">
             <div style="font-size:13px; color:#64748b; line-height:1.5;">
-                <strong>Panduan:</strong> Pantau chart di atas. Jika banyak siswa terhenti di tahap simulasi dan belum mengirim tanggapan, Anda bisa segera menanyakan kendala mereka di kelas.
+                <strong>Panduan:</strong> Jika banyak siswa berhenti pada tahap rencana/simulasi, bantu mereka menajamkan rumusan masalah atau hipotesis. Jika berhenti pada tahap uji hipotesis, arahkan mereka memilih bukti data yang paling kuat.
             </div>
         </div>
         """,

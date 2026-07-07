@@ -681,13 +681,13 @@ def progress_summary(df):
         st.metric("Total Siswa", total_siswa)
 
     with col2:
-        st.metric("Materi", selesai_materi)
+        st.metric("Rencana & Data", selesai_simulasi)
 
     with col3:
-        st.metric("Simulasi", selesai_simulasi)
+        st.metric("Materi Pendukung", selesai_materi)
 
     with col4:
-        st.metric("Tanggapan", selesai_tanggapan)
+        st.metric("Uji Hipotesis", selesai_tanggapan)
 
     with col5:
         st.metric("Feedback", sudah_feedback)
@@ -714,9 +714,9 @@ def prepare_progress_table(df):
 
     df_tampil = df_tampil.rename(columns={
         "nama": "Nama Siswa",
-        "materi_dibaca": "Materi",
-        "simulasi_dijalankan": "Simulasi",
-        "tanggapan_dikirim": "Tanggapan",
+        "materi_dibaca": "Materi Pendukung",
+        "simulasi_dijalankan": "Rencana & Data",
+        "tanggapan_dikirim": "Uji Hipotesis",
         "feedback_diterima": "Feedback",
         "updated_at": "Terakhir Update",
         "jumlah_tanggapan": "Jumlah Tanggapan",
@@ -726,9 +726,9 @@ def prepare_progress_table(df):
 
     kolom_urut = [
         "Nama Siswa",
-        "Materi",
-        "Simulasi",
-        "Tanggapan",
+        "Rencana & Data",
+        "Materi Pendukung",
+        "Uji Hipotesis",
         "Feedback",
         "Progres (%)",
         "Jumlah Tanggapan",
@@ -748,9 +748,9 @@ def progress_table(df):
         hide_index=True,
         column_config={
             "Nama Siswa": st.column_config.TextColumn("Nama Siswa", width="medium"),
-            "Materi": st.column_config.TextColumn("Materi", width="small"),
-            "Simulasi": st.column_config.TextColumn("Simulasi", width="small"),
-            "Tanggapan": st.column_config.TextColumn("Tanggapan", width="small"),
+            "Rencana & Data": st.column_config.TextColumn("Rencana & Data", width="medium"),
+            "Materi Pendukung": st.column_config.TextColumn("Materi Pendukung", width="medium"),
+            "Uji Hipotesis": st.column_config.TextColumn("Uji Hipotesis", width="medium"),
             "Feedback": st.column_config.TextColumn("Feedback", width="small"),
             "Progres (%)": st.column_config.ProgressColumn(
                 "Progres",
@@ -758,7 +758,7 @@ def progress_table(df):
                 max_value=100,
                 format="%d%%"
             ),
-            "Jumlah Tanggapan": st.column_config.NumberColumn("Tanggapan", width="small"),
+            "Jumlah Tanggapan": st.column_config.NumberColumn("Hasil", width="small"),
             "Jumlah Feedback": st.column_config.NumberColumn("Feedback", width="small"),
             "Terakhir Update": st.column_config.TextColumn("Terakhir Update", width="medium")
         }
@@ -771,14 +771,14 @@ def status_legend():
     with col1:
         info_card(
             "✅ Sudah",
-            "Siswa sudah menyelesaikan tahap tersebut.",
+            "Siswa sudah menyelesaikan tahap pada alur guided inquiry tersebut.",
             "green-card"
         )
 
     with col2:
         info_card(
             "⏳ Belum",
-            "Siswa belum menyelesaikan tahap tersebut.",
+            "Siswa belum menyelesaikan tahap pada alur guided inquiry tersebut.",
             "yellow-card"
         )
 
@@ -1035,7 +1035,7 @@ def generic_simulation_result_view(row):
 
         input_data = {key: value for key, value in input_data.items() if key not in investigasi_keys}
 
-    st.markdown("### Input Simulasi")
+    st.markdown("### Variabel Simulasi yang Digunakan")
 
     if input_data:
         input_items = list(input_data.items())
@@ -1049,16 +1049,16 @@ def generic_simulation_result_view(row):
                 )
     else:
         info_card(
-            "Input Simulasi",
+            "Variabel Simulasi",
             "Tidak ada data input.",
             "yellow-card"
         )
 
-    st.markdown("### Hasil Simulasi")
+    st.markdown("### Data Hasil Simulasi")
 
     if not hasil_data:
         info_card(
-            "Hasil Simulasi",
+            "Data Hasil Simulasi",
             "Tidak ada data hasil.",
             "yellow-card"
         )
@@ -1263,7 +1263,7 @@ def get_guided_questions(jenis_simulasi):
 
 
 def guided_inquiry_answer_view_generic(row):
-    st.markdown("### Jawaban Uji Hipotesis dan Kesimpulan")
+    st.markdown("### Uji Hipotesis, Kesimpulan, dan Tindakan Nyata")
 
     with st.expander("1. Uji Hipotesis Berdasarkan Data", expanded=True):
         st.write(row["jawaban_1"])
