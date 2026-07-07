@@ -1527,19 +1527,19 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
         unsafe_allow_html=True
     )
 
-    with st.expander("➕ Tambah Akun Email & Password untuk Validasi", expanded=False):
+    with st.expander("➕ Tambah Akun Email & Password", expanded=False):
         with st.form("form_tambah_pengguna_manual"):
             col_a, col_b = st.columns(2)
 
             with col_a:
-                nama_baru = st.text_input("Nama pengguna", placeholder="Contoh: Validator 1")
-                email_baru = st.text_input("Email", placeholder="validator1@email.com")
+                nama_baru = st.text_input("Nama pengguna", placeholder="Contoh: Nama Pengguna")
+                email_baru = st.text_input("Email", placeholder="nama@email.com")
                 password_baru = st.text_input("Password", type="password", placeholder="Minimal 6 karakter")
 
             with col_b:
                 role_baru = st.selectbox("Role", ["siswa", "guru", "admin"], index=0)
                 status_baru = st.selectbox("Status", ["aktif", "nonaktif"], index=0)
-                kelas_baru = st.text_input("Kelas / Keterangan", placeholder="Contoh: Validator Media")
+                kelas_baru = st.text_input("Kelas / Keterangan", placeholder="Contoh: XI IPA 1 / Guru Biologi")
 
             tambah = st.form_submit_button("Buat Akun", use_container_width=True)
 

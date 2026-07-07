@@ -81,6 +81,6 @@ Versi ini mendukung login manual menggunakan email dan password. Jalankan SQL be
 alter table public.users add column if not exists password_hash text;
 ```
 
-Setelah itu, masuk sebagai admin, buka **Daftar Pengguna**, lalu buat akun validator melalui bagian **Tambah Akun Email & Password untuk Validasi**. Akun yang dibuat bisa langsung digunakan pada halaman login utama.
+Setelah itu, masuk sebagai admin, buka **Daftar Pengguna**, lalu buat akun siswa atau guru melalui bagian **Tambah Akun Email & Password**. Akun yang dibuat bisa langsung digunakan pada halaman login utama jika statusnya aktif.
 
 Login Google tetap bisa digunakan jika konfigurasi `[google_oauth]` tersedia di Streamlit Secrets. Jika konfigurasi Google tidak diisi, aplikasi tetap berjalan dan hanya menampilkan login email & password.

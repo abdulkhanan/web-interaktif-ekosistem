@@ -3,6 +3,7 @@ import streamlit as st
 
 from database.init_db import init_db
 from modules.auth import init_auth, handle_google_callback, make_google_login_url, login_with_email_password, is_google_login_available
+from database.queries import create_user_manual
 
 from components.ui import global_page_loader
 
@@ -382,35 +383,69 @@ def render_login_page(google_login_url=None):
                     </div>
 
                     <div class="login-subtitle">
-                        Masuk menggunakan email dan password yang dibuat admin/guru. Login Google tetap bisa dipakai jika konfigurasinya tersedia.
+                        Masuk dengan email-password atau Google. Pengguna baru dapat mendaftar, lalu menunggu akun diaktifkan oleh admin.
                     </div>
                     """,
                     unsafe_allow_html=True
                 )
 
-                with st.form("form_login_email_password"):
-                    email = st.text_input("Email", placeholder="contoh: validator1@email.com")
-                    password = st.text_input("Password", type="password", placeholder="Masukkan password")
-                    submit = st.form_submit_button("Masuk dengan Email & Password", use_container_width=True)
+                tab_login, tab_register = st.tabs(["Masuk", "Daftar Akun"])
 
-                    if submit:
-                        success, message = login_with_email_password(email, password)
-                        if success:
-                            st.success(message)
-                            st.rerun()
-                        else:
-                            st.error(message)
+                with tab_login:
+                    with st.form("form_login_email_password"):
+                        email = st.text_input("Email", placeholder="nama@email.com")
+                        password = st.text_input("Password", type="password", placeholder="Masukkan password")
+                        submit = st.form_submit_button("Masuk dengan Email & Password", use_container_width=True)
 
-                if google_login_url:
-                    st.markdown('<div class="login-divider">atau</div>', unsafe_allow_html=True)
-                    st.link_button(
-                        "Masuk dengan Google",
-                        google_login_url,
-                        use_container_width=True
-                    )
+                        if submit:
+                            success, message = login_with_email_password(email, password)
+                            if success:
+                                st.success(message)
+                                st.rerun()
+                            else:
+                                st.error(message)
+
+                    if google_login_url:
+                        st.markdown('<div class="login-divider">atau</div>', unsafe_allow_html=True)
+                        st.link_button(
+                            "Masuk dengan Google",
+                            google_login_url,
+                            use_container_width=True
+                        )
+
+                with tab_register:
+                    with st.form("form_daftar_akun"):
+                        nama_daftar = st.text_input("Nama lengkap", placeholder="Masukkan nama lengkap")
+                        email_daftar = st.text_input("Email pendaftaran", placeholder="nama@email.com")
+                        password_daftar = st.text_input("Password", type="password", placeholder="Minimal 6 karakter")
+                        konfirmasi_password = st.text_input("Konfirmasi password", type="password", placeholder="Ulangi password")
+                        role_daftar = st.selectbox("Daftar sebagai", ["siswa", "guru"], index=0)
+                        kelas_daftar = st.text_input("Kelas / Instansi", placeholder="Contoh: XI IPA 1 / Guru Biologi")
+                        daftar = st.form_submit_button("Daftar Akun", use_container_width=True)
+
+                        if daftar:
+                            if not nama_daftar.strip() or not email_daftar.strip():
+                                st.error("Nama dan email wajib diisi.")
+                            elif len(password_daftar) < 6:
+                                st.error("Password minimal 6 karakter.")
+                            elif password_daftar != konfirmasi_password:
+                                st.error("Konfirmasi password tidak sama.")
+                            else:
+                                try:
+                                    create_user_manual(
+                                        nama=nama_daftar,
+                                        email=email_daftar,
+                                        role=role_daftar,
+                                        kelas=kelas_daftar,
+                                        status="nonaktif",
+                                        password=password_daftar,
+                                    )
+                                    st.success("Pendaftaran berhasil. Akun Anda menunggu aktivasi admin sebelum dapat digunakan.")
+                                except Exception as error:
+                                    st.error(f"Pendaftaran gagal: {error}")
 
                 st.markdown(
-                    '<div class="login-footnote">Untuk validasi media, admin dapat membuat akun validator pada menu Daftar Pengguna.</div>',
+                    '<div class="login-footnote">Role yang tersedia: siswa, guru, dan admin. Akun admin dibuat atau diubah melalui menu Daftar Pengguna.</div>',
                     unsafe_allow_html=True
                 )
 
