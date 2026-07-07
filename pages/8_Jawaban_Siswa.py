@@ -16,7 +16,7 @@ from components.ui import (
 init_db()
 
 st.set_page_config(
-    page_title="Klaim Ilmiah Siswa",
+    page_title="Jawaban Siswa",
     page_icon="📖",
     layout="wide"
 )
@@ -26,8 +26,8 @@ require_role(["guru"])
 role_navigation()
 
 page_title(
-    "📖 Jawaban atau Tanggapan Siswa",
-    "Halaman ini digunakan guru untuk membaca hasil analisis siswa pada setiap jenis simulasi."
+    "📖 Hasil Penyelidikan Siswa",
+    "Halaman ini digunakan guru untuk membaca rumusan masalah, hipotesis, uji hipotesis, kesimpulan, dan tindakan nyata siswa."
 )
 
 df = get_tanggapan_status_df()

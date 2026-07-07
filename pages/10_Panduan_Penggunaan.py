@@ -19,16 +19,15 @@ def tampilkan_tujuan_umum():
     section_title("Tujuan Web")
 
     info_card(
-        "Media Pembelajaran Ekosistem Berbasis Guided Inquiry / Investigasi Terbimbing",
+        "Media Pembelajaran Ekosistem Berbasis Guided Inquiry",
         """
         Web ini dibuat sebagai media pembelajaran interaktif materi ekosistem berbasis guided inquiry.
-        Alur pembelajaran dimulai dari penyajian fenomena atau masalah pada halaman simulasi.
-        Siswa mengamati fenomena tersebut melalui pertanyaan pemantik, kemudian menjalankan simulasi
-        untuk memperoleh data. Selama proses penyelidikan, siswa dapat menggunakan materi ekosistem
-        sebagai bahan pendukung untuk memahami konsep dan menafsirkan hasil simulasi. Setelah melakukan
-        penyelidikan, siswa menulis tanggapan berupa hasil pengamatan, analisis, dan kesimpulan.
-        Tanggapan tersebut kemudian ditinjau oleh guru, lalu siswa menerima feedback sebagai bahan
-        refleksi dan perbaikan pemahaman.
+        Alur pembelajaran dimulai dari penyajian fenomena atau masalah yang dilengkapi gambar pada halaman simulasi.
+        Siswa merumuskan masalah dan menyusun hipotesis terlebih dahulu, kemudian menjalankan simulasi
+        dengan mengubah variabel untuk memperoleh data. Selama proses penyelidikan, siswa dapat membuka
+        materi ekosistem sebagai bahan pendukung untuk memahami konsep dan menafsirkan hasil simulasi.
+        Setelah itu, siswa menguji hipotesis, merumuskan kesimpulan, dan menuliskan tindakan nyata.
+        Hasil penyelidikan tersebut ditinjau oleh guru, lalu siswa menerima feedback sebagai bahan refleksi.
         """,
         "green-card"
     )
@@ -107,7 +106,7 @@ def tampilkan_panduan_siswa():
     info_card(
         "2. Mengamati Fenomena pada Simulasi",
         """
-        Setelah login, siswa membuka halaman Investigasi Ekosistem. Pada halaman tersebut,
+        Setelah login, siswa membuka halaman Simulasi Ekosistem. Pada halaman tersebut,
         siswa akan menemukan fenomena atau permasalahan ekosistem yang harus diamati.
         Fenomena ini menjadi dasar awal bagi siswa untuk melakukan penyelidikan.
         """,
@@ -115,18 +114,26 @@ def tampilkan_panduan_siswa():
     )
 
     info_card(
-        "3. Menjalankan Simulasi",
+        "3. Merumuskan Masalah dan Hipotesis",
         """
-        Siswa memilih salah satu simulasi, yaitu Pencemaran Sungai, Aliran Energi,
-        atau Daur Air. Setelah itu, siswa mengatur variabel simulasi dan mengamati
-        perubahan data yang muncul. Data dari simulasi digunakan sebagai bahan untuk
-        menjawab fenomena atau permasalahan yang disajikan.
+        Pada awal simulasi, siswa membaca masalah yang disertai gambar. Sebelum mengubah variabel,
+        siswa menuliskan rumusan masalah dan hipotesis awal. Tahap ini membuat simulasi berfungsi
+        sebagai alat untuk menguji dugaan, bukan hanya sebagai percobaan bebas.
         """,
         "green-card"
     )
 
     info_card(
-        "4. Menggunakan Materi sebagai Bahan Penyelidikan",
+        "4. Menjalankan Simulasi dan Mengumpulkan Data",
+        """
+        Siswa mengatur variabel simulasi dan mengamati perubahan data yang muncul. Siswa dapat mencoba
+        beberapa kondisi variabel, kemudian menyimpan data yang paling relevan untuk menguji hipotesisnya.
+        """,
+        "green-card"
+    )
+
+    info_card(
+        "5. Menggunakan Materi sebagai Bahan Penyelidikan",
         """
         Selama proses penyelidikan, siswa dapat membuka halaman Materi Ekosistem.
         Materi pada halaman tersebut digunakan untuk membantu siswa memahami konsep ekosistem,
@@ -136,18 +143,18 @@ def tampilkan_panduan_siswa():
     )
 
     info_card(
-        "5. Mengirim Tanggapan",
+        "6. Menguji Hipotesis dan Mengirim Hasil Penyelidikan",
         """
-        Setelah menjalankan simulasi dan melakukan penyelidikan, siswa membuka halaman Klaim Ilmiah Siswa.
-        Pertanyaan guided inquiry akan menyesuaikan jenis simulasi yang dipilih. Siswa mengisi hasil
-        pengamatan, analisis, dan kesimpulan berdasarkan data simulasi serta pemahaman dari materi
-        ekosistem sebagai bahan penyelidikan.
+        Setelah menyimpan data simulasi, siswa membuka halaman Uji Hipotesis dan Kesimpulan.
+        Pertanyaan guided inquiry akan menyesuaikan jenis simulasi yang dipilih. Siswa membandingkan
+        hipotesis awal dengan data, mengaitkan hasil dengan materi pendukung, lalu menuliskan kesimpulan
+        ilmiah dan tindakan nyata.
         """,
         "green-card"
     )
 
     info_card(
-        "6. Melihat Feedback Guru",
+        "7. Melihat Feedback Guru",
         """
         Setelah guru memberikan feedback, siswa dapat membuka halaman Feedback Siswa
         atau Dashboard Siswa untuk membaca komentar, saran, dan penilaian dari guru.
@@ -159,14 +166,13 @@ def tampilkan_panduan_siswa():
     section_title("Urutan Penggunaan untuk Siswa")
 
     info_card(
-        "Alur Belajar Berbasis Guided Inquiry / Investigasi Terbimbing yang Ramah Siswa",
+        "Alur Belajar Berbasis Guided Inquiry",
         """
-        Siswa memulai kegiatan belajar dengan mengamati fenomena pada halaman simulasi.
-        Setelah itu, siswa menjalankan simulasi untuk memperoleh data dan menggunakan materi ekosistem
-        sebagai bahan penyelidikan untuk membantu memahami konsep yang berkaitan dengan fenomena tersebut.
-        Setelah proses penyelidikan selesai, siswa menulis tanggapan berdasarkan hasil pengamatan,
-        analisis, dan kesimpulan. Siswa baru dapat mengirim tanggapan setelah memilih dan menjalankan
-        salah satu simulasi.
+        Siswa memulai kegiatan belajar dengan mengamati fenomena dan gambar masalah pada halaman simulasi.
+        Setelah itu, siswa merumuskan masalah dan hipotesis, menjalankan simulasi untuk mengumpulkan data,
+        membuka materi pendukung jika diperlukan, menguji hipotesis berdasarkan data, lalu menuliskan
+        kesimpulan ilmiah dan tindakan nyata. Siswa baru dapat mengirim hasil penyelidikan setelah
+        menyimpan salah satu data simulasi.
         """,
         "danger-card"
     )
@@ -297,19 +303,20 @@ def tampilkan_panduan_guru():
         "yellow-card"
     )
 
-    section_title("Alur Guided Inquiry / Investigasi Terbimbing")
+    section_title("Alur Guided Inquiry yang Dipantau Guru")
 
     st.markdown(
         """
-        | Tahap Guided Inquiry / Investigasi Terbimbing | Implementasi di Web |
+        | Tahap Guided Inquiry | Implementasi di Web |
         |---|---|
-        | Orientasi | Siswa menelaah fenomena ekosistem yang disajikan pada halaman simulasi. |
-        | Merumuskan masalah | Siswa merumuskan sendiri pertanyaan ilmiah berdasarkan fenomena dan variabel yang tersedia. |
-        | Merumuskan hipotesis | Siswa menyusun dugaan sementara disertai alasan ilmiah berdasarkan konsep ekologi. |
-        | Mengumpulkan data | Siswa menjalankan simulasi, memanipulasi variabel, dan membaca grafik/tabel hasil simulasi. |
-        | Menganalisis/menguji hipotesis | Siswa membandingkan data dengan hipotesis untuk menentukan apakah hipotesis didukung atau tidak. |
-        | Menarik kesimpulan | Siswa membuat kesimpulan yang menjawab rumusan masalah dan didukung oleh data. |
-        | Feedback dan refleksi | Guru memberi feedback terhadap ketepatan konsep, bukti data, dan argumentasi siswa. |
+        | Orientasi | Siswa membaca fenomena masalah yang dilengkapi gambar pada halaman simulasi |
+        | Merumuskan masalah | Siswa menulis rumusan masalah sebelum membuka bagian simulasi |
+        | Merumuskan hipotesis | Siswa menulis hipotesis awal dan dasar konsep sebelum mengubah variabel |
+        | Mengumpulkan data | Siswa menjalankan simulasi dengan mengubah variabel dan membaca grafik/tabel |
+        | Penguatan konsep | Siswa dapat membuka materi ekosistem sebagai bahan penyelidikan |
+        | Menguji hipotesis | Siswa membandingkan hipotesis awal dengan data simulasi pada halaman Uji Hipotesis |
+        | Menarik kesimpulan | Siswa menuliskan kesimpulan ilmiah dan tindakan nyata |
+        | Feedback dan refleksi | Guru memberi feedback, lalu siswa menggunakan feedback untuk memperbaiki pemahaman |
         """
     )
 

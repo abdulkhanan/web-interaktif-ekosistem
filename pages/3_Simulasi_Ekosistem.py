@@ -44,38 +44,24 @@ nama_siswa = (
 
 
 page_title(
-    "🌏 Investigasi Ekosistem",
-    "Pilih kasus, rancang penyelidikan, jalankan simulasi, baca pola data, lalu susun klaim ilmiah."
+    "🌏 Simulasi Ekosistem",
+    "Amati fenomena lingkungan, ubah variabel simulasi, lalu gunakan data untuk memahami konsep ekosistem."
 )
 
 
 info_card(
-    "Alur Belajar",
+    "Bahan Penyelidikan",
     """
-    Media ini menggunakan guided inquiry sebagai struktur di balik layar. Di depan siswa, alurnya dibuat sebagai investigasi: 
-    pilih kasus, tentukan fokus penyelidikan, uji melalui simulasi, lalu buat klaim ilmiah berdasarkan data.
+    Sebelum menjalankan simulasi, siswa dapat membaca materi terlebih dahulu sebagai bahan pengetahuan.
+    Materi tidak menjadi syarat untuk membuka simulasi, tetapi digunakan untuk membantu siswa memahami konsep dasar sebelum melakukan penyelidikan.
     """,
     "blue-card"
-)
-
-st.markdown(
-    """
-    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:16px; margin:4px 0 22px 0; box-shadow:0 4px 14px rgba(15,23,42,0.05);">
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:12px;">
-            <div style="background:#eff6ff; border-radius:14px; padding:14px;"><b>1. Kasus</b><br><span style="font-size:13px; color:#475569;">Pahami fenomena ekosistem.</span></div>
-            <div style="background:#f0fdf4; border-radius:14px; padding:14px;"><b>2. Rencana Investigasi</b><br><span style="font-size:13px; color:#475569;">Tentukan fokus, variabel, dan dugaan.</span></div>
-            <div style="background:#fefce8; border-radius:14px; padding:14px;"><b>3. Simulasi & Data</b><br><span style="font-size:13px; color:#475569;">Ubah variabel dan baca pola.</span></div>
-            <div style="background:#f5f3ff; border-radius:14px; padding:14px;"><b>4. Klaim Ilmiah</b><br><span style="font-size:13px; color:#475569;">Tulis klaim, bukti, alasan, dan kesimpulan.</span></div>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
 )
 
 col_bahan, col_keterangan = st.columns([1, 3])
 
 with col_bahan:
-    if st.button("📘 Baca Materi Dulu"):
+    if st.button("📘 Pelajari Bahan Penyelidikan"):
         st.switch_page("pages/2_Materi_Ekosistem.py")
 
 st.divider()
@@ -95,81 +81,6 @@ def simpan_hasil_simulasi(jenis_simulasi, input_simulasi, hasil_simulasi):
     update_progress(nama_siswa, "simulasi_dijalankan")
     st.session_state["simulasi_tersimpan"] = jenis_simulasi
 
-
-def tampilkan_panduan_guided_inquiry(jenis_simulasi):
-    """Rencana investigasi level SMA: alur inquiry tersirat, tidak disajikan sebagai daftar sintaks kaku."""
-    panduan = {
-        "Pencemaran Sungai Akibat Limbah Pabrik": {
-            "kasus": "Limbah industri masuk ke sungai dan memengaruhi kualitas air serta organisme perairan.",
-            "fokus": "hubungan tingkat limbah dengan perubahan kualitas air, oksigen terlarut, populasi ikan, dan invertebrata",
-            "variabel_bebas": "tingkat limbah industri",
-            "variabel_respon": "kualitas air, indeks DO, populasi ikan, indeks invertebrata",
-            "data_kunci": "tren indeks limbah, kualitas air, DO, populasi ikan, dan invertebrata selama 30 hari",
-            "arah_analisis": "cari parameter yang naik, turun, atau berubah berlawanan arah ketika limbah meningkat"
-        },
-        "Rantai Makanan Saat Kemarau": {
-            "kasus": "Kemarau menurunkan ketersediaan rumput sebagai produsen pada ekosistem padang rumput.",
-            "fokus": "dampak penurunan produsen terhadap energi pada tiap tingkat trofik",
-            "variabel_bebas": "persentase penurunan produsen dan efisiensi transfer energi",
-            "variabel_respon": "energi produsen, konsumen I, konsumen II, dan konsumen III",
-            "data_kunci": "perbandingan energi antartingkat trofik setelah produsen berkurang",
-            "arah_analisis": "perhatikan perubahan energi dari produsen ke konsumen dan jelaskan konsekuensinya pada rantai makanan"
-        },
-        "Daur Air, Karbon Dioksida, dan Oksigen Saat Pohon Berkurang": {
-            "kasus": "Berkurangnya tutupan pohon memengaruhi penyerapan air, limpasan permukaan, serta pertukaran CO2 dan O2.",
-            "fokus": "hubungan tutupan vegetasi dengan infiltrasi, limpasan permukaan, penyerapan CO2, dan produksi O2",
-            "variabel_bebas": "curah hujan dan persentase tutupan vegetasi",
-            "variabel_respon": "infiltrasi, limpasan permukaan, CO2 diserap, dan O2 dihasilkan",
-            "data_kunci": "grafik daur air serta grafik CO2 dan O2 selama 30 hari",
-            "arah_analisis": "bandingkan data air dan gas untuk menjelaskan peran vegetasi sebagai komponen ekosistem"
-        },
-        "Peningkatan Alga Akibat Pupuk Berlebih": {
-            "kasus": "Nitrogen dan fosfor dari pupuk berlebih masuk ke perairan dan memicu peningkatan alga.",
-            "fokus": "hubungan kadar nutrien dengan pertumbuhan alga, oksigen air, dan kondisi organisme air",
-            "variabel_bebas": "kadar nitrogen dan fosfor",
-            "variabel_respon": "pertumbuhan alga, indeks oksigen air, dan kondisi organisme air",
-            "data_kunci": "tren zat hara, pertumbuhan alga, oksigen air, dan organisme air selama 30 hari",
-            "arah_analisis": "identifikasi apakah peningkatan nutrien selalu diikuti dampak positif atau justru memicu gangguan ekosistem"
-        }
-    }
-
-    item = panduan.get(jenis_simulasi)
-    if not item:
-        return
-
-    st.markdown("### 2. Rencana Investigasi")
-    st.markdown(
-        f"""
-        <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:18px; margin:8px 0 20px 0; box-shadow:0 4px 14px rgba(15,23,42,0.06);">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px;">
-                <div style="background:#f8fafc; border-radius:14px; padding:14px;">
-                    <div style="font-size:13px; color:#64748b; font-weight:700;">Kasus</div>
-                    <div style="font-size:15px; color:#0f172a; line-height:1.6;">{item['kasus']}</div>
-                </div>
-                <div style="background:#f0fdf4; border-radius:14px; padding:14px;">
-                    <div style="font-size:13px; color:#047857; font-weight:700;">Fokus Investigasi</div>
-                    <div style="font-size:15px; color:#0f172a; line-height:1.6;">{item['fokus']}</div>
-                </div>
-                <div style="background:#eff6ff; border-radius:14px; padding:14px;">
-                    <div style="font-size:13px; color:#0369a1; font-weight:700;">Variabel yang Diubah</div>
-                    <div style="font-size:15px; color:#0f172a; line-height:1.6;">{item['variabel_bebas']}</div>
-                </div>
-                <div style="background:#fefce8; border-radius:14px; padding:14px;">
-                    <div style="font-size:13px; color:#a16207; font-weight:700;">Variabel yang Diamati</div>
-                    <div style="font-size:15px; color:#0f172a; line-height:1.6;">{item['variabel_respon']}</div>
-                </div>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    with st.expander("Catatan investigasi sebelum menjalankan simulasi", expanded=False):
-        st.markdown(f"""
-        - **Data utama yang perlu dibaca:** {item['data_kunci']}.
-        - **Arah analisis:** {item['arah_analisis']}.
-        - Setelah simulasi dipilih, lanjutkan ke halaman **Tanggapan Siswa** untuk menuliskan rumusan masalah, dugaan, analisis data, dan klaim ilmiah.
-        """)
 
 def tampilkan_grafik_kurva(df, x_col, y_cols, warna_map, judul, ylabel="Nilai Parameter"):
     """Menampilkan grafik garis interaktif yang cepat menggunakan st.altair_chart tanpa zoom/pan."""
@@ -443,6 +354,155 @@ def status_eutrofikasi_card(hasil):
 
 
 
+
+# ============================================================
+# ALUR INVESTIGASI GUIDED INQUIRY
+# ============================================================
+
+info_card(
+    "Alur Penyelidikan",
+    """
+    Alur kegiatan pada halaman ini: siswa membaca masalah dan gambar, merumuskan masalah,
+    menyusun hipotesis, menjalankan simulasi untuk mengumpulkan data, membuka materi pendukung
+    bila diperlukan, menguji hipotesis, lalu menyusun kesimpulan dan tindakan nyata pada halaman tanggapan.
+    """,
+    "green-card"
+)
+
+
+def tampilkan_materi_pendukung(key_prefix):
+    with st.expander("📘 Materi Pendukung untuk Penyelidikan"):
+        st.write(
+            "Gunakan materi sebagai bahan konsep saat menyusun hipotesis atau ketika menafsirkan data simulasi. "
+            "Materi tidak memberikan jawaban langsung, tetapi membantu menjelaskan hubungan antar komponen ekosistem."
+        )
+        if st.button("Buka Halaman Materi Ekosistem", key=f"buka_materi_{key_prefix}"):
+            st.switch_page("pages/2_Materi_Ekosistem.py")
+
+
+def tampilkan_kasus_awal(
+    key_prefix,
+    judul_masalah,
+    narasi_masalah,
+    image_path,
+    caption,
+    fokus_penyelidikan
+):
+    section_title("1. Fenomena Masalah")
+
+    col_gambar, col_masalah = st.columns([1, 1.25])
+
+    with col_gambar:
+        if os.path.exists(image_path):
+            st.image(image_path, use_container_width=True)
+        else:
+            info_card(
+                "Gambar Belum Tersedia",
+                f"Simpan gambar pada folder: {image_path}",
+                "yellow-card"
+            )
+
+        st.caption(caption)
+
+    with col_masalah:
+        info_card(judul_masalah, narasi_masalah, "blue-card")
+        info_card("Fokus Penyelidikan", fokus_penyelidikan, "green-card")
+        tampilkan_materi_pendukung(key_prefix)
+
+    section_title("2. Rumusan Masalah dan Hipotesis Awal")
+
+    st.write(
+        "Sebelum menjalankan simulasi, tuliskan arah penyelidikanmu terlebih dahulu. "
+        "Bagian ini penting agar simulasi dipakai untuk menguji dugaan, bukan hanya mencoba-coba variabel."
+    )
+
+    rumusan_masalah = st.text_area(
+        "Rumusan masalah penyelidikan",
+        key=f"rumusan_masalah_{key_prefix}",
+        height=100,
+        placeholder="Tuliskan pertanyaan penyelidikan berdasarkan fenomena yang kamu amati."
+    )
+
+    hipotesis_awal = st.text_area(
+        "Hipotesis awal",
+        key=f"hipotesis_awal_{key_prefix}",
+        height=100,
+        placeholder="Tuliskan dugaan sementara yang akan kamu uji melalui simulasi."
+    )
+
+    dasar_konsep = st.text_area(
+        "Dasar konsep yang digunakan",
+        key=f"dasar_konsep_{key_prefix}",
+        height=90,
+        placeholder="Tuliskan konsep ekosistem yang mendukung hipotesismu."
+    )
+
+    siap = bool(rumusan_masalah.strip()) and bool(hipotesis_awal.strip())
+
+    if not siap:
+        info_card(
+            "Lengkapi Rencana Penyelidikan",
+            "Isi rumusan masalah dan hipotesis terlebih dahulu. Setelah itu, bagian simulasi dan pengumpulan data akan digunakan untuk menguji hipotesis tersebut.",
+            "yellow-card"
+        )
+
+    return {
+        "rumusan_masalah": rumusan_masalah.strip(),
+        "hipotesis_awal": hipotesis_awal.strip(),
+        "dasar_konsep": dasar_konsep.strip()
+    }, siap
+
+
+def tampilkan_arahan_pengumpulan_data():
+    info_card(
+        "3. Simulasi dan Pengumpulan Data",
+        """
+        Ubah variabel simulasi beberapa kali untuk melihat pola perubahan data. Bandingkan kondisi rendah,
+        sedang, dan tinggi jika memungkinkan. Setelah menemukan data yang paling relevan dengan hipotesismu,
+        simpan hasil simulasi untuk digunakan pada tahap uji hipotesis.
+        """,
+        "green-card"
+    )
+
+
+def tampilkan_arahan_analisis():
+    info_card(
+        "Baca Pola Data",
+        """
+        Perhatikan parameter yang naik, parameter yang turun, serta hubungan antara variabel yang kamu ubah
+        dengan kondisi ekosistem. Gunakan data ini sebagai bukti saat menguji hipotesis pada halaman tanggapan.
+        """,
+        "yellow-card"
+    )
+
+
+def tampilkan_grafik_batang(df, x_col, y_col, judul, ylabel="Nilai"):
+    chart = alt.Chart(df).mark_bar().encode(
+        x=alt.X(f"{x_col}:N", axis=alt.Axis(title=x_col, labelAngle=0)),
+        y=alt.Y(f"{y_col}:Q", axis=alt.Axis(title=ylabel)),
+        tooltip=[
+            alt.Tooltip(f"{x_col}:N", title=x_col),
+            alt.Tooltip(f"{y_col}:Q", title=ylabel, format=",.2f")
+        ]
+    ).properties(
+        title=alt.TitleParams(text=judul, fontSize=14, fontWeight="bold", anchor="start"),
+        height=320,
+        background="#ffffff"
+    ).configure_view(stroke=None)
+
+    st.altair_chart(chart, use_container_width=True)
+
+
+def payload_investigasi(investigasi, data_variabel):
+    payload = {
+        "rumusan_masalah": investigasi.get("rumusan_masalah", ""),
+        "hipotesis_awal": investigasi.get("hipotesis_awal", ""),
+        "dasar_konsep": investigasi.get("dasar_konsep", "")
+    }
+    payload.update(data_variabel)
+    return payload
+
+
 # ============================================================
 # TAB SIMULASI
 # ============================================================
@@ -450,8 +510,8 @@ def status_eutrofikasi_card(hasil):
 tab1, tab2, tab3, tab4 = st.tabs([
     "1. Pencemaran Sungai",
     "2. Rantai Makanan",
-    "3. Daur Air dan Carbon",
-    "4. Peningkatan Alga akibat Fosfor dan Nitrogen"
+    "3. Daur Air, CO2, dan O2",
+    "4. Peningkatan Alga"
 ])
 
 
@@ -461,124 +521,103 @@ tab1, tab2, tab3, tab4 = st.tabs([
 
 with tab1:
     jenis_simulasi = "Pencemaran Sungai Akibat Limbah Pabrik"
+    section_title("Investigasi Pencemaran Sungai Akibat Limbah Pabrik")
 
-    section_title("Simulasi Pencemaran Sungai Akibat Limbah Pabrik")
-
-    info_card(
-        "1. Kasus Ekosistem",
-        """
-        Limbah pabrik yang masuk ke sungai dapat mengubah kondisi air.
-        Air menjadi tercemar, kadar oksigen terlarut menurun, dan organisme air dapat terganggu.
-        Fenomena ini menunjukkan hubungan antara komponen abiotik seperti air, limbah, dan oksigen dengan komponen biotik seperti ikan dan hewan kecil di air.
+    investigasi, siap = tampilkan_kasus_awal(
+        key_prefix="pencemaran",
+        judul_masalah="Masalah Ekosistem Sungai",
+        narasi_masalah="""
+        Sebuah sungai menerima limbah dari aktivitas industri. Setelah beberapa waktu, air tampak berubah,
+        organisme kecil berkurang, dan jumlah ikan mulai menurun. Kondisi ini menunjukkan adanya perubahan
+        pada komponen abiotik dan biotik di ekosistem perairan.
         """,
-        "blue-card"
+        image_path=os.path.join("assets", "images", "pencemaran_sungai.jpg"),
+        caption="Fenomena pencemaran sungai digunakan sebagai konteks awal penyelidikan.",
+        fokus_penyelidikan="Selidiki hubungan antara tingkat limbah industri, kualitas air, oksigen terlarut, dan kondisi organisme air."
     )
 
-    info_card(
-        "Fokus Investigasi",
-        """
-        Gunakan simulasi ini untuk mengamati pengaruh tingkat limbah industri terhadap oksigen terlarut,
-        populasi ikan, indeks invertebrata, dan kondisi ekosistem sungai.
-        """,
-        "green-card"
-    )
+    if siap:
+        tampilkan_arahan_pengumpulan_data()
 
-    tampilkan_panduan_guided_inquiry(jenis_simulasi)
+        col_kiri, col_kanan = st.columns([1, 1.35])
 
-    col_kiri, col_kanan = st.columns([1, 1.4])
+        with col_kiri:
+            st.subheader("Ubah Variabel")
+            tingkat_limbah = st.slider(
+                "Tingkat Limbah Industri",
+                min_value=0.0,
+                max_value=1.0,
+                value=0.50,
+                step=0.01,
+                key="slider_limbah_final"
+            )
+            st.caption("Coba beberapa kondisi sebelum menyimpan hasil: rendah, sedang, dan tinggi.")
 
-    with col_kiri:
-        image_path = os.path.join("assets", "images", "pencemaran_sungai.jpg")
+        with col_kanan:
+            hasil = hitung_pencemaran_sungai(tingkat_limbah)
+            df_tren = pd.DataFrame(buat_tren_pencemaran_sungai(tingkat_limbah))
 
-        if os.path.exists(image_path):
-            st.image(image_path, width="stretch")
-        else:
+            st.markdown("### Ringkasan Hasil Simulasi")
+            status_pencemaran_card(hasil)
+
+            col_g1, col_g2 = st.columns(2)
+
+            with col_g1:
+                tampilkan_grafik_kurva(
+                    df=df_tren,
+                    x_col="Waktu (hari)",
+                    y_cols=["Indeks Limbah", "Kualitas Air", "Indeks DO"],
+                    warna_map={
+                        "Indeks Limbah": "#ef4444",
+                        "Kualitas Air": "#10b981",
+                        "Indeks DO": "#0284c7"
+                    },
+                    judul="Limbah, Kualitas Air, dan Oksigen",
+                    ylabel="Nilai Indeks"
+                )
+
+            with col_g2:
+                tampilkan_grafik_kurva(
+                    df=df_tren,
+                    x_col="Waktu (hari)",
+                    y_cols=["Populasi Ikan", "Indeks Invertebrata"],
+                    warna_map={
+                        "Populasi Ikan": "#8b5cf6",
+                        "Indeks Invertebrata": "#eab308"
+                    },
+                    judul="Dampak terhadap Organisme Air",
+                    ylabel="Nilai Indeks"
+                )
+
+            tampilkan_arahan_analisis()
+
+            with st.expander("📊 Lihat Data Lengkap Simulasi"):
+                st.dataframe(df_tren, width="stretch", hide_index=True)
+
             info_card(
-                "Gambar Belum Tersedia",
-                """
-                Simpan gambar pencemaran sungai pada folder:
-                assets/images/pencemaran_sungai.jpg
-                """,
-                "yellow-card"
+                "Kondisi Ekosistem",
+                hasil["kondisi"],
+                "green-card" if hasil["tingkat_pencemaran"] <= 30 else "yellow-card" if hasil["tingkat_pencemaran"] <= 70 else "danger-card"
             )
 
-        st.markdown(
-            """
-            <p style='text-align:center; color:#6b7280; line-height:1.7; font-size:15px;'>
-            Gambar ini menggambarkan kondisi sungai yang tercemar limbah.
-            Siswa dapat mengamati hubungan antara peningkatan limbah,
-            penurunan oksigen terlarut, dan gangguan organisme air.
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
+        if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_pencemaran_final"):
+            simpan_hasil_simulasi(
+                jenis_simulasi,
+                payload_investigasi(
+                    investigasi,
+                    {
+                        "tingkat_limbah_industri": tingkat_limbah,
+                        "indeks_limbah": hasil["indeks_limbah"],
+                        "tingkat_pencemaran": hasil["tingkat_pencemaran"]
+                    }
+                ),
+                hasil
+            )
 
-        st.subheader("3. Atur Variabel")
-
-        tingkat_limbah = st.slider(
-            "Tingkat Limbah Industri",
-            min_value=0.0,
-            max_value=1.0,
-            value=0.50,
-            step=0.01
-        )
-
-    with col_kanan:
-        hasil = hitung_pencemaran_sungai(tingkat_limbah)
-        data_tren = buat_tren_pencemaran_sungai(tingkat_limbah)
-        df_tren = pd.DataFrame(data_tren)
-
-        st.markdown("### 4. Simulasi dan Data")
-        status_pencemaran_card(hasil)
-
-        tampilkan_grafik_kurva(
-            df=df_tren,
-            x_col="Waktu (hari)",
-            y_cols=[
-                "Indeks Limbah",
-                "Kualitas Air",
-                "Indeks DO",
-                "Populasi Ikan",
-                "Indeks Invertebrata"
-            ],
-            warna_map={
-                "Indeks Limbah": "#ef4444",
-                "Kualitas Air": "#10b981",
-                "Indeks DO": "#0284c7",
-                "Populasi Ikan": "#8b5cf6",
-                "Indeks Invertebrata": "#eab308"
-            },
-            judul="Tren Parameter Ekosistem Sungai dari Waktu ke Waktu",
-            ylabel="Nilai Indeks"
-        )
-
-        st.dataframe(df_tren, width="stretch", hide_index=True)
-
-        info_card(
-            "Kondisi Ekosistem",
-            hasil["kondisi"],
-            "green-card"
-            if hasil["tingkat_pencemaran"] <= 30
-            else "yellow-card"
-            if hasil["tingkat_pencemaran"] <= 70
-            else "danger-card"
-        )
-
-    if st.button("✅ Gunakan Data Ini untuk Klaim Ilmiah", key="pilih_pencemaran"):
-        simpan_hasil_simulasi(
-            jenis_simulasi,
-            {
-                "tingkat_limbah_industri": tingkat_limbah,
-                "indeks_limbah": hasil["indeks_limbah"],
-                "tingkat_pencemaran": hasil["tingkat_pencemaran"]
-            },
-            hasil
-        )
-
-    if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
-        st.success(f"{jenis_simulasi} berhasil disimpan. Sekarang lanjutkan ke halaman Tanggapan Siswa untuk menyusun klaim ilmiah.")
-        if st.button("✍️ Susun Klaim Ilmiah", key="ke_tanggapan_1"):
-            st.switch_page("pages/4_Tanggapan_Siswa.py")
+        if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
+            st.success(f"{jenis_simulasi} berhasil disimpan. Lanjutkan ke tahap uji hipotesis, kesimpulan, dan tindakan nyata.")
+            if st.button("✍️ Lanjut ke Uji Hipotesis", key="ke_tanggapan_1_final"):
+                st.switch_page("pages/4_Tanggapan_Siswa.py")
 
 
 # ============================================================
@@ -587,123 +626,102 @@ with tab1:
 
 with tab2:
     jenis_simulasi = "Rantai Makanan Saat Kemarau"
+    section_title("Investigasi Rantai Makanan Saat Kemarau")
 
-    section_title("Simulasi Rantai Makanan Saat Kemarau")
-
-    info_card(
-        "1. Kasus Ekosistem",
-        """
-        Saat kemarau panjang, rumput di padang rumput dapat berkurang karena kekurangan air.
-        Rumput adalah produsen yang menjadi sumber energi bagi hewan pemakan tumbuhan.
-        Ketika jumlah rumput berkurang, energi yang tersedia untuk konsumen I, konsumen II, dan konsumen III juga ikut menurun.
+    investigasi, siap = tampilkan_kasus_awal(
+        key_prefix="rantai",
+        judul_masalah="Masalah Ketersediaan Produsen Saat Kemarau",
+        narasi_masalah="""
+        Pada musim kemarau panjang, pertumbuhan rumput di suatu ekosistem padang rumput menurun.
+        Rumput berperan sebagai produsen yang menjadi sumber energi bagi konsumen. Perubahan pada produsen
+        dapat memengaruhi aliran energi pada tingkat trofik berikutnya.
         """,
-        "blue-card"
+        image_path=os.path.join("assets", "images", "rantai_makanan_piramida_energi.png"),
+        caption="Piramida energi digunakan untuk membantu membaca aliran energi antar tingkat trofik.",
+        fokus_penyelidikan="Selidiki pengaruh berkurangnya produsen dan efisiensi transfer energi terhadap energi pada tiap tingkat trofik."
     )
 
-    info_card(
-        "Fokus Investigasi",
-        """
-        Gunakan simulasi ini untuk melihat pengaruh berkurangnya produsen terhadap energi
-        pada setiap tingkatan dalam rantai makanan.
-        """,
-        "green-card"
-    )
+    if siap:
+        tampilkan_arahan_pengumpulan_data()
 
-    tampilkan_panduan_guided_inquiry(jenis_simulasi)
+        col_kiri, col_kanan = st.columns([1, 1.35])
 
-    col_kiri, col_kanan = st.columns([1, 1.4])
+        with col_kiri:
+            st.subheader("Ubah Variabel")
+            energi_produsen_normal = st.number_input(
+                "Energi produsen sebelum kemarau (kkal)",
+                min_value=100,
+                max_value=100000,
+                value=10000,
+                step=100,
+                key="energi_produsen_final"
+            )
+            penurunan_produsen = st.slider(
+                "Rumput yang berkurang akibat kemarau (%)",
+                min_value=0,
+                max_value=90,
+                value=30,
+                key="penurunan_produsen_final"
+            )
+            efisiensi_transfer = st.slider(
+                "Energi yang berpindah ke makhluk hidup berikutnya (%)",
+                min_value=5,
+                max_value=30,
+                value=10,
+                key="efisiensi_transfer_final"
+            )
+            st.caption("Coba ubah penurunan produsen dan efisiensi transfer untuk melihat perubahan energi.")
 
-    with col_kiri:
-        image_path = os.path.join("assets", "images", "rantai_makanan_piramida_energi.png")
+        with col_kanan:
+            energi_awal = energi_produsen_normal * (1 - penurunan_produsen / 100)
+            hasil = hitung_aliran_energi(energi_awal, efisiensi_transfer)
 
-        if os.path.exists(image_path):
-            st.image(image_path, width="stretch")
-        else:
-            info_card(
-                "Gambar Belum Tersedia",
-                """
-                Simpan gambar rantai makanan pada folder:
-                assets/images/rantai_makanan_piramida_energi.png
-                """,
-                "yellow-card"
+            st.markdown("### Ringkasan Hasil Simulasi")
+            status_rantai_makanan_card(hasil, energi_awal, penurunan_produsen, efisiensi_transfer)
+
+            data = pd.DataFrame({
+                "Tingkatan Rantai Makanan": ["Produsen", "Konsumen I", "Konsumen II", "Konsumen III"],
+                "Energi": [hasil["produsen"], hasil["konsumen_1"], hasil["konsumen_2"], hasil["konsumen_3"]]
+            })
+
+            tampilkan_grafik_batang(
+                data,
+                x_col="Tingkatan Rantai Makanan",
+                y_col="Energi",
+                judul="Aliran Energi pada Tingkat Trofik",
+                ylabel="Energi (kkal)"
             )
 
-        st.markdown(
-            """
-            <p style='text-align:center; color:#6b7280; line-height:1.7; font-size:15px;'>
-            Gambar ini menunjukkan piramida energi pada ekosistem rantai makanan padang rumput.
-            Siswa dapat mengamati bagaimana energi berkurang secara drastis pada setiap tingkat trofik.
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
+            tampilkan_arahan_analisis()
 
-        st.subheader("3. Atur Variabel")
+            with st.expander("📊 Lihat Data Lengkap Simulasi"):
+                st.dataframe(data, width="stretch", hide_index=True)
 
-        energi_produsen_normal = st.number_input(
-            "Energi produsen sebelum kemarau (kkal)",
-            min_value=100,
-            max_value=100000,
-            value=10000,
-            step=100
-        )
+            with st.expander("📘 Buka Bantuan Konsep"):
+                st.write(
+                    "Gunakan konsep aliran energi dan piramida energi untuk menjelaskan mengapa energi yang tersedia "
+                    "berubah pada setiap tingkat trofik."
+                )
 
-        penurunan_produsen = st.slider(
-            "Rumput yang berkurang akibat kemarau (%)",
-            min_value=0,
-            max_value=90,
-            value=30
-        )
+        if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_rantai_final"):
+            simpan_hasil_simulasi(
+                jenis_simulasi,
+                payload_investigasi(
+                    investigasi,
+                    {
+                        "energi_produsen_normal": energi_produsen_normal,
+                        "rumput_berkurang_akibat_kemarau": penurunan_produsen,
+                        "energi_produsen_setelah_kemarau": energi_awal,
+                        "efisiensi_transfer_energi": efisiensi_transfer
+                    }
+                ),
+                hasil
+            )
 
-        efisiensi_transfer = st.slider(
-            "Energi yang berpindah ke makhluk hidup berikutnya (%)",
-            min_value=5,
-            max_value=30,
-            value=10
-        )
-
-    with col_kanan:
-        energi_awal = energi_produsen_normal * (1 - penurunan_produsen / 100)
-        hasil = hitung_aliran_energi(energi_awal, efisiensi_transfer)
-
-        st.markdown("### 4. Simulasi dan Data")
-        status_rantai_makanan_card(hasil, energi_awal, penurunan_produsen, efisiensi_transfer)
-
-        data = pd.DataFrame({
-            "Tingkatan Rantai Makanan": [
-                "Produsen",
-                "Konsumen I",
-                "Konsumen II",
-                "Konsumen III"
-            ],
-            "Energi": [
-                hasil["produsen"],
-                hasil["konsumen_1"],
-                hasil["konsumen_2"],
-                hasil["konsumen_3"]
-            ]
-        })
-
-        st.dataframe(data, width="stretch", hide_index=True)
-
-        info_card("Keterangan", hasil["keterangan"], "yellow-card")
-
-    if st.button("✅ Gunakan Data Ini untuk Klaim Ilmiah", key="pilih_rantai"):
-        simpan_hasil_simulasi(
-            jenis_simulasi,
-            {
-                "energi_produsen_normal": energi_produsen_normal,
-                "rumput_berkurang_akibat_kemarau": penurunan_produsen,
-                "energi_produsen_setelah_kemarau": energi_awal,
-                "perpindahan_energi": efisiensi_transfer
-            },
-            hasil
-        )
-
-    if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
-        st.success(f"{jenis_simulasi} berhasil disimpan. Sekarang lanjutkan ke halaman Tanggapan Siswa untuk menyusun klaim ilmiah.")
-        if st.button("✍️ Susun Klaim Ilmiah", key="ke_tanggapan_2"):
-            st.switch_page("pages/4_Tanggapan_Siswa.py")
+        if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
+            st.success(f"{jenis_simulasi} berhasil disimpan. Lanjutkan ke tahap uji hipotesis, kesimpulan, dan tindakan nyata.")
+            if st.button("✍️ Lanjut ke Uji Hipotesis", key="ke_tanggapan_2_final"):
+                st.switch_page("pages/4_Tanggapan_Siswa.py")
 
 
 # ============================================================
@@ -712,191 +730,118 @@ with tab2:
 
 with tab3:
     jenis_simulasi = "Daur Air, Karbon Dioksida, dan Oksigen Saat Pohon Berkurang"
+    section_title("Investigasi Daur Air, CO2, dan O2 Saat Pohon Berkurang")
 
-    section_title("Simulasi Daur Air, CO2, dan O2 Saat Pohon Berkurang")
-
-    info_card(
-        "1. Kasus Ekosistem",
-        """
-        Penebangan pohon dapat mengurangi tutupan vegetasi.
-        Ketika pohon berkurang, air hujan lebih sedikit meresap ke tanah dan lebih banyak mengalir di permukaan.
-        Tumbuhan juga berperan menyerap karbon dioksida dan menghasilkan oksigen.
+    investigasi, siap = tampilkan_kasus_awal(
+        key_prefix="daur_air",
+        judul_masalah="Masalah Berkurangnya Tutupan Vegetasi",
+        narasi_masalah="""
+        Penebangan pohon mengurangi tutupan vegetasi di suatu wilayah. Kondisi ini dapat memengaruhi
+        penyerapan air hujan ke dalam tanah, limpasan permukaan, penyerapan karbon dioksida, dan produksi oksigen.
+        Perubahan tersebut menunjukkan keterkaitan antara tumbuhan, air, dan gas di atmosfer.
         """,
-        "blue-card"
+        image_path=os.path.join("assets", "images", "diagram_daur_air_co2_o2.png"),
+        caption="Diagram daur air, CO2, dan O2 digunakan sebagai konteks awal penyelidikan.",
+        fokus_penyelidikan="Selidiki pengaruh tutupan vegetasi terhadap infiltrasi, limpasan permukaan, penyerapan CO2, dan produksi O2."
     )
 
-    info_card(
-        "Fokus Investigasi",
-        """
-        Gunakan simulasi ini untuk melihat pengaruh curah hujan dan tutupan vegetasi terhadap daur air,
-        penyerapan CO2, dan produksi O2. Variabel panas matahari dibuat tetap agar penyelidikan lebih fokus.
-        """,
-        "green-card"
-    )
+    if siap:
+        tampilkan_arahan_pengumpulan_data()
 
-    tampilkan_panduan_guided_inquiry(jenis_simulasi)
+        col_kiri, col_kanan = st.columns([1, 1.35])
 
-    col_kiri, col_kanan = st.columns([1, 1.4])
+        with col_kiri:
+            st.subheader("Ubah Variabel")
+            intensitas_panas = 60
+            curah_hujan = st.slider(
+                "Curah Hujan",
+                min_value=0,
+                max_value=100,
+                value=70,
+                key="curah_hujan_final"
+            )
+            tutupan_vegetasi = st.slider(
+                "Tutupan Vegetasi Setelah Penebangan",
+                min_value=0,
+                max_value=100,
+                value=50,
+                key="tutupan_vegetasi_final"
+            )
+            st.caption("Intensitas panas matahari dibuat tetap agar penyelidikan lebih fokus.")
 
-    with col_kiri:
-        image_path = os.path.join("assets", "images", "diagram_daur_air_co2_o2.png")
+        with col_kanan:
+            hasil = hitung_daur_air(
+                curah_hujan=curah_hujan,
+                tutupan_vegetasi=tutupan_vegetasi,
+                intensitas_panas=intensitas_panas
+            )
+            df_tren_air = pd.DataFrame(buat_tren_daur_air(
+                curah_hujan=curah_hujan,
+                tutupan_vegetasi_akhir=tutupan_vegetasi,
+                intensitas_panas=intensitas_panas
+            ))
 
-        if os.path.exists(image_path):
-            st.image(image_path, width="stretch")
-        else:
+            st.markdown("### Ringkasan Hasil Simulasi")
+            status_daur_air_card(hasil)
+
+            col_g1, col_g2 = st.columns(2)
+
+            with col_g1:
+                tampilkan_grafik_kurva(
+                    df=df_tren_air,
+                    x_col="Waktu (hari)",
+                    y_cols=["Infiltrasi", "Limpasan Permukaan"],
+                    warna_map={
+                        "Infiltrasi": "#10b981",
+                        "Limpasan Permukaan": "#ef4444"
+                    },
+                    judul="Vegetasi terhadap Air Hujan",
+                    ylabel="Nilai Indeks"
+                )
+
+            with col_g2:
+                tampilkan_grafik_kurva(
+                    df=df_tren_air,
+                    x_col="Waktu (hari)",
+                    y_cols=["CO2 Diserap", "O2 Dihasilkan"],
+                    warna_map={
+                        "CO2 Diserap": "#64748b",
+                        "O2 Dihasilkan": "#22c55e"
+                    },
+                    judul="Vegetasi terhadap CO2 dan O2",
+                    ylabel="Nilai Indeks"
+                )
+
+            tampilkan_arahan_analisis()
+
+            with st.expander("📊 Lihat Data Lengkap Simulasi"):
+                st.dataframe(df_tren_air, width="stretch", hide_index=True)
+
             info_card(
-                "Gambar Belum Tersedia",
-                """
-                Simpan gambar diagram pada folder:
-                assets/images/diagram_daur_air_co2_o2.png
-                """,
-                "yellow-card"
+                "Status Ekosistem",
+                hasil["status"],
+                "green-card" if hasil["status"] == "Baik" else "yellow-card" if hasil["status"] == "Cukup" else "danger-card"
             )
 
-        st.markdown(
-            """
-            <p style='text-align:center; color:#6b7280; line-height:1.7; font-size:15px;'>
-            Diagram ini mengilustrasikan daur air, penyerapan karbon dioksida (CO2), dan pelepasan oksigen (O2) oleh vegetasi tumbuhan.
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
+        if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_daur_air_final"):
+            simpan_hasil_simulasi(
+                jenis_simulasi,
+                payload_investigasi(
+                    investigasi,
+                    {
+                        "curah_hujan": curah_hujan,
+                        "tutupan_vegetasi_setelah_penebangan": tutupan_vegetasi,
+                        "panas_matahari_tetap": intensitas_panas
+                    }
+                ),
+                hasil
+            )
 
-        st.subheader("3. Atur Variabel")
+        if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
+            st.success(f"{jenis_simulasi} berhasil disimpan. Lanjutkan ke tahap uji hipotesis, kesimpulan, dan tindakan nyata.")
+            if st.button("✍️ Lanjut ke Uji Hipotesis", key="ke_tanggapan_3_final"):
+                st.switch_page("pages/4_Tanggapan_Siswa.py")
 
-        intensitas_panas = 60
-
-        curah_hujan = st.slider(
-            "Curah Hujan",
-            min_value=0,
-            max_value=100,
-            value=70
-        )
-
-        tutupan_vegetasi = st.slider(
-            "Tutupan Vegetasi Setelah Penebangan",
-            min_value=0,
-            max_value=100,
-            value=50
-        )
-
-    with col_kanan:
-        hasil = hitung_daur_air(
-            curah_hujan=curah_hujan,
-            tutupan_vegetasi=tutupan_vegetasi,
-            intensitas_panas=intensitas_panas
-        )
-
-        st.markdown("### 4. Simulasi dan Data")
-        status_daur_air_card(hasil)
-
-        info_card(
-            "Alur Sebab-Akibat",
-            """
-            Curah hujan dan tutupan vegetasi memengaruhi kondisi lingkungan.
-            Jika vegetasi berkurang, akar tumbuhan yang membantu penyerapan air juga berkurang.
-            Akibatnya, infiltrasi menurun dan limpasan permukaan meningkat.
-            Pada saat yang sama, jumlah tumbuhan yang menyerap CO2 dan menghasilkan O2 juga menurun.
-            """,
-            "yellow-card"
-        )
-
-        info_card(
-            "Status",
-            hasil["status"],
-            "green-card"
-            if hasil["status"] == "Baik"
-            else "yellow-card"
-            if hasil["status"] == "Cukup"
-            else "danger-card"
-        )
-
-        info_card(
-            "Keterangan",
-            hasil["keterangan"],
-            "yellow-card"
-        )
-
-    data_tren_air = buat_tren_daur_air(
-        curah_hujan=curah_hujan,
-        tutupan_vegetasi_akhir=tutupan_vegetasi,
-        intensitas_panas=intensitas_panas
-    )
-
-    df_tren_air = pd.DataFrame(data_tren_air)
-
-    col_grafik1, col_grafik2 = st.columns(2)
-
-    with col_grafik1:
-        st.markdown("### Grafik 1. Daur Air")
-
-        tampilkan_grafik_kurva(
-            df=df_tren_air,
-            x_col="Waktu (hari)",
-            y_cols=[
-                "Infiltrasi",
-                "Limpasan Permukaan"
-            ],
-            warna_map={
-                "Infiltrasi": "#10b981",
-                "Limpasan Permukaan": "#ef4444"
-            },
-            judul="Vegetasi terhadap Air Hujan",
-            ylabel="Nilai Indeks"
-        )
-
-        st.info(
-            """
-            Ketika tutupan vegetasi berkurang, infiltrasi menurun dan limpasan permukaan meningkat.
-            """
-        )
-
-    with col_grafik2:
-        st.markdown("### Grafik 2. CO2 dan O2")
-
-        tampilkan_grafik_kurva(
-            df=df_tren_air,
-            x_col="Waktu (hari)",
-            y_cols=[
-                "CO2 Diserap",
-                "O2 Dihasilkan"
-            ],
-            warna_map={
-                "CO2 Diserap": "#64748b",
-                "O2 Dihasilkan": "#22c55e"
-            },
-            judul="Vegetasi terhadap CO2 dan O2",
-            ylabel="Nilai Indeks"
-        )
-
-        st.info(
-            """
-            Semakin sedikit tutupan vegetasi, semakin rendah CO2 yang diserap dan O2 yang dihasilkan.
-            """
-        )
-
-    with st.expander("📊 Lihat Data Lengkap Simulasi"):
-        st.dataframe(
-            df_tren_air,
-            width="stretch",
-            hide_index=True
-        )
-
-    if st.button("✅ Gunakan Data Ini untuk Klaim Ilmiah", key="pilih_daur_air"):
-        simpan_hasil_simulasi(
-            jenis_simulasi,
-            {
-                "curah_hujan": curah_hujan,
-                "tutupan_vegetasi_setelah_penebangan": tutupan_vegetasi,
-                "panas_matahari_tetap": intensitas_panas
-            },
-            hasil
-        )
-
-    if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
-        st.success(f"{jenis_simulasi} berhasil disimpan. Sekarang lanjutkan ke halaman Tanggapan Siswa untuk menyusun klaim ilmiah.")
-        if st.button("✍️ Susun Klaim Ilmiah", key="ke_tanggapan_3"):
-            st.switch_page("pages/4_Tanggapan_Siswa.py")
 
 # ============================================================
 # TAB 4: PENINGKATAN ALGA
@@ -904,122 +849,105 @@ with tab3:
 
 with tab4:
     jenis_simulasi = "Peningkatan Alga Akibat Pupuk Berlebih"
+    section_title("Investigasi Peningkatan Alga Akibat Pupuk Berlebih")
 
-    section_title("Simulasi Peningkatan Alga Akibat Pupuk Berlebih")
-
-    info_card(
-        "1. Kasus Ekosistem",
-        """
-        Pupuk pertanian yang digunakan secara berlebihan dapat terbawa air hujan ke sungai atau danau.
-        Pupuk mengandung zat hara seperti nitrogen dan fosfor.
-        Jika zat hara masuk ke perairan dalam jumlah banyak, alga dapat tumbuh semakin banyak.
-        Fenomena peningkatan alga ini dalam ilmu ekologi dikenal sebagai eutrofikasi.
+    investigasi, siap = tampilkan_kasus_awal(
+        key_prefix="alga",
+        judul_masalah="Masalah Pupuk Berlebih di Perairan",
+        narasi_masalah="""
+        Pupuk pertanian yang digunakan berlebihan dapat terbawa air hujan menuju sungai atau danau.
+        Pupuk mengandung nitrogen dan fosfor. Jika zat hara masuk ke perairan dalam jumlah tinggi,
+        pertumbuhan alga dapat meningkat dan mengubah kondisi organisme air.
         """,
-        "blue-card"
+        image_path=os.path.join("assets", "images", "peningkatan_alga_akibat_pupuk_berlebih.png"),
+        caption="Fenomena peningkatan alga digunakan sebagai konteks awal penyelidikan eutrofikasi.",
+        fokus_penyelidikan="Selidiki pengaruh nitrogen dan fosfor terhadap pertumbuhan alga, oksigen air, dan kondisi organisme air."
     )
 
-    info_card(
-        "Fokus Investigasi",
-        """
-        Gunakan simulasi ini untuk melihat pengaruh nitrogen dan fosfor terhadap pertumbuhan alga,
-        oksigen air, dan kondisi organisme air.
-        """,
-        "green-card"
-    )
+    if siap:
+        tampilkan_arahan_pengumpulan_data()
 
-    tampilkan_panduan_guided_inquiry(jenis_simulasi)
+        col_kiri, col_kanan = st.columns([1, 1.35])
 
-    col_kiri, col_kanan = st.columns([1, 1.4])
+        with col_kiri:
+            st.subheader("Ubah Variabel")
+            kadar_nitrogen = st.slider(
+                "Nitrogen dari Pupuk",
+                min_value=0,
+                max_value=100,
+                value=50,
+                key="nitrogen_final"
+            )
+            kadar_fosfor = st.slider(
+                "Fosfor dari Pupuk",
+                min_value=0,
+                max_value=100,
+                value=50,
+                key="fosfor_final"
+            )
+            st.caption("Coba ubah nitrogen dan fosfor untuk melihat respons alga dan organisme air.")
 
-    with col_kiri:
-        image_path = os.path.join("assets", "images", "peningkatan_alga_akibat_pupuk_berlebih.png")
+        with col_kanan:
+            hasil = hitung_eutrofikasi(kadar_nitrogen, kadar_fosfor)
+            df_tren = pd.DataFrame(buat_tren_eutrofikasi(kadar_nitrogen, kadar_fosfor))
 
-        if os.path.exists(image_path):
-            st.image(image_path, width="stretch")
-        else:
+            st.markdown("### Ringkasan Hasil Simulasi")
+            status_eutrofikasi_card(hasil)
+
+            col_g1, col_g2 = st.columns(2)
+
+            with col_g1:
+                tampilkan_grafik_kurva(
+                    df=df_tren,
+                    x_col="Waktu (hari)",
+                    y_cols=["Zat Hara", "Pertumbuhan Alga"],
+                    warna_map={
+                        "Zat Hara": "#eab308",
+                        "Pertumbuhan Alga": "#10b981"
+                    },
+                    judul="Zat Hara dan Pertumbuhan Alga",
+                    ylabel="Nilai Indeks"
+                )
+
+            with col_g2:
+                tampilkan_grafik_kurva(
+                    df=df_tren,
+                    x_col="Waktu (hari)",
+                    y_cols=["Oksigen Air", "Organisme Air"],
+                    warna_map={
+                        "Oksigen Air": "#0284c7",
+                        "Organisme Air": "#ef4444"
+                    },
+                    judul="Oksigen dan Organisme Air",
+                    ylabel="Nilai Indeks"
+                )
+
+            tampilkan_arahan_analisis()
+
+            with st.expander("📊 Lihat Data Lengkap Simulasi"):
+                st.dataframe(df_tren, width="stretch", hide_index=True)
+
             info_card(
-                "Gambar Belum Tersedia",
-                """
-                Simpan gambar simulasi 4 pada folder:
-                assets/images/peningkatan_alga_akibat_pupuk_berlebih.png
-                """,
-                "yellow-card"
+                "Kondisi Ekosistem",
+                hasil["kondisi"],
+                "green-card" if hasil["indeks_nutrien"] <= 35 else "yellow-card" if hasil["indeks_nutrien"] <= 70 else "danger-card"
             )
 
-        st.markdown(
-            """
-            <p style='text-align:center; color:#6b7280; line-height:1.7; font-size:15px;'>
-            Gambar ini mengilustrasikan peristiwa eutrofikasi (ledakan pertumbuhan alga) di permukaan air yang dipicu oleh pemupukan berlebih.
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
+        if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_alga_final"):
+            simpan_hasil_simulasi(
+                jenis_simulasi,
+                payload_investigasi(
+                    investigasi,
+                    {
+                        "nitrogen_dari_pupuk": kadar_nitrogen,
+                        "fosfor_dari_pupuk": kadar_fosfor,
+                        "indeks_nutrien": hasil["indeks_nutrien"]
+                    }
+                ),
+                hasil
+            )
 
-        st.subheader("3. Atur Variabel")
-
-        kadar_nitrogen = st.slider("Nitrogen dari Pupuk", min_value=0, max_value=100, value=50)
-        kadar_fosfor = st.slider("Fosfor dari Pupuk", min_value=0, max_value=100, value=50)
-
-    with col_kanan:
-        hasil = hitung_eutrofikasi(kadar_nitrogen, kadar_fosfor)
-        data_tren = buat_tren_eutrofikasi(kadar_nitrogen, kadar_fosfor)
-        df_tren = pd.DataFrame(data_tren)
-
-        st.markdown("### 4. Simulasi dan Data")
-        status_eutrofikasi_card(hasil)
-
-        tampilkan_grafik_kurva(
-            df=df_tren,
-            x_col="Waktu (hari)",
-            y_cols=[
-                "Zat Hara",
-                "Pertumbuhan Alga",
-                "Oksigen Air",
-                "Organisme Air"
-            ],
-            warna_map={
-                "Zat Hara": "#eab308",
-                "Pertumbuhan Alga": "#10b981",
-                "Oksigen Air": "#0284c7",
-                "Organisme Air": "#ef4444"
-            },
-            judul="Tren Peningkatan Alga dari Waktu ke Waktu",
-            ylabel="Nilai Parameter"
-        )
-
-        st.dataframe(df_tren, width="stretch", hide_index=True)
-
-        info_card(
-            "Status Peningkatan Alga",
-            hasil["status_eutrofikasi"],
-            "green-card"
-            if hasil["indeks_nutrien"] <= 35
-            else "yellow-card"
-            if hasil["indeks_nutrien"] <= 70
-            else "danger-card"
-        )
-
-        info_card(
-            "Kondisi Ekosistem",
-            hasil["kondisi"],
-            "green-card"
-            if hasil["indeks_nutrien"] <= 35
-            else "yellow-card"
-            if hasil["indeks_nutrien"] <= 70
-            else "danger-card"
-        )
-
-    if st.button("✅ Gunakan Data Ini untuk Klaim Ilmiah", key="pilih_alga"):
-        simpan_hasil_simulasi(
-            jenis_simulasi,
-            {
-                "nitrogen_dari_pupuk": kadar_nitrogen,
-                "fosfor_dari_pupuk": kadar_fosfor
-            },
-            hasil
-        )
-
-    if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
-        st.success(f"{jenis_simulasi} berhasil disimpan. Sekarang lanjutkan ke halaman Tanggapan Siswa untuk menyusun klaim ilmiah.")
-        if st.button("✍️ Susun Klaim Ilmiah", key="ke_tanggapan_4"):
-            st.switch_page("pages/4_Tanggapan_Siswa.py")
+        if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
+            st.success(f"{jenis_simulasi} berhasil disimpan. Lanjutkan ke tahap uji hipotesis, kesimpulan, dan tindakan nyata.")
+            if st.button("✍️ Lanjut ke Uji Hipotesis", key="ke_tanggapan_4_final"):
+                st.switch_page("pages/4_Tanggapan_Siswa.py")

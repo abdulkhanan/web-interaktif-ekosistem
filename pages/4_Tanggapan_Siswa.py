@@ -17,7 +17,7 @@ from components.ui import (
 init_db()
 
 st.set_page_config(
-    page_title="Tanggapan Siswa",
+    page_title="Uji Hipotesis",
     page_icon="📝",
     layout="wide"
 )
@@ -29,8 +29,8 @@ role_navigation()
 nama_siswa = st.session_state.get("nama_pengguna", "")
 
 page_title(
-    "📝 Klaim Ilmiah Siswa",
-    "Susun hasil investigasi dalam bentuk rumusan masalah, dugaan awal, pola data, dan klaim ilmiah berbasis bukti."
+    "📝 Uji Hipotesis dan Kesimpulan",
+    "Gunakan data simulasi dan materi pendukung untuk menguji hipotesis, menyusun kesimpulan, dan menentukan tindakan nyata."
 )
 
 materi_sudah = is_progress_done(nama_siswa, "materi_dibaca")
@@ -45,8 +45,8 @@ if not simulasi_sudah or hasil is None:
     info_card(
         "Data Simulasi Belum Tersedia",
         """
-        Kamu harus menjalankan dan memilih salah satu simulasi terlebih dahulu sebelum menulis tanggapan.
-        Silakan kembali ke halaman Investigasi Ekosistem, lalu klik tombol **Gunakan Data Ini untuk Klaim Ilmiah** pada salah satu simulasi.
+        Kamu harus merumuskan masalah, menyusun hipotesis, menjalankan simulasi, dan menyimpan data terlebih dahulu.
+        Silakan kembali ke halaman Simulasi Ekosistem, lalu klik tombol Simpan Data untuk Uji Hipotesis.
         """,
         "danger-card"
     )
@@ -66,7 +66,7 @@ info_card(
     "green-card"
 )
 
-section_title("Ringkasan Simulasi")
+section_title("Ringkasan Rencana Investigasi dan Data Simulasi")
 
 row_preview = {
     "jenis_simulasi": hasil["jenis_simulasi"],
@@ -76,30 +76,19 @@ row_preview = {
 
 generic_simulation_result_view(row_preview)
 
-
-
-
-
-section_title("Lembar Klaim Ilmiah")
-
 info_card(
-    "Petunjuk Mengisi Jawaban",
+    "Tahap Akhir Penyelidikan",
     """
-    Tulis seperti laporan investigasi singkat. Jangan menyalin teks pada halaman simulasi.
-    Gunakan data yang dipilih untuk membangun klaim: apa pernyataan ilmiahmu, bukti datanya apa,
-    dan alasan ekologinya bagaimana.
+    Bandingkan hipotesis awal dengan data simulasi. Jika perlu, buka kembali materi ekosistem
+    sebagai bahan konsep untuk memperkuat alasan ilmiah sebelum menulis kesimpulan.
     """,
-    "blue-card"
+    "yellow-card"
 )
 
-st.markdown(
-    """
-    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:16px; margin:6px 0 20px 0;">
-        <b>Struktur jawaban:</b> Rumusan masalah → Dugaan awal → Pola data → Klaim, bukti, alasan, dan implikasi.
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+if st.button("📘 Buka Materi Pendukung", key="materi_dari_tanggapan"):
+    st.switch_page("pages/2_Materi_Ekosistem.py")
+
+section_title("Uji Hipotesis, Kesimpulan, dan Tindakan Nyata")
 
 questions = get_guided_questions(jenis_simulasi)
 
@@ -108,37 +97,29 @@ form_key = f"form_tanggapan_{jenis_simulasi.replace(' ', '_').replace(':', '').r
 with st.form(key=form_key):
     jawaban_1 = st.text_area(
         questions["q1"],
-        placeholder=questions.get("p1", "Rumuskan masalah penyelidikan secara mandiri."),
-        height=110,
         key=f"jawaban_1_{form_key}"
     )
 
     jawaban_2 = st.text_area(
         questions["q2"],
-        placeholder=questions.get("p2", "Tuliskan hipotesis dan alasan ilmiahnya."),
-        height=110,
         key=f"jawaban_2_{form_key}"
     )
 
     jawaban_3 = st.text_area(
         questions["q3"],
-        placeholder=questions.get("p3", "Analisis data dan tentukan apakah hipotesis didukung."),
-        height=140,
         key=f"jawaban_3_{form_key}"
     )
 
     kesimpulan = st.text_area(
         questions["q4"],
-        placeholder=questions.get("p4", "Tuliskan kesimpulan berbasis bukti."),
-        height=130,
         key=f"kesimpulan_{form_key}"
     )
 
-    submit = st.form_submit_button("Kirim Tanggapan")
+    submit = st.form_submit_button("Kirim Hasil Penyelidikan")
 
     if submit:
         if not jawaban_1 or not jawaban_2 or not jawaban_3 or not kesimpulan:
-            st.error("Semua kolom perlu diisi agar alur guided inquiry lengkap.")
+            st.error("Semua kolom jawaban harus diisi.")
         else:
             data = {
                 "id_tanggapan": datetime.now().strftime("%Y%m%d%H%M%S%f"),
@@ -157,10 +138,10 @@ with st.form(key=form_key):
             update_progress(nama_siswa, "tanggapan_dikirim")
 
             info_card(
-                "Klaim Ilmiah Berhasil Dikirim",
+                "Tanggapan Berhasil Dikirim",
                 """
-                Jawaban kamu sudah tersimpan. Guru dapat membaca rumusan masalah,
-                dugaan awal, analisis pola data, dan klaim ilmiah yang kamu tulis.
+                Hasil penyelidikan kamu sudah tersimpan. Jawaban ini memuat uji hipotesis,
+                kesimpulan ilmiah, dan tindakan nyata. Silakan menunggu feedback dari guru.
                 """,
                 "green-card"
             )

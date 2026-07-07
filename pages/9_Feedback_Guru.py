@@ -34,7 +34,7 @@ nama_guru = st.session_state.get("nama_pengguna", "")
 
 page_title(
     "✍️ Feedback Guru",
-    "Guru memberikan feedback terhadap jawaban siswa berdasarkan sintaks guided inquiry/inkuiri terbimbing."
+    "Guru memberikan feedback terhadap literasi sains dan sikap peduli lingkungan siswa."
 )
 
 info_card(
@@ -122,7 +122,7 @@ else:
             df_tanggapan["id_tanggapan"].astype(str) == id_terpilih
         ].iloc[0]
 
-        section_title("Detail Tanggapan Siswa")
+        section_title("Detail Hasil Penyelidikan Siswa")
 
         feedback_status_card(data_terpilih["status_feedback"])
 
@@ -201,7 +201,7 @@ else:
             if submit:
                 if not feedback_literasi or not feedback_sikap:
                     st.error(
-                        "Feedback terhadap jawaban guided inquiry siswa harus diisi."
+                        "Feedback literasi sains dan feedback sikap peduli lingkungan harus diisi."
                     )
                 else:
                     isi_feedback = (
