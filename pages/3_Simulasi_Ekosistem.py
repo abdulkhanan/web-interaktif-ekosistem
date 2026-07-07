@@ -557,47 +557,40 @@ with tab1:
             hasil = hitung_pencemaran_sungai(tingkat_limbah)
             df_tren = pd.DataFrame(buat_tren_pencemaran_sungai(tingkat_limbah))
 
-            st.markdown("### Ringkasan Hasil Simulasi")
+            st.markdown("### Hasil Pengamatan")
             status_pencemaran_card(hasil)
 
-            col_g1, col_g2 = st.columns(2)
+            tampilkan_grafik_kurva(
+                df=df_tren,
+                x_col="Waktu (hari)",
+                y_cols=[
+                    "Indeks Limbah",
+                    "Kualitas Air",
+                    "Indeks DO",
+                    "Populasi Ikan",
+                    "Indeks Invertebrata"
+                ],
+                warna_map={
+                    "Indeks Limbah": "#ef4444",
+                    "Kualitas Air": "#10b981",
+                    "Indeks DO": "#0284c7",
+                    "Populasi Ikan": "#8b5cf6",
+                    "Indeks Invertebrata": "#eab308"
+                },
+                judul="Tren Parameter Ekosistem Sungai dari Waktu ke Waktu",
+                ylabel="Nilai Indeks"
+            )
 
-            with col_g1:
-                tampilkan_grafik_kurva(
-                    df=df_tren,
-                    x_col="Waktu (hari)",
-                    y_cols=["Indeks Limbah", "Kualitas Air", "Indeks DO"],
-                    warna_map={
-                        "Indeks Limbah": "#ef4444",
-                        "Kualitas Air": "#10b981",
-                        "Indeks DO": "#0284c7"
-                    },
-                    judul="Limbah, Kualitas Air, dan Oksigen",
-                    ylabel="Nilai Indeks"
-                )
-
-            with col_g2:
-                tampilkan_grafik_kurva(
-                    df=df_tren,
-                    x_col="Waktu (hari)",
-                    y_cols=["Populasi Ikan", "Indeks Invertebrata"],
-                    warna_map={
-                        "Populasi Ikan": "#8b5cf6",
-                        "Indeks Invertebrata": "#eab308"
-                    },
-                    judul="Dampak terhadap Organisme Air",
-                    ylabel="Nilai Indeks"
-                )
-
-            tampilkan_arahan_analisis()
-
-            with st.expander("📊 Lihat Data Lengkap Simulasi"):
-                st.dataframe(df_tren, width="stretch", hide_index=True)
+            st.dataframe(df_tren, width="stretch", hide_index=True)
 
             info_card(
                 "Kondisi Ekosistem",
                 hasil["kondisi"],
-                "green-card" if hasil["tingkat_pencemaran"] <= 30 else "yellow-card" if hasil["tingkat_pencemaran"] <= 70 else "danger-card"
+                "green-card"
+                if hasil["tingkat_pencemaran"] <= 30
+                else "yellow-card"
+                if hasil["tingkat_pencemaran"] <= 70
+                else "danger-card"
             )
 
         if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_pencemaran_final"):
@@ -676,32 +669,27 @@ with tab2:
             energi_awal = energi_produsen_normal * (1 - penurunan_produsen / 100)
             hasil = hitung_aliran_energi(energi_awal, efisiensi_transfer)
 
-            st.markdown("### Ringkasan Hasil Simulasi")
+            st.markdown("### Hasil Pengamatan")
             status_rantai_makanan_card(hasil, energi_awal, penurunan_produsen, efisiensi_transfer)
 
             data = pd.DataFrame({
-                "Tingkatan Rantai Makanan": ["Produsen", "Konsumen I", "Konsumen II", "Konsumen III"],
-                "Energi": [hasil["produsen"], hasil["konsumen_1"], hasil["konsumen_2"], hasil["konsumen_3"]]
+                "Tingkatan Rantai Makanan": [
+                    "Produsen",
+                    "Konsumen I",
+                    "Konsumen II",
+                    "Konsumen III"
+                ],
+                "Energi": [
+                    hasil["produsen"],
+                    hasil["konsumen_1"],
+                    hasil["konsumen_2"],
+                    hasil["konsumen_3"]
+                ]
             })
 
-            tampilkan_grafik_batang(
-                data,
-                x_col="Tingkatan Rantai Makanan",
-                y_col="Energi",
-                judul="Aliran Energi pada Tingkat Trofik",
-                ylabel="Energi (kkal)"
-            )
+            st.dataframe(data, width="stretch", hide_index=True)
 
-            tampilkan_arahan_analisis()
-
-            with st.expander("📊 Lihat Data Lengkap Simulasi"):
-                st.dataframe(data, width="stretch", hide_index=True)
-
-            with st.expander("📘 Buka Bantuan Konsep"):
-                st.write(
-                    "Gunakan konsep aliran energi dan piramida energi untuk menjelaskan mengapa energi yang tersedia "
-                    "berubah pada setiap tingkat trofik."
-                )
+            info_card("Keterangan", hasil["keterangan"], "yellow-card")
 
         if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_rantai_final"):
             simpan_hasil_simulasi(
@@ -781,46 +769,91 @@ with tab3:
                 intensitas_panas=intensitas_panas
             ))
 
-            st.markdown("### Ringkasan Hasil Simulasi")
+            st.markdown("### Hasil Pengamatan")
             status_daur_air_card(hasil)
 
-            col_g1, col_g2 = st.columns(2)
-
-            with col_g1:
-                tampilkan_grafik_kurva(
-                    df=df_tren_air,
-                    x_col="Waktu (hari)",
-                    y_cols=["Infiltrasi", "Limpasan Permukaan"],
-                    warna_map={
-                        "Infiltrasi": "#10b981",
-                        "Limpasan Permukaan": "#ef4444"
-                    },
-                    judul="Vegetasi terhadap Air Hujan",
-                    ylabel="Nilai Indeks"
-                )
-
-            with col_g2:
-                tampilkan_grafik_kurva(
-                    df=df_tren_air,
-                    x_col="Waktu (hari)",
-                    y_cols=["CO2 Diserap", "O2 Dihasilkan"],
-                    warna_map={
-                        "CO2 Diserap": "#64748b",
-                        "O2 Dihasilkan": "#22c55e"
-                    },
-                    judul="Vegetasi terhadap CO2 dan O2",
-                    ylabel="Nilai Indeks"
-                )
-
-            tampilkan_arahan_analisis()
-
-            with st.expander("📊 Lihat Data Lengkap Simulasi"):
-                st.dataframe(df_tren_air, width="stretch", hide_index=True)
+            info_card(
+                "Alur Sebab-Akibat",
+                """
+                Curah hujan dan tutupan vegetasi memengaruhi kondisi lingkungan.
+                Jika vegetasi berkurang, akar tumbuhan yang membantu penyerapan air juga berkurang.
+                Akibatnya, infiltrasi menurun dan limpasan permukaan meningkat.
+                Pada saat yang sama, jumlah tumbuhan yang menyerap CO2 dan menghasilkan O2 juga menurun.
+                """,
+                "yellow-card"
+            )
 
             info_card(
-                "Status Ekosistem",
+                "Status",
                 hasil["status"],
-                "green-card" if hasil["status"] == "Baik" else "yellow-card" if hasil["status"] == "Cukup" else "danger-card"
+                "green-card"
+                if hasil["status"] == "Baik"
+                else "yellow-card"
+                if hasil["status"] == "Cukup"
+                else "danger-card"
+            )
+
+            info_card(
+                "Keterangan",
+                hasil["keterangan"],
+                "yellow-card"
+            )
+
+        col_grafik1, col_grafik2 = st.columns(2)
+
+        with col_grafik1:
+            st.markdown("### Grafik 1. Daur Air")
+
+            tampilkan_grafik_kurva(
+                df=df_tren_air,
+                x_col="Waktu (hari)",
+                y_cols=[
+                    "Infiltrasi",
+                    "Limpasan Permukaan"
+                ],
+                warna_map={
+                    "Infiltrasi": "#10b981",
+                    "Limpasan Permukaan": "#ef4444"
+                },
+                judul="Vegetasi terhadap Air Hujan",
+                ylabel="Nilai Indeks"
+            )
+
+            st.info(
+                """
+                Ketika tutupan vegetasi berkurang, infiltrasi menurun dan limpasan permukaan meningkat.
+                """
+            )
+
+        with col_grafik2:
+            st.markdown("### Grafik 2. CO2 dan O2")
+
+            tampilkan_grafik_kurva(
+                df=df_tren_air,
+                x_col="Waktu (hari)",
+                y_cols=[
+                    "CO2 Diserap",
+                    "O2 Dihasilkan"
+                ],
+                warna_map={
+                    "CO2 Diserap": "#64748b",
+                    "O2 Dihasilkan": "#22c55e"
+                },
+                judul="Vegetasi terhadap CO2 dan O2",
+                ylabel="Nilai Indeks"
+            )
+
+            st.info(
+                """
+                Semakin sedikit tutupan vegetasi, semakin rendah CO2 yang diserap dan O2 yang dihasilkan.
+                """
+            )
+
+        with st.expander("📊 Lihat Data Lengkap Simulasi"):
+            st.dataframe(
+                df_tren_air,
+                width="stretch",
+                hide_index=True
             )
 
         if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_daur_air_final"):
@@ -891,46 +924,48 @@ with tab4:
             hasil = hitung_eutrofikasi(kadar_nitrogen, kadar_fosfor)
             df_tren = pd.DataFrame(buat_tren_eutrofikasi(kadar_nitrogen, kadar_fosfor))
 
-            st.markdown("### Ringkasan Hasil Simulasi")
+            st.markdown("### Hasil Pengamatan")
             status_eutrofikasi_card(hasil)
 
-            col_g1, col_g2 = st.columns(2)
+            tampilkan_grafik_kurva(
+                df=df_tren,
+                x_col="Waktu (hari)",
+                y_cols=[
+                    "Zat Hara",
+                    "Pertumbuhan Alga",
+                    "Oksigen Air",
+                    "Organisme Air"
+                ],
+                warna_map={
+                    "Zat Hara": "#eab308",
+                    "Pertumbuhan Alga": "#10b981",
+                    "Oksigen Air": "#0284c7",
+                    "Organisme Air": "#ef4444"
+                },
+                judul="Tren Peningkatan Alga dari Waktu ke Waktu",
+                ylabel="Nilai Parameter"
+            )
 
-            with col_g1:
-                tampilkan_grafik_kurva(
-                    df=df_tren,
-                    x_col="Waktu (hari)",
-                    y_cols=["Zat Hara", "Pertumbuhan Alga"],
-                    warna_map={
-                        "Zat Hara": "#eab308",
-                        "Pertumbuhan Alga": "#10b981"
-                    },
-                    judul="Zat Hara dan Pertumbuhan Alga",
-                    ylabel="Nilai Indeks"
-                )
+            st.dataframe(df_tren, width="stretch", hide_index=True)
 
-            with col_g2:
-                tampilkan_grafik_kurva(
-                    df=df_tren,
-                    x_col="Waktu (hari)",
-                    y_cols=["Oksigen Air", "Organisme Air"],
-                    warna_map={
-                        "Oksigen Air": "#0284c7",
-                        "Organisme Air": "#ef4444"
-                    },
-                    judul="Oksigen dan Organisme Air",
-                    ylabel="Nilai Indeks"
-                )
-
-            tampilkan_arahan_analisis()
-
-            with st.expander("📊 Lihat Data Lengkap Simulasi"):
-                st.dataframe(df_tren, width="stretch", hide_index=True)
+            info_card(
+                "Status Peningkatan Alga",
+                hasil["status_eutrofikasi"],
+                "green-card"
+                if hasil["indeks_nutrien"] <= 35
+                else "yellow-card"
+                if hasil["indeks_nutrien"] <= 70
+                else "danger-card"
+            )
 
             info_card(
                 "Kondisi Ekosistem",
                 hasil["kondisi"],
-                "green-card" if hasil["indeks_nutrien"] <= 35 else "yellow-card" if hasil["indeks_nutrien"] <= 70 else "danger-card"
+                "green-card"
+                if hasil["indeks_nutrien"] <= 35
+                else "yellow-card"
+                if hasil["indeks_nutrien"] <= 70
+                else "danger-card"
             )
 
         if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_alga_final"):

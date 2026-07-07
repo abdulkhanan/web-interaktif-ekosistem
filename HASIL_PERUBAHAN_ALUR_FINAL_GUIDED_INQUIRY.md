@@ -94,3 +94,8 @@ Perubahan utama:
   - `kesimpulan`
 - Data tambahan rumusan masalah dan hipotesis disimpan di dalam JSON `input_simulasi`.
 - Semua file Python sudah dicek kompilasi dan tidak ada error sintaks.
+
+
+## Revisi Tambahan
+
+Bagian **Ringkasan Hasil Simulasi** pada halaman simulasi telah dikembalikan seperti tampilan pada `awal.zip`, yaitu menggunakan judul **Hasil Pengamatan**, grafik/tabel langsung tampil, dan susunan status/keterangan mengikuti dokumen awal. Alur guided inquiry final tetap dipertahankan.
