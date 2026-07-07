@@ -1,6 +1,7 @@
 import pandas as pd
 from datetime import datetime
 from database.connection import get_supabase_client
+from modules.security import hash_password
 
 
 VALID_ROLES = ["admin", "guru", "siswa"]
@@ -52,15 +53,33 @@ def get_user_by_email(email):
     if not email:
         return None
 
-    response = (
-        client()
-        .table("users")
-        .select("id_user,nama,email,google_sub,role,kelas,status,created_at,updated_at")
-        .eq("email", email)
-        .limit(1)
-        .execute()
-    )
-    return _first(_data(response))
+    fields_with_password = "id_user,nama,email,google_sub,role,kelas,status,password_hash,created_at,updated_at"
+    fields_without_password = "id_user,nama,email,google_sub,role,kelas,status,created_at,updated_at"
+
+    try:
+        response = (
+            client()
+            .table("users")
+            .select(fields_with_password)
+            .eq("email", email)
+            .limit(1)
+            .execute()
+        )
+        return _first(_data(response))
+    except Exception:
+        # Kompatibilitas jika kolom password_hash belum ditambahkan di Supabase.
+        response = (
+            client()
+            .table("users")
+            .select(fields_without_password)
+            .eq("email", email)
+            .limit(1)
+            .execute()
+        )
+        user = _first(_data(response))
+        if user is not None:
+            user["password_hash"] = None
+        return user
 
 
 def get_or_create_google_user(profile, default_admin_email=""):
@@ -106,7 +125,7 @@ def get_or_create_google_user(profile, default_admin_email=""):
     return get_user_by_email(email)
 
 
-def create_user_manual(nama, email, role, kelas="", status="aktif"):
+def create_user_manual(nama, email, role, kelas="", status="aktif", password=""):
     nama = _normalize_text(nama)
     email = _normalize_email(email)
     kelas = _normalize_text(kelas)
@@ -121,6 +140,8 @@ def create_user_manual(nama, email, role, kelas="", status="aktif"):
         raise ValueError("Role tidak valid.")
     if status not in VALID_STATUS:
         raise ValueError("Status tidak valid.")
+    if get_user_by_email(email) is not None:
+        raise ValueError("Email sudah terdaftar.")
 
     payload = {
         "nama": nama,
@@ -132,18 +153,43 @@ def create_user_manual(nama, email, role, kelas="", status="aktif"):
         "created_at": now(),
         "updated_at": now(),
     }
+
+    if password:
+        payload["password_hash"] = hash_password(password)
+
     client().table("users").insert(payload).execute()
 
 
 def get_users_df():
-    response = (
-        client()
-        .table("users")
-        .select("id_user,nama,email,role,kelas,status,created_at,updated_at")
-        .order("created_at", desc=True)
-        .execute()
-    )
-    return _df(_data(response), ["id_user", "nama", "email", "role", "kelas", "status", "created_at", "updated_at"])
+    columns = ["id_user", "nama", "email", "role", "kelas", "status", "login_password", "created_at", "updated_at"]
+
+    try:
+        response = (
+            client()
+            .table("users")
+            .select("id_user,nama,email,role,kelas,status,password_hash,created_at,updated_at")
+            .order("created_at", desc=True)
+            .execute()
+        )
+        df = _df(_data(response), ["id_user", "nama", "email", "role", "kelas", "status", "password_hash", "created_at", "updated_at"])
+        if df.empty:
+            return pd.DataFrame(columns=columns)
+        df["login_password"] = df["password_hash"].apply(lambda value: "tersedia" if str(value or "").strip() else "belum")
+        return df.drop(columns=["password_hash"], errors="ignore")
+    except Exception:
+        # Kompatibilitas jika kolom password_hash belum ditambahkan di Supabase.
+        response = (
+            client()
+            .table("users")
+            .select("id_user,nama,email,role,kelas,status,created_at,updated_at")
+            .order("created_at", desc=True)
+            .execute()
+        )
+        df = _df(_data(response), ["id_user", "nama", "email", "role", "kelas", "status", "created_at", "updated_at"])
+        if df.empty:
+            return pd.DataFrame(columns=columns)
+        df["login_password"] = "belum"
+        return df
 
 
 def update_user_role_status(id_user, role, status, kelas=""):
@@ -171,6 +217,16 @@ def update_user_name(id_user, nama_baru):
 
     client().table("users").update({
         "nama": nama_baru,
+        "updated_at": now(),
+    }).eq("id_user", int(id_user)).execute()
+
+
+def update_user_password(id_user, password):
+    if not password:
+        raise ValueError("Password tidak boleh kosong.")
+
+    client().table("users").update({
+        "password_hash": hash_password(password),
         "updated_at": now(),
     }).eq("id_user", int(id_user)).execute()
 

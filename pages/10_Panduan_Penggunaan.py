@@ -97,8 +97,8 @@ def tampilkan_panduan_siswa():
     info_card(
         "1. Login sebagai Siswa",
         """
-        Siswa masuk melalui halaman login Google. Sistem akan membaca email siswa,
-        kemudian memberikan akses jika akun siswa sudah aktif pada database.
+        Siswa masuk melalui halaman login menggunakan email dan password yang dibuat admin/guru.
+        Jika login Google tersedia, siswa juga dapat menggunakan akun Google yang sudah aktif pada database.
         """,
         "green-card"
     )
@@ -182,7 +182,7 @@ def tampilkan_panduan_siswa():
     info_card(
         "Gunakan Akun yang Sama",
         """
-        Gunakan akun Google yang sama setiap kali login. Sistem membaca progres belajar,
+        Gunakan akun email/password atau akun Google yang sama setiap kali login. Sistem membaca progres belajar,
         tanggapan, dan feedback berdasarkan identitas akun yang aktif pada database.
         """,
         "blue-card"
@@ -258,7 +258,7 @@ def tampilkan_panduan_guru():
     info_card(
         "1. Login sebagai Guru",
         """
-        Guru masuk melalui halaman login Google. Nama guru dan role akses akan diambil
+        Guru masuk melalui halaman login menggunakan email/password atau Google. Nama guru dan role akses akan diambil
         dari data akun yang terdaftar pada database.
         """,
         "yellow-card"

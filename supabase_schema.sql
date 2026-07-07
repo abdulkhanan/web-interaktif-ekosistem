@@ -6,6 +6,7 @@ create table if not exists public.users (
     nama text not null,
     email text not null unique,
     google_sub text unique,
+    password_hash text,
     role text not null check (role in ('admin', 'guru', 'siswa')),
     kelas text default '',
     status text default 'aktif' check (status in ('aktif', 'nonaktif')),
@@ -61,6 +62,10 @@ create index if not exists idx_feedback_nama_siswa on public.feedback_guru(nama_
 create index if not exists idx_progress_siswa_nama on public.progress_siswa(nama);
 create index if not exists idx_progress_materi_nama on public.progress_materi(nama);
 
--- Karena aplikasi ini memakai Google OAuth custom dan query server-side dari Streamlit,
+-- Jalankan baris ini juga pada database lama yang tabel users-nya sudah pernah dibuat
+-- agar login email & password bisa berjalan tanpa membuat ulang tabel.
+alter table public.users add column if not exists password_hash text;
+
+-- Karena aplikasi ini memakai Google OAuth custom/email-password dan query server-side dari Streamlit,
 -- koneksi paling sederhana memakai secret/service key di Streamlit Secrets.
 -- Jangan menaruh key tersebut di repository publik.

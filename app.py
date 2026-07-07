@@ -2,7 +2,7 @@ import os
 import streamlit as st
 
 from database.init_db import init_db
-from modules.auth import init_auth, handle_google_callback, make_google_login_url
+from modules.auth import init_auth, handle_google_callback, make_google_login_url, login_with_email_password, is_google_login_available
 
 from components.ui import global_page_loader
 
@@ -215,6 +215,63 @@ def apply_login_ui_style():
                 box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
             }
 
+            div[data-testid="stForm"] {
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+
+            div[data-testid="stTextInput"] label,
+            div[data-testid="stTextInput"] label p {
+                color: #334155 !important;
+                font-weight: 800 !important;
+                font-size: 14px !important;
+            }
+
+            div[data-testid="stTextInput"] input {
+                background-color: #ffffff !important;
+                color: #0f172a !important;
+                border: 1.5px solid #e2e8f0 !important;
+                border-radius: 14px !important;
+                min-height: 46px !important;
+            }
+
+            div[data-testid="stTextInput"] input:focus {
+                border-color: #0284c7 !important;
+                box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12) !important;
+            }
+
+            .stFormSubmitButton button {
+                width: 100% !important;
+                border-radius: 14px !important;
+                min-height: 46px !important;
+                font-size: 15px !important;
+                font-weight: 800 !important;
+                color: #ffffff !important;
+                border: none !important;
+                background: linear-gradient(135deg, #059669 0%, #0284c7 100%) !important;
+                box-shadow: 0 8px 20px rgba(5, 150, 105, 0.24) !important;
+            }
+
+            .login-divider {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin: 18px 0;
+                color: #94a3b8;
+                font-size: 13px;
+                font-weight: 700;
+            }
+
+            .login-divider::before,
+            .login-divider::after {
+                content: "";
+                flex: 1;
+                height: 1px;
+                background: #e2e8f0;
+            }
+
             .login-footnote {
                 margin-top: 20px;
                 font-size: 13px;
@@ -290,7 +347,7 @@ def apply_login_ui_style():
     )
 
 
-def render_login_page(google_login_url):
+def render_login_page(google_login_url=None):
     with st.container(key="login_shell"):
         col_image, col_login = st.columns([1.38, 0.92], gap=None)
 
@@ -325,16 +382,36 @@ def render_login_page(google_login_url):
                     </div>
 
                     <div class="login-subtitle">
-                        Masuk menggunakan akun Google untuk melanjutkan pembelajaran.
+                        Masuk menggunakan email dan password yang dibuat admin/guru. Login Google tetap bisa dipakai jika konfigurasinya tersedia.
                     </div>
                     """,
                     unsafe_allow_html=True
                 )
 
-                st.link_button(
-                    "Masuk dengan Google",
-                    google_login_url,
-                    use_container_width=True
+                with st.form("form_login_email_password"):
+                    email = st.text_input("Email", placeholder="contoh: validator1@email.com")
+                    password = st.text_input("Password", type="password", placeholder="Masukkan password")
+                    submit = st.form_submit_button("Masuk dengan Email & Password", use_container_width=True)
+
+                    if submit:
+                        success, message = login_with_email_password(email, password)
+                        if success:
+                            st.success(message)
+                            st.rerun()
+                        else:
+                            st.error(message)
+
+                if google_login_url:
+                    st.markdown('<div class="login-divider">atau</div>', unsafe_allow_html=True)
+                    st.link_button(
+                        "Masuk dengan Google",
+                        google_login_url,
+                        use_container_width=True
+                    )
+
+                st.markdown(
+                    '<div class="login-footnote">Untuk validasi media, admin dapat membuat akun validator pada menu Daftar Pengguna.</div>',
+                    unsafe_allow_html=True
                 )
 
 
@@ -351,5 +428,5 @@ handle_google_callback()
 if st.session_state.get("logged_in"):
     redirect_by_role()
 
-google_login_url = make_google_login_url()
+google_login_url = make_google_login_url() if is_google_login_available() else None
 render_login_page(google_login_url)

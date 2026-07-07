@@ -1,7 +1,8 @@
 import streamlit as st
 from authlib.integrations.requests_client import OAuth2Session
 
-from database.queries import get_or_create_google_user
+from database.queries import get_or_create_google_user, get_user_by_email
+from modules.security import verify_password
 
 
 GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
@@ -110,6 +111,51 @@ def init_auth():
             pass
 
 
+def set_login_session(user):
+    st.session_state["logged_in"] = True
+    st.session_state["logout_triggered"] = False
+    st.session_state["id_user"] = user["id_user"]
+    st.session_state["nama_pengguna"] = user["nama"]
+    st.session_state["email"] = user["email"]
+    st.session_state["role"] = user["role"]
+    st.session_state["kelas"] = user.get("kelas", "") or ""
+
+
+def login_with_email_password(email, password):
+    email = (email or "").strip().lower()
+    password = password or ""
+
+    if not email or not password:
+        return False, "Email dan password wajib diisi."
+
+    user = get_user_by_email(email)
+
+    if user is None:
+        return False, "Email atau password salah."
+
+    if str(user.get("status", "")).lower() != "aktif":
+        return False, "Akun ditemukan, tetapi statusnya belum aktif. Silakan hubungi admin/guru."
+
+    password_hash = user.get("password_hash")
+    if not password_hash:
+        return False, "Akun ini belum memiliki password. Admin dapat menambahkan password pada menu Daftar Pengguna."
+
+    if not verify_password(password, password_hash):
+        return False, "Email atau password salah."
+
+    set_login_session(user)
+    return True, "Login berhasil."
+
+
+def is_google_login_available():
+    try:
+        config = st.secrets["google_oauth"]
+        required_keys = ["client_id", "client_secret", "redirect_uri"]
+        return all(str(config.get(key, "")).strip() for key in required_keys)
+    except Exception:
+        return False
+
+
 def get_google_config():
     try:
         config = st.secrets["google_oauth"]
@@ -196,13 +242,7 @@ def handle_google_callback():
             st.query_params.clear()
             st.stop()
 
-        st.session_state["logged_in"] = True
-        st.session_state["logout_triggered"] = False
-        st.session_state["id_user"] = user["id_user"]
-        st.session_state["nama_pengguna"] = user["nama"]
-        st.session_state["email"] = user["email"]
-        st.session_state["role"] = user["role"]
-        st.session_state["kelas"] = user.get("kelas", "")
+        set_login_session(user)
 
         st.query_params.clear()
         st.rerun()
@@ -256,9 +296,9 @@ def require_role(allowed_roles):
         from components.ui import render_auth_warning
         render_auth_warning(
             title="Akses Dibatasi",
-            message="Silakan login terlebih dahulu menggunakan akun Google untuk mengakses fitur pembelajaran.",
+            message="Silakan login terlebih dahulu menggunakan email dan password, atau akun Google jika tersedia, untuk mengakses fitur pembelajaran.",
             icon="🔐",
-            button_label="Masuk dengan Google",
+            button_label="Masuk",
             target_page="app.py"
         )
         st.stop()

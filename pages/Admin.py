@@ -17,7 +17,7 @@ plt.rcParams.update({
 import streamlit as st
 
 from database.init_db import init_db
-from database.queries import get_users_df, get_user_counts, get_dashboard_counts_with_status, get_progress_siswa_df, update_user_name, update_user_data as update_user_data_db
+from database.queries import get_users_df, get_user_counts, get_dashboard_counts_with_status, get_progress_siswa_df, update_user_name, update_user_data as update_user_data_db, create_user_manual, update_user_password
 from modules.auth import require_role
 from components.ui import load_css
 
@@ -1527,6 +1527,38 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
         unsafe_allow_html=True
     )
 
+    with st.expander("➕ Tambah Akun Email & Password untuk Validasi", expanded=False):
+        with st.form("form_tambah_pengguna_manual"):
+            col_a, col_b = st.columns(2)
+
+            with col_a:
+                nama_baru = st.text_input("Nama pengguna", placeholder="Contoh: Validator 1")
+                email_baru = st.text_input("Email", placeholder="validator1@email.com")
+                password_baru = st.text_input("Password", type="password", placeholder="Minimal 6 karakter")
+
+            with col_b:
+                role_baru = st.selectbox("Role", ["siswa", "guru", "admin"], index=0)
+                status_baru = st.selectbox("Status", ["aktif", "nonaktif"], index=0)
+                kelas_baru = st.text_input("Kelas / Keterangan", placeholder="Contoh: Validator Media")
+
+            tambah = st.form_submit_button("Buat Akun", use_container_width=True)
+
+            if tambah:
+                try:
+                    create_user_manual(
+                        nama=nama_baru,
+                        email=email_baru,
+                        role=role_baru,
+                        kelas=kelas_baru,
+                        status=status_baru,
+                        password=password_baru,
+                    )
+                    st.success("Akun email & password berhasil dibuat.")
+                    st.rerun()
+                except Exception as error:
+                    st.error(f"Gagal membuat akun: {error}")
+                    st.info("Pastikan kolom password_hash sudah ditambahkan di tabel users Supabase. Jalankan SQL migrasi pada file supabase_schema.sql bila belum.")
+
     if df_users.empty:
         st.info("Belum ada pengguna yang terdaftar.")
 
@@ -1582,6 +1614,7 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
                         '<div class="user-field-label">Pengguna</div>'
                         f'<div class="user-name">{nama}</div>'
                         f'<div class="user-email">{email}</div>'
+                        f'<div class="user-email">Login password: {escape(str(row.get("login_password", "belum"))).capitalize()}</div>'
                         '</div>'
                         '</div>'
                         '<div>'
@@ -1630,6 +1663,12 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
                         disabled=True
                     )
 
+                    password_baru = st.text_input(
+                        "Password baru (opsional)",
+                        type="password",
+                        help="Isi hanya jika ingin membuat/mengganti password akun ini. Minimal 6 karakter."
+                    )
+
                     role_options = ["admin", "guru", "siswa"]
                     role_lama = str(selected_user["role"]).lower()
 
@@ -1673,6 +1712,9 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
                                 role_baru,
                                 status_baru
                             )
+
+                            if password_baru.strip():
+                                update_user_password(int(selected_user["id_user"]), password_baru.strip())
 
                             st.success("Data pengguna berhasil diperbarui.")
                             del st.session_state["selected_edit_user_id"]
