@@ -159,7 +159,7 @@ def tampilkan_panduan_siswa():
     section_title("Urutan Penggunaan untuk Siswa")
 
     info_card(
-        "Alur Belajar Berbasis Guided Inquiry",
+        "Alur Belajar Berbasis Guided Inquiry yang Ramah Siswa",
         """
         Siswa memulai kegiatan belajar dengan mengamati fenomena pada halaman simulasi.
         Setelah itu, siswa menjalankan simulasi untuk memperoleh data dan menggunakan materi ekosistem
@@ -297,19 +297,18 @@ def tampilkan_panduan_guru():
         "yellow-card"
     )
 
-    section_title("Alur Guided Inquiry yang Dipantau Guru")
+    section_title("Alur Guided Inquiry yang Disederhanakan")
 
     st.markdown(
         """
         | Tahap Guided Inquiry | Implementasi di Web |
         |---|---|
-        | Orientasi masalah | Siswa mengamati fenomena atau masalah pada halaman simulasi |
-        | Pertanyaan pemantik | Siswa membaca pertanyaan yang berkaitan dengan fenomena ekosistem |
-        | Penyelidikan | Siswa menjalankan simulasi dengan mengatur variabel yang tersedia |
-        | Pengumpulan data | Siswa mengamati hasil perubahan data dari simulasi |
-        | Penguatan konsep | Siswa menggunakan materi ekosistem sebagai bahan penyelidikan |
-        | Analisis data | Siswa menjawab pertanyaan pada halaman Tanggapan Siswa |
-        | Kesimpulan | Siswa menuliskan kesimpulan berdasarkan hasil simulasi dan materi pendukung |
+        | Orientasi / Amati | Siswa mengamati fenomena lingkungan pada halaman simulasi |
+        | Merumuskan masalah / Tanya | Siswa menuliskan pertanyaan penyelidikan dengan kalimat bantu |
+        | Merumuskan hipotesis / Duga | Siswa menulis dugaan awal dengan pola “Jika..., maka...” |
+        | Mengumpulkan data | Siswa menjalankan simulasi, mengubah variabel, dan membaca grafik/tabel hasil pengamatan |
+        | Menganalisis/menguji hipotesis | Siswa membandingkan data hasil simulasi dengan hipotesis yang telah dibuat |
+        | Menarik kesimpulan | Siswa menuliskan kesimpulan berdasarkan data, bukan sekadar pendapat |
         | Feedback dan refleksi | Guru memberi feedback, lalu siswa menggunakan feedback untuk memperbaiki pemahaman |
         """
     )

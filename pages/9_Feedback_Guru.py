@@ -34,7 +34,7 @@ nama_guru = st.session_state.get("nama_pengguna", "")
 
 page_title(
     "✍️ Feedback Guru",
-    "Guru memberikan feedback terhadap literasi sains dan sikap peduli lingkungan siswa."
+    "Guru memberikan feedback terhadap jawaban siswa berdasarkan sintaks guided inquiry/inkuiri terbimbing."
 )
 
 info_card(
@@ -201,7 +201,7 @@ else:
             if submit:
                 if not feedback_literasi or not feedback_sikap:
                     st.error(
-                        "Feedback literasi sains dan feedback sikap peduli lingkungan harus diisi."
+                        "Feedback terhadap jawaban guided inquiry siswa harus diisi."
                     )
                 else:
                     isi_feedback = (

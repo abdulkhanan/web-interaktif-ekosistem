@@ -1202,60 +1202,65 @@ def generic_simulation_result_view(row):
 
 
 def get_guided_questions(jenis_simulasi):
-    if jenis_simulasi == "Pencemaran Sungai Akibat Limbah Pabrik":
-        return {
-            "q1": "1. Jelaskan apa yang terjadi pada ekosistem sungai ketika limbah pabrik masuk ke air.",
-            "q2": "2. Berdasarkan grafik atau tabel, data apa yang menunjukkan bahwa kondisi sungai mulai terganggu?",
-            "q3": "3. Mengapa penurunan oksigen air dapat mengganggu ikan dan organisme air lainnya?",
-            "q4": "4. Tuliskan kesimpulan dan satu tindakan nyata untuk mengurangi pencemaran sungai."
+    """Pertanyaan dibuat ramah siswa, tetapi tetap mewakili sintaks guided inquiry."""
+    data = {
+        "Pencemaran Sungai Akibat Limbah Pabrik": {
+            "variabel": "tingkat limbah industri",
+            "dampak": "kualitas air, oksigen terlarut, populasi ikan, dan organisme air",
+            "aksi": "mengurangi pembuangan limbah ke sungai"
+        },
+        "Rantai Makanan Saat Kemarau": {
+            "variabel": "berkurangnya rumput/produsen saat kemarau",
+            "dampak": "energi pada konsumen I, konsumen II, dan konsumen III",
+            "aksi": "menjaga ketersediaan tumbuhan/produsen dalam ekosistem"
+        },
+        "Daur Air Saat Pohon Berkurang": {
+            "variabel": "berkurangnya pohon/tutupan vegetasi",
+            "dampak": "infiltrasi, limpasan permukaan, CO2 yang diserap, dan O2 yang dihasilkan",
+            "aksi": "menanam dan menjaga pohon di lingkungan sekitar"
+        },
+        "Daur Air, Karbon Dioksida, dan Oksigen Saat Pohon Berkurang": {
+            "variabel": "berkurangnya pohon/tutupan vegetasi",
+            "dampak": "infiltrasi, limpasan permukaan, CO2 yang diserap, dan O2 yang dihasilkan",
+            "aksi": "menanam dan menjaga pohon di lingkungan sekitar"
+        },
+        "Peningkatan Alga Akibat Pupuk Berlebih": {
+            "variabel": "nitrogen dan fosfor dari pupuk berlebih",
+            "dampak": "pertumbuhan alga, oksigen air, dan organisme air",
+            "aksi": "menggunakan pupuk secara bijak agar tidak terbawa ke perairan"
         }
-
-    if jenis_simulasi == "Rantai Makanan Saat Kemarau":
-        return {
-            "q1": "1. Jelaskan apa yang terjadi pada rantai makanan ketika rumput berkurang saat kemarau.",
-            "q2": "2. Berdasarkan data simulasi, tingkatan rantai makanan mana yang memiliki energi paling besar dan paling kecil?",
-            "q3": "3. Mengapa berkurangnya produsen dapat memengaruhi konsumen dalam ekosistem?",
-            "q4": "4. Tuliskan kesimpulan dan satu tindakan nyata untuk menjaga keseimbangan ekosistem."
-        }
-
-    if jenis_simulasi == "Daur Air Saat Pohon Berkurang":
-        return {
-            "q1": "1. Jelaskan apa yang terjadi pada daur air ketika jumlah pohon berkurang.",
-            "q2": "2. Berdasarkan data simulasi, bagaimana tutupan vegetasi memengaruhi infiltrasi dan limpasan permukaan?",
-            "q3": "3. Mengapa keberadaan pohon penting bagi keseimbangan air di lingkungan?",
-            "q4": "4. Tuliskan kesimpulan dan satu tindakan nyata untuk menjaga keseimbangan daur air."
-        }
-
-    if jenis_simulasi == "Peningkatan Alga Akibat Pupuk Berlebih":
-        return {
-            "q1": "1. Jelaskan apa yang terjadi ketika pupuk berlebih masuk ke sungai atau danau.",
-            "q2": "2. Berdasarkan grafik atau tabel, data apa yang menunjukkan bahwa alga tumbuh terlalu banyak?",
-            "q3": "3. Mengapa pertumbuhan alga yang berlebihan dapat mengganggu organisme air?",
-            "q4": "4. Tuliskan kesimpulan dan satu tindakan nyata untuk mengurangi masuknya pupuk berlebih ke perairan."
-        }
+    }
+    item = data.get(jenis_simulasi, {
+        "variabel": "variabel yang kamu ubah",
+        "dampak": "hasil yang muncul pada tabel/grafik",
+        "aksi": "menjaga keseimbangan ekosistem"
+    })
 
     return {
-        "q1": "1. Jelaskan fenomena lingkungan yang terjadi pada simulasi.",
-        "q2": "2. Jelaskan data penting yang kamu temukan dari grafik atau tabel.",
-        "q3": "3. Mengapa fenomena tersebut perlu diperhatikan?",
-        "q4": "4. Tuliskan kesimpulan dan satu tindakan nyata yang dapat kamu lakukan."
+        "q1": "1. Amati dan buat pertanyaan penyelidikan",
+        "p1": f"Tuliskan dengan pola: Bagaimana pengaruh {item['variabel']} terhadap {item['dampak']}?",
+        "q2": "2. Tulis dugaan awalmu",
+        "p2": f"Tuliskan dengan pola: Jika {item['variabel']} meningkat/berkurang, maka {item['dampak']} akan .... karena ....",
+        "q3": "3. Tulis bukti dari data simulasi",
+        "p3": "Ambil 2–3 data dari tabel/grafik. Lalu tulis apakah data itu sesuai dengan dugaan awalmu.",
+        "q4": "4. Buat kesimpulan dan tindakan nyata",
+        "p4": f"Tuliskan hubungan sebab-akibat yang kamu temukan, lalu tambahkan tindakan nyata, misalnya {item['aksi']}."
     }
 
 
-
 def guided_inquiry_answer_view_generic(row):
-    st.markdown("### Jawaban Literasi Sains dan Sikap Peduli Lingkungan")
+    st.markdown("### Jawaban Penyelidikan Siswa")
 
-    with st.expander("1. Penjelasan Fenomena Ilmiah", expanded=True):
+    with st.expander("1. Amati dan Pertanyaan Penyelidikan", expanded=True):
         st.write(row["jawaban_1"])
 
-    with st.expander("2. Interpretasi Data atau Bukti Simulasi", expanded=True):
+    with st.expander("2. Dugaan Awal / Hipotesis", expanded=True):
         st.write(row["jawaban_2"])
 
-    with st.expander("3. Refleksi Sikap Peduli Lingkungan", expanded=True):
+    with st.expander("3. Bukti Data dan Pencocokan Dugaan", expanded=True):
         st.write(row["jawaban_3"])
 
-    with st.expander("4. Kesimpulan Ilmiah dan Aksi Nyata", expanded=True):
+    with st.expander("4. Kesimpulan dan Tindakan Nyata", expanded=True):
         st.write(row["kesimpulan"])
 
 
