@@ -1,6 +1,12 @@
-# Revisi Penyelarasan Media dengan Guided Inquiry / Inkuiri Terbimbing
+# Revisi Guided Inquiry Level SMA
 
-Revisi ini menyelaraskan media dengan sintaks:
+File ini berisi ringkasan revisi media agar alur pembelajaran lebih sesuai dengan model guided inquiry/inquiry terbimbing untuk siswa SMA.
+
+## Prinsip Revisi
+
+Versi sebelumnya terlalu banyak memberi contoh dan pola kalimat sehingga siswa cenderung tinggal meniru. Pada versi SMA, bantuan dikurangi. Media hanya memberi rambu penyelidikan, sedangkan siswa tetap diminta berpikir mandiri melalui rumusan masalah, hipotesis, analisis data, dan kesimpulan berbasis bukti.
+
+## Sintaks yang Digunakan
 
 1. Orientasi
 2. Merumuskan masalah
@@ -9,39 +15,11 @@ Revisi ini menyelaraskan media dengan sintaks:
 5. Menganalisis/menguji hipotesis
 6. Menarik kesimpulan
 
-## File yang direvisi
+## Perubahan pada Media
 
-### pages/3_Simulasi_Ekosistem.py
-- Menambahkan panduan sintaks guided inquiry pada setiap simulasi.
-- Menambahkan contoh rumusan masalah, contoh hipotesis, data yang perlu diamati, dan cara menguji hipotesis.
-- Mengubah arahan halaman agar siswa tidak hanya menjalankan simulasi, tetapi juga menyiapkan masalah, hipotesis, data, dan uji hipotesis.
-
-### pages/4_Tanggapan_Siswa.py
-- Mengubah instruksi halaman agar jawaban siswa mengikuti guided inquiry.
-- Menambahkan kartu penjelasan alur jawaban: rumusan masalah, hipotesis, data/uji hipotesis, dan kesimpulan.
-
-### components/ui.py
-- Mengubah pertanyaan tanggapan siswa agar sesuai sintaks guided inquiry.
-- Mengubah tampilan jawaban guru menjadi:
-  1. Rumusan Masalah
-  2. Hipotesis
-  3. Data Hasil Pengamatan dan Uji Hipotesis
-  4. Kesimpulan dan Aksi Nyata
-- Memperbaiki kecocokan nama simulasi Daur Air, CO2, dan O2 agar tidak masuk ke pertanyaan default.
-
-### pages/9_Feedback_Guru.py
-- Menyesuaikan deskripsi feedback guru agar mengacu pada jawaban guided inquiry.
-
-### pages/10_Panduan_Penggunaan.py
-- Mengubah tabel alur guided inquiry agar sesuai dengan sintaks yang digunakan dalam penelitian.
-
-## Catatan
-
-Struktur database tidak diubah agar tetap kompatibel dengan Supabase lama. Kolom jawaban tetap memakai empat kolom utama:
-
-- jawaban_1 = Rumusan masalah
-- jawaban_2 = Hipotesis
-- jawaban_3 = Data hasil pengamatan dan uji hipotesis
-- kesimpulan = Kesimpulan dan aksi nyata
-
-Dengan cara ini, media menjadi lebih sesuai guided inquiry tanpa perlu menjalankan migrasi database baru.
+- Menghapus contoh rumusan masalah dan contoh hipotesis yang terlalu mengarahkan.
+- Mengubah panduan menjadi rambu penyelidikan: konteks, variabel, parameter yang diamati, data bukti, dan konsep ekologi terkait.
+- Mengubah halaman Tanggapan Siswa menjadi Lembar Jawaban Guided Inquiry.
+- Mengubah istilah jawaban menjadi lebih akademik: rumusan masalah, hipotesis dan dasar teori, analisis data dan uji hipotesis, kesimpulan berbasis bukti.
+- Menyesuaikan tombol menjadi “Pilih Hasil Ini untuk Dianalisis”.
+- Mempertahankan struktur database agar kompatibel dengan data lama.

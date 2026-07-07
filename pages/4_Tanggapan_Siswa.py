@@ -30,7 +30,7 @@ nama_siswa = st.session_state.get("nama_pengguna", "")
 
 page_title(
     "📝 Tanggapan Siswa",
-    "Tulis jawaban dengan alur sederhana: pertanyaan penyelidikan, dugaan, bukti data, dan kesimpulan."
+    "Tulis hasil penyelidikan berdasarkan rumusan masalah, hipotesis, analisis data, dan kesimpulan."
 )
 
 materi_sudah = is_progress_done(nama_siswa, "materi_dibaca")
@@ -46,7 +46,7 @@ if not simulasi_sudah or hasil is None:
         "Data Simulasi Belum Tersedia",
         """
         Kamu harus menjalankan dan memilih salah satu simulasi terlebih dahulu sebelum menulis tanggapan.
-        Silakan kembali ke halaman Simulasi Ekosistem, lalu klik tombol **Pilih Hasil Ini untuk Menjawab** pada salah satu simulasi.
+        Silakan kembali ke halaman Simulasi Ekosistem, lalu klik tombol **Pilih Hasil Ini untuk Dianalisis** pada salah satu simulasi.
         """,
         "danger-card"
     )
@@ -80,13 +80,14 @@ generic_simulation_result_view(row_preview)
 
 
 
-section_title("Pertanyaan Tanggapan")
+section_title("Lembar Jawaban Guided Inquiry")
 
 info_card(
     "Petunjuk Mengisi Jawaban",
     """
-    Gunakan bahasa sendiri. Tidak perlu panjang, yang penting jawaban menunjukkan hubungan sebab-akibat.
-    Ikuti pola: **apa yang ditanyakan → apa dugaanmu → data apa buktinya → apa kesimpulannya**.
+    Gunakan bahasa ilmiah yang ringkas. Jawaban tidak perlu menyalin petunjuk;
+    yang dinilai adalah ketepatan rumusan masalah, alasan hipotesis, penggunaan data,
+    dan kesimpulan yang menjawab masalah penyelidikan.
     """,
     "blue-card"
 )
@@ -98,28 +99,28 @@ form_key = f"form_tanggapan_{jenis_simulasi.replace(' ', '_').replace(':', '').r
 with st.form(key=form_key):
     jawaban_1 = st.text_area(
         questions["q1"],
-        placeholder=questions.get("p1", "Tuliskan pertanyaan penyelidikanmu di sini."),
+        placeholder=questions.get("p1", "Rumuskan masalah penyelidikan secara mandiri."),
         height=110,
         key=f"jawaban_1_{form_key}"
     )
 
     jawaban_2 = st.text_area(
         questions["q2"],
-        placeholder=questions.get("p2", "Tuliskan dugaan awalmu di sini."),
+        placeholder=questions.get("p2", "Tuliskan hipotesis dan alasan ilmiahnya."),
         height=110,
         key=f"jawaban_2_{form_key}"
     )
 
     jawaban_3 = st.text_area(
         questions["q3"],
-        placeholder=questions.get("p3", "Tuliskan data penting dan cocokkan dengan dugaanmu."),
+        placeholder=questions.get("p3", "Analisis data dan tentukan apakah hipotesis didukung."),
         height=140,
         key=f"jawaban_3_{form_key}"
     )
 
     kesimpulan = st.text_area(
         questions["q4"],
-        placeholder=questions.get("p4", "Tuliskan kesimpulan dan tindakan nyata."),
+        placeholder=questions.get("p4", "Tuliskan kesimpulan berbasis bukti."),
         height=130,
         key=f"kesimpulan_{form_key}"
     )
@@ -128,7 +129,7 @@ with st.form(key=form_key):
 
     if submit:
         if not jawaban_1 or not jawaban_2 or not jawaban_3 or not kesimpulan:
-            st.error("Semua kolom perlu diisi. Gunakan kalimat bantu yang tersedia kalau masih bingung.")
+            st.error("Semua kolom perlu diisi agar alur guided inquiry lengkap.")
         else:
             data = {
                 "id_tanggapan": datetime.now().strftime("%Y%m%d%H%M%S%f"),
@@ -149,8 +150,8 @@ with st.form(key=form_key):
             info_card(
                 "Tanggapan Berhasil Dikirim",
                 """
-                Tanggapan kamu sudah tersimpan. Guru dapat membaca pertanyaan penyelidikan,
-                dugaan, bukti data, dan kesimpulan yang kamu tulis.
+                Tanggapan kamu sudah tersimpan. Guru dapat membaca rumusan masalah,
+                hipotesis, analisis data, dan kesimpulan yang kamu tulis.
                 """,
                 "green-card"
             )

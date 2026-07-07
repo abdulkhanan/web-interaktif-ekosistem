@@ -1202,65 +1202,59 @@ def generic_simulation_result_view(row):
 
 
 def get_guided_questions(jenis_simulasi):
-    """Pertanyaan dibuat ramah siswa, tetapi tetap mewakili sintaks guided inquiry."""
+    """Pertanyaan guided inquiry untuk siswa SMA: terbuka, analitis, dan berbasis data."""
     data = {
         "Pencemaran Sungai Akibat Limbah Pabrik": {
-            "variabel": "tingkat limbah industri",
-            "dampak": "kualitas air, oksigen terlarut, populasi ikan, dan organisme air",
-            "aksi": "mengurangi pembuangan limbah ke sungai"
+            "fokus": "pencemaran air dan perubahan komponen biotik-abiotik",
+            "konsep": "kadar oksigen terlarut, kualitas air, toleransi organisme, dan keseimbangan ekosistem"
         },
         "Rantai Makanan Saat Kemarau": {
-            "variabel": "berkurangnya rumput/produsen saat kemarau",
-            "dampak": "energi pada konsumen I, konsumen II, dan konsumen III",
-            "aksi": "menjaga ketersediaan tumbuhan/produsen dalam ekosistem"
+            "fokus": "penurunan produsen dan dampaknya pada aliran energi",
+            "konsep": "produsen, konsumen, tingkat trofik, piramida energi, dan efisiensi perpindahan energi"
         },
         "Daur Air Saat Pohon Berkurang": {
-            "variabel": "berkurangnya pohon/tutupan vegetasi",
-            "dampak": "infiltrasi, limpasan permukaan, CO2 yang diserap, dan O2 yang dihasilkan",
-            "aksi": "menanam dan menjaga pohon di lingkungan sekitar"
+            "fokus": "perubahan tutupan vegetasi terhadap siklus air dan pertukaran gas",
+            "konsep": "infiltrasi, limpasan permukaan, fotosintesis, penyerapan CO2, dan produksi O2"
         },
         "Daur Air, Karbon Dioksida, dan Oksigen Saat Pohon Berkurang": {
-            "variabel": "berkurangnya pohon/tutupan vegetasi",
-            "dampak": "infiltrasi, limpasan permukaan, CO2 yang diserap, dan O2 yang dihasilkan",
-            "aksi": "menanam dan menjaga pohon di lingkungan sekitar"
+            "fokus": "perubahan tutupan vegetasi terhadap siklus air dan pertukaran gas",
+            "konsep": "infiltrasi, limpasan permukaan, fotosintesis, penyerapan CO2, dan produksi O2"
         },
         "Peningkatan Alga Akibat Pupuk Berlebih": {
-            "variabel": "nitrogen dan fosfor dari pupuk berlebih",
-            "dampak": "pertumbuhan alga, oksigen air, dan organisme air",
-            "aksi": "menggunakan pupuk secara bijak agar tidak terbawa ke perairan"
+            "fokus": "nutrien berlebih dan perubahan kualitas perairan",
+            "konsep": "nitrogen, fosfor, eutrofikasi, ledakan alga, oksigen terlarut, dan kematian organisme air"
         }
     }
     item = data.get(jenis_simulasi, {
-        "variabel": "variabel yang kamu ubah",
-        "dampak": "hasil yang muncul pada tabel/grafik",
-        "aksi": "menjaga keseimbangan ekosistem"
+        "fokus": "fenomena ekosistem yang diamati",
+        "konsep": "konsep ekologi yang relevan dengan data simulasi"
     })
 
     return {
-        "q1": "1. Amati dan buat pertanyaan penyelidikan",
-        "p1": f"Tuliskan dengan pola: Bagaimana pengaruh {item['variabel']} terhadap {item['dampak']}?",
-        "q2": "2. Tulis dugaan awalmu",
-        "p2": f"Tuliskan dengan pola: Jika {item['variabel']} meningkat/berkurang, maka {item['dampak']} akan .... karena ....",
-        "q3": "3. Tulis bukti dari data simulasi",
-        "p3": "Ambil 2–3 data dari tabel/grafik. Lalu tulis apakah data itu sesuai dengan dugaan awalmu.",
-        "q4": "4. Buat kesimpulan dan tindakan nyata",
-        "p4": f"Tuliskan hubungan sebab-akibat yang kamu temukan, lalu tambahkan tindakan nyata, misalnya {item['aksi']}."
+        "q1": "1. Rumusan masalah penyelidikan",
+        "p1": f"Rumuskan satu pertanyaan ilmiah berdasarkan fokus: {item['fokus']}.",
+        "q2": "2. Hipotesis dan dasar teori",
+        "p2": f"Susun hipotesis awal dan hubungkan dengan konsep: {item['konsep']}.",
+        "q3": "3. Analisis data dan uji hipotesis",
+        "p3": "Gunakan data pada tabel/grafik. Bandingkan perubahan antarparameter, lalu tentukan apakah data mendukung hipotesis.",
+        "q4": "4. Kesimpulan berbasis bukti",
+        "p4": "Tuliskan kesimpulan yang menjawab rumusan masalah. Sertakan bukti data dan refleksi singkat terhadap fenomena ekosistem."
     }
 
 
 def guided_inquiry_answer_view_generic(row):
-    st.markdown("### Jawaban Penyelidikan Siswa")
+    st.markdown("### Jawaban Guided Inquiry Siswa")
 
-    with st.expander("1. Amati dan Pertanyaan Penyelidikan", expanded=True):
+    with st.expander("1. Rumusan Masalah Penyelidikan", expanded=True):
         st.write(row["jawaban_1"])
 
-    with st.expander("2. Dugaan Awal / Hipotesis", expanded=True):
+    with st.expander("2. Hipotesis dan Dasar Teori", expanded=True):
         st.write(row["jawaban_2"])
 
-    with st.expander("3. Bukti Data dan Pencocokan Dugaan", expanded=True):
+    with st.expander("3. Analisis Data dan Uji Hipotesis", expanded=True):
         st.write(row["jawaban_3"])
 
-    with st.expander("4. Kesimpulan dan Tindakan Nyata", expanded=True):
+    with st.expander("4. Kesimpulan Berbasis Bukti", expanded=True):
         st.write(row["kesimpulan"])
 
 

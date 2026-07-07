@@ -297,19 +297,19 @@ def tampilkan_panduan_guru():
         "yellow-card"
     )
 
-    section_title("Alur Guided Inquiry yang Disederhanakan")
+    section_title("Alur Guided Inquiry")
 
     st.markdown(
         """
         | Tahap Guided Inquiry | Implementasi di Web |
         |---|---|
-        | Orientasi / Amati | Siswa mengamati fenomena lingkungan pada halaman simulasi |
-        | Merumuskan masalah / Tanya | Siswa menuliskan pertanyaan penyelidikan dengan kalimat bantu |
-        | Merumuskan hipotesis / Duga | Siswa menulis dugaan awal dengan pola “Jika..., maka...” |
-        | Mengumpulkan data | Siswa menjalankan simulasi, mengubah variabel, dan membaca grafik/tabel hasil pengamatan |
-        | Menganalisis/menguji hipotesis | Siswa membandingkan data hasil simulasi dengan hipotesis yang telah dibuat |
-        | Menarik kesimpulan | Siswa menuliskan kesimpulan berdasarkan data, bukan sekadar pendapat |
-        | Feedback dan refleksi | Guru memberi feedback, lalu siswa menggunakan feedback untuk memperbaiki pemahaman |
+        | Orientasi | Siswa menelaah fenomena ekosistem yang disajikan pada halaman simulasi. |
+        | Merumuskan masalah | Siswa merumuskan sendiri pertanyaan ilmiah berdasarkan fenomena dan variabel yang tersedia. |
+        | Merumuskan hipotesis | Siswa menyusun dugaan sementara disertai alasan ilmiah berdasarkan konsep ekologi. |
+        | Mengumpulkan data | Siswa menjalankan simulasi, memanipulasi variabel, dan membaca grafik/tabel hasil simulasi. |
+        | Menganalisis/menguji hipotesis | Siswa membandingkan data dengan hipotesis untuk menentukan apakah hipotesis didukung atau tidak. |
+        | Menarik kesimpulan | Siswa membuat kesimpulan yang menjawab rumusan masalah dan didukung oleh data. |
+        | Feedback dan refleksi | Guru memberi feedback terhadap ketepatan konsep, bukti data, dan argumentasi siswa. |
         """
     )
 
