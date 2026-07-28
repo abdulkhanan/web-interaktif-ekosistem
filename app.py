@@ -18,13 +18,10 @@ st.set_page_config(
 
 def redirect_by_role():
     role = st.session_state.get("role")
-
     if role == "admin":
         st.switch_page("pages/Admin.py")
-
     elif role == "guru":
         st.switch_page("pages/6_Dashboard_Guru.py")
-
     elif role == "siswa":
         st.switch_page("pages/1_Dashboard_Siswa.py")
 
@@ -35,195 +32,137 @@ def apply_login_ui_style():
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
-            @keyframes fadeInSlideUp {
-                0% { opacity: 0; transform: translateY(20px); }
+            @keyframes fadeInUp {
+                0%   { opacity: 0; transform: translateY(28px); }
                 100% { opacity: 1; transform: translateY(0); }
             }
 
-            /* Hide Streamlit iframe wrapper gaps and skeletons for hidden cookies component */
+            /* ── Hide Streamlit chrome ── */
             .st-key-hidden_cookies,
             .st-key-hidden_cookies_logout,
             .st-key-hidden_cookies [data-testid="stSkeleton"],
-            .st-key-hidden_cookies .stSkeleton,
             .st-key-hidden_cookies_logout [data-testid="stSkeleton"],
-            .st-key-hidden_cookies_logout .stSkeleton,
             .element-container:has(iframe[height="0"]),
-            .element-container:has(iframe[height="0px"]) {
-                display: none !important;
-            }
+            .element-container:has(iframe[height="0px"]) { display: none !important; }
 
             [data-testid="stSidebar"],
-            [data-testid="collapsedControl"] {
-                display: none !important;
-            }
+            [data-testid="collapsedControl"] { display: none !important; }
 
-            header,
-            footer {
-                visibility: hidden !important;
-            }
+            header, footer { visibility: hidden !important; }
 
+            /* ── Page background ── */
             .stApp {
-                background:
-                    radial-gradient(circle at top left, rgba(5, 150, 105, 0.12), transparent 30%),
-                    radial-gradient(circle at bottom right, rgba(2, 132, 199, 0.12), transparent 35%),
-                    linear-gradient(135deg, #f0fdf4 0%, #f0f9ff 100%) !important;
+                background: linear-gradient(150deg, #daeef6 0%, #e2f4ec 55%, #d8eef5 100%) !important;
                 font-family: 'Outfit', 'Inter', sans-serif !important;
             }
 
-            /* Compact Desktop/Laptop Layout */
+            /* ── Center narrow container ── */
             .block-container {
-                padding-top: 3.5rem !important;
-                padding-bottom: 3.5rem !important;
-                max-width: 940px !important;
-                transition: all 0.3s ease;
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+                max-width: 500px !important;
             }
 
+            /* ── Outer white card ── */
             .st-key-login_shell {
-                animation: fadeInSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                background: rgba(255, 255, 255, 0.8) !important;
-                backdrop-filter: blur(20px) !important;
-                border-radius: 32px !important;
-                padding: 0 !important;
-                overflow: hidden !important;
-                box-shadow: 0 30px 80px -20px rgba(15, 23, 42, 0.12) !important;
-                border: 1px solid rgba(255, 255, 255, 0.6) !important;
-            }
-
-            .st-key-login_shell > div {
-                gap: 0 !important;
-            }
-
-            .st-key-login_form_panel {
-                background: rgba(255, 255, 255, 0.95) !important;
-                min-height: 520px !important;
-                padding: 56px 48px !important;
-                border-radius: 0 32px 32px 0 !important;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                transition: all 0.3s ease;
-            }
-
-            .st-key-login_image_panel {
+                animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
                 background: #ffffff !important;
-                min-height: 520px !important;
+                border-radius: 28px !important;
                 padding: 0 !important;
-                border-radius: 32px 0 0 32px !important;
-                display: flex !important;
-                align-items: stretch !important;
-                justify-content: stretch !important;
                 overflow: hidden !important;
-                position: relative !important;
-                transition: all 0.3s ease;
+                box-shadow: 0 24px 64px -12px rgba(15, 23, 42, 0.15) !important;
+                border: 1px solid rgba(226, 232, 240, 0.5) !important;
             }
 
-            .st-key-login_image_panel::after {
-                content: "" !important;
-                position: absolute !important;
-                inset: 0 !important;
-                background: linear-gradient(135deg, rgba(5, 150, 105, 0.15) 0%, rgba(2, 132, 199, 0.15) 100%) !important;
-                pointer-events: none !important;
+            /* ── Image section ── */
+            .login-image-section {
+                width: 100%;
+                overflow: hidden;
+                border-radius: 28px 28px 0 0;
+            }
+            .login-image-section img {
+                width: 100%;
+                height: 260px;
+                object-fit: cover;
+                object-position: center 30%;
+                display: block;
             }
 
+            /* ── Form section ── */
+            .st-key-login_form_panel {
+                padding: 32px 36px 36px 36px !important;
+            }
+
+            /* ── Brand row ── */
             .brand-row {
                 display: flex;
                 align-items: center;
-                gap: 12px;
-                margin-bottom: 38px;
-                transition: all 0.3s ease;
+                gap: 10px;
+                margin-bottom: 14px;
             }
-
             .brand-logo {
-                width: 40px;
-                height: 40px;
-                border-radius: 12px;
-                background: linear-gradient(135deg, #059669, #0284c7);
+                width: 38px;
+                height: 38px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 color: #ffffff;
-                font-size: 20px;
-                box-shadow: 0 8px 20px rgba(5, 150, 105, 0.25);
+                font-size: 19px;
+                flex-shrink: 0;
+                box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
             }
-
             .brand-name {
                 font-family: 'Outfit', sans-serif;
-                font-size: 22px;
+                font-size: 19px;
                 font-weight: 900;
-                letter-spacing: 1px;
-                background: linear-gradient(135deg, #047857 0%, #0284c7 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                line-height: 1.1;
+                letter-spacing: 1.8px;
+                color: #059669;
+                line-height: 1;
             }
 
-            .brand-sub {
-                font-size: 12px;
-                color: #64748b;
-                margin-top: 2px;
-                font-weight: 600;
-            }
-
+            /* ── Title & subtitle ── */
             .login-title {
                 font-family: 'Outfit', sans-serif;
-                font-size: 32px;
+                font-size: 23px;
                 font-weight: 800;
-                line-height: 1.25;
-                margin-bottom: 14px;
-                letter-spacing: -0.8px;
-                background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                transition: all 0.3s ease;
-            }
-
-            .login-subtitle {
-                font-size: 15px;
-                color: #64748b;
-                line-height: 1.7;
-                margin-bottom: 28px;
-                max-width: 420px;
-                transition: all 0.3s ease;
-            }
-
-            div[data-testid="stLinkButton"] a {
-                width: 100%;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                gap: 12px;
-                border-radius: 14px;
-                padding-top: 14px;
-                padding-bottom: 14px;
-                font-size: 15px;
-                font-weight: 700;
-                background-color: #ffffff;
-                color: #334155;
-                border: 1px solid #e2e8f0;
-                box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-                text-decoration: none;
-                transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-
-            div[data-testid="stLinkButton"] a::before {
-                content: "";
-                width: 20px;
-                height: 20px;
-                display: inline-block;
-                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFC107' d='M43.611 20.083H42V20H24v8h11.303C33.651 32.657 29.223 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z'/%3E%3Cpath fill='%23FF3D00' d='M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z'/%3E%3Cpath fill='%234CAF50' d='M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z'/%3E%3Cpath fill='%231976D2' d='M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z'/%3E%3C/svg%3E");
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-
-            div[data-testid="stLinkButton"] a:hover {
-                background-color: #f8fafc;
-                border-color: #cbd5e1;
                 color: #0f172a;
-                transform: translateY(-2px);
-                box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+                line-height: 1.25;
+                margin-bottom: 5px;
+                letter-spacing: -0.3px;
+            }
+            .login-subtitle {
+                font-size: 13px;
+                color: #64748b;
+                line-height: 1.55;
+                margin-bottom: 18px;
             }
 
+            /* ── Tabs ── */
+            div[data-testid="stTabs"] [data-baseweb="tab-list"] {
+                gap: 0 !important;
+                border-bottom: 1.5px solid #e2e8f0 !important;
+                margin-bottom: 14px !important;
+                background: transparent !important;
+            }
+            div[data-testid="stTabs"] [data-baseweb="tab"] {
+                font-weight: 700 !important;
+                font-size: 14px !important;
+                color: #94a3b8 !important;
+                padding: 8px 20px 10px 0 !important;
+                border: none !important;
+                background: transparent !important;
+                margin-right: 12px !important;
+            }
+            div[data-testid="stTabs"] [aria-selected="true"] {
+                color: #059669 !important;
+                border-bottom: 2.5px solid #059669 !important;
+            }
+            div[data-testid="stTabs"] [data-baseweb="tab-highlight"] { display: none !important; }
+            div[data-testid="stTabs"] [data-baseweb="tab-border"] { display: none !important; }
+
+            /* ── Form ── */
             div[data-testid="stForm"] {
                 background: transparent !important;
                 border: none !important;
@@ -231,64 +170,85 @@ def apply_login_ui_style():
                 box-shadow: none !important;
             }
 
+            /* ── Input labels ── */
             div[data-testid="stTextInput"] label,
             div[data-testid="stTextInput"] label p {
-                color: #334155 !important;
-                font-weight: 800 !important;
-                font-size: 14px !important;
+                color: #1e293b !important;
+                font-weight: 700 !important;
+                font-size: 13px !important;
+                margin-bottom: 4px !important;
             }
 
+            /* ── Input fields ── */
             div[data-testid="stTextInput"] div[data-baseweb="input"] {
-                border-radius: 14px !important;
+                border-radius: 10px !important;
                 border: 1.5px solid #e2e8f0 !important;
-                background-color: #ffffff !important;
+                background-color: #f8fafc !important;
                 overflow: hidden !important;
+                transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s !important;
             }
-            
             div[data-testid="stTextInput"] div[data-baseweb="input"]:focus-within {
-                border-color: #0284c7 !important;
-                box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12) !important;
+                border-color: #059669 !important;
+                box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12) !important;
+                background-color: #ffffff !important;
             }
-            
             div[data-testid="stTextInput"] input {
                 background-color: transparent !important;
                 color: #0f172a !important;
-                min-height: 46px !important;
+                min-height: 44px !important;
                 border: none !important;
                 box-shadow: none !important;
-                padding-left: 16px !important;
-                padding-right: 16px !important;
+                font-size: 14px !important;
+                padding-left: 14px !important;
+                padding-right: 14px !important;
             }
 
+            /* ── Selectbox ── */
+            div[data-testid="stSelectbox"] label,
+            div[data-testid="stSelectbox"] label p {
+                color: #1e293b !important;
+                font-weight: 700 !important;
+                font-size: 13px !important;
+            }
+            div[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+                border-radius: 10px !important;
+                border: 1.5px solid #e2e8f0 !important;
+                background-color: #f8fafc !important;
+                min-height: 44px !important;
+                font-size: 14px !important;
+            }
+
+            /* ── Submit button ── */
             .stFormSubmitButton button {
                 width: 100% !important;
-                border-radius: 14px !important;
+                border-radius: 10px !important;
                 min-height: 46px !important;
                 font-size: 15px !important;
                 font-weight: 800 !important;
                 color: #ffffff !important;
                 border: none !important;
-                background: linear-gradient(135deg, #059669 0%, #0284c7 100%) !important;
-                box-shadow: 0 8px 20px rgba(5, 150, 105, 0.24) !important;
-                transition: all 0.3s ease !important;
+                background: linear-gradient(135deg, #059669 0%, #0d9488 100%) !important;
+                box-shadow: 0 4px 16px rgba(5, 150, 105, 0.32) !important;
+                transition: all 0.25s ease !important;
+                margin-top: 6px !important;
             }
             .stFormSubmitButton button:hover {
                 transform: translateY(-2px) !important;
-                box-shadow: 0 12px 24px rgba(5, 150, 105, 0.32) !important;
-                background: linear-gradient(135deg, #047857 0%, #0369a1 100%) !important;
-                color: #ffffff !important;
+                box-shadow: 0 8px 22px rgba(5, 150, 105, 0.4) !important;
+                background: linear-gradient(135deg, #047857 0%, #0f766e 100%) !important;
             }
 
+            /* ── Divider ── */
             .login-divider {
                 display: flex;
                 align-items: center;
-                gap: 12px;
-                margin: 18px 0;
+                gap: 10px;
+                margin: 12px 0;
                 color: #94a3b8;
-                font-size: 13px;
-                font-weight: 700;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.4px;
             }
-
             .login-divider::before,
             .login-divider::after {
                 content: "";
@@ -297,84 +257,52 @@ def apply_login_ui_style():
                 background: #e2e8f0;
             }
 
-            .login-footnote {
-                margin-top: 20px;
-                font-size: 13px;
-                color: #64748b;
-                line-height: 1.7;
-                text-align: center;
+            /* ── Google button ── */
+            div[data-testid="stLinkButton"] a {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 10px !important;
+                width: 100% !important;
+                border-radius: 10px !important;
+                padding: 11px 20px !important;
+                font-size: 14px !important;
+                font-weight: 700 !important;
+                background-color: #ffffff !important;
+                color: #334155 !important;
+                border: 1.5px solid #e2e8f0 !important;
+                box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+                text-decoration: none !important;
+                transition: all 0.2s ease !important;
+            }
+            div[data-testid="stLinkButton"] a::before {
+                content: "" !important;
+                width: 18px !important;
+                height: 18px !important;
+                display: inline-block !important;
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFC107' d='M43.611 20.083H42V20H24v8h11.303C33.651 32.657 29.223 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z'/%3E%3Cpath fill='%23FF3D00' d='M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z'/%3E%3Cpath fill='%234CAF50' d='M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z'/%3E%3Cpath fill='%231976D2' d='M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z'/%3E%3C/svg%3E") !important;
+                background-size: contain !important;
+                background-repeat: no-repeat !important;
+                background-position: center !important;
+                flex-shrink: 0 !important;
+            }
+            div[data-testid="stLinkButton"] a:hover {
+                background-color: #f8fafc !important;
+                border-color: #cbd5e1 !important;
+                transform: translateY(-1px) !important;
+                box-shadow: 0 6px 16px rgba(15, 23, 42, 0.09) !important;
             }
 
-            .login-image-wrap img {
-                width: 100%;
-                height: auto;
-                border-radius: 24px;
-                display: block;
-            }
-            .st-key-login_image_panel .element-container {
-                height: 100% !important;
-                display: flex !important;
-                width: 100% !important;
-            }
-            .st-key-login_image_panel [data-testid="stImage"] {
-                height: 100% !important;
-                display: flex !important;
-                width: 100% !important;
-            }
-            .st-key-login_image_panel img {
-                width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important;
-                display: block !important;
-            }
-
-            .image-placeholder {
-                min-height: 520px;
-                background: #f8fafc;
+            /* ── Footer note ── */
+            .login-note {
+                margin-top: 12px;
+                font-size: 12px;
+                color: #94a3b8;
+                font-weight: 500;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 90px;
-            }
-
-            /* Responsive Breakpoint: Tablet & Small Screens */
-            @media (max-width: 1024px) {
-                .block-container {
-                    max-width: 90% !important;
-                    padding-top: 2.5rem !important;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .st-key-login_image_panel {
-                    display: none !important; /* Hide image column */
-                }
-                .st-key-login_form_panel {
-                    border-radius: 32px !important; /* Round all corners */
-                    min-height: auto !important;
-                    padding: 42px 32px !important;
-                }
-                .st-key-login_shell div[data-testid="column"] {
-                    width: 100% !important;
-                    flex: 1 1 100% !important;
-                }
-            }
-
-            /* Responsive Breakpoint: Mobile Phones */
-            @media (max-width: 480px) {
-                .block-container {
-                    padding-top: 1.5rem !important;
-                    padding-bottom: 1.5rem !important;
-                }
-                .st-key-login_form_panel {
-                    padding: 32px 20px !important;
-                }
-                .brand-row {
-                    margin-bottom: 32px !important;
-                }
-                .login-title {
-                    font-size: 26px !important;
-                }
+                align-items: flex-start;
+                gap: 5px;
+                line-height: 1.5;
             }
         </style>
         """,
@@ -383,103 +311,106 @@ def apply_login_ui_style():
 
 
 def render_login_page(google_login_url=None):
+    # Outer card wrapper
     with st.container(key="login_shell"):
-        col_image, col_login = st.columns([1.25, 1.05], gap=None)
 
-        with col_image:
-            with st.container(key="login_image_panel"):
-                image_path = "assets/images/login_illustration.png"
+        # ── Image on top ──
+        image_path = "assets/images/login_illustration.png"
+        if os.path.exists(image_path):
+            st.markdown(
+                f"""
+                <div class="login-image-section">
+                    <img src="data:image/png;base64,{_img_to_b64(image_path)}" alt="Ekosistem" />
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+        else:
+            st.markdown(
+                '<div style="height:220px; background:linear-gradient(135deg,#d1fae5,#cffafe); border-radius:28px 28px 0 0; display:flex; align-items:center; justify-content:center; font-size:80px;">🌿</div>',
+                unsafe_allow_html=True
+            )
 
-                if os.path.exists(image_path):
-                    st.image(image_path, use_container_width=True)
-                else:
-                    st.markdown(
-                        """
-                        <div class="image-placeholder">🌿</div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+        # ── Form below image ──
+        with st.container(key="login_form_panel"):
+            st.markdown(
+                """
+                <div class="brand-row">
+                    <div class="brand-logo">🌿</div>
+                    <div class="brand-name">EKOSISTEM</div>
+                </div>
+                <div class="login-title">Web Pembelajaran Ekosistem</div>
+                <div class="login-subtitle">Belajar, memahami, dan menjaga keseimbangan alam bersama. Jelajahi ekosistem di sekitarmu!</div>
+                """,
+                unsafe_allow_html=True
+            )
 
-        with col_login:
-            with st.container(key="login_form_panel"):
+            tab_login, tab_register = st.tabs(["Masuk", "Daftar Akun"])
+
+            with tab_login:
+                with st.form("form_login_email_password"):
+                    email = st.text_input("Email", placeholder="✉️  Masukkan email Anda")
+                    password = st.text_input("Password", type="password", placeholder="🔒  Masukkan password Anda")
+                    submit = st.form_submit_button("Masuk dengan Email & Password", use_container_width=True)
+
+                    if submit:
+                        success, message = login_with_email_password(email, password)
+                        if success:
+                            st.success(message)
+                            st.rerun()
+                        else:
+                            st.error(message)
+
+                if google_login_url:
+                    st.markdown('<div class="login-divider">atau</div>', unsafe_allow_html=True)
+                    st.link_button("Masuk dengan Google", google_login_url, use_container_width=True)
+
                 st.markdown(
-                    """
-                    <div class="brand-row">
-                        <div class="brand-logo">🌿</div>
-                        <div>
-                            <div class="brand-name">EKOSISTEM</div>
-                        </div>
-                    </div>
-
-                    <div class="login-title">
-                        Web Pembelajaran Ekosistem
-                    </div>
-
-                    <div class="login-subtitle">
-                        Masuk dengan email-password atau Google. Pengguna baru dapat mendaftar, lalu menunggu akun diaktifkan oleh admin.
-                    </div>
-                    """,
+                    '<div class="login-note">🛡️ Pengguna baru dapat mendaftar dan menunggu aktivasi admin.</div>',
                     unsafe_allow_html=True
                 )
 
-                tab_login, tab_register = st.tabs(["Masuk", "Daftar Akun"])
+            with tab_register:
+                with st.form("form_daftar_akun"):
+                    nama_daftar = st.text_input("Nama lengkap", placeholder="👤  Masukkan nama lengkap")
+                    email_daftar = st.text_input("Email pendaftaran", placeholder="✉️  nama@email.com")
+                    password_daftar = st.text_input("Password", type="password", placeholder="🔒  Minimal 6 karakter")
+                    konfirmasi_password = st.text_input("Konfirmasi password", type="password", placeholder="🔒  Ulangi password")
+                    role_daftar = st.selectbox("Daftar sebagai", ["siswa", "guru"], index=0)
+                    kelas_daftar = st.text_input("Kelas / Instansi", placeholder="🏫  Contoh: XI IPA 1 / Guru Biologi")
+                    daftar = st.form_submit_button("Daftar Akun", use_container_width=True)
 
-                with tab_login:
-                    with st.form("form_login_email_password"):
-                        email = st.text_input("Email", placeholder="nama@email.com")
-                        password = st.text_input("Password", type="password", placeholder="Masukkan password")
-                        submit = st.form_submit_button("Masuk dengan Email & Password", use_container_width=True)
+                    if daftar:
+                        if not nama_daftar.strip() or not email_daftar.strip():
+                            st.error("Nama dan email wajib diisi.")
+                        elif len(password_daftar) < 6:
+                            st.error("Password minimal 6 karakter.")
+                        elif password_daftar != konfirmasi_password:
+                            st.error("Konfirmasi password tidak sama.")
+                        else:
+                            try:
+                                create_user_manual(
+                                    nama=nama_daftar,
+                                    email=email_daftar,
+                                    role=role_daftar,
+                                    kelas=kelas_daftar,
+                                    status="nonaktif",
+                                    password=password_daftar,
+                                )
+                                st.success("Pendaftaran berhasil. Akun Anda menunggu aktivasi admin sebelum dapat digunakan.")
+                            except Exception as error:
+                                st.error(f"Pendaftaran gagal: {error}")
 
-                        if submit:
-                            success, message = login_with_email_password(email, password)
-                            if success:
-                                st.success(message)
-                                st.rerun()
-                            else:
-                                st.error(message)
-
-                    if google_login_url:
-                        st.markdown('<div class="login-divider">atau</div>', unsafe_allow_html=True)
-                        st.link_button(
-                            "Masuk dengan Google",
-                            google_login_url,
-                            use_container_width=True
-                        )
-
-                with tab_register:
-                    with st.form("form_daftar_akun"):
-                        nama_daftar = st.text_input("Nama lengkap", placeholder="Masukkan nama lengkap")
-                        email_daftar = st.text_input("Email pendaftaran", placeholder="nama@email.com")
-                        password_daftar = st.text_input("Password", type="password", placeholder="Minimal 6 karakter")
-                        konfirmasi_password = st.text_input("Konfirmasi password", type="password", placeholder="Ulangi password")
-                        role_daftar = st.selectbox("Daftar sebagai", ["siswa", "guru"], index=0)
-                        kelas_daftar = st.text_input("Kelas / Instansi", placeholder="Contoh: XI IPA 1 / Guru Biologi")
-                        daftar = st.form_submit_button("Daftar Akun", use_container_width=True)
-
-                        if daftar:
-                            if not nama_daftar.strip() or not email_daftar.strip():
-                                st.error("Nama dan email wajib diisi.")
-                            elif len(password_daftar) < 6:
-                                st.error("Password minimal 6 karakter.")
-                            elif password_daftar != konfirmasi_password:
-                                st.error("Konfirmasi password tidak sama.")
-                            else:
-                                try:
-                                    create_user_manual(
-                                        nama=nama_daftar,
-                                        email=email_daftar,
-                                        role=role_daftar,
-                                        kelas=kelas_daftar,
-                                        status="nonaktif",
-                                        password=password_daftar,
-                                    )
-                                    st.success("Pendaftaran berhasil. Akun Anda menunggu aktivasi admin sebelum dapat digunakan.")
-                                except Exception as error:
-                                    st.error(f"Pendaftaran gagal: {error}")
-
-                st.markdown("", unsafe_allow_html=True)
+                st.markdown(
+                    '<div class="login-note">🛡️ Akun baru akan ditinjau dan diaktifkan oleh admin.</div>',
+                    unsafe_allow_html=True
+                )
 
 
+def _img_to_b64(path):
+    import base64
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
 
 init_db()
