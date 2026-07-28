@@ -386,13 +386,17 @@ def render_login_page(google_login_url=None):
 
         with col_image:
             with st.container(key="login_image_panel"):
-                image_path = "assets/images/login_illustration.webp"
+                image_path = "assets/images/login_illustration.png"
 
                 if os.path.exists(image_path):
                     st.image(image_path, use_container_width=True)
                 else:
                     st.markdown(
                         """
+                        <style>
+                        .st-key-login_image_panel .element-container { height: 100% !important; display: flex !important; width: 100% !important; }
+                        .st-key-login_image_panel [data-testid="stMarkdownContainer"] { height: 100% !important; width: 100% !important; }
+                        </style>
                         <div class="image-placeholder">🌿</div>
                         """,
                         unsafe_allow_html=True
