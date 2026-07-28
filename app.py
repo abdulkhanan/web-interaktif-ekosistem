@@ -202,6 +202,12 @@ def apply_login_ui_style():
                 padding-left: 14px !important;
                 padding-right: 14px !important;
             }
+            
+            /* Hide browser-default reveal password eye icon (Edge/IE) */
+            input::-ms-reveal,
+            input::-ms-clear {
+                display: none !important;
+            }
 
             /* ── Selectbox ── */
             div[data-testid="stSelectbox"] label,
