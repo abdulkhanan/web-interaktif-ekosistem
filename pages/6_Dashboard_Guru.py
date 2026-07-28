@@ -5,7 +5,8 @@ from database.init_db import init_db
 from database.queries import (
     get_dashboard_counts_with_status,
     get_tanggapan_status_df,
-    get_progress_siswa_df
+    get_progress_siswa_df,
+    get_user_counts
 )
 from modules.auth import require_role
 from components.ui import load_css, page_title, section_title, info_card, role_navigation
@@ -183,9 +184,9 @@ try:
 except Exception:
     progress_df = pd.DataFrame()
 
-# Jumlah siswa pada dashboard guru dibuat lebih stabil: gunakan data progress jika tersedia.
-if not progress_df.empty and "nama" in progress_df.columns:
-    jumlah_siswa = max(jumlah_siswa, int(progress_df["nama"].astype(str).str.strip().replace("", pd.NA).dropna().nunique()))
+# Gunakan data users untuk mendapatkan jumlah siswa sebenarnya
+user_counts = get_user_counts()
+jumlah_siswa = user_counts.get("siswa", 0)
 
 # Alert jika ada tanggapan menunggu
 if jumlah_belum_feedback > 0:

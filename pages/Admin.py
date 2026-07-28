@@ -1140,7 +1140,7 @@ if st.session_state["admin_menu"] == "Dashboard":
         unsafe_allow_html=True
     )
 
-    r1c1, r1c2, r1c3 = st.columns(3)
+    r1c1, r1c2, r1c3, r1c4 = st.columns(4)
 
     with r1c1:
         st.markdown(
@@ -1178,6 +1178,20 @@ if st.session_state["admin_menu"] == "Dashboard":
                 <div class="mc-content">
                     <div class="mc-label">Guru</div>
                     <div class="mc-value">{counts.get("guru", 0)}</div>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+    with r1c4:
+        st.markdown(
+            f"""
+            <div class="metric-card-v2 mc-purple">
+                <div class="mc-icon">🛡️</div>
+                <div class="mc-content">
+                    <div class="mc-label">Admin</div>
+                    <div class="mc-value">{counts.get("admin", 0)}</div>
                 </div>
             </div>
             """,
