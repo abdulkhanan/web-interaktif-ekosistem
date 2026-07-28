@@ -168,12 +168,10 @@ def apply_login_ui_style():
                 font-family: 'Outfit', sans-serif;
                 font-size: 32px;
                 font-weight: 800;
+                color: #0f172a;
                 line-height: 1.25;
                 margin-bottom: 14px;
                 letter-spacing: -0.8px;
-                background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
                 transition: all 0.3s ease;
             }
 
@@ -384,7 +382,7 @@ def apply_login_ui_style():
 
 def render_login_page(google_login_url=None):
     with st.container(key="login_shell"):
-        col_image, col_login = st.columns([1.25, 1.05], gap=None)
+        col_image, col_login = st.columns([1.1, 1.0], gap=None)
 
         with col_image:
             with st.container(key="login_image_panel"):
@@ -416,7 +414,7 @@ def render_login_page(google_login_url=None):
                     </div>
 
                     <div class="login-subtitle">
-                        Masuk dengan email-password atau Google. Pengguna baru dapat mendaftar, lalu menunggu akun diaktifkan oleh admin.
+                        Belajar, memahami, dan menjaga keseimbangan alam bersama. Jelajahi ekosistem di sekitarmu!
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -426,8 +424,8 @@ def render_login_page(google_login_url=None):
 
                 with tab_login:
                     with st.form("form_login_email_password"):
-                        email = st.text_input("Email", placeholder="nama@email.com")
-                        password = st.text_input("Password", type="password", placeholder="Masukkan password")
+                        email = st.text_input("Email", placeholder="✉️  Masukkan email Anda")
+                        password = st.text_input("Password", type="password", placeholder="🔒  Masukkan password Anda")
                         submit = st.form_submit_button("Masuk dengan Email & Password", use_container_width=True)
 
                         if submit:
@@ -446,14 +444,19 @@ def render_login_page(google_login_url=None):
                             use_container_width=True
                         )
 
+                    st.markdown(
+                        '<div style="margin-top: 16px; font-size: 12px; color: #64748b; font-weight: 600;"><span style="color: #059669; font-size: 14px;">🛡️</span> Pengguna baru dapat mendaftar dan menunggu aktivasi admin.</div>',
+                        unsafe_allow_html=True
+                    )
+
                 with tab_register:
                     with st.form("form_daftar_akun"):
-                        nama_daftar = st.text_input("Nama lengkap", placeholder="Masukkan nama lengkap")
-                        email_daftar = st.text_input("Email pendaftaran", placeholder="nama@email.com")
-                        password_daftar = st.text_input("Password", type="password", placeholder="Minimal 6 karakter")
-                        konfirmasi_password = st.text_input("Konfirmasi password", type="password", placeholder="Ulangi password")
+                        nama_daftar = st.text_input("Nama lengkap", placeholder="👤  Masukkan nama lengkap")
+                        email_daftar = st.text_input("Email pendaftaran", placeholder="✉️  nama@email.com")
+                        password_daftar = st.text_input("Password", type="password", placeholder="🔒  Minimal 6 karakter")
+                        konfirmasi_password = st.text_input("Konfirmasi password", type="password", placeholder="🔒  Ulangi password")
                         role_daftar = st.selectbox("Daftar sebagai", ["siswa", "guru"], index=0)
-                        kelas_daftar = st.text_input("Kelas / Instansi", placeholder="Contoh: XI IPA 1 / Guru Biologi")
+                        kelas_daftar = st.text_input("Kelas / Instansi", placeholder="🏫  Contoh: XI IPA 1 / Guru Biologi")
                         daftar = st.form_submit_button("Daftar Akun", use_container_width=True)
 
                         if daftar:
@@ -476,6 +479,11 @@ def render_login_page(google_login_url=None):
                                     st.success("Pendaftaran berhasil. Akun Anda menunggu aktivasi admin sebelum dapat digunakan.")
                                 except Exception as error:
                                     st.error(f"Pendaftaran gagal: {error}")
+                                    
+                    st.markdown(
+                        '<div style="margin-top: 16px; font-size: 12px; color: #64748b; font-weight: 600;"><span style="color: #059669; font-size: 14px;">🛡️</span> Akun baru akan ditinjau dan diaktifkan oleh admin.</div>',
+                        unsafe_allow_html=True
+                    )
 
                 st.markdown("", unsafe_allow_html=True)
 
