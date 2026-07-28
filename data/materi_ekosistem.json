@@ -29,9 +29,9 @@
           {
             "nomor": "B.1",
             "judul": "Individu",
-            "gambar": "assets/images/satuan_ekosistem/individu.png",
+            "gambar": "assets/images/satuan_ekosistem/individu.jpg",
             "caption": "Gambar 2. Seekor ikan sebagai contoh individu",
-            "sumber": "Ilustrasi dibuat secara mandiri untuk web interaktif ekosistem, 2026.",
+            "sumber": "https://akuakulturunhas.blogspot.com/2010/08/",
             "paragraf": [
               "Individu adalah satu makhluk hidup tunggal yang dapat menjalankan proses kehidupan. Individu mempunyai ciri sebagai makhluk hidup, seperti bernapas, membutuhkan makanan, tumbuh, bergerak, merespons rangsangan, dan berkembang biak.",
               "Contoh individu adalah seekor ikan nila, satu pohon mangga, seekor katak, atau seorang manusia. Dalam simulasi pencemaran sungai, satu ikan dapat diamati sebagai individu yang kondisinya dipengaruhi oleh kualitas air tempat hidupnya."
@@ -40,20 +40,20 @@
           {
             "nomor": "B.2",
             "judul": "Populasi",
-            "gambar": "assets/images/satuan_ekosistem/populasi.png",
+            "gambar": "assets/images/satuan_ekosistem/populasi.jpg",
             "caption": "Gambar 3. Sekumpulan ikan sejenis sebagai contoh populasi",
-            "sumber": "Ilustrasi dibuat secara mandiri untuk web interaktif ekosistem, 2026.",
+            "sumber": "https://budaya.jogjaprov.go.id/berita/detail/1585-mengenal-ekosistem-laut",
             "paragraf": [
               "Populasi adalah kumpulan individu sejenis yang hidup di tempat dan pada waktu yang sama. Anggota suatu populasi memiliki kesamaan jenis serta dapat mengalami pertambahan atau penurunan jumlah karena kelahiran, kematian, kedatangan, dan perpindahan.",
-              "Sekumpulan ikan nila yang hidup di bagian tertentu dari sungai merupakan contoh populasi. Apabila air sungai tercemar dan kadar oksigen menurun, jumlah ikan yang mampu bertahan dapat berkurang sehingga ukuran populasinya berubah."
+              "Sekumpulan ikan tuna yang hidup di bagian tertentu dari laut merupakan contoh populasi. Apabila air sungai tercemar dan kadar oksigen menurun, jumlah ikan yang mampu bertahan dapat berkurang sehingga ukuran populasinya berubah."
             ]
           },
           {
             "nomor": "B.3",
             "judul": "Komunitas",
-            "gambar": "assets/images/satuan_ekosistem/komunitas.png",
+            "gambar": "assets/images/satuan_ekosistem/komunitas.jpg",
             "caption": "Gambar 4. Berbagai populasi organisme dalam komunitas perairan",
-            "sumber": "Ilustrasi dibuat secara mandiri untuk web interaktif ekosistem, 2026.",
+            "sumber": "https://budaya.jogjaprov.go.id/berita/detail/1585-mengenal-ekosistem-laut",
             "paragraf": [
               "Komunitas adalah kumpulan berbagai populasi yang hidup pada wilayah yang sama. Dalam komunitas sungai dapat ditemukan populasi ikan, tumbuhan air, alga, serangga air, siput, katak, bakteri, dan organisme lainnya.",
               "Perubahan pada satu populasi dapat memengaruhi kondisi komunitas. Sebagai contoh, penurunan kualitas air dapat mengurangi jumlah organisme yang peka terhadap pencemaran, sedangkan organisme yang lebih tahan mungkin masih dapat bertahan."
@@ -62,9 +62,9 @@
           {
             "nomor": "B.4",
             "judul": "Ekosistem",
-            "gambar": "assets/images/satuan_ekosistem/ekosistem.png",
+            "gambar": "assets/images/satuan_ekosistem/ekosistem.jpg",
             "caption": "Gambar 5. Komunitas dan lingkungan abiotik membentuk ekosistem",
-            "sumber": "Ilustrasi dibuat secara mandiri untuk web interaktif ekosistem, 2026.",
+            "sumber": "https://www.pelajaran.co.id/pengertian-ekosistem-komponen-tipe-macam-jenis-dan-contoh-ekosistem/",
             "paragraf": [
               "Ekosistem terbentuk ketika komunitas makhluk hidup berinteraksi dengan komponen abiotik di lingkungannya. Ekosistem sungai, misalnya, tidak hanya terdiri atas ikan dan tumbuhan air, tetapi juga air, cahaya matahari, suhu, arus, batuan, sedimen, pH, mineral, dan oksigen terlarut.",
               "Karena semua komponen saling berkaitan, perubahan kualitas air dapat menimbulkan perubahan pada organisme yang hidup di dalamnya. Hubungan inilah yang menjadi fokus utama dalam simulasi pencemaran sungai."
@@ -74,8 +74,8 @@
             "nomor": "B.5",
             "judul": "Bioma",
             "gambar": "assets/images/satuan_ekosistem/bioma.png",
-            "caption": "Gambar 6. Hutan hujan tropis sebagai contoh bioma",
-            "sumber": "Ilustrasi dibuat secara mandiri untuk web interaktif ekosistem, 2026.",
+            "caption": "Gambar 6. Hutan hujan tropis Kalimantan sebagai contoh bioma",
+            "sumber": "https://www.thoughtco.com/land-biomes-tropical-rain-forests-373496",
             "paragraf": [
               "Bioma adalah wilayah yang sangat luas dan mempunyai kesamaan iklim, vegetasi dominan, serta jenis organisme yang mampu beradaptasi terhadap kondisi tersebut. Bioma mencakup banyak ekosistem yang memiliki karakter lingkungan serupa.",
               "Contoh bioma adalah hutan hujan tropis, padang rumput, gurun, tundra, taiga, serta bioma perairan. Indonesia banyak berada dalam wilayah bioma hutan hujan tropis yang memiliki curah hujan tinggi dan keanekaragaman hayati yang besar."
@@ -84,9 +84,9 @@
           {
             "nomor": "B.6",
             "judul": "Biosfer",
-            "gambar": "assets/images/satuan_ekosistem/biosfer.png",
+            "gambar": "assets/images/satuan_ekosistem/biosfer.jpg",
             "caption": "Gambar 7. Biosfer mencakup seluruh bagian bumi yang mendukung kehidupan",
-            "sumber": "Ilustrasi dibuat secara mandiri untuk web interaktif ekosistem, 2026.",
+            "sumber": "https://www.australianenvironmentaleducation.com.au/education-resources/what-is-the-biosphere/",
             "paragraf": [
               "Biosfer adalah seluruh wilayah di bumi yang dapat mendukung kehidupan. Biosfer mencakup bagian daratan, perairan, dan lapisan udara tempat organisme dapat hidup.",
               "Semua individu, populasi, komunitas, ekosistem, dan bioma merupakan bagian dari biosfer. Oleh karena itu, gangguan lingkungan pada suatu wilayah dapat menjadi bagian dari masalah yang lebih luas apabila terjadi terus-menerus dan mencakup banyak ekosistem."
@@ -131,9 +131,12 @@
         "huruf": "E",
         "judul": "Hubungan Komponen Biotik dan Abiotik",
         "paragraf": [
-          "Komponen biotik dan abiotik tidak dapat dipisahkan. Makhluk hidup membutuhkan kondisi lingkungan tertentu, sedangkan aktivitas makhluk hidup juga dapat mengubah lingkungan. Tumbuhan air menggunakan cahaya, air, karbon dioksida, dan mineral untuk melakukan fotosintesis. Hasil fotosintesis mendukung pertumbuhan tumbuhan dan dapat menambah oksigen di lingkungan perairan.",
-          "Ikan membutuhkan oksigen terlarut untuk respirasi. Ketika kualitas air menurun karena limbah, oksigen terlarut dapat berkurang sehingga ikan mengalami stres, bergerak lebih lambat, berpindah ke wilayah lain, atau mati. Perubahan ini menunjukkan bahwa gangguan pada komponen abiotik dapat menimbulkan perubahan pada komponen biotik.",
-          "Hubungan tersebut juga berlaku sebaliknya. Ledakan pertumbuhan alga atau penguraian sisa organisme dalam jumlah besar dapat menggunakan banyak oksigen di dalam air. Dengan demikian, jumlah dan aktivitas organisme juga dapat memengaruhi kondisi kimia serta fisik lingkungan perairan."
+          "Komponen biotik dan abiotik tidak dapat dipisahkan karena keduanya saling berhubungan dan saling memengaruhi. Dalam ekosistem sungai, komponen biotik meliputi berbagai makhluk hidup, seperti ikan, tumbuhan air, alga, serangga air, plankton, bakteri, dan organisme pengurai. Sementara itu, komponen abiotik meliputi unsur tidak hidup, seperti air, cahaya matahari, suhu, arus, pH, oksigen terlarut, mineral, dan dasar sungai. Setiap organisme membutuhkan kondisi lingkungan tertentu agar dapat bertahan hidup, tumbuh, bergerak, memperoleh makanan, dan berkembang biak.",
+          "Tumbuhan air dan alga membutuhkan cahaya matahari, air, karbon dioksida, serta mineral untuk melakukan fotosintesis. Melalui proses tersebut, tumbuhan menghasilkan bahan makanan untuk mendukung pertumbuhannya dan melepaskan oksigen ke dalam lingkungan perairan. Tumbuhan air juga dapat menjadi tempat berlindung, tempat menempel, tempat berkembang biak, serta sumber makanan bagi ikan dan organisme sungai lainnya.",
+          "Ikan sangat dipengaruhi oleh kondisi abiotik di sekitarnya. Ikan membutuhkan air dengan suhu, pH, arus, dan kadar oksigen terlarut yang sesuai. Apabila air sungai tercemar oleh limbah, kualitas air dapat menurun, warna dan bau air dapat berubah, serta kadar oksigen terlarut dapat berkurang. Kondisi tersebut dapat menyebabkan ikan mengalami stres, kesulitan bernapas, bergerak lebih lambat, kehilangan sumber makanan, berpindah ke bagian sungai yang lebih bersih, atau mati. Hal ini menunjukkan bahwa perubahan pada komponen abiotik dapat menimbulkan perubahan pada komponen biotik.",
+          "Hubungan tersebut juga berlangsung sebaliknya karena aktivitas makhluk hidup dapat memengaruhi kondisi lingkungan sungai. Tumbuhan air dapat membantu menghasilkan oksigen, memperlambat aliran air pada bagian tertentu, dan menjadi tempat hidup bagi organisme kecil. Ikan dan hewan air lainnya juga berperan dalam perpindahan bahan organik dan mineral melalui aktivitas makan, bergerak, dan mengeluarkan sisa metabolisme. Dengan demikian, keberadaan organisme turut memengaruhi kondisi fisik dan kimia air sungai.",
+          "Daun, ranting, bangkai organisme, dan sisa makhluk hidup yang masuk ke sungai akan diuraikan oleh bakteri, jamur, dan organisme pengurai lainnya. Dalam jumlah yang wajar, proses penguraian membantu mengembalikan unsur hara ke lingkungan. Namun, apabila bahan organik yang masuk terlalu banyak, organisme pengurai akan menggunakan lebih banyak oksigen selama proses penguraian. Akibatnya, kadar oksigen terlarut dapat menurun dan kehidupan ikan serta organisme air lainnya dapat terganggu.",
+          "Apabila salah satu komponen mengalami gangguan, keseimbangan ekosistem sungai juga dapat berubah. Pembuangan limbah rumah tangga, limbah pertanian, sampah, atau limbah kegiatan usaha ke sungai tidak hanya mengubah kondisi air, tetapi juga dapat mengurangi jumlah ikan, tumbuhan air, serangga air, dan organisme lainnya. Oleh karena itu, keseimbangan ekosistem sungai bergantung pada hubungan yang selaras antara komponen biotik dan komponen abiotik serta kualitas lingkungan yang mendukung kehidupan organisme."
         ],
         "callout": "Fokus simulasi: tingkat limbah industri memengaruhi kualitas air; perubahan kualitas air kemudian berkaitan dengan oksigen terlarut, populasi ikan, indeks invertebrata, dan kondisi ekosistem sungai."
       },
