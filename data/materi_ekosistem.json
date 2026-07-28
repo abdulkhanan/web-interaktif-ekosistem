@@ -162,9 +162,8 @@
         "huruf": "H",
         "judul": "Pencemaran Ekosistem Perairan",
         "gambar": {
-          "path": "assets/images/pencemaran_sungai.jpg",
-          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai",
-          "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
+          "path": "assets/images/satuan_ekosistem/pencemaran.jpeg",
+          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai"
         },
         "paragraf": [
           "Pencemaran air adalah masuknya makhluk hidup, zat, energi, atau komponen lain ke dalam perairan sehingga kualitas air menurun dan tidak lagi sesuai dengan fungsi atau kebutuhan organisme. Sumber pencemaran dapat berasal dari limbah industri, limbah rumah tangga, kegiatan pertanian, peternakan, pertambangan, dan sampah.",
@@ -188,8 +187,7 @@
       "Dinas Kebudayaan Daerah Istimewa Yogyakarta. (2023). Mengenal ekosistem laut, jenis, dan peran untuk kehidupan manusia [Sumber gambar populasi dan komunitas]. https://budaya.jogjaprov.go.id/berita/detail/1585-mengenal-ekosistem-laut",
       "Pelajaran.co.id. (n.d.). Pengertian ekosistem, komponen, tipe, macam jenis, dan contoh ekosistem lengkap [Sumber gambar ekosistem]. https://www.pelajaran.co.id/pengertian-ekosistem-komponen-tipe-macam-jenis-dan-contoh-ekosistem/",
       "Bailey, R. (n.d.). Land biomes: Tropical rainforests [Sumber gambar bioma]. ThoughtCo. https://www.thoughtco.com/land-biomes-tropical-rain-forests-373496",
-      "Australian Environmental Education. (n.d.). What is the biosphere? [Sumber gambar biosfer]. https://www.australianenvironmentaleducation.com.au/education-resources/what-is-the-biosphere/",
-      "Proyek Web Interaktif Ekosistem. (2026). Koleksi aset gambar komponen ekosistem dan pencemaran sungai [Aset digital internal]."
+      "Australian Environmental Education. (n.d.). What is the biosphere? [Sumber gambar biosfer]. https://www.australianenvironmentaleducation.com.au/education-resources/what-is-the-biosphere/"
     ]
   },
   {
@@ -198,8 +196,7 @@
     "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari sumber dan perpindahan energi dalam ekosistem, tingkat trofik, piramida ekologi, produktivitas produsen, serta dampak musim kemarau terhadap ketersediaan energi pada rantai makanan.",
     "gambar_utama": {
       "path": "assets/images/rantai_makanan_piramida_energi.png",
-      "judul": "Gambar 1. Diagram rantai makanan dan piramida energi pada ekosistem",
-      "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
+      "judul": "Gambar 1. Diagram rantai makanan dan piramida energi pada ekosistem"
     },
     "bagian": [
       {
@@ -321,8 +318,7 @@
       "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia. (2021). Ilmu Pengetahuan Alam untuk SMP Kelas VII. Jakarta: Pusat Kurikulum dan Perbukuan.",
       "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e (Bagian 46.3: Biogeochemical Cycles). Houston, Texas: OpenStax, Rice University.",
       "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson.",
-      "U.S. Geological Survey, Water Science School. (n.d.). Water cycle. https://www.usgs.gov/water-science-school/water-cycle",
-      "Proyek Web Interaktif Ekosistem. (2026). Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen [Aset digital internal]."
+      "U.S. Geological Survey, Water Science School. (n.d.). Water cycle. https://www.usgs.gov/water-science-school/water-cycle"
     ]
   },
   {
@@ -331,8 +327,7 @@
     "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari perputaran nitrogen dan fosfor serta manfaatnya sebagai unsur hara. Pembahasan difokuskan pada masuknya pupuk berlebih ke sungai, pertumbuhan alga, penurunan oksigen terlarut, dan dampaknya terhadap organisme perairan.",
     "gambar_utama": {
       "path": "assets/images/daur_nitrogen_fosfor.png",
-      "judul": "Gambar 1. Diagram daur nitrogen, daur fosfor, dan dampak kelebihan zat hara pada perairan",
-      "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
+      "judul": "Gambar 1. Diagram daur nitrogen, daur fosfor, dan dampak kelebihan zat hara pada perairan"
     },
     "bagian": [
       {
@@ -448,8 +443,7 @@
       "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia. (2021). Ilmu Pengetahuan Alam untuk SMP Kelas VII. Jakarta: Pusat Kurikulum dan Perbukuan.",
       "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e (Bagian 46.3: Biogeochemical Cycles). Houston, Texas: OpenStax, Rice University.",
       "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson.",
-      "U.S. Environmental Protection Agency. (2026). Nutrient pollution. https://www.epa.gov/nutrientpollution",
-      "Proyek Web Interaktif Ekosistem. (2026). Diagram daur nitrogen, daur fosfor, dan dampak kelebihan zat hara pada perairan [Aset digital internal]."
+      "U.S. Environmental Protection Agency. (2026). Nutrient pollution. https://www.epa.gov/nutrientpollution"
     ]
   }
 ]
