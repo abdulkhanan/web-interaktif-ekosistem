@@ -51,9 +51,11 @@ st.markdown(
 
         div[data-testid="stImage"] img {
             width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
             border-radius: 14px;
+            display: block;
         }
         .materi-text p {
             text-align: justify;
