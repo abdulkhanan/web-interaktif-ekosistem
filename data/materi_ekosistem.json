@@ -84,7 +84,7 @@
             "nomor": "B.6",
             "judul": "Biosfer",
             "gambar": "assets/images/satuan_ekosistem/biosfer.jpg",
-            "caption": "Gambar 7. Biosfer mencakup seluruh bagian bumi yang mendukung kehidupan",
+            "caption": "Gambar 7. Biosfer",
             "sumber": "https://www.istockphoto.com/id/vektor/infografis-ekologi-biosfer-untuk-pembelajaran-gm1473108901-503307259",
             "paragraf": [
               "Biosfer adalah seluruh wilayah di bumi yang dapat mendukung kehidupan. Biosfer mencakup bagian daratan, perairan, dan lapisan udara tempat organisme dapat hidup.",
@@ -187,7 +187,7 @@
       "Dinas Kebudayaan Daerah Istimewa Yogyakarta. (2023). Mengenal ekosistem laut, jenis, dan peran untuk kehidupan manusia [Sumber gambar populasi dan komunitas]. https://budaya.jogjaprov.go.id/berita/detail/1585-mengenal-ekosistem-laut",
       "Pelajaran.co.id. (n.d.). Pengertian ekosistem, komponen, tipe, macam jenis, dan contoh ekosistem lengkap [Sumber gambar ekosistem]. https://www.pelajaran.co.id/pengertian-ekosistem-komponen-tipe-macam-jenis-dan-contoh-ekosistem/",
       "Bailey, R. (n.d.). Land biomes: Tropical rainforests [Sumber gambar bioma]. ThoughtCo. https://www.thoughtco.com/land-biomes-tropical-rain-forests-373496",
-      "Australian Environmental Education. (n.d.). What is the biosphere? [Sumber gambar biosfer]. https://www.australianenvironmentaleducation.com.au/education-resources/what-is-the-biosphere/"
+      "https://www.istockphoto.com/id/vektor/infografis-ekologi-biosfer-untuk-pembelajaran-gm1473108901-503307259"
     ]
   },
   {
@@ -217,8 +217,7 @@
     "referensi": [
       "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia. (2021). Ilmu Pengetahuan Alam untuk SMP Kelas VII. Jakarta: Pusat Kurikulum dan Perbukuan.",
       "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e (Bagian 46.2: Energy Flow through Ecosystems). Houston, Texas: OpenStax, Rice University.",
-      "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson.",
-      "Proyek Web Interaktif Ekosistem. (2026). Diagram rantai makanan dan piramida energi [Aset digital internal]."
+      "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson."
     ]
   },
   {
@@ -227,8 +226,7 @@
     "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari perputaran air, karbon, dan oksigen antara makhluk hidup dan lingkungan. Pembahasan difokuskan pada peran tumbuhan serta dampak berkurangnya jumlah pohon terhadap infiltrasi, limpasan permukaan, penyerapan karbon dioksida, dan produksi oksigen.",
     "gambar_utama": {
       "path": "assets/images/daur_air_co2_o2.png",
-      "judul": "Gambar 1. Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen",
-      "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
+      "judul": "Gambar 1. Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen"
     },
     "bagian": [
       {
