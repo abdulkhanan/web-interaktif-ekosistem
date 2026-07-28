@@ -35,11 +35,6 @@ def apply_login_ui_style():
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
-            @keyframes fadeInSlideUp {
-                0% { opacity: 0; transform: translateY(20px); }
-                100% { opacity: 1; transform: translateY(0); }
-            }
-
             /* Hide Streamlit iframe wrapper gaps and skeletons for hidden cookies component */
             .st-key-hidden_cookies,
             .st-key-hidden_cookies_logout,
@@ -70,43 +65,76 @@ def apply_login_ui_style():
                 font-family: 'Outfit', 'Inter', sans-serif !important;
             }
 
-            /* Compact Desktop/Laptop Layout */
+            /* Login card: memenuhi viewport tanpa menyisakan ruang kosong */
             .block-container {
-                padding-top: 3.5rem !important;
-                padding-bottom: 3.5rem !important;
-                max-width: 940px !important;
+                min-height: 100vh !important;
+                max-width: 1180px !important;
+                padding: 2rem 1.5rem !important;
+                display: flex !important;
+                align-items: center !important;
                 transition: all 0.3s ease;
             }
 
             .st-key-login_shell {
-                animation: fadeInSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                background: rgba(255, 255, 255, 0.8) !important;
+                width: 100% !important;
+                height: min(760px, calc(100vh - 4rem)) !important;
+                min-height: 620px !important;
+                background: rgba(255, 255, 255, 0.82) !important;
                 backdrop-filter: blur(20px) !important;
                 border-radius: 32px !important;
                 padding: 0 !important;
                 overflow: hidden !important;
                 box-shadow: 0 30px 80px -20px rgba(15, 23, 42, 0.12) !important;
-                border: 1px solid rgba(255, 255, 255, 0.6) !important;
+                border: 1px solid rgba(255, 255, 255, 0.72) !important;
             }
 
-            .st-key-login_shell > div {
+            .st-key-login_shell > div,
+            .st-key-login_shell div[data-testid="stHorizontalBlock"] {
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 0 !important;
                 gap: 0 !important;
+                align-items: stretch !important;
+            }
+
+            .st-key-login_shell div[data-testid="column"] {
+                min-width: 0 !important;
+                height: 100% !important;
+                display: flex !important;
+                align-items: stretch !important;
             }
 
             .st-key-login_form_panel {
-                background: rgba(255, 255, 255, 0.95) !important;
-                min-height: 520px !important;
-                padding: 56px 48px !important;
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 0 !important;
+                overflow-y: auto !important;
+                overscroll-behavior: contain !important;
+                scrollbar-width: thin !important;
+                scrollbar-color: rgba(148, 163, 184, 0.55) transparent !important;
+                background: rgba(255, 255, 255, 0.97) !important;
+                padding: 34px 42px !important;
                 border-radius: 0 32px 32px 0 !important;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important;
                 transition: all 0.3s ease;
             }
 
+            .st-key-login_form_panel::-webkit-scrollbar {
+                width: 7px;
+            }
+
+            .st-key-login_form_panel::-webkit-scrollbar-thumb {
+                background: rgba(148, 163, 184, 0.42);
+                border-radius: 999px;
+            }
+
             .st-key-login_image_panel {
-                background: #ffffff !important;
-                min-height: 520px !important;
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 0 !important;
+                background: #e8f6f4 !important;
                 padding: 0 !important;
                 border-radius: 32px 0 0 32px !important;
                 display: flex !important;
@@ -115,6 +143,16 @@ def apply_login_ui_style():
                 overflow: hidden !important;
                 position: relative !important;
                 transition: all 0.3s ease;
+            }
+
+            .st-key-login_image_panel > div,
+            .st-key-login_image_panel [data-testid="stImage"],
+            .st-key-login_image_panel [data-testid="stImage"] > div {
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
 
             .st-key-login_image_panel::after {
@@ -129,7 +167,7 @@ def apply_login_ui_style():
                 display: flex;
                 align-items: center;
                 gap: 12px;
-                margin-bottom: 38px;
+                margin-bottom: 24px;
                 transition: all 0.3s ease;
             }
 
@@ -168,20 +206,18 @@ def apply_login_ui_style():
                 font-family: 'Outfit', sans-serif;
                 font-size: 32px;
                 font-weight: 800;
+                color: #0f172a;
                 line-height: 1.25;
                 margin-bottom: 14px;
                 letter-spacing: -0.8px;
-                background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
                 transition: all 0.3s ease;
             }
 
             .login-subtitle {
                 font-size: 15px;
                 color: #64748b;
-                line-height: 1.7;
-                margin-bottom: 28px;
+                line-height: 1.65;
+                margin-bottom: 20px;
                 max-width: 420px;
                 transition: all 0.3s ease;
             }
@@ -238,26 +274,17 @@ def apply_login_ui_style():
                 font-size: 14px !important;
             }
 
-            div[data-testid="stTextInput"] div[data-baseweb="input"] {
-                border-radius: 14px !important;
-                border: 1.5px solid #e2e8f0 !important;
+            div[data-testid="stTextInput"] input {
                 background-color: #ffffff !important;
-                overflow: hidden !important;
+                color: #0f172a !important;
+                border: 1.5px solid #e2e8f0 !important;
+                border-radius: 14px !important;
+                min-height: 46px !important;
             }
-            
-            div[data-testid="stTextInput"] div[data-baseweb="input"]:focus-within {
+
+            div[data-testid="stTextInput"] input:focus {
                 border-color: #0284c7 !important;
                 box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12) !important;
-            }
-            
-            div[data-testid="stTextInput"] input {
-                background-color: transparent !important;
-                color: #0f172a !important;
-                min-height: 46px !important;
-                border: none !important;
-                box-shadow: none !important;
-                padding-left: 16px !important;
-                padding-right: 16px !important;
             }
 
             .stFormSubmitButton button {
@@ -270,13 +297,6 @@ def apply_login_ui_style():
                 border: none !important;
                 background: linear-gradient(135deg, #059669 0%, #0284c7 100%) !important;
                 box-shadow: 0 8px 20px rgba(5, 150, 105, 0.24) !important;
-                transition: all 0.3s ease !important;
-            }
-            .stFormSubmitButton button:hover {
-                transform: translateY(-2px) !important;
-                box-shadow: 0 12px 24px rgba(5, 150, 105, 0.32) !important;
-                background: linear-gradient(135deg, #047857 0%, #0369a1 100%) !important;
-                color: #ffffff !important;
             }
 
             .login-divider {
@@ -311,25 +331,20 @@ def apply_login_ui_style():
                 border-radius: 24px;
                 display: block;
             }
-            .st-key-login_image_panel .element-container {
-                height: 100% !important;
-                display: flex !important;
-                width: 100% !important;
-            }
-            .st-key-login_image_panel [data-testid="stImage"] {
-                height: 100% !important;
-                display: flex !important;
-                width: 100% !important;
-            }
             .st-key-login_image_panel img {
                 width: 100% !important;
                 height: 100% !important;
+                max-height: none !important;
                 object-fit: cover !important;
+                object-position: center center !important;
                 display: block !important;
+                border-radius: 0 !important;
             }
 
             .image-placeholder {
-                min-height: 520px;
+                width: 100%;
+                height: 100%;
+                min-height: 100%;
                 background: #f8fafc;
                 display: flex;
                 align-items: center;
@@ -340,22 +355,48 @@ def apply_login_ui_style():
             /* Responsive Breakpoint: Tablet & Small Screens */
             @media (max-width: 1024px) {
                 .block-container {
-                    max-width: 90% !important;
-                    padding-top: 2.5rem !important;
+                    max-width: 94% !important;
+                    padding: 1.5rem 1rem !important;
+                }
+
+                .st-key-login_shell {
+                    height: min(720px, calc(100vh - 3rem)) !important;
+                    min-height: 600px !important;
+                }
+
+                .st-key-login_form_panel {
+                    padding: 30px 32px !important;
                 }
             }
 
             @media (max-width: 768px) {
+                .block-container {
+                    min-height: 100vh !important;
+                    padding: 1rem !important;
+                    align-items: flex-start !important;
+                }
+
+                .st-key-login_shell {
+                    height: auto !important;
+                    min-height: 0 !important;
+                    border-radius: 26px !important;
+                }
+
                 .st-key-login_image_panel {
-                    display: none !important; /* Hide image column */
+                    display: none !important;
                 }
+
                 .st-key-login_form_panel {
-                    border-radius: 32px !important; /* Round all corners */
-                    min-height: auto !important;
-                    padding: 42px 32px !important;
+                    height: auto !important;
+                    min-height: 0 !important;
+                    overflow: visible !important;
+                    border-radius: 26px !important;
+                    padding: 36px 28px !important;
                 }
+
                 .st-key-login_shell div[data-testid="column"] {
                     width: 100% !important;
+                    height: auto !important;
                     flex: 1 1 100% !important;
                 }
             }
@@ -384,7 +425,7 @@ def apply_login_ui_style():
 
 def render_login_page(google_login_url=None):
     with st.container(key="login_shell"):
-        col_image, col_login = st.columns([1.25, 1.05], gap=None)
+        col_image, col_login = st.columns([1.38, 0.92], gap=None)
 
         with col_image:
             with st.container(key="login_image_panel"):
@@ -407,7 +448,8 @@ def render_login_page(google_login_url=None):
                     <div class="brand-row">
                         <div class="brand-logo">🌿</div>
                         <div>
-                            <div class="brand-name">EKOSISTEM</div>
+                            <div class="brand-name">ECOSYSTEM</div>
+                            <div class="brand-sub">Guided Inquiry Learning</div>
                         </div>
                     </div>
 
@@ -477,7 +519,10 @@ def render_login_page(google_login_url=None):
                                 except Exception as error:
                                     st.error(f"Pendaftaran gagal: {error}")
 
-                st.markdown("", unsafe_allow_html=True)
+                st.markdown(
+                    '<div class="login-footnote">Role yang tersedia: siswa, guru, dan admin. Akun admin dibuat atau diubah melalui menu Daftar Pengguna.</div>',
+                    unsafe_allow_html=True
+                )
 
 
 
