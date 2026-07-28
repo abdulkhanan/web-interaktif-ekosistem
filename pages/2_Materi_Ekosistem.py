@@ -283,24 +283,45 @@ def render_text_block(paragraphs, points=None):
         unsafe_allow_html=True
     )
 
-
 def render_image_with_source(image_data):
     if not image_data:
         return
 
     image_path = image_data.get("path", "")
-    title = image_data.get("judul") or image_data.get("caption", "")
-    source = image_data.get("sumber", "Sumber belum dicantumkan.")
+    title = (
+        image_data.get("judul")
+        or image_data.get("caption")
+        or ""
+    ).strip()
+
+    # Tidak memakai teks cadangan
+    source = str(image_data.get("sumber") or "").strip()
 
     if os.path.exists(image_path):
         st.image(image_path, use_container_width=True)
-        st.markdown(
-            f"""
-            <div class="materi-caption">{escape(title)}</div>
-            <div class="materi-source">Sumber: {escape(source)}</div>
-            """,
-            unsafe_allow_html=True
+
+        # Caption hanya ditampilkan jika ada
+        caption_html = (
+            f'<div class="materi-caption">{escape(title)}</div>'
+            if title
+            else ""
         )
+
+        # Sumber hanya ditampilkan jika ada
+        source_html = (
+            f'<div class="materi-source">Sumber: {escape(source)}</div>'
+            if source
+            else ""
+        )
+
+        if caption_html or source_html:
+            st.markdown(
+                f"""
+                {caption_html}
+                {source_html}
+                """,
+                unsafe_allow_html=True
+            )
     else:
         info_card(
             "Gambar Belum Ditemukan",
@@ -310,7 +331,6 @@ def render_image_with_source(image_data):
             """,
             "yellow-card"
         )
-
 
 def render_section_heading(letter, title):
     st.markdown(
