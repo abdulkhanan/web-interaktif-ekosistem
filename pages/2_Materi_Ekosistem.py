@@ -49,26 +49,14 @@ st.markdown(
             box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
         }
 
-        div[data-testid="stImage"] {
-            width: 100%;
-            height: 420px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border-radius: 14px;
-            background: #ffffff;
-        }
-
         div[data-testid="stImage"] img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: contain;
             object-position: center;
             border-radius: 14px;
             display: block;
         }
-        
         .materi-text p {
             text-align: justify;
             text-justify: inter-word;
@@ -132,10 +120,6 @@ st.markdown(
         }
 
         .materi-caption {
-            min-height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             text-align: center;
             font-size: 14px;
             font-weight: 700;
@@ -145,10 +129,6 @@ st.markdown(
         }
 
         .materi-source {
-            min-height: 58px;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
             text-align: center;
             font-size: 13px;
             font-style: italic;
@@ -156,10 +136,8 @@ st.markdown(
             margin-top: 3px;
             margin-bottom: 16px;
             line-height: 1.5;
-            overflow-wrap: anywhere;
-            word-break: break-word;
         }
-        
+
         .materi-helper {
             background: #eff6ff;
             border: 1px solid #bfdbfe;
