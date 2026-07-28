@@ -5,8 +5,7 @@
     "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari ekosistem sebagai satu kesatuan antara makhluk hidup dan lingkungan fisiknya. Pembahasan difokuskan pada konsep yang mendukung simulasi pencemaran sungai, terutama hubungan kualitas air, oksigen terlarut, pH, populasi ikan, dan kondisi organisme perairan.",
     "gambar_utama": {
       "path": "assets/images/komponen_ekosistem.png",
-      "judul": "Gambar 1. Komponen biotik dan abiotik pada ekosistem perairan",
-      "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
+      "judul": "Gambar 1. Komponen biotik dan abiotik pada ekosistem perairan"
     },
     "bagian": [
       {
@@ -163,7 +162,8 @@
         "judul": "Pencemaran Ekosistem Perairan",
         "gambar": {
           "path": "assets/images/satuan_ekosistem/pencemaran.jpeg",
-          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai"
+          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai",
+          "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor"
         },
         "paragraf": [
           "Pencemaran air adalah masuknya makhluk hidup, zat, energi, atau komponen lain ke dalam perairan sehingga kualitas air menurun dan tidak lagi sesuai dengan fungsi atau kebutuhan organisme. Sumber pencemaran dapat berasal dari limbah industri, limbah rumah tangga, kegiatan pertanian, peternakan, pertambangan, dan sampah.",
