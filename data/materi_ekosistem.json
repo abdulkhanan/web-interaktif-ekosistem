@@ -182,25 +182,274 @@
     ],
     "referensi": [
       "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia. (2021). Ilmu Pengetahuan Alam untuk SMP Kelas VII. Jakarta: Pusat Kurikulum dan Perbukuan.",
-      "OpenStax. (2020). Biology 2e. Houston, Texas: OpenStax, Rice University.",
+      "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e. Houston, Texas: OpenStax, Rice University.",
       "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson.",
-      "Tim Pengembang Web Interaktif Ekosistem. (2026). Ilustrasi satuan makhluk hidup dalam ekosistem [Ilustrasi digital mandiri].",
-      "Proyek Web Interaktif Ekosistem. (2026). Koleksi aset gambar bahan penyelidikan [Aset digital internal]."
+      "Keluarga Mahasiswa Profesi Budidaya Perairan Universitas Hasanuddin. (2010). Kumpulan informasi budidaya perairan [Sumber gambar individu]. https://akuakulturunhas.blogspot.com/2010/08/",
+      "Dinas Kebudayaan Daerah Istimewa Yogyakarta. (2023). Mengenal ekosistem laut, jenis, dan peran untuk kehidupan manusia [Sumber gambar populasi dan komunitas]. https://budaya.jogjaprov.go.id/berita/detail/1585-mengenal-ekosistem-laut",
+      "Pelajaran.co.id. (n.d.). Pengertian ekosistem, komponen, tipe, macam jenis, dan contoh ekosistem lengkap [Sumber gambar ekosistem]. https://www.pelajaran.co.id/pengertian-ekosistem-komponen-tipe-macam-jenis-dan-contoh-ekosistem/",
+      "Bailey, R. (n.d.). Land biomes: Tropical rainforests [Sumber gambar bioma]. ThoughtCo. https://www.thoughtco.com/land-biomes-tropical-rain-forests-373496",
+      "Australian Environmental Education. (n.d.). What is the biosphere? [Sumber gambar biosfer]. https://www.australianenvironmentaleducation.com.au/education-resources/what-is-the-biosphere/",
+      "Proyek Web Interaktif Ekosistem. (2026). Koleksi aset gambar komponen ekosistem dan pencemaran sungai [Aset digital internal]."
     ]
   },
   {
     "kode": "materi_2_aliran_energi",
     "judul": "Bahan Penyelidikan 2: Aliran Energi dalam Ekosistem, Piramida Ekologi, Tipe Ekosistem, dan Produktivitas Ekosistem",
-    "isi": "Energi dalam ekosistem berasal dari matahari. Tumbuhan hijau menangkap energi matahari melalui proses fotosintesis. Energi tersebut digunakan tumbuhan untuk membuat makanan. Tumbuhan berperan sebagai produsen karena mampu menghasilkan makanan sendiri. Hewan yang memakan tumbuhan memperoleh energi dari produsen. Hewan pemakan tumbuhan kemudian dapat dimakan oleh hewan lain. Perpindahan energi dari satu makhluk hidup ke makhluk hidup lain membentuk aliran energi.\n\nAliran energi dapat diamati melalui rantai makanan. Rantai makanan adalah urutan makan dan dimakan dalam ekosistem. Contohnya, rumput dimakan belalang, belalang dimakan katak, lalu katak dimakan ular. Rumput berperan sebagai produsen. Belalang berperan sebagai konsumen I. Katak berperan sebagai konsumen II. Ular berperan sebagai konsumen III. Setiap tingkatan dalam rantai makanan disebut tingkat trofik, tetapi dalam pembelajaran dapat dipahami sebagai tingkatan dalam rantai makanan.\n\nEnergi yang berpindah dari satu tingkat ke tingkat berikutnya tidak seluruhnya diteruskan. Sebagian energi digunakan makhluk hidup untuk bergerak, tumbuh, bernapas, berkembang biak, dan mempertahankan hidup. Sebagian energi juga hilang sebagai panas. Akibatnya, energi yang diterima konsumen I lebih kecil daripada energi pada produsen. Energi pada konsumen II lebih kecil daripada konsumen I. Energi pada konsumen III juga semakin kecil. Pola ini menyebabkan jumlah energi makin berkurang pada tingkatan rantai makanan yang lebih tinggi.\n\nPiramida ekologi menggambarkan perbandingan jumlah organisme, biomassa, atau energi pada setiap tingkatan ekosistem. Pada piramida energi, bagian dasar biasanya ditempati oleh produsen karena produsen memiliki energi paling besar. Bagian di atasnya ditempati oleh konsumen I, konsumen II, dan konsumen III. Semakin tinggi tingkatannya, energi yang tersedia semakin kecil. Bentuk piramida ini menunjukkan bahwa produsen memiliki peran besar dalam menopang kehidupan konsumen di atasnya.\n\nProduktivitas ekosistem berkaitan dengan kemampuan produsen menghasilkan bahan organik melalui fotosintesis. Semakin tinggi produktivitas produsen, semakin besar energi yang tersedia dalam ekosistem. Tumbuhan yang subur dapat menyediakan lebih banyak makanan bagi herbivor. Herbivor yang cukup makanan dapat mendukung keberadaan karnivor. Sebaliknya, jika jumlah produsen menurun, energi yang tersedia untuk konsumen juga ikut menurun.\n\nMusim kemarau panjang dapat menjadi contoh fenomena yang memengaruhi aliran energi. Saat air berkurang, pertumbuhan rumput dapat menurun. Rumput sebagai produsen menjadi lebih sedikit. Akibatnya, energi yang tersedia untuk hewan pemakan rumput juga berkurang. Hewan pemakan hewan lain juga dapat terkena dampaknya. Fenomena ini menunjukkan bahwa perubahan pada produsen dapat memengaruhi seluruh rantai makanan.\n\nTipe ekosistem juga memengaruhi bentuk aliran energi. Ekosistem darat seperti hutan, padang rumput, dan sawah memiliki produsen utama berupa tumbuhan darat. Ekosistem perairan seperti sungai, danau, dan laut memiliki produsen berupa fitoplankton, alga, dan tumbuhan air. Meskipun jenis organisme berbeda, prinsip aliran energi tetap sama. Energi mengalir dari produsen ke konsumen dan jumlahnya berkurang pada setiap perpindahan.\n\nMelalui simulasi rantai makanan saat kemarau, siswa dapat menyelidiki pengaruh penurunan produsen terhadap energi pada setiap tingkatan rantai makanan. Siswa dapat mengubah jumlah energi produsen dan melihat bagaimana perubahan tersebut memengaruhi konsumen I, konsumen II, dan konsumen III. Simulasi ini membantu siswa memahami bahwa keseimbangan ekosistem sangat dipengaruhi oleh ketersediaan energi dari produsen."
+    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari sumber dan perpindahan energi dalam ekosistem, tingkat trofik, piramida ekologi, produktivitas produsen, serta dampak musim kemarau terhadap ketersediaan energi pada rantai makanan.",
+    "gambar_utama": {
+      "path": "assets/images/rantai_makanan_piramida_energi.png",
+      "judul": "Gambar 1. Diagram rantai makanan dan piramida energi pada ekosistem",
+      "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
+    },
+    "bagian": [
+      {
+        "huruf": "A",
+        "judul": "Aliran Energi dalam Ekosistem",
+        "paragraf": [
+          "Energi dalam ekosistem berasal dari matahari. Tumbuhan hijau menangkap energi matahari melalui proses fotosintesis. Energi tersebut digunakan tumbuhan untuk membuat makanan. Tumbuhan berperan sebagai produsen karena mampu menghasilkan makanan sendiri. Hewan yang memakan tumbuhan memperoleh energi dari produsen. Hewan pemakan tumbuhan kemudian dapat dimakan oleh hewan lain. Perpindahan energi dari satu makhluk hidup ke makhluk hidup lain membentuk aliran energi.",
+          "Aliran energi dapat diamati melalui rantai makanan. Rantai makanan adalah urutan makan dan dimakan dalam ekosistem. Contohnya, rumput dimakan belalang, belalang dimakan katak, lalu katak dimakan ular. Rumput berperan sebagai produsen. Belalang berperan sebagai konsumen I. Katak berperan sebagai konsumen II. Ular berperan sebagai konsumen III. Setiap tingkatan dalam rantai makanan disebut tingkat trofik, tetapi dalam pembelajaran dapat dipahami sebagai tingkatan dalam rantai makanan.",
+          "Energi yang berpindah dari satu tingkat ke tingkat berikutnya tidak seluruhnya diteruskan. Sebagian energi digunakan makhluk hidup untuk bergerak, tumbuh, bernapas, berkembang biak, dan mempertahankan hidup. Sebagian energi juga hilang sebagai panas. Akibatnya, energi yang diterima konsumen I lebih kecil daripada energi pada produsen. Energi pada konsumen II lebih kecil daripada konsumen I. Energi pada konsumen III juga semakin kecil. Pola ini menyebabkan jumlah energi makin berkurang pada tingkatan rantai makanan yang lebih tinggi.",
+          "Piramida ekologi menggambarkan perbandingan jumlah organisme, biomassa, atau energi pada setiap tingkatan ekosistem. Pada piramida energi, bagian dasar biasanya ditempati oleh produsen karena produsen memiliki energi paling besar. Bagian di atasnya ditempati oleh konsumen I, konsumen II, dan konsumen III. Semakin tinggi tingkatannya, energi yang tersedia semakin kecil. Bentuk piramida ini menunjukkan bahwa produsen memiliki peran besar dalam menopang kehidupan konsumen di atasnya.",
+          "Produktivitas ekosistem berkaitan dengan kemampuan produsen menghasilkan bahan organik melalui fotosintesis. Semakin tinggi produktivitas produsen, semakin besar energi yang tersedia dalam ekosistem. Tumbuhan yang subur dapat menyediakan lebih banyak makanan bagi herbivor. Herbivor yang cukup makanan dapat mendukung keberadaan karnivor. Sebaliknya, jika jumlah produsen menurun, energi yang tersedia untuk konsumen juga ikut menurun.",
+          "Musim kemarau panjang dapat menjadi contoh fenomena yang memengaruhi aliran energi. Saat air berkurang, pertumbuhan rumput dapat menurun. Rumput sebagai produsen menjadi lebih sedikit. Akibatnya, energi yang tersedia untuk hewan pemakan rumput juga berkurang. Hewan pemakan hewan lain juga dapat terkena dampaknya. Fenomena ini menunjukkan bahwa perubahan pada produsen dapat memengaruhi seluruh rantai makanan.",
+          "Tipe ekosistem juga memengaruhi bentuk aliran energi. Ekosistem darat seperti hutan, padang rumput, dan sawah memiliki produsen utama berupa tumbuhan darat. Ekosistem perairan seperti sungai, danau, dan laut memiliki produsen berupa fitoplankton, alga, dan tumbuhan air. Meskipun jenis organisme berbeda, prinsip aliran energi tetap sama. Energi mengalir dari produsen ke konsumen dan jumlahnya berkurang pada setiap perpindahan.",
+          "Melalui simulasi rantai makanan saat kemarau, siswa dapat menyelidiki pengaruh penurunan produsen terhadap energi pada setiap tingkatan rantai makanan. Siswa dapat mengubah jumlah energi produsen dan melihat bagaimana perubahan tersebut memengaruhi konsumen I, konsumen II, dan konsumen III. Simulasi ini membantu siswa memahami bahwa keseimbangan ekosistem sangat dipengaruhi oleh ketersediaan energi dari produsen."
+        ]
+      }
+    ],
+    "referensi": [
+      "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia. (2021). Ilmu Pengetahuan Alam untuk SMP Kelas VII. Jakarta: Pusat Kurikulum dan Perbukuan.",
+      "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e (Bagian 46.2: Energy Flow through Ecosystems). Houston, Texas: OpenStax, Rice University.",
+      "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson.",
+      "Proyek Web Interaktif Ekosistem. (2026). Diagram rantai makanan dan piramida energi [Aset digital internal]."
+    ]
   },
   {
     "kode": "materi_3_daur_air_karbon_oksigen",
     "judul": "Bahan Penyelidikan 3: Daur Air, Daur Karbon, dan Daur Oksigen",
-    "isi": "Daur air adalah proses perputaran air dari permukaan bumi ke atmosfer lalu kembali lagi ke bumi. Air di laut, sungai, danau, tanah, serta tumbuhan dapat mengalami penguapan akibat panas matahari. Uap air naik ke atmosfer, kemudian berubah menjadi titik-titik air dan membentuk awan. Ketika titik-titik air dalam awan semakin banyak dan berat, air turun kembali ke bumi sebagai hujan. Air hujan dapat meresap ke dalam tanah, mengalir di permukaan tanah, masuk ke sungai, atau kembali ke laut.\n\nBeberapa istilah dalam daur air perlu dipahami dengan sederhana. Evaporasi adalah penguapan air akibat panas matahari. Kondensasi adalah perubahan uap air menjadi titik-titik air yang membentuk awan. Presipitasi adalah turunnya air dari atmosfer ke permukaan bumi, misalnya hujan. Infiltrasi adalah masuknya air ke dalam tanah. Limpasan permukaan adalah air hujan yang mengalir di atas permukaan tanah. Semua proses ini saling berkaitan dalam menjaga ketersediaan air di lingkungan.\n\nTumbuhan memiliki peran dalam daur air. Akar tumbuhan membantu tanah menyerap air hujan. Daun dan batang tumbuhan mengurangi kecepatan air hujan yang jatuh ke tanah. Tanah yang tertutup vegetasi biasanya lebih mudah menyerap air daripada tanah terbuka. Ketika banyak pohon ditebang, air hujan lebih sulit meresap ke tanah. Akibatnya, limpasan permukaan dapat meningkat. Kondisi ini dapat memicu genangan, erosi, banjir, dan berkurangnya cadangan air tanah.\n\nDaur karbon adalah perputaran karbon di alam. Karbon terdapat dalam bentuk karbon dioksida atau CO₂ di udara. Tumbuhan menyerap CO₂ saat melakukan fotosintesis. CO₂ digunakan untuk membuat makanan dan membantu pertumbuhan tumbuhan. Hewan dan manusia menghasilkan CO₂ melalui pernapasan. Pembakaran bahan bakar, kebakaran hutan, dan aktivitas industri juga dapat menambah CO₂ di udara. Jika jumlah tumbuhan berkurang, kemampuan lingkungan untuk menyerap CO₂ juga menurun.\n\nDaur oksigen berkaitan erat dengan proses fotosintesis dan pernapasan. Tumbuhan menghasilkan oksigen atau O₂ melalui fotosintesis. Oksigen digunakan manusia, hewan, dan organisme lain untuk bernapas. Pada saat bernapas, makhluk hidup menggunakan oksigen dan menghasilkan karbon dioksida. Hubungan ini menunjukkan bahwa daur karbon dan daur oksigen saling berkaitan. Tumbuhan menyerap CO₂ dan menghasilkan O₂, sedangkan manusia dan hewan menggunakan O₂ dan menghasilkan CO₂.\n\nPenebangan pohon dapat mengganggu daur air, daur karbon, dan daur oksigen sekaligus. Ketika pohon berkurang, air hujan lebih banyak mengalir di permukaan dan lebih sedikit meresap ke tanah. Penyerapan karbon dioksida juga menurun karena jumlah tumbuhan berkurang. Produksi oksigen ikut berkurang karena proses fotosintesis berkurang. Fenomena ini menunjukkan bahwa vegetasi berperan dalam menjaga keseimbangan lingkungan.\n\nMelalui simulasi daur air saat pohon berkurang, siswa dapat menyelidiki pengaruh jumlah pohon atau tumbuhan yang masih tersisa terhadap air yang meresap ke tanah, limpasan permukaan, penyerapan CO₂, dan produksi O₂. Simulasi ini tidak menggambarkan seluruh proses daur karbon dan daur oksigen secara lengkap, tetapi menunjukkan peran tumbuhan dalam membantu menyerap karbon dioksida dan menghasilkan oksigen."
+    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari perputaran air, karbon, dan oksigen antara makhluk hidup dan lingkungan. Pembahasan difokuskan pada peran tumbuhan serta dampak berkurangnya jumlah pohon terhadap infiltrasi, limpasan permukaan, penyerapan karbon dioksida, dan produksi oksigen.",
+    "gambar_utama": {
+      "path": "assets/images/daur_air_co2_o2.png",
+      "judul": "Gambar 1. Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen",
+      "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
+    },
+    "bagian": [
+      {
+        "huruf": "A",
+        "judul": "Pengertian Daur Biogeokimia",
+        "paragraf": [
+          "Daur biogeokimia adalah proses perpindahan dan penggunaan kembali unsur atau senyawa kimia antara komponen biotik dan komponen abiotik. Komponen biotik meliputi seluruh makhluk hidup, sedangkan komponen abiotik meliputi atmosfer, air, tanah, batuan, dan lingkungan fisik lainnya. Melalui daur ini, materi yang dibutuhkan organisme tidak langsung habis, tetapi terus berpindah dan digunakan kembali dalam ekosistem.",
+          "Air, karbon, dan oksigen dapat berada di udara, tanah, perairan, tumbuhan, hewan, serta mikroorganisme. Ketiganya berpindah melalui berbagai proses, seperti penguapan, hujan, fotosintesis, respirasi, penguraian, pembakaran, penyerapan oleh tumbuhan, dan aliran air. Walaupun dipelajari secara terpisah, daur air, karbon, dan oksigen sebenarnya saling berkaitan.",
+          "Daur biogeokimia berperan penting dalam menjaga ketersediaan materi bagi kehidupan. Apabila salah satu proses terganggu dalam skala besar, keseimbangan lingkungan juga dapat berubah. Penebangan pohon, perubahan penggunaan lahan, kebakaran, dan pencemaran merupakan contoh aktivitas yang dapat memengaruhi jalannya daur tersebut."
+        ]
+      },
+      {
+        "huruf": "B",
+        "judul": "Daur Air",
+        "paragraf": [
+          "Daur air adalah pergerakan air secara terus-menerus dari permukaan bumi menuju atmosfer dan kembali lagi ke permukaan bumi. Energi matahari menyebabkan air dari laut, sungai, danau, tanah, serta permukaan lainnya menguap menjadi uap air. Tumbuhan juga melepaskan uap air melalui transpirasi. Uap air bergerak naik ke atmosfer dan mengalami pendinginan.",
+          "Ketika suhu udara menurun, uap air mengalami kondensasi dan membentuk titik-titik air di dalam awan. Titik air yang semakin banyak akan bergabung dan menjadi lebih berat. Air kemudian turun ke permukaan bumi sebagai presipitasi, misalnya hujan. Setelah mencapai permukaan, sebagian air mengalir menuju sungai dan laut, sedangkan sebagian lainnya meresap ke dalam tanah.",
+          "Air yang masuk ke tanah melalui infiltrasi dapat tersimpan sebagai kelembapan tanah atau bergerak lebih dalam melalui perkolasi untuk mengisi air tanah. Air yang tidak sempat meresap akan mengalir di atas permukaan sebagai limpasan. Besarnya infiltrasi dan limpasan dipengaruhi oleh kemiringan lahan, jenis tanah, curah hujan, tutupan vegetasi, dan penggunaan lahan."
+        ],
+        "poin": [
+          "Evaporasi: perubahan air cair menjadi uap air akibat pemanasan.",
+          "Transpirasi: pelepasan uap air dari tumbuhan melalui stomata daun.",
+          "Kondensasi: perubahan uap air menjadi titik-titik air yang membentuk awan.",
+          "Presipitasi: turunnya air dari atmosfer, misalnya dalam bentuk hujan.",
+          "Infiltrasi: masuknya air dari permukaan ke dalam tanah.",
+          "Perkolasi: gerakan air menuju lapisan tanah yang lebih dalam.",
+          "Limpasan permukaan: aliran air di atas permukaan menuju saluran, sungai, danau, atau laut.",
+          "Pengumpulan air: tersimpannya air di sungai, danau, laut, tanah, dan air bawah tanah."
+        ]
+      },
+      {
+        "huruf": "C",
+        "judul": "Peran Tumbuhan dalam Daur Air",
+        "paragraf": [
+          "Tumbuhan mempunyai peran penting dalam mengatur pergerakan air. Tajuk dan daun menahan sebagian air hujan sehingga air tidak langsung menghantam permukaan tanah dengan kuat. Air yang tertahan dapat menguap kembali atau jatuh secara perlahan ke tanah. Kondisi ini membantu mengurangi pengikisan permukaan tanah.",
+          "Akar tumbuhan membentuk ruang dan saluran kecil di dalam tanah sehingga air lebih mudah meresap. Serasah daun dan bahan organik di permukaan juga membantu mempertahankan struktur serta daya serap tanah. Pada wilayah yang ditutupi vegetasi, infiltrasi umumnya lebih baik dan limpasan permukaan dapat berkurang dibandingkan lahan terbuka atau permukaan yang tertutup bangunan.",
+          "Tumbuhan menyerap air dari tanah untuk menjalankan proses kehidupan. Sebagian air digunakan dalam fotosintesis dan berbagai reaksi metabolisme, sedangkan sebagian besar dilepaskan kembali ke atmosfer melalui transpirasi. Oleh karena itu, tumbuhan menghubungkan cadangan air di dalam tanah dengan uap air di atmosfer."
+        ]
+      },
+      {
+        "huruf": "D",
+        "judul": "Daur Karbon",
+        "paragraf": [
+          "Karbon merupakan unsur utama penyusun senyawa organik, seperti karbohidrat, lemak, protein, dan asam nukleat. Di atmosfer, karbon banyak ditemukan dalam bentuk karbon dioksida atau CO₂. Karbon juga tersimpan dalam tubuh makhluk hidup, tanah, sedimen, batuan karbonat, laut, serta bahan bakar fosil.",
+          "Tumbuhan menyerap karbon dioksida dari udara melalui fotosintesis. Dengan bantuan cahaya matahari dan air, karbon dioksida diubah menjadi senyawa organik yang digunakan untuk pertumbuhan. Karbon kemudian berpindah kepada hewan ketika hewan memakan tumbuhan atau organisme lain. Dengan demikian, karbon bergerak melalui komponen-komponen dalam ekosistem.",
+          "Respirasi tumbuhan, hewan, dan mikroorganisme melepaskan kembali karbon dioksida ke lingkungan. Penguraian sisa organisme juga mengembalikan karbon ke tanah, air, dan udara. Selain proses alami, pembakaran kayu dan bahan bakar fosil melepaskan karbon dioksida dalam jumlah besar. Berkurangnya vegetasi dapat mengurangi kemampuan lingkungan menyerap karbon dioksida melalui fotosintesis."
+        ]
+      },
+      {
+        "huruf": "E",
+        "judul": "Daur Oksigen",
+        "paragraf": [
+          "Oksigen terdapat di atmosfer dalam bentuk gas O₂ dan terlarut di dalam air. Oksigen dibutuhkan oleh manusia, hewan, tumbuhan, dan banyak mikroorganisme untuk respirasi sel. Melalui respirasi, energi yang tersimpan dalam bahan makanan dapat dilepaskan dan digunakan untuk menjalankan aktivitas kehidupan.",
+          "Salah satu sumber utama oksigen adalah fotosintesis. Tumbuhan darat, tumbuhan air, alga, dan fitoplankton menggunakan karbon dioksida serta air untuk membentuk bahan organik, kemudian melepaskan oksigen. Oksigen tersebut masuk ke udara atau larut di dalam air dan dapat digunakan oleh organisme lain.",
+          "Oksigen juga digunakan dalam penguraian bahan organik, pembakaran, dan berbagai proses kimia. Karena terus digunakan, ketersediaan oksigen perlu dipertahankan melalui proses yang menghasilkan oksigen, terutama fotosintesis. Jumlah tumbuhan, intensitas cahaya, kualitas lingkungan, dan aktivitas organisme dapat memengaruhi keseimbangan antara produksi dan penggunaan oksigen."
+        ]
+      },
+      {
+        "huruf": "F",
+        "judul": "Hubungan Daur Air, Karbon, dan Oksigen",
+        "paragraf": [
+          "Daur air, karbon, dan oksigen tidak berlangsung secara terpisah. Ketiganya saling bertemu dalam fotosintesis. Tumbuhan menyerap air melalui akar dan mengambil karbon dioksida dari udara. Dengan bantuan energi cahaya, tumbuhan membentuk bahan organik dan menghasilkan oksigen.",
+          "Bahan organik hasil fotosintesis menyimpan karbon sekaligus menjadi sumber energi bagi tumbuhan dan organisme yang memakannya. Ketika organisme melakukan respirasi, oksigen digunakan dan karbon dioksida serta air dihasilkan. Penguraian sisa organisme juga menggunakan atau menghasilkan senyawa yang menjadi bagian dari ketiga daur tersebut.",
+          "Tumbuhan berperan sebagai penghubung penting karena memengaruhi pergerakan air melalui penyerapan dan transpirasi, menyerap karbon dioksida melalui fotosintesis, serta menghasilkan oksigen. Oleh sebab itu, perubahan jumlah dan kondisi vegetasi dapat memengaruhi daur air, karbon, dan oksigen secara bersamaan."
+        ]
+      },
+      {
+        "huruf": "G",
+        "judul": "Dampak Berkurangnya Jumlah Pohon",
+        "paragraf": [
+          "Berkurangnya jumlah pohon menyebabkan permukaan tanah kehilangan pelindung berupa tajuk, akar, dan serasah. Air hujan menjadi lebih cepat mencapai permukaan dan mengalir ke tempat yang lebih rendah. Akibatnya, infiltrasi dapat menurun, sedangkan limpasan permukaan, erosi, sedimentasi, genangan, dan risiko banjir dapat meningkat.",
+          "Penurunan infiltrasi menyebabkan lebih sedikit air tersimpan dalam tanah dan mengisi air bawah tanah. Pada musim kering, cadangan air menjadi lebih cepat berkurang. Hilangnya vegetasi juga mengurangi transpirasi sehingga perpindahan uap air dari daratan menuju atmosfer dapat berubah.",
+          "Jumlah pohon yang berkurang juga menurunkan luas daun yang melakukan fotosintesis. Penyerapan karbon dioksida dan produksi oksigen ikut berkurang. Jika penebangan diikuti pembakaran, karbon yang tersimpan dalam biomassa dapat dilepaskan kembali ke atmosfer sebagai karbon dioksida. Oleh karena itu, perubahan vegetasi dapat memengaruhi kondisi tanah, air, udara, dan makhluk hidup sekaligus."
+        ],
+        "poin": [
+          "Infiltrasi dan pengisian air tanah dapat menurun.",
+          "Limpasan permukaan, erosi, dan risiko banjir dapat meningkat.",
+          "Cadangan air tanah pada musim kering dapat berkurang.",
+          "Penyerapan karbon dioksida melalui fotosintesis menurun.",
+          "Produksi oksigen oleh tumbuhan ikut berkurang.",
+          "Suhu permukaan dan kondisi mikroklimat dapat berubah."
+        ],
+        "callout": "Berkurangnya jumlah pohon tidak hanya memengaruhi satu proses lingkungan. Perubahan vegetasi dapat mengurangi peresapan air, meningkatkan limpasan permukaan, menurunkan penyerapan karbon dioksida, dan mengurangi produksi oksigen secara bersamaan. Pada simulasi, setiap perubahan variabel perlu dianalisis sebagai bagian dari hubungan tersebut."
+      }
+    ],
+    "referensi": [
+      "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia. (2021). Ilmu Pengetahuan Alam untuk SMP Kelas VII. Jakarta: Pusat Kurikulum dan Perbukuan.",
+      "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e (Bagian 46.3: Biogeochemical Cycles). Houston, Texas: OpenStax, Rice University.",
+      "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson.",
+      "U.S. Geological Survey, Water Science School. (n.d.). Water cycle. https://www.usgs.gov/water-science-school/water-cycle",
+      "Proyek Web Interaktif Ekosistem. (2026). Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen [Aset digital internal]."
+    ]
   },
   {
     "kode": "materi_4_daur_nitrogen_fosfor",
     "judul": "Bahan Penyelidikan 4: Daur Nitrogen dan Daur Fosfor",
-    "isi": "Nitrogen dan fosfor adalah unsur yang dibutuhkan makhluk hidup. Nitrogen diperlukan untuk membentuk protein dan membantu pertumbuhan organisme. Fosfor diperlukan untuk pembentukan energi, pertumbuhan sel, tulang, gigi, dan bagian penting dalam tubuh makhluk hidup. Tumbuhan membutuhkan nitrogen dan fosfor untuk tumbuh. Hewan memperoleh nitrogen dan fosfor dari makanan yang dikonsumsi. Kedua unsur ini terus berpindah melalui tanah, air, tumbuhan, hewan, mikroorganisme, dan lingkungan.\n\nDaur nitrogen adalah perputaran nitrogen di alam. Nitrogen banyak terdapat di udara, tetapi sebagian besar makhluk hidup tidak dapat langsung menggunakannya dalam bentuk gas nitrogen. Bakteri tertentu dapat mengubah nitrogen menjadi bentuk yang dapat diserap tumbuhan. Tumbuhan menyerap nitrogen dari tanah, lalu nitrogen berpindah ke hewan ketika hewan memakan tumbuhan. Ketika makhluk hidup mati atau menghasilkan sisa metabolisme, pengurai membantu mengembalikan nitrogen ke tanah. Proses ini membuat nitrogen terus berputar dalam ekosistem.\n\nDaur fosfor adalah perputaran fosfor di alam. Fosfor banyak terdapat dalam batuan, tanah, dan sedimen. Pelapukan batuan dapat melepaskan fosfat ke tanah atau air. Tumbuhan menyerap fosfat dari tanah. Hewan memperoleh fosfor ketika memakan tumbuhan atau hewan lain. Ketika makhluk hidup mati, fosfor kembali ke tanah melalui proses penguraian. Berbeda dengan nitrogen, fosfor tidak banyak beredar di atmosfer. Fosfor lebih banyak bergerak melalui tanah, air, batuan, dan makhluk hidup.\n\nPupuk pertanian mengandung zat hara, terutama nitrogen dan fosfor. Dalam jumlah yang sesuai, pupuk dapat membantu tanaman tumbuh. Pupuk yang digunakan secara berlebihan dapat terbawa air hujan menuju sungai, danau, atau perairan lain. Nitrogen dan fosfor yang masuk ke perairan dapat menjadi makanan bagi alga. Jika jumlah zat hara terlalu banyak, alga dapat tumbuh semakin banyak. Fenomena peningkatan jumlah alga akibat zat hara berlebih dikenal sebagai eutrofikasi.\n\nPeningkatan alga dapat mengganggu kondisi perairan. Alga yang tumbuh terlalu banyak dapat menghalangi cahaya matahari masuk ke air. Ketika alga mati dan terurai, proses penguraian dapat menghabiskan oksigen terlarut di dalam air. Oksigen terlarut adalah oksigen dalam air yang dibutuhkan ikan dan organisme air untuk bertahan hidup. Jika oksigen menurun, ikan dan organisme air dapat terganggu, mengalami stres, atau mati. Kondisi ini dapat merusak keseimbangan ekosistem perairan.\n\nDaur nitrogen dan daur fosfor menunjukkan bahwa zat hara dapat berpindah dari tanah ke tumbuhan, ke hewan, lalu kembali ke lingkungan. Aktivitas manusia dapat mengubah keseimbangan daur tersebut. Penggunaan pupuk yang berlebihan dapat menyebabkan terlalu banyak nitrogen dan fosfor masuk ke perairan. Kondisi ini menunjukkan bahwa kegiatan di darat dapat memengaruhi ekosistem air.\n\nMelalui simulasi peningkatan alga akibat pupuk berlebih, siswa dapat menyelidiki pengaruh nitrogen dan fosfor terhadap pertumbuhan alga, oksigen air, dan kondisi organisme air. Simulasi ini membantu siswa memahami bahwa zat hara memang dibutuhkan makhluk hidup, tetapi jumlah yang berlebihan dapat mengganggu keseimbangan ekosistem."
+    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari perputaran nitrogen dan fosfor serta manfaatnya sebagai unsur hara. Pembahasan difokuskan pada masuknya pupuk berlebih ke sungai, pertumbuhan alga, penurunan oksigen terlarut, dan dampaknya terhadap organisme perairan.",
+    "gambar_utama": {
+      "path": "assets/images/daur_nitrogen_fosfor.png",
+      "judul": "Gambar 1. Diagram daur nitrogen, daur fosfor, dan dampak kelebihan zat hara pada perairan",
+      "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
+    },
+    "bagian": [
+      {
+        "huruf": "A",
+        "judul": "Nitrogen dan Fosfor sebagai Unsur Hara",
+        "paragraf": [
+          "Nitrogen dan fosfor merupakan unsur hara yang dibutuhkan makhluk hidup. Unsur hara adalah unsur kimia yang digunakan organisme untuk membentuk bagian tubuh dan menjalankan proses kehidupan. Walaupun dibutuhkan, nitrogen dan fosfor harus tersedia dalam jumlah yang sesuai. Kekurangan unsur hara dapat menghambat pertumbuhan, sedangkan jumlah yang berlebihan dapat mengganggu keseimbangan lingkungan.",
+          "Nitrogen menjadi bagian penting dari asam amino, protein, klorofil, serta asam nukleat berupa DNA dan RNA. Tumbuhan menggunakan nitrogen untuk membentuk jaringan baru dan mendukung pertumbuhan daun. Hewan memperoleh nitrogen dengan memakan tumbuhan atau organisme lain karena sebagian besar hewan tidak dapat mengambil nitrogen langsung dari udara.",
+          "Fosfor berperan dalam pembentukan ATP sebagai pembawa energi, DNA, RNA, membran sel, tulang, dan gigi. Pada tumbuhan, fosfor mendukung pertumbuhan akar, pembelahan sel, pembungaan, dan pembentukan biji. Fosfor diperoleh tumbuhan terutama dalam bentuk ion fosfat yang tersedia di tanah atau air."
+        ]
+      },
+      {
+        "huruf": "B",
+        "judul": "Daur Nitrogen",
+        "paragraf": [
+          "Sebagian besar nitrogen di bumi terdapat di atmosfer sebagai gas N₂. Meskipun jumlahnya melimpah, nitrogen dalam bentuk tersebut tidak dapat langsung digunakan oleh sebagian besar tumbuhan dan hewan. Nitrogen harus diubah lebih dahulu menjadi senyawa yang dapat diserap atau dimanfaatkan oleh organisme.",
+          "Bakteri pengikat nitrogen mengubah gas nitrogen menjadi amonia atau senyawa terkait melalui fiksasi nitrogen. Amonia kemudian dapat diubah oleh bakteri nitrifikasi menjadi nitrit dan nitrat. Tumbuhan menyerap nitrat atau amonium melalui akar dan menggunakannya untuk membentuk senyawa organik. Nitrogen berpindah kepada hewan melalui proses makan dan dimakan.",
+          "Sisa metabolisme, daun gugur, bangkai, dan bahan organik lainnya diuraikan oleh mikroorganisme. Melalui amonifikasi, nitrogen organik dikembalikan menjadi amonia atau amonium. Sebagian nitrat selanjutnya diubah kembali menjadi gas nitrogen oleh bakteri denitrifikasi dan dilepaskan ke atmosfer. Rangkaian proses ini menjaga nitrogen terus berputar antara atmosfer, tanah, perairan, dan makhluk hidup."
+        ],
+        "poin": [
+          "Fiksasi nitrogen: perubahan gas nitrogen menjadi senyawa yang dapat memasuki daur biologis.",
+          "Nitrifikasi: perubahan amonia atau amonium menjadi nitrit dan kemudian nitrat.",
+          "Asimilasi: penyerapan nitrogen anorganik oleh tumbuhan untuk membentuk senyawa organik.",
+          "Perpindahan melalui makanan: nitrogen berpindah dari tumbuhan kepada hewan dan organisme lain.",
+          "Amonifikasi: penguraian nitrogen organik menjadi amonia atau amonium.",
+          "Denitrifikasi: perubahan nitrat menjadi gas nitrogen yang kembali ke atmosfer."
+        ]
+      },
+      {
+        "huruf": "C",
+        "judul": "Daur Fosfor",
+        "paragraf": [
+          "Fosfor banyak tersimpan dalam batuan, mineral, tanah, sedimen, air, dan tubuh makhluk hidup. Berbeda dengan daur nitrogen, daur fosfor tidak mempunyai fase gas di atmosfer yang dominan. Karena melibatkan pelapukan batuan dan pembentukan sedimen, sebagian proses dalam daur fosfor berlangsung sangat lambat.",
+          "Pelapukan batuan melepaskan ion fosfat ke tanah dan perairan. Tumbuhan menyerap fosfat melalui akar, kemudian menggunakannya untuk membentuk senyawa penting. Fosfor berpindah kepada hewan ketika hewan memakan tumbuhan atau organisme lain. Setelah organisme mengeluarkan sisa metabolisme atau mati, pengurai mengembalikan fosfat ke lingkungan.",
+          "Sebagian fosfat terbawa oleh aliran air menuju sungai, danau, atau laut. Fosfat dapat digunakan organisme perairan, mengendap di dasar, dan tersimpan sebagai sedimen. Dalam waktu geologis yang panjang, sedimen dapat membentuk batuan baru. Pengangkatan batuan dan pelapukan kemudian mengulangi perputaran fosfor."
+        ],
+        "poin": [
+          "Pelapukan batuan melepaskan fosfat ke tanah dan air.",
+          "Tumbuhan menyerap fosfat melalui akar.",
+          "Fosfor berpindah kepada hewan melalui makanan.",
+          "Penguraian sisa organisme mengembalikan fosfat ke lingkungan.",
+          "Sebagian fosfat terbawa ke perairan dan mengendap sebagai sedimen.",
+          "Sedimen dapat membentuk batuan dan kembali mengalami pelapukan dalam waktu yang sangat lama."
+        ]
+      },
+      {
+        "huruf": "D",
+        "judul": "Penggunaan Pupuk dalam Pertanian",
+        "paragraf": [
+          "Pupuk digunakan untuk menambah unsur hara yang dibutuhkan tanaman. Pupuk nitrogen dapat mendukung pertumbuhan daun dan pembentukan protein, sedangkan pupuk fosfat membantu perkembangan akar, pembelahan sel, pembungaan, dan pembentukan biji. Penggunaan pupuk yang sesuai kebutuhan dapat meningkatkan pertumbuhan serta hasil tanaman.",
+          "Tanaman tidak selalu menyerap seluruh unsur hara yang diberikan. Sebagian nitrogen dapat menguap, tercuci ke lapisan tanah yang lebih dalam, atau terbawa aliran air. Fosfor dapat terikat pada partikel tanah dan ikut terbawa ketika terjadi erosi. Risiko kehilangan unsur hara meningkat apabila pupuk diberikan terlalu banyak, pada waktu yang tidak tepat, atau menjelang hujan lebat.",
+          "Pupuk yang hilang dari lahan bukan hanya mengurangi efisiensi pemupukan, tetapi juga dapat memasuki sungai, danau, waduk, atau perairan lain. Oleh karena itu, jumlah, jenis, waktu, dan cara pemberian pupuk perlu disesuaikan dengan kebutuhan tanaman serta kondisi tanah dan cuaca."
+        ]
+      },
+      {
+        "huruf": "E",
+        "judul": "Masuknya Zat Hara ke Sungai",
+        "paragraf": [
+          "Ketika hujan turun, air yang tidak meresap ke tanah mengalir di atas permukaan sebagai limpasan. Limpasan dapat membawa pupuk terlarut, partikel tanah, kotoran ternak, dan bahan organik menuju parit, saluran air, dan sungai. Nitrogen juga dapat mencapai perairan melalui aliran air bawah tanah setelah nitrat tercuci dari lapisan tanah.",
+          "Masuknya nitrogen dan fosfor menyebabkan konsentrasi zat hara di sungai meningkat. Dalam jumlah terbatas, zat hara mendukung pertumbuhan tumbuhan air dan alga. Namun, masukan yang terlalu besar dapat membuat pertumbuhan produsen perairan berlangsung lebih cepat daripada kemampuan ekosistem mempertahankan keseimbangan.",
+          "Besarnya zat hara yang mencapai sungai dipengaruhi oleh jumlah pupuk, waktu pemupukan, intensitas hujan, kemiringan lahan, tutupan vegetasi, jarak lahan dari sungai, dan keberadaan daerah penyangga. Vegetasi di tepi sungai dapat membantu menahan sedimen serta menyerap sebagian unsur hara sebelum mencapai perairan."
+        ]
+      },
+      {
+        "huruf": "F",
+        "judul": "Eutrofikasi",
+        "paragraf": [
+          "Eutrofikasi adalah peningkatan kesuburan perairan akibat bertambahnya unsur hara, terutama nitrogen dan fosfor. Proses ini dapat terjadi secara alami dalam waktu lama, tetapi aktivitas manusia dapat mempercepatnya melalui penggunaan pupuk berlebihan, pembuangan air limbah, kotoran ternak, dan bahan organik.",
+          "Kelebihan zat hara dapat memicu pertumbuhan alga secara cepat atau ledakan alga. Air dapat berubah warna dan menjadi lebih keruh. Lapisan alga di permukaan mengurangi cahaya yang masuk ke dalam air sehingga fotosintesis tumbuhan yang hidup di bagian lebih dalam terganggu.",
+          "Alga mempunyai masa hidup terbatas. Ketika banyak alga dan tumbuhan air mati, sisa-sisanya diuraikan oleh bakteri serta mikroorganisme lain. Proses penguraian membutuhkan oksigen. Semakin banyak bahan organik yang diuraikan, semakin banyak oksigen terlarut yang digunakan.",
+          "Apabila penggunaan oksigen lebih besar daripada penambahannya, kadar oksigen terlarut akan menurun. Kondisi kekurangan oksigen dapat menyebabkan ikan mengalami stres, naik ke permukaan, berpindah, atau mati. Dengan demikian, peningkatan zat hara tidak selalu memperbaiki ekosistem, tetapi dapat menimbulkan rangkaian perubahan yang merusak perairan."
+        ],
+        "poin": [
+          "Pupuk atau limbah kaya nitrogen dan fosfor masuk ke sungai.",
+          "Konsentrasi zat hara di dalam air meningkat.",
+          "Alga dan tumbuhan air tumbuh secara berlebihan.",
+          "Air menjadi keruh dan cahaya ke bagian dalam berkurang.",
+          "Alga serta organisme lain mati dan menjadi bahan organik.",
+          "Mikroorganisme pengurai menggunakan banyak oksigen.",
+          "Kadar oksigen terlarut menurun.",
+          "Ikan dan organisme air lainnya mengalami gangguan atau kematian."
+        ]
+      },
+      {
+        "huruf": "G",
+        "judul": "Dampak terhadap Ekosistem Sungai",
+        "paragraf": [
+          "Kelebihan zat hara dapat mengubah kondisi fisik, kimia, dan biologis sungai. Secara fisik, air dapat menjadi lebih keruh, berubah warna, berbau, atau tertutup oleh kumpulan alga. Secara kimia, kadar oksigen terlarut dan pH dapat mengalami perubahan, terutama antara siang dan malam.",
+          "Secara biologis, organisme yang membutuhkan air bersih dan oksigen tinggi dapat berkurang. Jenis yang lebih tahan terhadap kondisi tercemar mungkin menjadi lebih dominan. Ikan dapat kehilangan habitat, sumber makanan, dan tempat berkembang biak. Jika kekurangan oksigen berlangsung lama, jumlah populasi dan keanekaragaman organisme dapat menurun.",
+          "Dampak tersebut menunjukkan bahwa pertumbuhan alga tidak boleh diamati sebagai perubahan tunggal. Siswa perlu menganalisis hubungan antara konsentrasi zat hara, jumlah alga, kadar oksigen terlarut, dan kondisi organisme air secara bersamaan."
+        ],
+        "poin": [
+          "Perubahan warna, bau, dan kejernihan air.",
+          "Penurunan cahaya yang masuk ke bagian dalam perairan.",
+          "Perubahan pH dan penurunan oksigen terlarut.",
+          "Gangguan respirasi, pertumbuhan, dan reproduksi ikan.",
+          "Penurunan jumlah organisme yang peka terhadap pencemaran.",
+          "Perubahan komposisi komunitas dan keseimbangan ekosistem."
+        ]
+      },
+      {
+        "huruf": "H",
+        "judul": "Hubungan Daur Nitrogen dan Fosfor dengan Aktivitas Manusia",
+        "paragraf": [
+          "Aktivitas manusia tidak menghentikan daur nitrogen dan fosfor, tetapi dapat mengubah jumlah, bentuk, lokasi, dan kecepatan perpindahannya. Pembuatan serta penggunaan pupuk menambah nitrogen dan fosfor reaktif ke lahan. Limbah rumah tangga, peternakan, industri pangan, dan erosi tanah juga dapat meningkatkan masukan unsur hara ke perairan.",
+          "Ketika masukan unsur hara lebih besar daripada kemampuan tanaman, tanah, dan perairan untuk menyerap atau mengolahnya, zat hara akan menumpuk atau terbawa ke tempat lain. Masalah yang terjadi di sungai dapat berasal dari kegiatan di wilayah daratan yang cukup jauh karena air menghubungkan lahan pertanian, permukiman, saluran drainase, dan badan sungai.",
+          "Pengelolaan pupuk sesuai kebutuhan, penanaman vegetasi penyangga, pengendalian erosi, pengolahan limbah, dan perlindungan daerah tepi sungai dapat mengurangi masukan nitrogen serta fosfor. Upaya tersebut membantu menjaga manfaat unsur hara bagi pertumbuhan tanpa menimbulkan kerusakan ekosistem perairan."
+        ],
+        "callout": "Nitrogen dan fosfor dibutuhkan makhluk hidup, tetapi jumlah yang berlebihan di sungai dapat memicu pertumbuhan alga secara tidak terkendali. Penguraian alga yang mati menggunakan banyak oksigen sehingga kadar oksigen terlarut menurun dan kehidupan ikan serta organisme air lainnya dapat terganggu."
+      }
+    ],
+    "referensi": [
+      "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia. (2021). Ilmu Pengetahuan Alam untuk SMP Kelas VII. Jakarta: Pusat Kurikulum dan Perbukuan.",
+      "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e (Bagian 46.3: Biogeochemical Cycles). Houston, Texas: OpenStax, Rice University.",
+      "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson.",
+      "U.S. Environmental Protection Agency. (2026). Nutrient pollution. https://www.epa.gov/nutrientpollution",
+      "Proyek Web Interaktif Ekosistem. (2026). Diagram daur nitrogen, daur fosfor, dan dampak kelebihan zat hara pada perairan [Aset digital internal]."
+    ]
   }
 ]
