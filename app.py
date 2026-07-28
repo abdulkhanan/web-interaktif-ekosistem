@@ -60,7 +60,7 @@ def apply_login_ui_style():
             .block-container {
                 padding-top: 3rem !important;
                 padding-bottom: 3rem !important;
-                max-width: 500px !important;
+                max-width: 660px !important;
             }
 
             /* ── Outer white card ── */
@@ -82,7 +82,7 @@ def apply_login_ui_style():
             }
             .login-image-section img {
                 width: 100%;
-                height: 260px;
+                height: 330px;
                 object-fit: cover;
                 object-position: center 30%;
                 display: block;
@@ -90,7 +90,7 @@ def apply_login_ui_style():
 
             /* ── Form section ── */
             .st-key-login_form_panel {
-                padding: 32px 36px 36px 36px !important;
+                padding: 42px 48px 48px 48px !important;
             }
 
             /* ── Brand row ── */
