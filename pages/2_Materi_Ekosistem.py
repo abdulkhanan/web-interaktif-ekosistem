@@ -49,6 +49,12 @@ st.markdown(
             box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
         }
 
+        div[data-testid="stImage"] img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 14px;
+        }
         .materi-text p {
             text-align: justify;
             text-justify: inter-word;
@@ -381,27 +387,28 @@ def render_structured_materi(materi):
         section_image = section.get("gambar")
         if section_image:
             render_image_with_source(section_image)
-
+        
         subsections = section.get("subbagian", [])
+
         if subsections:
-            columns = st.columns(2)
-            for index, subsection in enumerate(subsections):
-                with columns[index % 2]:
-                    render_subsection(subsection)
+            # Membuat kolom baru untuk setiap pasangan subbagian
+            for index in range(0, len(subsections), 2):
+                columns = st.columns(2, gap="large")
 
-        flow = section.get("alur", "")
-        if flow:
-            st.markdown(
-                f'<div class="materi-flow">Urutan satuan makhluk hidup:<br>{escape(flow)}</div>',
-                unsafe_allow_html=True
-            )
+                # Bagian sebelah kiri
+                with columns[0]:
+                    render_subsection(subsections[index])
 
-        callout = section.get("callout", "")
-        if callout:
-            st.markdown(
-                f'<div class="materi-callout"><strong>Hal penting:</strong> {escape(callout)}</div>',
-                unsafe_allow_html=True
-            )
+                # Bagian sebelah kanan
+                if index + 1 < len(subsections):
+                    with columns[1]:
+                        render_subsection(subsections[index + 1])
+
+                # Jarak antarbaris kartu
+                st.markdown(
+                    '<div style="height: 24px;"></div>',
+                    unsafe_allow_html=True
+                )
 
     render_references(materi.get("referensi", []))
 
