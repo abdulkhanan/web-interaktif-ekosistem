@@ -230,17 +230,26 @@ def apply_login_ui_style():
                 font-size: 14px !important;
             }
 
-            div[data-testid="stTextInput"] input {
-                background-color: #ffffff !important;
-                color: #0f172a !important;
-                border: 1.5px solid #e2e8f0 !important;
+            div[data-testid="stTextInput"] div[data-baseweb="input"] {
                 border-radius: 14px !important;
-                min-height: 46px !important;
+                border: 1.5px solid #e2e8f0 !important;
+                background-color: #ffffff !important;
+                overflow: hidden !important;
             }
-
-            div[data-testid="stTextInput"] input:focus {
+            
+            div[data-testid="stTextInput"] div[data-baseweb="input"]:focus-within {
                 border-color: #0284c7 !important;
                 box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12) !important;
+            }
+            
+            div[data-testid="stTextInput"] input {
+                background-color: transparent !important;
+                color: #0f172a !important;
+                min-height: 46px !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
             }
 
             .stFormSubmitButton button {
@@ -373,8 +382,7 @@ def render_login_page(google_login_url=None):
                     <div class="brand-row">
                         <div class="brand-logo">🌿</div>
                         <div>
-                            <div class="brand-name">ECOSYSTEM</div>
-                            <div class="brand-sub">Guided Inquiry Learning</div>
+                            <div class="brand-name">EKOSISTEM</div>
                         </div>
                     </div>
 
@@ -444,10 +452,7 @@ def render_login_page(google_login_url=None):
                                 except Exception as error:
                                     st.error(f"Pendaftaran gagal: {error}")
 
-                st.markdown(
-                    '<div class="login-footnote">Role yang tersedia: siswa, guru, dan admin. Akun admin dibuat atau diubah melalui menu Daftar Pengguna.</div>',
-                    unsafe_allow_html=True
-                )
+                st.markdown("", unsafe_allow_html=True)
 
 
 
