@@ -35,6 +35,11 @@ def apply_login_ui_style():
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
+            @keyframes fadeInSlideUp {
+                0% { opacity: 0; transform: translateY(20px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+
             /* Hide Streamlit iframe wrapper gaps and skeletons for hidden cookies component */
             .st-key-hidden_cookies,
             .st-key-hidden_cookies_logout,
@@ -74,6 +79,7 @@ def apply_login_ui_style():
             }
 
             .st-key-login_shell {
+                animation: fadeInSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
                 background: rgba(255, 255, 255, 0.8) !important;
                 backdrop-filter: blur(20px) !important;
                 border-radius: 32px !important;
@@ -90,7 +96,7 @@ def apply_login_ui_style():
             .st-key-login_form_panel {
                 background: rgba(255, 255, 255, 0.95) !important;
                 min-height: 520px !important;
-                padding: 42px 38px !important;
+                padding: 56px 48px !important;
                 border-radius: 0 32px 32px 0 !important;
                 display: flex;
                 flex-direction: column;
@@ -162,10 +168,12 @@ def apply_login_ui_style():
                 font-family: 'Outfit', sans-serif;
                 font-size: 32px;
                 font-weight: 800;
-                color: #0f172a;
                 line-height: 1.25;
                 margin-bottom: 14px;
                 letter-spacing: -0.8px;
+                background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
                 transition: all 0.3s ease;
             }
 
@@ -262,6 +270,13 @@ def apply_login_ui_style():
                 border: none !important;
                 background: linear-gradient(135deg, #059669 0%, #0284c7 100%) !important;
                 box-shadow: 0 8px 20px rgba(5, 150, 105, 0.24) !important;
+                transition: all 0.3s ease !important;
+            }
+            .stFormSubmitButton button:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 12px 24px rgba(5, 150, 105, 0.32) !important;
+                background: linear-gradient(135deg, #047857 0%, #0369a1 100%) !important;
+                color: #ffffff !important;
             }
 
             .login-divider {
@@ -359,7 +374,7 @@ def apply_login_ui_style():
 
 def render_login_page(google_login_url=None):
     with st.container(key="login_shell"):
-        col_image, col_login = st.columns([1.38, 0.92], gap=None)
+        col_image, col_login = st.columns([1.25, 1.05], gap=None)
 
         with col_image:
             with st.container(key="login_image_panel"):
