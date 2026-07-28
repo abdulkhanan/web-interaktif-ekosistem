@@ -311,11 +311,21 @@ def apply_login_ui_style():
                 border-radius: 24px;
                 display: block;
             }
+            .st-key-login_image_panel .element-container {
+                height: 100% !important;
+                display: flex !important;
+                width: 100% !important;
+            }
+            .st-key-login_image_panel [data-testid="stImage"] {
+                height: 100% !important;
+                display: flex !important;
+                width: 100% !important;
+            }
             .st-key-login_image_panel img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
             }
 
             .image-placeholder {
