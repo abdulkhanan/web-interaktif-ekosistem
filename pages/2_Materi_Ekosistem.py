@@ -44,7 +44,7 @@ st.markdown(
             border: 1px solid #e5e7eb;
             border-radius: 18px;
             padding: 24px 28px;
-            margin-top: 18px;
+            margin-top: 12px;
             margin-bottom: 20px;
             box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
         }
@@ -55,16 +55,79 @@ st.markdown(
             font-size: 16px;
             line-height: 1.9;
             color: #334155;
-            margin-bottom: 16px;
+            margin: 0 0 16px 0;
         }
 
+        .materi-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .materi-text ul {
+            margin: 10px 0 0 22px;
+            padding: 0;
+        }
+
+        .materi-text li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .materi-section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 30px;
+            margin-bottom: 6px;
+            color: #0f5132;
+        }
+
+        .materi-section-letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            color: #047857;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .materi-section-name {
+            font-size: 23px;
+            line-height: 1.35;
+            font-weight: 800;
+        }
+
+        .materi-subtitle {
+            font-size: 19px;
+            line-height: 1.45;
+            color: #0f5132;
+            font-weight: 800;
+            margin: 4px 0 10px 0;
+        }
 
         .materi-caption {
             text-align: center;
             font-size: 14px;
+            font-weight: 700;
+            color: #475569;
+            margin-top: 8px;
+            line-height: 1.55;
+        }
+
+        .materi-source {
+            text-align: center;
+            font-size: 13px;
+            font-style: italic;
             color: #64748b;
-            margin-top: 10px;
-            line-height: 1.6;
+            margin-top: 3px;
+            margin-bottom: 16px;
+            line-height: 1.5;
         }
 
         .materi-helper {
@@ -76,6 +139,66 @@ st.markdown(
             line-height: 1.7;
             margin-bottom: 18px;
         }
+
+        .materi-overview {
+            background: linear-gradient(135deg, #ecfdf5 0%, #eff6ff 100%);
+            border: 1px solid #a7f3d0;
+            border-radius: 18px;
+            padding: 20px 24px;
+            color: #334155;
+            line-height: 1.8;
+            margin: 8px 0 20px 0;
+        }
+
+        .materi-callout {
+            background: #fff7ed;
+            border-left: 5px solid #f97316;
+            border-radius: 14px;
+            padding: 16px 20px;
+            color: #7c2d12;
+            line-height: 1.75;
+            margin: 10px 0 22px 0;
+        }
+
+        .materi-flow {
+            background: #f0fdf4;
+            border: 1px dashed #22c55e;
+            border-radius: 16px;
+            padding: 18px 20px;
+            text-align: center;
+            color: #166534;
+            font-size: 17px;
+            font-weight: 800;
+            line-height: 1.7;
+            margin: 6px 0 22px 0;
+        }
+
+        .materi-reference {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 18px;
+            padding: 22px 26px;
+            margin-top: 28px;
+            margin-bottom: 22px;
+        }
+
+        .materi-reference h3 {
+            color: #0f5132;
+            margin: 0 0 12px 0;
+            font-size: 22px;
+        }
+
+        .materi-reference ol {
+            margin: 0 0 0 22px;
+            padding: 0;
+        }
+
+        .materi-reference li {
+            color: #334155;
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 9px;
+        }
     </style>
     """,
     unsafe_allow_html=True
@@ -83,21 +206,20 @@ st.markdown(
 
 
 IMAGE_MAP = {
-    "materi_1_komponen_ekosistem": {
-        "path": "assets/images/komponen_ekosistem.png",
-        "caption": "Gambar komponen biotik dan abiotik pada ekosistem sungai."
-    },
     "materi_2_aliran_energi": {
         "path": "assets/images/rantai_makanan_piramida_energi.png",
-        "caption": "Diagram rantai makanan dan piramida energi pada ekosistem."
+        "judul": "Diagram rantai makanan dan piramida energi pada ekosistem.",
+        "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
     },
     "materi_3_daur_air_karbon_oksigen": {
         "path": "assets/images/daur_air_co2_o2.png",
-        "caption": "Diagram daur air serta peran tumbuhan terhadap karbon dioksida dan oksigen."
+        "judul": "Diagram daur air serta peran tumbuhan terhadap karbon dioksida dan oksigen.",
+        "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
     },
     "materi_4_daur_nitrogen_fosfor": {
         "path": "assets/images/daur_nitrogen_fosfor.png",
-        "caption": "Diagram daur nitrogen, daur fosfor, dan dampak pupuk berlebih pada perairan."
+        "judul": "Diagram daur nitrogen, daur fosfor, dan dampak pupuk berlebih pada perairan.",
+        "sumber": "Aset gambar yang tersedia dalam proyek web interaktif ekosistem."
     }
 }
 
@@ -117,66 +239,191 @@ def load_materi():
         return []
 
 
-def render_justified_text(text):
-    paragraphs = [
+def normalize_paragraphs(content):
+    if isinstance(content, list):
+        return [str(item).strip() for item in content if str(item).strip()]
+
+    return [
         paragraph.strip()
-        for paragraph in str(text).split("\n\n")
+        for paragraph in str(content or "").split("\n\n")
         if paragraph.strip()
     ]
 
-    html_paragraphs = ""
 
-    for paragraph in paragraphs:
-        safe_paragraph = escape(paragraph)
-        html_paragraphs += f"<p>{safe_paragraph}</p>"
+def render_text_block(paragraphs, points=None):
+    safe_paragraphs = "".join(
+        f"<p>{escape(paragraph)}</p>"
+        for paragraph in normalize_paragraphs(paragraphs)
+    )
+
+    safe_points = ""
+    if points:
+        list_items = "".join(
+            f"<li>{escape(str(point))}</li>"
+            for point in points
+            if str(point).strip()
+        )
+        safe_points = f"<ul>{list_items}</ul>"
 
     st.markdown(
         f"""
         <div class="materi-text">
-            {html_paragraphs}
+            {safe_paragraphs}
+            {safe_points}
         </div>
         """,
         unsafe_allow_html=True
     )
 
 
-def render_materi_image(kode_materi):
-    image_data = IMAGE_MAP.get(kode_materi)
-
+def render_image_with_source(image_data):
     if not image_data:
         return
 
-    image_path = image_data["path"]
-    caption = image_data["caption"]
+    image_path = image_data.get("path", "")
+    title = image_data.get("judul") or image_data.get("caption", "")
+    source = image_data.get("sumber", "Sumber belum dicantumkan.")
 
     if os.path.exists(image_path):
-        st.image(
-            image_path,
-            caption=caption,
-            use_container_width=True
+        st.image(image_path, use_container_width=True)
+        st.markdown(
+            f"""
+            <div class="materi-caption">{escape(title)}</div>
+            <div class="materi-source">Sumber: {escape(source)}</div>
+            """,
+            unsafe_allow_html=True
         )
     else:
         info_card(
             "Gambar Belum Ditemukan",
             f"""
             File gambar belum tersedia. Simpan gambar pada lokasi berikut:<br>
-            <strong>{image_path}</strong>
+            <strong>{escape(image_path)}</strong>
             """,
             "yellow-card"
         )
 
+
+def render_section_heading(letter, title):
+    st.markdown(
+        f"""
+        <div class="materi-section-title">
+            <span class="materi-section-letter">{escape(letter)}</span>
+            <span class="materi-section-name">{escape(title)}</span>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+def render_subsection(subsection):
+    number = subsection.get("nomor", "")
+    title = subsection.get("judul", "")
+    image_path = subsection.get("gambar", "")
+
+    st.markdown(
+        f'<div class="materi-subtitle">{escape(number)}. {escape(title)}</div>',
+        unsafe_allow_html=True
+    )
+
+    if image_path:
+        render_image_with_source({
+            "path": image_path,
+            "judul": subsection.get("caption", ""),
+            "sumber": subsection.get("sumber", "")
+        })
+
+    render_text_block(subsection.get("paragraf", []))
+
+
+def render_references(references):
+    if not references:
+        return
+
+    list_items = "".join(
+        f"<li>{escape(str(reference))}</li>"
+        for reference in references
+        if str(reference).strip()
+    )
+
+    st.markdown(
+        f"""
+        <div class="materi-reference">
+            <h3>📚 Referensi</h3>
+            <ol>{list_items}</ol>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+def render_structured_materi(materi):
+    summary = materi.get("ringkasan", "")
+    if summary:
+        st.markdown(
+            f'<div class="materi-overview"><strong>Gambaran materi:</strong> {escape(summary)}</div>',
+            unsafe_allow_html=True
+        )
+
+    render_image_with_source(materi.get("gambar_utama"))
+
+    for section in materi.get("bagian", []):
+        render_section_heading(
+            section.get("huruf", ""),
+            section.get("judul", "")
+        )
+
+        render_text_block(
+            section.get("paragraf", []),
+            section.get("poin", [])
+        )
+
+        section_image = section.get("gambar")
+        if section_image:
+            render_image_with_source(section_image)
+
+        subsections = section.get("subbagian", [])
+        if subsections:
+            columns = st.columns(2)
+            for index, subsection in enumerate(subsections):
+                with columns[index % 2]:
+                    render_subsection(subsection)
+
+        flow = section.get("alur", "")
+        if flow:
+            st.markdown(
+                f'<div class="materi-flow">Urutan satuan makhluk hidup:<br>{escape(flow)}</div>',
+                unsafe_allow_html=True
+            )
+
+        callout = section.get("callout", "")
+        if callout:
+            st.markdown(
+                f'<div class="materi-callout"><strong>Hal penting:</strong> {escape(callout)}</div>',
+                unsafe_allow_html=True
+            )
+
+    render_references(materi.get("referensi", []))
+
+
+def render_legacy_materi(materi):
+    kode = materi.get("kode", "")
+    image_data = IMAGE_MAP.get(kode)
+    render_image_with_source(image_data)
+    render_text_block(materi.get("isi", ""))
+
+
 def render_materi_item(materi, nomor):
     kode = materi.get("kode", "")
     judul = materi.get("judul", f"Bahan Penyelidikan {nomor}")
-    isi = materi.get("isi", "")
-
     sudah_dibaca = is_materi_done(nama_siswa, kode)
 
     section_title(judul)
 
-    render_materi_image(kode)
-
-    render_justified_text(isi)
+    if materi.get("bagian"):
+        render_structured_materi(materi)
+    else:
+        render_legacy_materi(materi)
 
     if sudah_dibaca:
         st.markdown(
@@ -195,7 +442,7 @@ def render_materi_item(materi, nomor):
             unsafe_allow_html=True
         )
     else:
-        col1, col2 = st.columns([1, 3])
+        col1, _ = st.columns([1, 3])
         with col1:
             if st.button(
                 "📖 Tandai Sudah Dibaca",
@@ -204,7 +451,6 @@ def render_materi_item(materi, nomor):
             ):
                 mark_materi_selesai(nama_siswa, kode, judul)
                 st.rerun()
-
 
 
 materi_list = load_materi()
@@ -259,8 +505,8 @@ st.markdown(
     """
     <div class="materi-helper">
         <strong>Petunjuk:</strong>
-        Pilih bahan penyelidikan sesuai urutan materi. Amati gambar, baca penjelasan,
-        lalu lanjutkan ke halaman Simulasi Ekosistem untuk menyelidiki fenomena yang berkaitan.
+        Pilih bahan penyelidikan sesuai urutan materi. Amati setiap gambar dan sumbernya,
+        baca penjelasan pada setiap subbagian, lalu lanjutkan ke halaman Simulasi Ekosistem.
     </div>
     """,
     unsafe_allow_html=True
@@ -268,8 +514,8 @@ st.markdown(
 
 
 tab_labels = []
-for index, m in enumerate(materi_list):
-    kode = m.get("kode", "")
+for index, material in enumerate(materi_list):
+    kode = material.get("kode", "")
     status = "✅" if kode in materi_selesai_codes else "⏳"
     tab_labels.append(f"{status} {index + 1}. Bahan Penyelidikan")
 
