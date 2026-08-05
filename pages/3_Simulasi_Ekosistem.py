@@ -362,9 +362,9 @@ def status_eutrofikasi_card(hasil):
 info_card(
     "Alur Penyelidikan",
     """
-    Alur kegiatan pada halaman ini: siswa membaca masalah dan gambar, merumuskan masalah,
-    menyusun hipotesis, menjalankan simulasi untuk mengumpulkan data, membuka materi pendukung
-    bila diperlukan, menguji hipotesis, lalu menyusun kesimpulan dan tindakan nyata pada halaman tanggapan.
+    Alurnya dibuat sederhana: tulis rumusan masalah dan hipotesis awal, jalankan simulasi,
+    catat satu perubahan utama, lalu bandingkan jawabanmu dengan umpan balik ilmiah.
+    Setelah itu, kamu dapat melanjutkan ke halaman uji hipotesis dan kesimpulan.
     """,
     "green-card"
 )
@@ -380,27 +380,26 @@ def tampilkan_materi_pendukung(key_prefix):
             st.switch_page("pages/2_Materi_Ekosistem.py")
 
 
-def tampilkan_umpan_balik_awal(
+def tampilkan_umpan_balik_setelah_simulasi(
     rumusan_masalah,
     hipotesis_awal,
-    dasar_konsep,
+    hasil_pengamatan,
     urgensi_fenomena,
     contoh_rumusan,
     contoh_hipotesis,
-    hubungan_konsep,
     arahan_rumusan,
     arahan_hipotesis
 ):
-    """Menampilkan respons langsung yang membimbing tanpa menilai jawaban siswa benar atau salah."""
-    section_title("3. Umpan Balik Awal")
+    """Menampilkan umpan balik hanya setelah siswa menjalankan dan menyimpan simulasi."""
+    section_title("5. Umpan Balik Setelah Simulasi")
 
     st.success(
-        "Jawaban awalmu sudah tercatat. Sistem tidak memberi label benar atau salah pada tahap ini. "
-        "Gunakan tanggapan berikut sebagai pembanding sebelum menguji dugaan melalui simulasi."
+        "Kamu sudah menyusun jawaban awal, menjalankan simulasi, dan mencatat hasil pengamatan. "
+        "Umpan balik berikut digunakan sebagai pembanding, bukan untuk menyatakan jawabanmu salah."
     )
 
     with st.container(border=True):
-        st.markdown("#### 📝 Jawaban Awalmu")
+        st.markdown("#### 📝 Jawaban dan Hasil Pengamatanmu")
         col_rumusan, col_hipotesis = st.columns(2)
 
         with col_rumusan:
@@ -411,12 +410,11 @@ def tampilkan_umpan_balik_awal(
             st.markdown("**Hipotesis awal**")
             st.write(hipotesis_awal)
 
-        if dasar_konsep:
-            st.markdown("**Dasar konsep yang kamu gunakan**")
-            st.write(dasar_konsep)
+        st.markdown("**Perubahan utama yang kamu amati**")
+        st.write(hasil_pengamatan)
 
     info_card(
-        "Mengapa Fenomena Ini Penting?",
+        "Kaitan Fenomena",
         urgensi_fenomena,
         "blue-card"
     )
@@ -425,27 +423,21 @@ def tampilkan_umpan_balik_awal(
 
     with col_rumusan:
         with st.container(border=True):
-            st.markdown("#### 🔎 Arah Pengembangan Rumusan Masalah")
+            st.markdown("#### 🔎 Umpan Balik Rumusan Masalah")
             st.write(arahan_rumusan)
             st.markdown("**Contoh jawaban ilmiah sebagai pembanding:**")
             st.info(contoh_rumusan)
 
     with col_hipotesis:
         with st.container(border=True):
-            st.markdown("#### 💡 Arah Pengembangan Hipotesis")
+            st.markdown("#### 💡 Umpan Balik Hipotesis")
             st.write(arahan_hipotesis)
             st.markdown("**Contoh jawaban ilmiah sebagai pembanding:**")
             st.info(contoh_hipotesis)
 
-    info_card(
-        "Hubungan Konsep Utama",
-        hubungan_konsep,
-        "green-card"
-    )
-
     st.caption(
-        "Contoh tersebut bukan penanda bahwa jawabanmu salah. Kamu dapat memperbaiki jawaban pada kolom di atas "
-        "atau melanjutkan untuk memperoleh data yang akan menguji hipotesismu."
+        "Contoh tersebut tidak perlu disalin. Gunakan untuk membandingkan kelengkapan jawabanmu "
+        "dengan data yang kamu peroleh dari simulasi."
     )
 
 
@@ -459,9 +451,9 @@ def tampilkan_kasus_awal(
     urgensi_fenomena,
     contoh_rumusan,
     contoh_hipotesis,
-    hubungan_konsep,
     arahan_rumusan,
-    arahan_hipotesis
+    arahan_hipotesis,
+    pertanyaan_pengamatan
 ):
     section_title("1. Fenomena Masalah")
 
@@ -487,65 +479,107 @@ def tampilkan_kasus_awal(
     section_title("2. Rumusan Masalah dan Hipotesis Awal")
 
     st.write(
-        "Sebelum menjalankan simulasi, tuliskan arah penyelidikanmu terlebih dahulu. "
-        "Bagian ini penting agar simulasi dipakai untuk menguji dugaan, bukan hanya mencoba-coba variabel."
+        "Tuliskan rumusan masalah dan hipotesis awal berdasarkan fenomena. "
+        "Contoh jawaban belum ditampilkan agar kamu dapat berpikir mandiri terlebih dahulu."
     )
 
-    rumusan_masalah = st.text_area(
-        "Rumusan masalah penyelidikan",
-        key=f"rumusan_masalah_{key_prefix}",
-        height=100,
-        placeholder="Tuliskan pertanyaan penyelidikan berdasarkan fenomena yang kamu amati."
-    )
+    flag_key = f"jawaban_awal_disimpan_{key_prefix}"
+    data_key = f"data_jawaban_awal_{key_prefix}"
 
-    hipotesis_awal = st.text_area(
-        "Hipotesis awal",
-        key=f"hipotesis_awal_{key_prefix}",
-        height=100,
-        placeholder="Tuliskan dugaan sementara yang akan kamu uji melalui simulasi."
-    )
+    if not st.session_state.get(flag_key, False):
+        with st.form(key=f"form_jawaban_awal_{key_prefix}"):
+            rumusan_masalah = st.text_area(
+                "Rumusan masalah penyelidikan",
+                key=f"rumusan_masalah_{key_prefix}",
+                height=100,
+                placeholder="Tuliskan pertanyaan penyelidikan berdasarkan fenomena yang kamu amati."
+            )
 
-    dasar_konsep = st.text_area(
-        "Dasar konsep yang digunakan (opsional)",
-        key=f"dasar_konsep_{key_prefix}",
-        height=90,
-        placeholder="Tuliskan konsep ekosistem yang mendukung hipotesismu."
-    )
+            hipotesis_awal = st.text_area(
+                "Hipotesis awal",
+                key=f"hipotesis_awal_{key_prefix}",
+                height=100,
+                placeholder="Tuliskan dugaan sementara yang akan kamu uji melalui simulasi."
+            )
 
-    rumusan_bersih = rumusan_masalah.strip()
-    hipotesis_bersih = hipotesis_awal.strip()
-    dasar_konsep_bersih = dasar_konsep.strip()
-    siap = bool(rumusan_bersih) and bool(hipotesis_bersih)
+            submit_awal = st.form_submit_button("Simpan Jawaban Awal dan Mulai Simulasi")
 
-    if siap:
-        tampilkan_umpan_balik_awal(
-            rumusan_masalah=rumusan_bersih,
-            hipotesis_awal=hipotesis_bersih,
-            dasar_konsep=dasar_konsep_bersih,
-            urgensi_fenomena=urgensi_fenomena,
-            contoh_rumusan=contoh_rumusan,
-            contoh_hipotesis=contoh_hipotesis,
-            hubungan_konsep=hubungan_konsep,
-            arahan_rumusan=arahan_rumusan,
-            arahan_hipotesis=arahan_hipotesis
-        )
-    else:
+        if submit_awal:
+            rumusan_bersih = rumusan_masalah.strip()
+            hipotesis_bersih = hipotesis_awal.strip()
+
+            if not rumusan_bersih or not hipotesis_bersih:
+                st.error("Rumusan masalah dan hipotesis awal harus diisi.")
+            else:
+                st.session_state[data_key] = {
+                    "rumusan_masalah": rumusan_bersih,
+                    "hipotesis_awal": hipotesis_bersih
+                }
+                st.session_state[flag_key] = True
+                st.rerun()
+
         info_card(
-            "Lengkapi Rencana Penyelidikan",
-            "Isi rumusan masalah dan hipotesis terlebih dahulu. Setelah keduanya terisi, tanggapan pembanding akan muncul langsung tanpa menyatakan jawabanmu salah.",
+            "Langkah Berikutnya",
+            "Setelah kedua jawaban disimpan, simulasi akan terbuka. Umpan balik dan contoh jawaban baru muncul setelah kamu mengamati serta menyimpan hasil simulasi.",
             "yellow-card"
         )
 
-    return {
-        "rumusan_masalah": rumusan_bersih,
-        "hipotesis_awal": hipotesis_bersih,
-        "dasar_konsep": dasar_konsep_bersih
-    }, siap
+        return {
+            "rumusan_masalah": "",
+            "hipotesis_awal": ""
+        }, False, {
+            "urgensi_fenomena": urgensi_fenomena,
+            "contoh_rumusan": contoh_rumusan,
+            "contoh_hipotesis": contoh_hipotesis,
+            "arahan_rumusan": arahan_rumusan,
+            "arahan_hipotesis": arahan_hipotesis,
+            "pertanyaan_pengamatan": pertanyaan_pengamatan
+        }
 
+    investigasi = st.session_state.get(data_key, {})
+
+    st.success(
+        "Jawaban awalmu sudah tersimpan. Sekarang jalankan simulasi untuk mencari data yang dapat menguji dugaanmu."
+    )
+
+    with st.expander("Lihat Jawaban Awal", expanded=False):
+        st.markdown("**Rumusan masalah**")
+        st.write(investigasi.get("rumusan_masalah", ""))
+        st.markdown("**Hipotesis awal**")
+        st.write(investigasi.get("hipotesis_awal", ""))
+
+    if st.button("Ubah Jawaban Awal", key=f"ubah_jawaban_awal_{key_prefix}"):
+        st.session_state.pop(flag_key, None)
+        st.session_state.pop(data_key, None)
+        st.session_state.pop("hasil_simulasi", None)
+        st.session_state.pop("simulasi_tersimpan", None)
+        st.rerun()
+
+    return investigasi, True, {
+        "urgensi_fenomena": urgensi_fenomena,
+        "contoh_rumusan": contoh_rumusan,
+        "contoh_hipotesis": contoh_hipotesis,
+        "arahan_rumusan": arahan_rumusan,
+        "arahan_hipotesis": arahan_hipotesis,
+        "pertanyaan_pengamatan": pertanyaan_pengamatan
+    }
+
+
+def tampilkan_hasil_pengamatan_singkat(key_prefix, pertanyaan):
+    section_title("4. Hasil Pengamatan Singkat")
+    st.write(
+        "Setelah mencoba beberapa kondisi, tuliskan satu perubahan utama yang kamu lihat pada data atau grafik."
+    )
+    return st.text_area(
+        pertanyaan,
+        key=f"hasil_pengamatan_{key_prefix}",
+        height=100,
+        placeholder="Tuliskan perubahan utama berdasarkan data simulasi, bukan berdasarkan perkiraan."
+    )
 
 def tampilkan_arahan_pengumpulan_data():
     info_card(
-        "4. Simulasi dan Pengumpulan Data",
+        "3. Simulasi dan Pengumpulan Data",
         """
         Ubah variabel simulasi beberapa kali untuk melihat pola perubahan data. Bandingkan kondisi rendah,
         sedang, dan tinggi jika memungkinkan. Setelah menemukan data yang paling relevan dengan hipotesismu,
@@ -583,11 +617,11 @@ def tampilkan_grafik_batang(df, x_col, y_col, judul, ylabel="Nilai"):
     st.altair_chart(chart, use_container_width=True)
 
 
-def payload_investigasi(investigasi, data_variabel):
+def payload_investigasi(investigasi, data_variabel, hasil_pengamatan):
     payload = {
         "rumusan_masalah": investigasi.get("rumusan_masalah", ""),
         "hipotesis_awal": investigasi.get("hipotesis_awal", ""),
-        "dasar_konsep": investigasi.get("dasar_konsep", "")
+        "hasil_pengamatan_siswa": hasil_pengamatan.strip()
     }
     payload.update(data_variabel)
     return payload
@@ -613,7 +647,7 @@ with tab1:
     jenis_simulasi = "Pencemaran Sungai Akibat Limbah Pabrik"
     section_title("Investigasi Pencemaran Sungai Akibat Limbah Pabrik")
 
-    investigasi, siap = tampilkan_kasus_awal(
+    investigasi, siap, umpan_balik = tampilkan_kasus_awal(
         key_prefix="pencemaran",
         judul_masalah="Masalah Ekosistem Sungai",
         narasi_masalah="""
@@ -627,9 +661,9 @@ with tab1:
         urgensi_fenomena="Limbah industri dapat mengubah kualitas air dan kadar oksigen terlarut. Perubahan pada komponen abiotik tersebut berpotensi memengaruhi organisme kecil dan ikan. Oleh karena itu, hubungan antara tingkat limbah dan kondisi ekosistem sungai perlu diselidiki melalui data simulasi.",
         contoh_rumusan="Bagaimana peningkatan tingkat limbah industri memengaruhi kualitas air, oksigen terlarut, dan kondisi organisme di ekosistem sungai?",
         contoh_hipotesis="Jika tingkat limbah industri meningkat, maka kualitas air dan oksigen terlarut diperkirakan menurun sehingga kondisi organisme air dapat terganggu.",
-        hubungan_konsep="Limbah industri meningkat → kualitas air dan oksigen terlarut berubah → kondisi organisme kecil dan ikan dapat terganggu.",
         arahan_rumusan="Jawabanmu sudah menjadi bagian dari proses penyelidikan. Agar lebih terarah, rumusan masalah dapat menghubungkan tingkat limbah sebagai faktor penyebab dengan perubahan kualitas air, oksigen terlarut, dan organisme air.",
-        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menunjukkan dugaan hubungan sebab-akibat. Gunakan kata seperti ‘jika’, ‘maka’, atau ‘diperkirakan’ karena dugaan tersebut masih perlu dibuktikan melalui data."
+        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menunjukkan dugaan hubungan sebab-akibat. Gunakan kata seperti ‘jika’, ‘maka’, atau ‘diperkirakan’ karena dugaan tersebut masih perlu dibuktikan melalui data.",
+        pertanyaan_pengamatan="Apa perubahan utama pada kualitas air, oksigen terlarut, atau organisme ketika tingkat limbah diubah?"
     )
 
     if siap:
@@ -689,22 +723,42 @@ with tab1:
                 else "danger-card"
             )
 
-        if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_pencemaran_final"):
-            simpan_hasil_simulasi(
-                jenis_simulasi,
-                payload_investigasi(
-                    investigasi,
-                    {
-                        "tingkat_limbah_industri": tingkat_limbah,
-                        "indeks_limbah": hasil["indeks_limbah"],
-                        "tingkat_pencemaran": hasil["tingkat_pencemaran"]
-                    }
-                ),
-                hasil
-            )
+        hasil_pengamatan = tampilkan_hasil_pengamatan_singkat(
+            "pencemaran",
+            umpan_balik["pertanyaan_pengamatan"]
+        )
+        hasil_pengamatan_bersih = hasil_pengamatan.strip()
+
+        if st.button("Simpan Hasil Pengamatan", key="simpan_pencemaran_final"):
+            if not hasil_pengamatan_bersih:
+                st.warning("Tuliskan satu perubahan utama yang kamu amati sebelum menyimpan hasil.")
+            else:
+                simpan_hasil_simulasi(
+                    jenis_simulasi,
+                    payload_investigasi(
+                        investigasi,
+                        {
+                            "tingkat_limbah_industri": tingkat_limbah,
+                            "indeks_limbah": hasil["indeks_limbah"],
+                            "tingkat_pencemaran": hasil["tingkat_pencemaran"]
+                        },
+                        hasil_pengamatan_bersih
+                    ),
+                    hasil
+                )
 
         if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
-            st.success(f"{jenis_simulasi} berhasil disimpan. Lanjutkan ke tahap uji hipotesis, kesimpulan, dan tindakan nyata.")
+            st.success(f"{jenis_simulasi} berhasil disimpan.")
+            tampilkan_umpan_balik_setelah_simulasi(
+                rumusan_masalah=investigasi["rumusan_masalah"],
+                hipotesis_awal=investigasi["hipotesis_awal"],
+                hasil_pengamatan=hasil_pengamatan_bersih,
+                urgensi_fenomena=umpan_balik["urgensi_fenomena"],
+                contoh_rumusan=umpan_balik["contoh_rumusan"],
+                contoh_hipotesis=umpan_balik["contoh_hipotesis"],
+                arahan_rumusan=umpan_balik["arahan_rumusan"],
+                arahan_hipotesis=umpan_balik["arahan_hipotesis"]
+            )
             if st.button("✍️ Lanjut ke Uji Hipotesis", key="ke_tanggapan_1_final"):
                 st.switch_page("pages/4_Tanggapan_Siswa.py")
 
@@ -717,7 +771,7 @@ with tab2:
     jenis_simulasi = "Rantai Makanan Saat Kemarau"
     section_title("Investigasi Rantai Makanan Saat Kemarau")
 
-    investigasi, siap = tampilkan_kasus_awal(
+    investigasi, siap, umpan_balik = tampilkan_kasus_awal(
         key_prefix="rantai",
         judul_masalah="Masalah Ketersediaan Produsen Saat Kemarau",
         narasi_masalah="""
@@ -731,9 +785,9 @@ with tab2:
         urgensi_fenomena="Rumput merupakan produsen dan sumber awal energi dalam rantai makanan. Ketika musim kemarau menyebabkan jumlah rumput berkurang, energi yang tersedia bagi konsumen tingkat I, II, dan III juga dapat berubah. Hubungan antara ketersediaan produsen dan aliran energi perlu diselidiki melalui data simulasi.",
         contoh_rumusan="Bagaimana berkurangnya rumput akibat musim kemarau dan efisiensi transfer energi memengaruhi jumlah energi pada setiap tingkat trofik?",
         contoh_hipotesis="Jika jumlah rumput berkurang akibat musim kemarau, maka energi yang tersedia bagi konsumen diperkirakan ikut menurun. Semakin tinggi tingkat trofik, energi yang diterima diperkirakan semakin sedikit.",
-        hubungan_konsep="Kemarau panjang → rumput sebagai produsen berkurang → energi produsen menurun → energi yang diterima konsumen pada tingkat trofik berikutnya ikut menurun.",
         arahan_rumusan="Jawabanmu sudah mengarah pada fenomena rantai makanan. Agar lebih terukur, rumusan masalah dapat menyebutkan perubahan jumlah rumput, efisiensi transfer, dan energi pada setiap tingkat trofik.",
-        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan akibat berkurangnya sumber energi pada produsen terhadap konsumen, termasuk pola energi yang semakin sedikit pada tingkat trofik yang lebih tinggi."
+        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan akibat berkurangnya sumber energi pada produsen terhadap konsumen, termasuk pola energi yang semakin sedikit pada tingkat trofik yang lebih tinggi.",
+        pertanyaan_pengamatan="Apa perubahan utama pada energi produsen dan konsumen ketika jumlah rumput atau efisiensi transfer diubah?"
     )
 
     if siap:
@@ -793,23 +847,43 @@ with tab2:
 
             info_card("Keterangan", hasil["keterangan"], "yellow-card")
 
-        if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_rantai_final"):
-            simpan_hasil_simulasi(
-                jenis_simulasi,
-                payload_investigasi(
-                    investigasi,
-                    {
-                        "energi_produsen_normal": energi_produsen_normal,
-                        "rumput_berkurang_akibat_kemarau": penurunan_produsen,
-                        "energi_produsen_setelah_kemarau": energi_awal,
-                        "efisiensi_transfer_energi": efisiensi_transfer
-                    }
-                ),
-                hasil
-            )
+        hasil_pengamatan = tampilkan_hasil_pengamatan_singkat(
+            "rantai",
+            umpan_balik["pertanyaan_pengamatan"]
+        )
+        hasil_pengamatan_bersih = hasil_pengamatan.strip()
+
+        if st.button("Simpan Hasil Pengamatan", key="simpan_rantai_final"):
+            if not hasil_pengamatan_bersih:
+                st.warning("Tuliskan satu perubahan utama yang kamu amati sebelum menyimpan hasil.")
+            else:
+                simpan_hasil_simulasi(
+                    jenis_simulasi,
+                    payload_investigasi(
+                        investigasi,
+                        {
+                            "energi_produsen_normal": energi_produsen_normal,
+                            "rumput_berkurang_akibat_kemarau": penurunan_produsen,
+                            "energi_produsen_setelah_kemarau": energi_awal,
+                            "efisiensi_transfer_energi": efisiensi_transfer
+                        },
+                        hasil_pengamatan_bersih
+                    ),
+                    hasil
+                )
 
         if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
-            st.success(f"{jenis_simulasi} berhasil disimpan. Lanjutkan ke tahap uji hipotesis, kesimpulan, dan tindakan nyata.")
+            st.success(f"{jenis_simulasi} berhasil disimpan.")
+            tampilkan_umpan_balik_setelah_simulasi(
+                rumusan_masalah=investigasi["rumusan_masalah"],
+                hipotesis_awal=investigasi["hipotesis_awal"],
+                hasil_pengamatan=hasil_pengamatan_bersih,
+                urgensi_fenomena=umpan_balik["urgensi_fenomena"],
+                contoh_rumusan=umpan_balik["contoh_rumusan"],
+                contoh_hipotesis=umpan_balik["contoh_hipotesis"],
+                arahan_rumusan=umpan_balik["arahan_rumusan"],
+                arahan_hipotesis=umpan_balik["arahan_hipotesis"]
+            )
             if st.button("✍️ Lanjut ke Uji Hipotesis", key="ke_tanggapan_2_final"):
                 st.switch_page("pages/4_Tanggapan_Siswa.py")
 
@@ -822,7 +896,7 @@ with tab3:
     jenis_simulasi = "Daur Air, Karbon Dioksida, dan Oksigen Saat Pohon Berkurang"
     section_title("Investigasi Daur Air, CO2, dan O2 Saat Pohon Berkurang")
 
-    investigasi, siap = tampilkan_kasus_awal(
+    investigasi, siap, umpan_balik = tampilkan_kasus_awal(
         key_prefix="daur_air",
         judul_masalah="Masalah Berkurangnya Tutupan Vegetasi",
         narasi_masalah="""
@@ -836,9 +910,9 @@ with tab3:
         urgensi_fenomena="Tumbuhan membantu air hujan meresap ke tanah melalui akar, menyerap karbon dioksida, dan menghasilkan oksigen. Ketika tutupan vegetasi berkurang, keseimbangan air dan gas di lingkungan dapat berubah. Dampak tersebut perlu diselidiki melalui beberapa kondisi simulasi.",
         contoh_rumusan="Bagaimana berkurangnya tutupan vegetasi setelah penebangan memengaruhi infiltrasi air, limpasan permukaan, penyerapan CO2, dan produksi O2?",
         contoh_hipotesis="Jika tutupan vegetasi berkurang, maka infiltrasi air, penyerapan CO2, dan produksi O2 diperkirakan menurun, sedangkan limpasan permukaan diperkirakan meningkat.",
-        hubungan_konsep="Tutupan vegetasi berkurang → akar dan daun berkurang → infiltrasi, penyerapan CO2, dan produksi O2 menurun → limpasan permukaan meningkat.",
         arahan_rumusan="Jawabanmu sudah menjadi awal penyelidikan. Agar sesuai dengan variabel simulasi, rumusan masalah dapat menghubungkan tutupan vegetasi dan curah hujan dengan infiltrasi, limpasan, penyerapan CO2, serta produksi O2.",
-        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan arah perubahan setiap parameter saat vegetasi berkurang, tanpa menganggap hasilnya sudah pasti sebelum simulasi dilakukan."
+        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan arah perubahan setiap parameter saat vegetasi berkurang, tanpa menganggap hasilnya sudah pasti sebelum simulasi dilakukan.",
+        pertanyaan_pengamatan="Apa perubahan utama pada infiltrasi, limpasan, CO2, atau O2 ketika tutupan vegetasi diubah?"
     )
 
     if siap:
@@ -881,12 +955,10 @@ with tab3:
             status_daur_air_card(hasil)
 
             info_card(
-                "Alur Sebab-Akibat",
+                "Petunjuk Pengamatan",
                 """
-                Curah hujan dan tutupan vegetasi memengaruhi kondisi lingkungan.
-                Jika vegetasi berkurang, akar tumbuhan yang membantu penyerapan air juga berkurang.
-                Akibatnya, infiltrasi menurun dan limpasan permukaan meningkat.
-                Pada saat yang sama, jumlah tumbuhan yang menyerap CO2 dan menghasilkan O2 juga menurun.
+                Bandingkan nilai infiltrasi dan limpasan permukaan pada beberapa tingkat tutupan vegetasi.
+                Amati juga perubahan penyerapan CO2 dan produksi O2 sebelum menuliskan hasil pengamatanmu.
                 """,
                 "yellow-card"
             )
@@ -928,9 +1000,7 @@ with tab3:
             )
 
             st.info(
-                """
-                Ketika tutupan vegetasi berkurang, infiltrasi menurun dan limpasan permukaan meningkat.
-                """
+                "Bandingkan arah perubahan infiltrasi dan limpasan permukaan saat tutupan vegetasi diubah."
             )
 
         with col_grafik2:
@@ -952,9 +1022,7 @@ with tab3:
             )
 
             st.info(
-                """
-                Semakin sedikit tutupan vegetasi, semakin rendah CO2 yang diserap dan O2 yang dihasilkan.
-                """
+                "Amati arah perubahan CO2 yang diserap dan O2 yang dihasilkan saat tutupan vegetasi diubah."
             )
 
         with st.expander("📊 Lihat Data Lengkap Simulasi"):
@@ -964,22 +1032,42 @@ with tab3:
                 hide_index=True
             )
 
-        if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_daur_air_final"):
-            simpan_hasil_simulasi(
-                jenis_simulasi,
-                payload_investigasi(
-                    investigasi,
-                    {
-                        "curah_hujan": curah_hujan,
-                        "tutupan_vegetasi_setelah_penebangan": tutupan_vegetasi,
-                        "panas_matahari_tetap": intensitas_panas
-                    }
-                ),
-                hasil
-            )
+        hasil_pengamatan = tampilkan_hasil_pengamatan_singkat(
+            "daur_air",
+            umpan_balik["pertanyaan_pengamatan"]
+        )
+        hasil_pengamatan_bersih = hasil_pengamatan.strip()
+
+        if st.button("Simpan Hasil Pengamatan", key="simpan_daur_air_final"):
+            if not hasil_pengamatan_bersih:
+                st.warning("Tuliskan satu perubahan utama yang kamu amati sebelum menyimpan hasil.")
+            else:
+                simpan_hasil_simulasi(
+                    jenis_simulasi,
+                    payload_investigasi(
+                        investigasi,
+                        {
+                            "curah_hujan": curah_hujan,
+                            "tutupan_vegetasi_setelah_penebangan": tutupan_vegetasi,
+                            "panas_matahari_tetap": intensitas_panas
+                        },
+                        hasil_pengamatan_bersih
+                    ),
+                    hasil
+                )
 
         if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
-            st.success(f"{jenis_simulasi} berhasil disimpan. Lanjutkan ke tahap uji hipotesis, kesimpulan, dan tindakan nyata.")
+            st.success(f"{jenis_simulasi} berhasil disimpan.")
+            tampilkan_umpan_balik_setelah_simulasi(
+                rumusan_masalah=investigasi["rumusan_masalah"],
+                hipotesis_awal=investigasi["hipotesis_awal"],
+                hasil_pengamatan=hasil_pengamatan_bersih,
+                urgensi_fenomena=umpan_balik["urgensi_fenomena"],
+                contoh_rumusan=umpan_balik["contoh_rumusan"],
+                contoh_hipotesis=umpan_balik["contoh_hipotesis"],
+                arahan_rumusan=umpan_balik["arahan_rumusan"],
+                arahan_hipotesis=umpan_balik["arahan_hipotesis"]
+            )
             if st.button("✍️ Lanjut ke Uji Hipotesis", key="ke_tanggapan_3_final"):
                 st.switch_page("pages/4_Tanggapan_Siswa.py")
 
@@ -992,7 +1080,7 @@ with tab4:
     jenis_simulasi = "Peningkatan Alga Akibat Pupuk Berlebih"
     section_title("Investigasi Peningkatan Alga Akibat Pupuk Berlebih")
 
-    investigasi, siap = tampilkan_kasus_awal(
+    investigasi, siap, umpan_balik = tampilkan_kasus_awal(
         key_prefix="alga",
         judul_masalah="Masalah Pupuk Berlebih di Perairan",
         narasi_masalah="""
@@ -1006,9 +1094,9 @@ with tab4:
         urgensi_fenomena="Pupuk yang terbawa air hujan dapat membawa nitrogen dan fosfor ke perairan. Jika zat hara terlalu tinggi, pertumbuhan alga dapat meningkat dan mengubah ketersediaan oksigen serta kondisi organisme air. Hubungan antartahap tersebut perlu diselidiki melalui data simulasi.",
         contoh_rumusan="Bagaimana peningkatan kadar nitrogen dan fosfor dari pupuk memengaruhi pertumbuhan alga, oksigen dalam air, dan kondisi organisme perairan?",
         contoh_hipotesis="Jika kadar nitrogen dan fosfor dalam perairan meningkat, maka pertumbuhan alga diperkirakan meningkat. Kondisi tersebut dapat menurunkan oksigen dalam air dan mengganggu organisme perairan.",
-        hubungan_konsep="Pupuk berlebih → nitrogen dan fosfor meningkat → pertumbuhan alga meningkat → oksigen air dapat menurun → organisme air dapat terganggu.",
         arahan_rumusan="Jawabanmu sudah berhubungan dengan fenomena peningkatan alga. Agar lebih terarah, rumusan masalah dapat menyebutkan nitrogen dan fosfor sebagai faktor yang diuji serta alga, oksigen, dan organisme sebagai parameter yang diamati.",
-        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan urutan sebab-akibat dari zat hara menuju pertumbuhan alga, perubahan oksigen, lalu kondisi organisme air."
+        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan urutan sebab-akibat dari zat hara menuju pertumbuhan alga, perubahan oksigen, lalu kondisi organisme air.",
+        pertanyaan_pengamatan="Apa perubahan utama pada alga, oksigen air, atau organisme ketika kadar nitrogen dan fosfor diubah?"
     )
 
     if siap:
@@ -1082,21 +1170,41 @@ with tab4:
                 else "danger-card"
             )
 
-        if st.button("Simpan Data untuk Uji Hipotesis", key="simpan_alga_final"):
-            simpan_hasil_simulasi(
-                jenis_simulasi,
-                payload_investigasi(
-                    investigasi,
-                    {
-                        "nitrogen_dari_pupuk": kadar_nitrogen,
-                        "fosfor_dari_pupuk": kadar_fosfor,
-                        "indeks_nutrien": hasil["indeks_nutrien"]
-                    }
-                ),
-                hasil
-            )
+        hasil_pengamatan = tampilkan_hasil_pengamatan_singkat(
+            "alga",
+            umpan_balik["pertanyaan_pengamatan"]
+        )
+        hasil_pengamatan_bersih = hasil_pengamatan.strip()
+
+        if st.button("Simpan Hasil Pengamatan", key="simpan_alga_final"):
+            if not hasil_pengamatan_bersih:
+                st.warning("Tuliskan satu perubahan utama yang kamu amati sebelum menyimpan hasil.")
+            else:
+                simpan_hasil_simulasi(
+                    jenis_simulasi,
+                    payload_investigasi(
+                        investigasi,
+                        {
+                            "nitrogen_dari_pupuk": kadar_nitrogen,
+                            "fosfor_dari_pupuk": kadar_fosfor,
+                            "indeks_nutrien": hasil["indeks_nutrien"]
+                        },
+                        hasil_pengamatan_bersih
+                    ),
+                    hasil
+                )
 
         if st.session_state.get("simulasi_tersimpan") == jenis_simulasi:
-            st.success(f"{jenis_simulasi} berhasil disimpan. Lanjutkan ke tahap uji hipotesis, kesimpulan, dan tindakan nyata.")
+            st.success(f"{jenis_simulasi} berhasil disimpan.")
+            tampilkan_umpan_balik_setelah_simulasi(
+                rumusan_masalah=investigasi["rumusan_masalah"],
+                hipotesis_awal=investigasi["hipotesis_awal"],
+                hasil_pengamatan=hasil_pengamatan_bersih,
+                urgensi_fenomena=umpan_balik["urgensi_fenomena"],
+                contoh_rumusan=umpan_balik["contoh_rumusan"],
+                contoh_hipotesis=umpan_balik["contoh_hipotesis"],
+                arahan_rumusan=umpan_balik["arahan_rumusan"],
+                arahan_hipotesis=umpan_balik["arahan_hipotesis"]
+            )
             if st.button("✍️ Lanjut ke Uji Hipotesis", key="ke_tanggapan_4_final"):
                 st.switch_page("pages/4_Tanggapan_Siswa.py")
