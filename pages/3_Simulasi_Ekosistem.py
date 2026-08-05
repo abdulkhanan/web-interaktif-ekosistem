@@ -380,13 +380,88 @@ def tampilkan_materi_pendukung(key_prefix):
             st.switch_page("pages/2_Materi_Ekosistem.py")
 
 
+def tampilkan_umpan_balik_awal(
+    rumusan_masalah,
+    hipotesis_awal,
+    dasar_konsep,
+    urgensi_fenomena,
+    contoh_rumusan,
+    contoh_hipotesis,
+    hubungan_konsep,
+    arahan_rumusan,
+    arahan_hipotesis
+):
+    """Menampilkan respons langsung yang membimbing tanpa menilai jawaban siswa benar atau salah."""
+    section_title("3. Umpan Balik Awal")
+
+    st.success(
+        "Jawaban awalmu sudah tercatat. Sistem tidak memberi label benar atau salah pada tahap ini. "
+        "Gunakan tanggapan berikut sebagai pembanding sebelum menguji dugaan melalui simulasi."
+    )
+
+    with st.container(border=True):
+        st.markdown("#### 📝 Jawaban Awalmu")
+        col_rumusan, col_hipotesis = st.columns(2)
+
+        with col_rumusan:
+            st.markdown("**Rumusan masalah**")
+            st.write(rumusan_masalah)
+
+        with col_hipotesis:
+            st.markdown("**Hipotesis awal**")
+            st.write(hipotesis_awal)
+
+        if dasar_konsep:
+            st.markdown("**Dasar konsep yang kamu gunakan**")
+            st.write(dasar_konsep)
+
+    info_card(
+        "Mengapa Fenomena Ini Penting?",
+        urgensi_fenomena,
+        "blue-card"
+    )
+
+    col_rumusan, col_hipotesis = st.columns(2)
+
+    with col_rumusan:
+        with st.container(border=True):
+            st.markdown("#### 🔎 Arah Pengembangan Rumusan Masalah")
+            st.write(arahan_rumusan)
+            st.markdown("**Contoh jawaban ilmiah sebagai pembanding:**")
+            st.info(contoh_rumusan)
+
+    with col_hipotesis:
+        with st.container(border=True):
+            st.markdown("#### 💡 Arah Pengembangan Hipotesis")
+            st.write(arahan_hipotesis)
+            st.markdown("**Contoh jawaban ilmiah sebagai pembanding:**")
+            st.info(contoh_hipotesis)
+
+    info_card(
+        "Hubungan Konsep Utama",
+        hubungan_konsep,
+        "green-card"
+    )
+
+    st.caption(
+        "Contoh tersebut bukan penanda bahwa jawabanmu salah. Kamu dapat memperbaiki jawaban pada kolom di atas "
+        "atau melanjutkan untuk memperoleh data yang akan menguji hipotesismu."
+    )
+
+
 def tampilkan_kasus_awal(
     key_prefix,
     judul_masalah,
     narasi_masalah,
     image_path,
     caption,
-    fokus_penyelidikan
+    fokus_penyelidikan,
+    urgensi_fenomena,
+    contoh_rumusan,
+    contoh_hipotesis,
+    hubungan_konsep,
+    arahan_rumusan,
+    arahan_hipotesis
 ):
     section_title("1. Fenomena Masalah")
 
@@ -431,31 +506,46 @@ def tampilkan_kasus_awal(
     )
 
     dasar_konsep = st.text_area(
-        "Dasar konsep yang digunakan",
+        "Dasar konsep yang digunakan (opsional)",
         key=f"dasar_konsep_{key_prefix}",
         height=90,
         placeholder="Tuliskan konsep ekosistem yang mendukung hipotesismu."
     )
 
-    siap = bool(rumusan_masalah.strip()) and bool(hipotesis_awal.strip())
+    rumusan_bersih = rumusan_masalah.strip()
+    hipotesis_bersih = hipotesis_awal.strip()
+    dasar_konsep_bersih = dasar_konsep.strip()
+    siap = bool(rumusan_bersih) and bool(hipotesis_bersih)
 
-    if not siap:
+    if siap:
+        tampilkan_umpan_balik_awal(
+            rumusan_masalah=rumusan_bersih,
+            hipotesis_awal=hipotesis_bersih,
+            dasar_konsep=dasar_konsep_bersih,
+            urgensi_fenomena=urgensi_fenomena,
+            contoh_rumusan=contoh_rumusan,
+            contoh_hipotesis=contoh_hipotesis,
+            hubungan_konsep=hubungan_konsep,
+            arahan_rumusan=arahan_rumusan,
+            arahan_hipotesis=arahan_hipotesis
+        )
+    else:
         info_card(
             "Lengkapi Rencana Penyelidikan",
-            "Isi rumusan masalah dan hipotesis terlebih dahulu. Setelah itu, bagian simulasi dan pengumpulan data akan digunakan untuk menguji hipotesis tersebut.",
+            "Isi rumusan masalah dan hipotesis terlebih dahulu. Setelah keduanya terisi, tanggapan pembanding akan muncul langsung tanpa menyatakan jawabanmu salah.",
             "yellow-card"
         )
 
     return {
-        "rumusan_masalah": rumusan_masalah.strip(),
-        "hipotesis_awal": hipotesis_awal.strip(),
-        "dasar_konsep": dasar_konsep.strip()
+        "rumusan_masalah": rumusan_bersih,
+        "hipotesis_awal": hipotesis_bersih,
+        "dasar_konsep": dasar_konsep_bersih
     }, siap
 
 
 def tampilkan_arahan_pengumpulan_data():
     info_card(
-        "3. Simulasi dan Pengumpulan Data",
+        "4. Simulasi dan Pengumpulan Data",
         """
         Ubah variabel simulasi beberapa kali untuk melihat pola perubahan data. Bandingkan kondisi rendah,
         sedang, dan tinggi jika memungkinkan. Setelah menemukan data yang paling relevan dengan hipotesismu,
@@ -533,7 +623,13 @@ with tab1:
         """,
         image_path=os.path.join("assets", "images", "pencemaran_sungai.jpg"),
         caption="Fenomena pencemaran sungai digunakan sebagai konteks awal penyelidikan.",
-        fokus_penyelidikan="Selidiki hubungan antara tingkat limbah industri, kualitas air, oksigen terlarut, dan kondisi organisme air."
+        fokus_penyelidikan="Selidiki hubungan antara tingkat limbah industri, kualitas air, oksigen terlarut, dan kondisi organisme air.",
+        urgensi_fenomena="Limbah industri dapat mengubah kualitas air dan kadar oksigen terlarut. Perubahan pada komponen abiotik tersebut berpotensi memengaruhi organisme kecil dan ikan. Oleh karena itu, hubungan antara tingkat limbah dan kondisi ekosistem sungai perlu diselidiki melalui data simulasi.",
+        contoh_rumusan="Bagaimana peningkatan tingkat limbah industri memengaruhi kualitas air, oksigen terlarut, dan kondisi organisme di ekosistem sungai?",
+        contoh_hipotesis="Jika tingkat limbah industri meningkat, maka kualitas air dan oksigen terlarut diperkirakan menurun sehingga kondisi organisme air dapat terganggu.",
+        hubungan_konsep="Limbah industri meningkat → kualitas air dan oksigen terlarut berubah → kondisi organisme kecil dan ikan dapat terganggu.",
+        arahan_rumusan="Jawabanmu sudah menjadi bagian dari proses penyelidikan. Agar lebih terarah, rumusan masalah dapat menghubungkan tingkat limbah sebagai faktor penyebab dengan perubahan kualitas air, oksigen terlarut, dan organisme air.",
+        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menunjukkan dugaan hubungan sebab-akibat. Gunakan kata seperti ‘jika’, ‘maka’, atau ‘diperkirakan’ karena dugaan tersebut masih perlu dibuktikan melalui data."
     )
 
     if siap:
@@ -631,7 +727,13 @@ with tab2:
         """,
         image_path=os.path.join("assets", "images", "rantai_makanan_piramida_energi.png"),
         caption="Piramida energi digunakan untuk membantu membaca aliran energi antar tingkat trofik.",
-        fokus_penyelidikan="Selidiki pengaruh berkurangnya produsen dan efisiensi transfer energi terhadap energi pada tiap tingkat trofik."
+        fokus_penyelidikan="Selidiki pengaruh berkurangnya produsen dan efisiensi transfer energi terhadap energi pada tiap tingkat trofik.",
+        urgensi_fenomena="Rumput merupakan produsen dan sumber awal energi dalam rantai makanan. Ketika musim kemarau menyebabkan jumlah rumput berkurang, energi yang tersedia bagi konsumen tingkat I, II, dan III juga dapat berubah. Hubungan antara ketersediaan produsen dan aliran energi perlu diselidiki melalui data simulasi.",
+        contoh_rumusan="Bagaimana berkurangnya rumput akibat musim kemarau dan efisiensi transfer energi memengaruhi jumlah energi pada setiap tingkat trofik?",
+        contoh_hipotesis="Jika jumlah rumput berkurang akibat musim kemarau, maka energi yang tersedia bagi konsumen diperkirakan ikut menurun. Semakin tinggi tingkat trofik, energi yang diterima diperkirakan semakin sedikit.",
+        hubungan_konsep="Kemarau panjang → rumput sebagai produsen berkurang → energi produsen menurun → energi yang diterima konsumen pada tingkat trofik berikutnya ikut menurun.",
+        arahan_rumusan="Jawabanmu sudah mengarah pada fenomena rantai makanan. Agar lebih terukur, rumusan masalah dapat menyebutkan perubahan jumlah rumput, efisiensi transfer, dan energi pada setiap tingkat trofik.",
+        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan akibat berkurangnya sumber energi pada produsen terhadap konsumen, termasuk pola energi yang semakin sedikit pada tingkat trofik yang lebih tinggi."
     )
 
     if siap:
@@ -730,7 +832,13 @@ with tab3:
         """,
         image_path=os.path.join("assets", "images", "diagram_daur_air_co2_o2.png"),
         caption="Diagram daur air, CO2, dan O2 digunakan sebagai konteks awal penyelidikan.",
-        fokus_penyelidikan="Selidiki pengaruh tutupan vegetasi terhadap infiltrasi, limpasan permukaan, penyerapan CO2, dan produksi O2."
+        fokus_penyelidikan="Selidiki pengaruh tutupan vegetasi terhadap infiltrasi, limpasan permukaan, penyerapan CO2, dan produksi O2.",
+        urgensi_fenomena="Tumbuhan membantu air hujan meresap ke tanah melalui akar, menyerap karbon dioksida, dan menghasilkan oksigen. Ketika tutupan vegetasi berkurang, keseimbangan air dan gas di lingkungan dapat berubah. Dampak tersebut perlu diselidiki melalui beberapa kondisi simulasi.",
+        contoh_rumusan="Bagaimana berkurangnya tutupan vegetasi setelah penebangan memengaruhi infiltrasi air, limpasan permukaan, penyerapan CO2, dan produksi O2?",
+        contoh_hipotesis="Jika tutupan vegetasi berkurang, maka infiltrasi air, penyerapan CO2, dan produksi O2 diperkirakan menurun, sedangkan limpasan permukaan diperkirakan meningkat.",
+        hubungan_konsep="Tutupan vegetasi berkurang → akar dan daun berkurang → infiltrasi, penyerapan CO2, dan produksi O2 menurun → limpasan permukaan meningkat.",
+        arahan_rumusan="Jawabanmu sudah menjadi awal penyelidikan. Agar sesuai dengan variabel simulasi, rumusan masalah dapat menghubungkan tutupan vegetasi dan curah hujan dengan infiltrasi, limpasan, penyerapan CO2, serta produksi O2.",
+        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan arah perubahan setiap parameter saat vegetasi berkurang, tanpa menganggap hasilnya sudah pasti sebelum simulasi dilakukan."
     )
 
     if siap:
@@ -894,7 +1002,13 @@ with tab4:
         """,
         image_path=os.path.join("assets", "images", "peningkatan_alga_akibat_pupuk_berlebih.png"),
         caption="Fenomena peningkatan alga digunakan sebagai konteks awal penyelidikan eutrofikasi.",
-        fokus_penyelidikan="Selidiki pengaruh nitrogen dan fosfor terhadap pertumbuhan alga, oksigen air, dan kondisi organisme air."
+        fokus_penyelidikan="Selidiki pengaruh nitrogen dan fosfor terhadap pertumbuhan alga, oksigen air, dan kondisi organisme air.",
+        urgensi_fenomena="Pupuk yang terbawa air hujan dapat membawa nitrogen dan fosfor ke perairan. Jika zat hara terlalu tinggi, pertumbuhan alga dapat meningkat dan mengubah ketersediaan oksigen serta kondisi organisme air. Hubungan antartahap tersebut perlu diselidiki melalui data simulasi.",
+        contoh_rumusan="Bagaimana peningkatan kadar nitrogen dan fosfor dari pupuk memengaruhi pertumbuhan alga, oksigen dalam air, dan kondisi organisme perairan?",
+        contoh_hipotesis="Jika kadar nitrogen dan fosfor dalam perairan meningkat, maka pertumbuhan alga diperkirakan meningkat. Kondisi tersebut dapat menurunkan oksigen dalam air dan mengganggu organisme perairan.",
+        hubungan_konsep="Pupuk berlebih → nitrogen dan fosfor meningkat → pertumbuhan alga meningkat → oksigen air dapat menurun → organisme air dapat terganggu.",
+        arahan_rumusan="Jawabanmu sudah berhubungan dengan fenomena peningkatan alga. Agar lebih terarah, rumusan masalah dapat menyebutkan nitrogen dan fosfor sebagai faktor yang diuji serta alga, oksigen, dan organisme sebagai parameter yang diamati.",
+        arahan_hipotesis="Hipotesismu dapat dikembangkan dengan menjelaskan urutan sebab-akibat dari zat hara menuju pertumbuhan alga, perubahan oksigen, lalu kondisi organisme air."
     )
 
     if siap:
