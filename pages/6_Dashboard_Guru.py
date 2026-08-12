@@ -151,6 +151,51 @@ st.markdown(
         .pb-green { background: linear-gradient(90deg, #059669, #10b981); }
         .pb-blue { background: linear-gradient(90deg, #0284c7, #38bdf8); }
         .pb-purple { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+
+
+        /* Capaian Pembelajaran */
+        .cp-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #dbeafe;
+            border-left: 5px solid #0284c7;
+            border-radius: 18px;
+            padding: 22px 24px;
+            margin: 4px 0 24px 0;
+            box-shadow: 0 8px 24px -14px rgba(2, 132, 199, 0.25);
+        }
+        .cp-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 19px;
+            font-weight: 900;
+            color: #0f172a;
+            margin-bottom: 14px;
+        }
+        .cp-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+        .cp-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 16px 18px;
+        }
+        .cp-item-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #0369a1;
+            margin-bottom: 8px;
+        }
+        .cp-text {
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        @media (max-width: 800px) {
+            .cp-grid { grid-template-columns: 1fr; }
+        }
     </style>
     """,
     unsafe_allow_html=True
@@ -165,6 +210,36 @@ nama_guru = st.session_state.get("nama_pengguna", "")
 page_title(
     "👩‍🏫 Dashboard Guru",
     f"Selamat datang, {nama_guru}. Dashboard ini digunakan untuk memantau alur penyelidikan siswa: rencana investigasi, simulasi/data, uji hipotesis, kesimpulan, dan feedback."
+)
+
+
+st.markdown(
+    """
+    <div class="cp-card">
+        <div class="cp-title">🎯 Capaian Pembelajaran (CP) Fase E — Biologi</div>
+        <div class="cp-grid">
+            <div class="cp-item">
+                <div class="cp-item-title">🧬 Pemahaman Biologi</div>
+                <div class="cp-text">
+                    Menerapkan prinsip klasifikasi dan strategi pelestarian keanekaragaman hayati;
+                    mendeskripsikan peranan virus, bakteri, dan jamur dalam kehidupan;
+                    <strong>menganalisis interaksi antar komponen ekosistem dan pengaruhnya terhadap keseimbangan ekosistem</strong>;
+                    dan menerapkan konsep IPA untuk mengatasi permasalahan berkaitan dengan perubahan iklim.
+                </div>
+            </div>
+            <div class="cp-item">
+                <div class="cp-item-title">🔎 Keterampilan Proses</div>
+                <div class="cp-text">
+                    Keterampilan inkuiri terkait biologi yang meliputi keterampilan mengamati;
+                    merumuskan pertanyaan dan memprediksi; merencanakan dan melakukan penyelidikan;
+                    memproses dan menganalisis data/informasi; mengevaluasi dan refleksi; serta
+                    mengomunikasikan hasil.
+                </div>
+            </div>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
 )
 
 (
