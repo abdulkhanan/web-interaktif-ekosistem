@@ -82,6 +82,71 @@ def get_user_by_email(email):
         return user
 
 
+def get_user_by_id(id_user):
+    if id_user is None:
+        return None
+
+    try:
+        id_user = int(id_user)
+    except (TypeError, ValueError):
+        return None
+
+    fields_with_password = "id_user,nama,email,google_sub,role,kelas,status,password_hash,created_at,updated_at"
+    fields_without_password = "id_user,nama,email,google_sub,role,kelas,status,created_at,updated_at"
+
+    try:
+        response = (
+            client()
+            .table("users")
+            .select(fields_with_password)
+            .eq("id_user", id_user)
+            .limit(1)
+            .execute()
+        )
+        return _first(_data(response))
+    except Exception:
+        # Kompatibilitas jika kolom password_hash belum ditambahkan di Supabase.
+        response = (
+            client()
+            .table("users")
+            .select(fields_without_password)
+            .eq("id_user", id_user)
+            .limit(1)
+            .execute()
+        )
+        user = _first(_data(response))
+        if user is not None:
+            user["password_hash"] = None
+        return user
+
+
+def delete_user_account(id_user):
+    """Hapus akun dari tabel users. Data pembelajaran tidak ikut dihapus."""
+    try:
+        id_user = int(id_user)
+    except (TypeError, ValueError):
+        raise ValueError("ID pengguna tidak valid.")
+
+    user = get_user_by_id(id_user)
+    if user is None:
+        raise ValueError("Akun pengguna tidak ditemukan atau sudah dihapus.")
+
+    response = (
+        client()
+        .table("users")
+        .delete()
+        .eq("id_user", id_user)
+        .execute()
+    )
+
+    # Beberapa konfigurasi Supabase tidak selalu mengembalikan baris yang dihapus,
+    # sehingga keberhasilan diverifikasi dengan pengecekan ulang.
+    if get_user_by_id(id_user) is not None:
+        raise RuntimeError("Akun gagal dihapus dari database.")
+
+    return user
+
+
 def get_or_create_google_user(profile, default_admin_email=""):
     email = _normalize_email(profile.get("email", ""))
     nama = _normalize_text(profile.get("name", ""))

@@ -17,7 +17,7 @@ plt.rcParams.update({
 import streamlit as st
 
 from database.init_db import init_db
-from database.queries import get_users_df, get_user_counts, get_dashboard_counts_with_status, get_progress_siswa_df, update_user_name, update_user_data as update_user_data_db, create_user_manual, update_user_password
+from database.queries import get_users_df, get_user_counts, get_dashboard_counts_with_status, get_progress_siswa_df, update_user_name, update_user_data as update_user_data_db, create_user_manual, update_user_password, delete_user_account
 from modules.auth import require_role
 from components.ui import load_css
 
@@ -1644,14 +1644,85 @@ elif st.session_state["admin_menu"] == "Daftar Pengguna":
                 
                     st.markdown(card_html, unsafe_allow_html=True)
 
-                    col_edit, col_empty = st.columns([1, 3])
+                    col_edit, col_delete, col_empty = st.columns([1, 1, 2])
 
                     with col_edit:
-                        if st.button("Edit", key=f"btn_edit_user_{row_id}", use_container_width=True):
+                        if st.button("✏️ Edit", key=f"btn_edit_user_{row_id}", use_container_width=True):
                             st.session_state["selected_edit_user_id"] = row_id
+                            st.session_state.pop("selected_delete_user_id", None)
+                            st.rerun()
+
+                    with col_delete:
+                        delete_disabled = row_id == current_user_id
+                        if st.button(
+                            "🗑️ Hapus",
+                            key=f"btn_delete_user_{row_id}",
+                            use_container_width=True,
+                            disabled=delete_disabled,
+                            help="Akun admin yang sedang digunakan tidak dapat dihapus." if delete_disabled else "Hapus akun pengguna ini."
+                        ):
+                            st.session_state["selected_delete_user_id"] = row_id
+                            st.session_state.pop("selected_edit_user_id", None)
                             st.rerun()
 
         st.divider()
+
+        if "selected_delete_user_id" in st.session_state:
+            selected_delete_id = int(st.session_state["selected_delete_user_id"])
+            delete_rows = df_users[df_users["id_user"].astype(int) == selected_delete_id]
+
+            if delete_rows.empty:
+                st.session_state.pop("selected_delete_user_id", None)
+            else:
+                delete_user = delete_rows.iloc[0]
+                delete_nama = str(delete_user["nama"])
+                delete_email = str(delete_user["email"])
+
+                st.markdown(
+                    '<div class="admin-section-title" style="font-size:24px;margin-top:24px;">Hapus Pengguna</div>',
+                    unsafe_allow_html=True
+                )
+                st.warning(
+                    f"Anda akan menghapus akun **{delete_nama}** ({delete_email}) secara permanen dari daftar pengguna. "
+                    "Data pembelajaran seperti tanggapan, progres, dan feedback tidak ikut dihapus."
+                )
+
+                with st.form("form_hapus_pengguna"):
+                    konfirmasi_hapus = st.checkbox(
+                        "Saya yakin ingin menghapus akun ini dan mencabut akses loginnya."
+                    )
+                    col_hapus, col_batal_hapus = st.columns(2)
+
+                    with col_hapus:
+                        hapus = st.form_submit_button(
+                            "🗑️ Hapus Akun Permanen",
+                            use_container_width=True,
+                            type="primary"
+                        )
+
+                    with col_batal_hapus:
+                        batal_hapus = st.form_submit_button("Batal", use_container_width=True)
+
+                    if hapus:
+                        if selected_delete_id == current_user_id:
+                            st.error("Akun admin yang sedang digunakan tidak boleh dihapus.")
+                        elif not konfirmasi_hapus:
+                            st.error("Centang kotak konfirmasi terlebih dahulu.")
+                        else:
+                            try:
+                                deleted = delete_user_account(selected_delete_id)
+                                st.session_state.pop("selected_delete_user_id", None)
+                                st.success(
+                                    f"Akun {deleted.get('nama', delete_nama)} berhasil dihapus. "
+                                    "Jika pengguna masih sedang membuka aplikasi, aksesnya akan dicabut pada interaksi atau navigasi berikutnya."
+                                )
+                                st.rerun()
+                            except Exception as error:
+                                st.error(f"Gagal menghapus akun: {error}")
+
+                    if batal_hapus:
+                        st.session_state.pop("selected_delete_user_id", None)
+                        st.rerun()
 
         if "selected_edit_user_id" in st.session_state:
             selected_id = int(st.session_state["selected_edit_user_id"])

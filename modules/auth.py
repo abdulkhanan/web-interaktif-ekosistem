@@ -1,7 +1,7 @@
 import streamlit as st
 from authlib.integrations.requests_client import OAuth2Session
 
-from database.queries import get_or_create_google_user, get_user_by_email
+from database.queries import get_or_create_google_user, get_user_by_email, get_user_by_id
 from modules.security import verify_password
 
 
@@ -9,6 +9,52 @@ GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
 GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
 GOOGLE_USERINFO_URL = "https://openidconnect.googleapis.com/v1/userinfo"
 GOOGLE_SCOPE = "openid email profile"
+
+
+def _clear_local_auth_state(remove_cookies=True):
+    """Kosongkan sesi lokal tanpa memaksa navigasi halaman."""
+    st.session_state["logged_in"] = False
+    st.session_state["logout_triggered"] = True
+    st.session_state["id_user"] = None
+    st.session_state["nama_pengguna"] = ""
+    st.session_state["email"] = ""
+    st.session_state["role"] = None
+    st.session_state["kelas"] = ""
+
+    if remove_cookies:
+        try:
+            from streamlit_cookies_controller import CookieController
+            with st.container(key="hidden_cookies_invalid"):
+                controller = CookieController()
+                for cookie_name in ["logged_in", "id_user", "nama_pengguna", "email", "role", "kelas"]:
+                    controller.remove(cookie_name)
+        except Exception:
+            pass
+
+
+def _refresh_and_validate_logged_in_user():
+    """Sinkronkan sesi dengan database dan cabut akses akun yang dihapus/nonaktif."""
+    if not st.session_state.get("logged_in"):
+        return
+
+    try:
+        user = get_user_by_id(st.session_state.get("id_user"))
+        if user is None and st.session_state.get("email"):
+            user = get_user_by_email(st.session_state.get("email"))
+    except Exception:
+        # Jika database sedang tidak dapat dijangkau, jangan otomatis mengeluarkan pengguna.
+        return
+
+    if user is None or str(user.get("status", "")).lower() != "aktif":
+        _clear_local_auth_state(remove_cookies=True)
+        return
+
+    # Perubahan nama/role/kelas dari admin langsung tersinkron pada interaksi berikutnya.
+    st.session_state["id_user"] = user.get("id_user")
+    st.session_state["nama_pengguna"] = user.get("nama", "") or ""
+    st.session_state["email"] = user.get("email", "") or ""
+    st.session_state["role"] = user.get("role")
+    st.session_state["kelas"] = user.get("kelas", "") or ""
 
 
 def init_auth():
@@ -20,8 +66,10 @@ def init_auth():
             /* Sembunyikan loading skeleton dari komponen cookie */
             .st-key-hidden_cookies,
             .st-key-hidden_cookies_logout,
+            .st-key-hidden_cookies_invalid,
             .st-key-hidden_cookies *,
             .st-key-hidden_cookies_logout *,
+            .st-key-hidden_cookies_invalid *,
             div[data-testid="stSkeleton"],
             [data-testid="stSkeleton"],
             .stSkeleton,
@@ -93,7 +141,11 @@ def init_auth():
         except Exception:
             pass
 
-    # 2. Write auth state to cookies using CookieController if not already written
+    # 2. Validasi ulang ke database. Jika akun sudah dihapus/nonaktif oleh admin,
+    #    sesi pengguna langsung dicabut pada interaksi/navigasi berikutnya.
+    _refresh_and_validate_logged_in_user()
+
+    # 3. Write auth state to cookies using CookieController if not already written
     if st.session_state["logged_in"]:
         try:
             cookies = st.context.cookies
@@ -253,13 +305,7 @@ def handle_google_callback():
 
 
 def logout():
-    st.session_state["logged_in"] = False
-    st.session_state["logout_triggered"] = True
-    st.session_state["id_user"] = None
-    st.session_state["nama_pengguna"] = ""
-    st.session_state["email"] = ""
-    st.session_state["role"] = None
-    st.session_state["kelas"] = ""
+    _clear_local_auth_state(remove_cookies=False)
 
     if "hasil_simulasi" in st.session_state:
         del st.session_state["hasil_simulasi"]
