@@ -17,7 +17,57 @@ plt.rcParams.update({
 import streamlit as st
 
 from database.init_db import init_db
-from database.queries import get_users_df, get_user_counts, get_dashboard_counts_with_status, get_progress_siswa_df, update_user_name, update_user_data as update_user_data_db, create_user_manual, update_user_password, delete_user_account
+from database.queries import (
+    get_users_df,
+    get_user_counts,
+    get_dashboard_counts_with_status,
+    get_progress_siswa_df,
+    update_user_name,
+    update_user_data as update_user_data_db,
+    create_user_manual,
+    update_user_password,
+)
+
+# Kompatibilitas deploy: beberapa deployment lama masih memakai
+# database/queries.py yang belum memiliki delete_user_account.
+# Karena itu fitur hapus akun memiliki fallback langsung ke Supabase.
+try:
+    from database.queries import delete_user_account
+except ImportError:
+    from database.connection import get_supabase_client
+
+    def delete_user_account(id_user):
+        try:
+            id_user = int(id_user)
+        except (TypeError, ValueError):
+            raise ValueError("ID pengguna tidak valid.")
+
+        db = get_supabase_client()
+        lookup = (
+            db.table("users")
+            .select("id_user,nama,email,role,status")
+            .eq("id_user", id_user)
+            .limit(1)
+            .execute()
+        )
+        rows = lookup.data or []
+        if not rows:
+            raise ValueError("Akun pengguna tidak ditemukan atau sudah dihapus.")
+
+        user = rows[0]
+        db.table("users").delete().eq("id_user", id_user).execute()
+
+        verify = (
+            db.table("users")
+            .select("id_user")
+            .eq("id_user", id_user)
+            .limit(1)
+            .execute()
+        )
+        if verify.data:
+            raise RuntimeError("Akun gagal dihapus dari database.")
+        return user
+
 from modules.auth import require_role
 from components.ui import load_css
 

@@ -1,7 +1,50 @@
 import streamlit as st
 from authlib.integrations.requests_client import OAuth2Session
 
-from database.queries import get_or_create_google_user, get_user_by_email, get_user_by_id
+from database.queries import get_or_create_google_user, get_user_by_email
+
+# Kompatibilitas dengan database/queries.py versi lama pada deployment.
+try:
+    from database.queries import get_user_by_id
+except ImportError:
+    from database.connection import get_supabase_client
+
+    def get_user_by_id(id_user):
+        if id_user is None:
+            return None
+        try:
+            id_user = int(id_user)
+        except (TypeError, ValueError):
+            return None
+
+        db = get_supabase_client()
+        fields_with_password = (
+            "id_user,nama,email,google_sub,role,kelas,status,"
+            "password_hash,created_at,updated_at"
+        )
+        fields_without_password = (
+            "id_user,nama,email,google_sub,role,kelas,status,created_at,updated_at"
+        )
+        try:
+            response = (
+                db.table("users")
+                .select(fields_with_password)
+                .eq("id_user", id_user)
+                .limit(1)
+                .execute()
+            )
+        except Exception:
+            response = (
+                db.table("users")
+                .select(fields_without_password)
+                .eq("id_user", id_user)
+                .limit(1)
+                .execute()
+            )
+
+        rows = response.data or []
+        return rows[0] if rows else None
+
 from modules.security import verify_password
 
 
