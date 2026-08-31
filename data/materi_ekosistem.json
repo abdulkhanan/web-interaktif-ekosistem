@@ -1,8 +1,8 @@
 [
   {
     "kode": "materi_1_komponen_ekosistem",
-    "judul": "Bahan Penyelidikan 1: Ekosistem, Satuan Makhluk Hidup, Komponen Biotik dan Abiotik, serta Pencemaran Perairan",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari ekosistem sebagai satu kesatuan antara makhluk hidup dan lingkungan fisiknya. Pembahasan difokuskan pada konsep yang mendukung simulasi pencemaran sungai, terutama hubungan kualitas air, oksigen terlarut, pH, populasi ikan, dan kondisi organisme perairan.",
+    "judul": "Bahan Penyelidikan 1: Ekosistem, Komponen, Interaksi, dan Keseimbangan Ekosistem",
+    "ringkasan": "Materi inti ini memusatkan perhatian pada pengertian ekosistem, komponen biotik dan abiotik, interaksi antarkomponen, serta keseimbangan ekosistem. Pencemaran perairan digunakan sebagai konteks penyelidikan agar siswa dapat menghubungkan perubahan lingkungan dengan respons organisme tanpa memperoleh kesimpulan simulasi secara langsung.",
     "gambar_utama": {
       "path": "assets/images/komponen_ekosistem.png",
       "judul": "Gambar 1. Komponen biotik dan abiotik pada ekosistem perairan"
@@ -12,188 +12,82 @@
         "huruf": "A",
         "judul": "Pengertian Ekosistem",
         "paragraf": [
-          "Ekosistem adalah suatu kesatuan yang terbentuk dari hubungan timbal balik antara makhluk hidup dan lingkungan tidak hidup di sekitarnya. Makhluk hidup yang terdapat dalam ekosistem tidak berdiri sendiri. Setiap organisme membutuhkan organisme lain atau kondisi lingkungan tertentu agar dapat tumbuh, berkembang, memperoleh makanan, bernapas, dan mempertahankan kehidupannya.",
-          "Sebuah kolam, sungai, sawah, kebun, dan hutan dapat disebut ekosistem karena di dalamnya terdapat komponen biotik dan komponen abiotik yang saling berhubungan. Ikan di sungai, misalnya, membutuhkan air sebagai habitat, oksigen terlarut untuk respirasi, suhu yang sesuai, makanan, serta tempat berlindung. Apabila salah satu kondisi tersebut berubah secara berlebihan, kehidupan ikan dan organisme lain dapat terganggu.",
-          "Ekosistem bersifat dinamis. Jumlah organisme, kualitas air, suhu, cahaya, kadar zat hara, dan kondisi lingkungan lainnya dapat mengalami perubahan. Meskipun demikian, ekosistem yang sehat mempunyai kemampuan untuk mempertahankan hubungan antarkomponennya dalam batas tertentu. Oleh karena itu, keadaan suatu ekosistem dapat dipahami dengan mengamati perubahan komponen biotik dan abiotiknya secara bersamaan."
+          "Ekosistem adalah unit struktural dan fungsional dalam ekologi tempat organisme hidup berinteraksi satu sama lain dan dengan lingkungan sekitarnya. Setiap ekosistem memiliki ciri khas karena komponen biotik dan abiotiknya dapat berbeda.",
+          "Sungai, kolam, sawah, kebun, dan hutan dapat dipelajari sebagai ekosistem. Untuk memahami kondisi suatu ekosistem, pengamatan tidak cukup hanya dilakukan pada makhluk hidup, tetapi juga pada faktor lingkungan yang mendukung kehidupannya."
         ]
       },
       {
         "huruf": "B",
-        "judul": "Satuan Makhluk Hidup dalam Ekosistem",
+        "judul": "Komponen Biotik dan Abiotik",
         "paragraf": [
-          "Makhluk hidup di alam dapat dipelajari melalui beberapa tingkatan organisasi. Tingkatan tersebut dimulai dari satu organisme, kemudian berkembang menjadi kelompok organisme, kumpulan berbagai kelompok, hingga seluruh wilayah bumi yang mendukung kehidupan. Urutannya adalah individu, populasi, komunitas, ekosistem, bioma, dan biosfer.",
-          "Setiap tingkatan mempunyai cakupan yang berbeda, tetapi saling berhubungan. Individu sejenis membentuk populasi, beberapa populasi membentuk komunitas, dan komunitas yang berinteraksi dengan lingkungan abiotik membentuk ekosistem. Berbagai ekosistem dengan kondisi iklim dan organisme dominan yang serupa membentuk bioma, sedangkan seluruh bioma dan ekosistem di bumi menjadi bagian dari biosfer."
+          "Komponen biotik adalah seluruh makhluk hidup dalam ekosistem, sedangkan komponen abiotik adalah unsur tidak hidup yang memengaruhi kehidupan organisme. Kedua komponen tersebut saling berhubungan dan tidak dapat dipisahkan dalam kajian ekosistem.",
+          "Dalam ekosistem perairan, komponen biotik dapat berupa tumbuhan air, alga, plankton, ikan, serangga air, bakteri, dan jamur. Komponen abiotiknya antara lain air, cahaya, suhu, pH, oksigen terlarut, mineral, arus, dan sedimen."
         ],
-        "subbagian": [
-          {
-            "nomor": "B.1",
-            "judul": "Individu",
-            "gambar": "assets/images/satuan_ekosistem/individu.jpg",
-            "caption": "Gambar 2. Seekor ikan sebagai contoh individu",
-            "sumber": "https://akuakulturunhas.blogspot.com/2010/08/",
-            "paragraf": [
-              "Individu adalah satu makhluk hidup tunggal yang dapat menjalankan proses kehidupan. Individu mempunyai ciri sebagai makhluk hidup, seperti bernapas, membutuhkan makanan, tumbuh, bergerak, merespons rangsangan, dan berkembang biak.",
-              "Contoh individu adalah seekor ikan nila, satu pohon mangga, seekor katak, atau seorang manusia. Dalam simulasi pencemaran sungai, satu ikan dapat diamati sebagai individu yang kondisinya dipengaruhi oleh kualitas air tempat hidupnya."
-            ]
-          },
-          {
-            "nomor": "B.2",
-            "judul": "Populasi",
-            "gambar": "assets/images/satuan_ekosistem/populasi.jpg",
-            "caption": "Gambar 3. Sekumpulan ikan sejenis sebagai contoh populasi",
-            "sumber": "https://budaya.jogjaprov.go.id/berita/detail/1585-mengenal-ekosistem-laut",
-            "paragraf": [
-              "Populasi adalah kumpulan individu sejenis yang hidup di tempat dan pada waktu yang sama. Anggota suatu populasi memiliki kesamaan jenis serta dapat mengalami pertambahan atau penurunan jumlah karena kelahiran, kematian, kedatangan, dan perpindahan.",
-              "Sekumpulan ikan tuna yang hidup di bagian tertentu dari laut merupakan contoh populasi. Apabila air sungai tercemar dan kadar oksigen menurun, jumlah ikan yang mampu bertahan dapat berkurang sehingga ukuran populasinya berubah."
-            ]
-          },
-          {
-            "nomor": "B.3",
-            "judul": "Komunitas",
-            "gambar": "assets/images/satuan_ekosistem/komunitas.jpg",
-            "caption": "Gambar 4. Berbagai populasi organisme dalam komunitas perairan",
-            "sumber": "https://budaya.jogjaprov.go.id/berita/detail/1585-mengenal-ekosistem-laut",
-            "paragraf": [
-              "Komunitas adalah kumpulan berbagai populasi yang hidup pada wilayah yang sama. Dalam komunitas sungai dapat ditemukan populasi ikan, tumbuhan air, alga, serangga air, siput, katak, bakteri, dan organisme lainnya.",
-              "Perubahan pada satu populasi dapat memengaruhi kondisi komunitas. Sebagai contoh, penurunan kualitas air dapat mengurangi jumlah organisme yang peka terhadap pencemaran, sedangkan organisme yang lebih tahan mungkin masih dapat bertahan."
-            ]
-          },
-          {
-            "nomor": "B.4",
-            "judul": "Ekosistem",
-            "gambar": "assets/images/satuan_ekosistem/ekosistem.jpg",
-            "caption": "Gambar 5. Komunitas dan lingkungan abiotik membentuk ekosistem",
-            "sumber": "https://www.pelajaran.co.id/pengertian-ekosistem-komponen-tipe-macam-jenis-dan-contoh-ekosistem/",
-            "paragraf": [
-              "Ekosistem terbentuk ketika komunitas makhluk hidup berinteraksi dengan komponen abiotik di lingkungannya. Ekosistem sungai, misalnya, tidak hanya terdiri atas ikan dan tumbuhan air, tetapi juga air, cahaya matahari, suhu, arus, batuan, sedimen, pH, mineral, dan oksigen terlarut.",
-              "Karena semua komponen saling berkaitan, perubahan kualitas air dapat menimbulkan perubahan pada organisme yang hidup di dalamnya. Hubungan inilah yang menjadi fokus utama dalam simulasi pencemaran sungai."
-            ]
-          },
-          {
-            "nomor": "B.5",
-            "judul": "Bioma",
-            "gambar": "assets/images/satuan_ekosistem/bioma.png",
-            "caption": "Gambar 6. Hutan hujan tropis Kalimantan sebagai contoh bioma",
-            "sumber": "https://www.thoughtco.com/land-biomes-tropical-rain-forests-373496",
-            "paragraf": [
-              "Bioma adalah wilayah yang sangat luas dan mempunyai kesamaan iklim, vegetasi dominan, serta jenis organisme yang mampu beradaptasi terhadap kondisi tersebut. Bioma mencakup banyak ekosistem yang memiliki karakter lingkungan serupa.",
-              "Contoh bioma adalah hutan hujan tropis, padang rumput, gurun, tundra, taiga, serta bioma perairan. Indonesia banyak berada dalam wilayah bioma hutan hujan tropis yang memiliki curah hujan tinggi dan keanekaragaman hayati yang besar."
-            ]
-          },
-          {
-            "nomor": "B.6",
-            "judul": "Biosfer",
-            "gambar": "assets/images/satuan_ekosistem/biosfer.jpg",
-            "caption": "Gambar 7. Biosfer",
-            "sumber": "https://www.istockphoto.com/id/vektor/infografis-ekologi-biosfer-untuk-pembelajaran-gm1473108901-503307259",
-            "paragraf": [
-              "Biosfer adalah seluruh wilayah di bumi yang dapat mendukung kehidupan. Biosfer mencakup bagian daratan, perairan, dan lapisan udara tempat organisme dapat hidup.",
-              "Semua individu, populasi, komunitas, ekosistem, dan bioma merupakan bagian dari biosfer. Oleh karena itu, gangguan lingkungan pada suatu wilayah dapat menjadi bagian dari masalah yang lebih luas apabila terjadi terus-menerus dan mencakup banyak ekosistem."
-            ]
-          }
-        ],
-        "alur": "Individu → Populasi → Komunitas → Ekosistem → Bioma → Biosfer"
+        "poin": [
+          "Produsen: organisme yang menghasilkan bahan organik, misalnya tumbuhan dan alga.",
+          "Konsumen: organisme yang memperoleh energi dengan memakan organisme lain.",
+          "Pengurai: organisme seperti bakteri dan jamur yang menguraikan sisa makhluk hidup.",
+          "Faktor abiotik penting dalam perairan antara lain suhu, pH, cahaya, oksigen terlarut, air, dan zat hara."
+        ]
       },
       {
         "huruf": "C",
-        "judul": "Komponen Biotik",
+        "judul": "Interaksi Antarkomponen Ekosistem",
         "paragraf": [
-          "Komponen biotik adalah seluruh makhluk hidup yang terdapat dalam suatu ekosistem. Komponen ini mencakup manusia, hewan, tumbuhan, alga, jamur, bakteri, dan berbagai mikroorganisme. Dalam ekosistem perairan, komponen biotik dapat berupa ikan, tumbuhan air, fitoplankton, zooplankton, serangga air, moluska, dan bakteri pengurai.",
-          "Berdasarkan perannya, komponen biotik dapat dikelompokkan menjadi produsen, konsumen, pengurai, dan detritivor. Produsen mampu membentuk bahan organik melalui fotosintesis, seperti tumbuhan air dan alga. Konsumen memperoleh energi dengan memanfaatkan organisme atau bahan organik lain. Pengurai, seperti bakteri dan jamur, menguraikan sisa makhluk hidup menjadi zat yang lebih sederhana. Detritivor memakan serpihan bahan organik atau detritus.",
-          "Keberadaan organisme tertentu dapat menjadi petunjuk kondisi lingkungan. Beberapa jenis invertebrata air hanya dapat hidup pada air yang bersih dan memiliki oksigen cukup, sedangkan jenis lain lebih tahan terhadap pencemaran. Oleh sebab itu, perubahan indeks invertebrata dalam simulasi dapat digunakan untuk membantu menggambarkan perubahan kualitas ekosistem sungai."
+          "Makhluk hidup berinteraksi dengan makhluk hidup lain dan dengan lingkungan abiotiknya. Interaksi antarmakhluk hidup dapat berbentuk predasi, kompetisi, hubungan netral, simbiosis, dan antibiosis.",
+          "Simbiosis mencakup mutualisme, parasitisme, dan komensalisme. Selain itu, hubungan biotik dan abiotik dapat terlihat ketika tumbuhan memperoleh unsur hara dari tanah, menggunakan cahaya untuk fotosintesis, atau organisme air bergantung pada kondisi fisik dan kimia air."
         ],
         "poin": [
-          "Produsen: tumbuhan air, alga, dan fitoplankton.",
-          "Konsumen: ikan, katak, serangga air, dan hewan perairan lainnya.",
-          "Pengurai: bakteri dan jamur yang menguraikan sisa organisme.",
-          "Detritivor: organisme yang memanfaatkan serpihan bahan organik."
+          "Predasi: hubungan antara predator dan mangsanya.",
+          "Kompetisi: persaingan organisme untuk memperoleh sumber daya seperti makanan, air, cahaya, atau ruang.",
+          "Netral: hubungan dua organisme yang tidak saling mengganggu secara langsung.",
+          "Mutualisme: kedua organisme memperoleh keuntungan.",
+          "Parasitisme: satu organisme memperoleh keuntungan, sedangkan organisme lain dirugikan.",
+          "Komensalisme: satu organisme memperoleh keuntungan, sedangkan organisme lain tidak dirugikan maupun diuntungkan.",
+          "Antibiosis: satu organisme menghasilkan zat yang menghambat atau membunuh organisme lain."
         ]
       },
       {
         "huruf": "D",
-        "judul": "Komponen Abiotik",
+        "judul": "Populasi, Komunitas, dan Ekosistem sebagai Fokus Pengamatan",
         "paragraf": [
-          "Komponen abiotik adalah unsur tidak hidup yang memengaruhi kehidupan organisme. Walaupun tidak hidup, komponen abiotik menentukan apakah suatu habitat sesuai bagi organisme tertentu. Perubahan yang terlalu besar pada satu komponen abiotik dapat mengganggu proses kehidupan makhluk hidup.",
-          "Pada ekosistem perairan, air menjadi medium utama tempat organisme hidup. Suhu air memengaruhi aktivitas metabolisme serta jumlah oksigen yang dapat terlarut. Cahaya matahari mendukung fotosintesis tumbuhan air dan alga. pH menunjukkan tingkat keasaman atau kebasaan air, sedangkan oksigen terlarut dibutuhkan ikan dan banyak organisme air untuk melakukan respirasi.",
-          "Tanah, batuan, sedimen, arus, mineral, dan zat hara juga termasuk komponen abiotik. Dalam jumlah yang seimbang, zat hara mendukung pertumbuhan produsen. Namun, masukan zat atau limbah yang terlalu banyak dapat mengubah kondisi fisik dan kimia air sehingga habitat tidak lagi sesuai bagi organisme yang hidup di dalamnya."
-        ],
-        "poin": [
-          "Air: habitat dan medium berlangsungnya proses kehidupan organisme perairan.",
-          "Cahaya: sumber energi untuk fotosintesis.",
-          "Suhu: memengaruhi metabolisme organisme dan kelarutan oksigen.",
-          "pH: menunjukkan tingkat keasaman atau kebasaan air.",
-          "Oksigen terlarut: digunakan organisme air untuk respirasi.",
-          "Mineral dan zat hara: mendukung pertumbuhan, tetapi dapat mengganggu bila berlebihan."
+          "Dalam penyelidikan ekosistem, siswa sering mengamati perubahan jumlah organisme pada tingkat populasi dan hubungan beberapa populasi dalam suatu komunitas. Populasi adalah kumpulan individu sejenis pada tempat dan waktu tertentu, sedangkan komunitas adalah kumpulan berbagai populasi yang hidup pada wilayah yang sama.",
+          "Bagian ini digunakan sebagai konsep pendukung agar data perubahan jumlah ikan, alga, tumbuhan, atau organisme lain dalam simulasi dapat ditafsirkan secara tepat. Bioma dan biosfer tidak menjadi fokus materi inti pada media ini."
         ]
       },
       {
         "huruf": "E",
-        "judul": "Hubungan Komponen Biotik dan Abiotik",
+        "judul": "Keseimbangan Ekosistem",
         "paragraf": [
-          "Komponen biotik dan abiotik tidak dapat dipisahkan karena keduanya saling berhubungan dan saling memengaruhi. Dalam ekosistem sungai, komponen biotik meliputi berbagai makhluk hidup, seperti ikan, tumbuhan air, alga, serangga air, plankton, bakteri, dan organisme pengurai. Sementara itu, komponen abiotik meliputi unsur tidak hidup, seperti air, cahaya matahari, suhu, arus, pH, oksigen terlarut, mineral, dan dasar sungai. Setiap organisme membutuhkan kondisi lingkungan tertentu agar dapat bertahan hidup, tumbuh, bergerak, memperoleh makanan, dan berkembang biak.",
-          "Tumbuhan air dan alga membutuhkan cahaya matahari, air, karbon dioksida, serta mineral untuk melakukan fotosintesis. Melalui proses tersebut, tumbuhan menghasilkan bahan makanan untuk mendukung pertumbuhannya dan melepaskan oksigen ke dalam lingkungan perairan. Tumbuhan air juga dapat menjadi tempat berlindung, tempat menempel, tempat berkembang biak, serta sumber makanan bagi ikan dan organisme sungai lainnya.",
-          "Ikan sangat dipengaruhi oleh kondisi abiotik di sekitarnya. Ikan membutuhkan air dengan suhu, pH, arus, dan kadar oksigen terlarut yang sesuai. Apabila air sungai tercemar oleh limbah, kualitas air dapat menurun, warna dan bau air dapat berubah, serta kadar oksigen terlarut dapat berkurang. Kondisi tersebut dapat menyebabkan ikan mengalami stres, kesulitan bernapas, bergerak lebih lambat, kehilangan sumber makanan, berpindah ke bagian sungai yang lebih bersih, atau mati. Hal ini menunjukkan bahwa perubahan pada komponen abiotik dapat menimbulkan perubahan pada komponen biotik.",
-          "Hubungan tersebut juga berlangsung sebaliknya karena aktivitas makhluk hidup dapat memengaruhi kondisi lingkungan sungai. Tumbuhan air dapat membantu menghasilkan oksigen, memperlambat aliran air pada bagian tertentu, dan menjadi tempat hidup bagi organisme kecil. Ikan dan hewan air lainnya juga berperan dalam perpindahan bahan organik dan mineral melalui aktivitas makan, bergerak, dan mengeluarkan sisa metabolisme. Dengan demikian, keberadaan organisme turut memengaruhi kondisi fisik dan kimia air sungai.",
-          "Daun, ranting, bangkai organisme, dan sisa makhluk hidup yang masuk ke sungai akan diuraikan oleh bakteri, jamur, dan organisme pengurai lainnya. Dalam jumlah yang wajar, proses penguraian membantu mengembalikan unsur hara ke lingkungan. Namun, apabila bahan organik yang masuk terlalu banyak, organisme pengurai akan menggunakan lebih banyak oksigen selama proses penguraian. Akibatnya, kadar oksigen terlarut dapat menurun dan kehidupan ikan serta organisme air lainnya dapat terganggu.",
-          "Apabila salah satu komponen mengalami gangguan, keseimbangan ekosistem sungai juga dapat berubah. Pembuangan limbah rumah tangga, limbah pertanian, sampah, atau limbah kegiatan usaha ke sungai tidak hanya mengubah kondisi air, tetapi juga dapat mengurangi jumlah ikan, tumbuhan air, serangga air, dan organisme lainnya. Oleh karena itu, keseimbangan ekosistem sungai bergantung pada hubungan yang selaras antara komponen biotik dan komponen abiotik serta kualitas lingkungan yang mendukung kehidupan organisme."
-        ],
-        "callout": "Fokus simulasi: tingkat limbah industri memengaruhi kualitas air; perubahan kualitas air kemudian berkaitan dengan oksigen terlarut, populasi ikan, indeks invertebrata, dan kondisi ekosistem sungai."
+          "Interaksi yang berlangsung secara dinamis membantu mempertahankan keseimbangan ekosistem. Keseimbangan bukan berarti kondisi tidak pernah berubah, tetapi menunjukkan bahwa hubungan antarkomponen masih memungkinkan fungsi ekosistem berlangsung.",
+          "Perubahan pada satu komponen dapat memengaruhi komponen lain. Karena itu, ketika menganalisis gangguan ekosistem, siswa perlu memperhatikan beberapa variabel secara bersamaan, misalnya kondisi air dan perubahan organisme yang hidup di dalamnya."
+        ]
       },
       {
         "huruf": "F",
-        "judul": "Keseimbangan Ekosistem",
+        "judul": "Pencemaran Perairan sebagai Konteks Penyelidikan",
         "paragraf": [
-          "Keseimbangan ekosistem adalah keadaan ketika komponen biotik dan abiotik dapat menjalankan fungsinya serta mempertahankan hubungan yang relatif stabil. Seimbang bukan berarti tidak pernah terjadi perubahan. Populasi organisme dan kondisi lingkungan tetap dapat berubah, tetapi perubahan tersebut masih berada dalam batas yang dapat ditoleransi oleh ekosistem.",
-          "Ekosistem memiliki kemampuan tertentu untuk menyesuaikan diri terhadap gangguan. Namun, kemampuan ini tidak terbatas. Apabila pencemaran terjadi terus-menerus atau jumlah limbah terlalu besar, ekosistem dapat kehilangan kemampuan untuk memulihkan kondisinya. Akibatnya, jumlah organisme peka menurun, kualitas habitat memburuk, dan fungsi ekosistem terganggu.",
-          "Keseimbangan dapat diamati melalui beberapa indikator, seperti kejernihan dan bau air, nilai pH, kadar oksigen terlarut, keberadaan organisme air, serta kestabilan populasi. Pengamatan terhadap beberapa indikator sekaligus memberikan gambaran yang lebih baik daripada hanya melihat satu komponen."
-        ]
-      },
-      {
-        "huruf": "G",
-        "judul": "Gangguan terhadap Ekosistem",
-        "paragraf": [
-          "Gangguan ekosistem adalah peristiwa yang menyebabkan perubahan pada komponen atau hubungan di dalam ekosistem. Gangguan dapat terjadi secara alami, seperti banjir, kekeringan, letusan gunung api, dan perubahan suhu ekstrem. Gangguan juga dapat berasal dari aktivitas manusia, seperti pembuangan limbah, penggunaan bahan kimia berlebihan, penebangan hutan, perubahan habitat, dan penumpukan sampah.",
-          "Besarnya dampak gangguan dipengaruhi oleh jenis, intensitas, luas wilayah, dan lamanya gangguan. Gangguan ringan dan berlangsung singkat mungkin masih dapat dipulihkan. Sebaliknya, gangguan berat dan terjadi terus-menerus dapat menyebabkan perubahan populasi, hilangnya organisme tertentu, penurunan kualitas habitat, dan kerusakan fungsi ekosistem.",
-          "Dalam ekosistem sungai, limbah yang masuk dari kegiatan industri atau rumah tangga dapat mengubah sifat air. Perubahan tersebut tidak hanya terlihat dari warna dan bau, tetapi juga dapat terjadi pada suhu, pH, kandungan bahan organik, zat beracun, dan oksigen terlarut."
-        ]
-      },
-      {
-        "huruf": "H",
-        "judul": "Pencemaran Ekosistem Perairan",
-        "gambar": {
-          "path": "assets/images/satuan_ekosistem/pencemaran.jpeg",
-          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai",
-          "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor"
-        },
-        "paragraf": [
-          "Pencemaran air adalah masuknya makhluk hidup, zat, energi, atau komponen lain ke dalam perairan sehingga kualitas air menurun dan tidak lagi sesuai dengan fungsi atau kebutuhan organisme. Sumber pencemaran dapat berasal dari limbah industri, limbah rumah tangga, kegiatan pertanian, peternakan, pertambangan, dan sampah.",
-          "Limbah industri dapat membawa bahan organik, zat kimia, logam, atau panas ke sungai. Bahan organik yang terurai dalam jumlah besar dapat meningkatkan penggunaan oksigen oleh mikroorganisme. Akibatnya, kadar oksigen terlarut menurun. Beberapa bahan kimia juga dapat mengubah pH atau bersifat toksik bagi ikan dan organisme air lainnya.",
-          "Penurunan oksigen terlarut menyebabkan organisme air kesulitan melakukan respirasi. Ikan dapat mengalami stres, muncul ke permukaan untuk memperoleh oksigen, berpindah dari daerah tercemar, atau mati. Organisme invertebrata yang peka juga dapat menghilang, sehingga indeks invertebrata menurun dan menunjukkan kondisi sungai yang semakin terganggu.",
-          "Pada simulasi, perubahan tingkat limbah tidak boleh diamati sebagai angka yang berdiri sendiri. Siswa perlu memperhatikan pola hubungan antara limbah, oksigen terlarut, populasi ikan, indeks invertebrata, dan kondisi ekosistem. Semakin besar gangguan pada kualitas air, semakin besar kemungkinan perubahan terjadi pada organisme yang bergantung pada air tersebut."
+          "Pencemaran perairan digunakan sebagai konteks penerapan konsep ekosistem. Masuknya bahan dari aktivitas manusia dapat mengubah kondisi fisik, kimia, atau biologis perairan. Dampaknya perlu dianalisis melalui data, bukan hanya berdasarkan satu indikator.",
+          "Pada simulasi, siswa akan membandingkan tingkat limbah dengan beberapa parameter seperti kualitas air, pH, oksigen terlarut, dan kondisi organisme. Sebelum menjalankan simulasi, tentukan terlebih dahulu hubungan yang ingin diuji dan susun hipotesis berdasarkan konsep yang telah dipelajari."
         ],
         "poin": [
-          "Perubahan fisik: warna, bau, kekeruhan, dan suhu air.",
-          "Perubahan kimia: pH, oksigen terlarut, zat hara, dan bahan pencemar.",
-          "Perubahan biologis: jumlah ikan, keberadaan invertebrata, pertumbuhan alga, dan aktivitas mikroorganisme.",
-          "Dampak ekosistem: penurunan kualitas habitat dan terganggunya keseimbangan antarkomponen."
+          "Amati perubahan komponen abiotik ketika tingkat limbah diubah.",
+          "Bandingkan respons organisme pada beberapa kondisi simulasi.",
+          "Gunakan lebih dari satu indikator untuk menilai kondisi ekosistem.",
+          "Tarik kesimpulan berdasarkan data hasil pengamatan."
         ]
       }
     ],
     "referensi": [
       "Krisdianti, Niken Resminingpuri, Elizabeth Tjahjadarmawan, dan Ayuk Ratna Puspaningsih. 2023. Ilmu Pengetahuan Alam untuk SMA/MA Kelas X (Edisi Revisi). Jakarta: Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.",
       "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e. Houston, Texas: OpenStax, Rice University.",
-      "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson.",
-      "Keluarga Mahasiswa Profesi Budidaya Perairan Universitas Hasanuddin. (2010). Kumpulan informasi budidaya perairan. https://akuakulturunhas.blogspot.com/2010/08/",
-      "Dinas Kebudayaan Daerah Istimewa Yogyakarta. (2023). Mengenal ekosistem laut, jenis, dan peran untuk kehidupan manusia. https://budaya.jogjaprov.go.id/berita/detail/1585-mengenal-ekosistem-laut",
-      "Pelajaran.co.id. (n.d.). Pengertian ekosistem, komponen, tipe, macam jenis, dan contoh ekosistem lengkap. https://www.pelajaran.co.id/pengertian-ekosistem-komponen-tipe-macam-jenis-dan-contoh-ekosistem/",
-      "Bailey, R. (n.d.). Land biomes: Tropical rainforests. ThoughtCo. https://www.thoughtco.com/land-biomes-tropical-rain-forests-373496",
-      "https://www.istockphoto.com/id/vektor/infografis-ekologi-biosfer-untuk-pembelajaran-gm1473108901-503307259"
+      "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson."
     ]
   },
   {
     "kode": "materi_2_aliran_energi",
-    "judul": "Bahan Penyelidikan 2: Aliran Energi dalam Ekosistem, Piramida Ekologi, Tipe Ekosistem, dan Produktivitas Ekosistem",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari sumber dan perpindahan energi dalam ekosistem, tingkat trofik, piramida ekologi, produktivitas produsen, serta dampak musim kemarau terhadap ketersediaan energi pada rantai makanan.",
+    "judul": "Bahan Penyelidikan 2: Rantai Makanan, Jaring-Jaring Makanan, Aliran Energi, dan Piramida Ekologi",
+    "ringkasan": "Materi inti ini membahas peristiwa makan dan dimakan, hubungan beberapa rantai makanan menjadi jaring-jaring makanan, tingkat trofik, aliran energi, serta piramida ekologi. Tipe ekosistem dan produktivitas tidak dijadikan pokok bahasan utama agar materi tetap sesuai dengan fokus subbab ekosistem.",
     "gambar_utama": {
       "path": "assets/images/rantai_makanan_piramida_energi.png",
       "judul": "Gambar 1. Diagram rantai makanan dan piramida energi pada ekosistem"
@@ -201,16 +95,53 @@
     "bagian": [
       {
         "huruf": "A",
-        "judul": "Aliran Energi dalam Ekosistem",
+        "judul": "Rantai Makanan",
         "paragraf": [
-          "Energi dalam ekosistem berasal dari matahari. Tumbuhan hijau menangkap energi matahari melalui proses fotosintesis. Energi tersebut digunakan tumbuhan untuk membuat makanan. Tumbuhan berperan sebagai produsen karena mampu menghasilkan makanan sendiri. Hewan yang memakan tumbuhan memperoleh energi dari produsen. Hewan pemakan tumbuhan kemudian dapat dimakan oleh hewan lain. Perpindahan energi dari satu makhluk hidup ke makhluk hidup lain membentuk aliran energi.",
-          "Aliran energi dapat diamati melalui rantai makanan. Rantai makanan adalah urutan makan dan dimakan dalam ekosistem. Contohnya, rumput dimakan belalang, belalang dimakan katak, lalu katak dimakan ular. Rumput berperan sebagai produsen. Belalang berperan sebagai konsumen I. Katak berperan sebagai konsumen II. Ular berperan sebagai konsumen III. Setiap tingkatan dalam rantai makanan disebut tingkat trofik, tetapi dalam pembelajaran dapat dipahami sebagai tingkatan dalam rantai makanan.",
-          "Energi yang berpindah dari satu tingkat ke tingkat berikutnya tidak seluruhnya diteruskan. Sebagian energi digunakan makhluk hidup untuk bergerak, tumbuh, bernapas, berkembang biak, dan mempertahankan hidup. Sebagian energi juga hilang sebagai panas. Akibatnya, energi yang diterima konsumen I lebih kecil daripada energi pada produsen. Energi pada konsumen II lebih kecil daripada konsumen I. Energi pada konsumen III juga semakin kecil. Pola ini menyebabkan jumlah energi makin berkurang pada tingkatan rantai makanan yang lebih tinggi.",
-          "Piramida ekologi menggambarkan perbandingan jumlah organisme, biomassa, atau energi pada setiap tingkatan ekosistem. Pada piramida energi, bagian dasar biasanya ditempati oleh produsen karena produsen memiliki energi paling besar. Bagian di atasnya ditempati oleh konsumen I, konsumen II, dan konsumen III. Semakin tinggi tingkatannya, energi yang tersedia semakin kecil. Bentuk piramida ini menunjukkan bahwa produsen memiliki peran besar dalam menopang kehidupan konsumen di atasnya.",
-          "Produktivitas ekosistem berkaitan dengan kemampuan produsen menghasilkan bahan organik melalui fotosintesis. Semakin tinggi produktivitas produsen, semakin besar energi yang tersedia dalam ekosistem. Tumbuhan yang subur dapat menyediakan lebih banyak makanan bagi herbivor. Herbivor yang cukup makanan dapat mendukung keberadaan karnivor. Sebaliknya, jika jumlah produsen menurun, energi yang tersedia untuk konsumen juga ikut menurun.",
-          "Musim kemarau panjang dapat menjadi contoh fenomena yang memengaruhi aliran energi. Saat air berkurang, pertumbuhan rumput dapat menurun. Rumput sebagai produsen menjadi lebih sedikit. Akibatnya, energi yang tersedia untuk hewan pemakan rumput juga berkurang. Hewan pemakan hewan lain juga dapat terkena dampaknya. Fenomena ini menunjukkan bahwa perubahan pada produsen dapat memengaruhi seluruh rantai makanan.",
-          "Tipe ekosistem juga memengaruhi bentuk aliran energi. Ekosistem darat seperti hutan, padang rumput, dan sawah memiliki produsen utama berupa tumbuhan darat. Ekosistem perairan seperti sungai, danau, dan laut memiliki produsen berupa fitoplankton, alga, dan tumbuhan air. Meskipun jenis organisme berbeda, prinsip aliran energi tetap sama. Energi mengalir dari produsen ke konsumen dan jumlahnya berkurang pada setiap perpindahan.",
-          "Melalui simulasi rantai makanan saat kemarau, siswa dapat menyelidiki pengaruh penurunan produsen terhadap energi pada setiap tingkatan rantai makanan. Siswa dapat mengubah jumlah energi produsen dan melihat bagaimana perubahan tersebut memengaruhi konsumen I, konsumen II, dan konsumen III. Simulasi ini membantu siswa memahami bahwa keseimbangan ekosistem sangat dipengaruhi oleh ketersediaan energi dari produsen."
+          "Rantai makanan adalah peristiwa makan dan dimakan yang menunjukkan perpindahan bahan dan energi antarorganisme. Produsen menjadi sumber awal bahan organik bagi konsumen dalam rantai makanan.",
+          "Contoh sederhana adalah rumput → belalang → katak → ular. Arah panah menunjukkan perpindahan bahan dan energi dari organisme yang dimakan menuju organisme yang memakannya."
+        ]
+      },
+      {
+        "huruf": "B",
+        "judul": "Jaring-Jaring Makanan",
+        "paragraf": [
+          "Di alam, satu organisme dapat memiliki lebih dari satu sumber makanan dan dapat pula dimakan oleh lebih dari satu organisme. Karena itu, beberapa rantai makanan saling berkaitan dan membentuk jaring-jaring makanan.",
+          "Jaring-jaring makanan membantu siswa melihat bahwa perubahan satu populasi dapat berkaitan dengan lebih dari satu organisme. Gunakan hubungan tersebut ketika memprediksi akibat perubahan jumlah produsen atau konsumen."
+        ],
+        "poin": [
+          "Contoh 1: padi → belalang → katak → ular.",
+          "Contoh 2: padi → tikus → ular.",
+          "Contoh 3: padi → ulat → burung → ular."
+        ]
+      },
+      {
+        "huruf": "C",
+        "judul": "Tingkat Trofik dan Aliran Energi",
+        "paragraf": [
+          "Tingkat trofik adalah posisi organisme dalam rantai makanan atau jaring-jaring makanan. Tingkat trofik I ditempati produsen, tingkat trofik II ditempati konsumen I, dan tingkat trofik berikutnya ditempati konsumen pada tingkat yang lebih tinggi.",
+          "Energi mengalir dalam ekosistem dan tidak kembali ke produsen. Energi matahari ditangkap oleh tumbuhan, kemudian digunakan oleh konsumen. Dari satu tingkat trofik ke tingkat berikutnya, energi yang berpindah hanya sebagian; buku IPA Kelas X Edisi Revisi 2023 menggunakan gambaran sekitar 10% dari energi pada tingkat sebelumnya, sedangkan sebagian besar energi digunakan dalam proses kehidupan dan terlepas sebagai panas.",
+          "Nilai 10% merupakan penyederhanaan untuk membantu memahami pola penurunan energi. Dalam simulasi, efisiensi transfer dapat diubah agar siswa mengamati bagaimana besarnya transfer memengaruhi energi pada setiap tingkat trofik."
+        ]
+      },
+      {
+        "huruf": "D",
+        "judul": "Piramida Ekologi",
+        "paragraf": [
+          "Piramida ekologi menggambarkan susunan tingkat trofik berdasarkan jumlah organisme, biomassa, atau energi. Pada piramida energi, ukuran setiap tingkat menunjukkan jumlah energi yang tersedia pada tingkat trofik tersebut.",
+          "Piramida energi membantu memperlihatkan pola energi yang lebih besar pada tingkat produsen dan semakin kecil pada tingkat trofik yang lebih tinggi."
+        ],
+        "poin": [
+          "Piramida jumlah: membandingkan jumlah organisme pada setiap tingkat trofik.",
+          "Piramida biomassa: membandingkan massa organisme pada setiap tingkat trofik.",
+          "Piramida energi: membandingkan energi yang tersedia pada setiap tingkat trofik."
+        ]
+      },
+      {
+        "huruf": "E",
+        "judul": "Konteks Penyelidikan: Produsen Saat Kemarau",
+        "paragraf": [
+          "Musim kemarau dapat mengubah ketersediaan air dan pertumbuhan produsen. Pada simulasi, siswa akan mengubah persentase penurunan produsen dan efisiensi transfer energi, lalu mengamati energi pada produsen, konsumen I, konsumen II, dan konsumen III.",
+          "Sebelum mengubah variabel, susun dugaan tentang pola yang mungkin terjadi. Setelah memperoleh data, bandingkan beberapa kondisi dan gunakan data tersebut untuk menguji hipotesis."
         ]
       }
     ],
@@ -222,8 +153,8 @@
   },
   {
     "kode": "materi_3_daur_air_karbon_oksigen",
-    "judul": "Bahan Penyelidikan 3: Daur Air, Daur Karbon, dan Daur Oksigen",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari perputaran air, karbon, dan oksigen antara makhluk hidup dan lingkungan. Pembahasan difokuskan pada peran tumbuhan serta dampak berkurangnya jumlah pohon terhadap infiltrasi, limpasan permukaan, penyerapan karbon dioksida, dan produksi oksigen.",
+    "judul": "Bahan Penyelidikan 3: Siklus Materi dalam Ekosistem — Air, Karbon, dan Oksigen",
+    "ringkasan": "Bagian ini merupakan materi pendukung untuk memperjelas konsep siklus materi yang disebut dalam subbab ekosistem. Fokusnya adalah keterkaitan air, karbon, oksigen, tumbuhan, dan lingkungan sebagai konteks penyelidikan perubahan tutupan vegetasi.",
     "gambar_utama": {
       "path": "assets/images/daur_air_co2_o2.png",
       "judul": "Gambar 1. Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen"
@@ -231,85 +162,43 @@
     "bagian": [
       {
         "huruf": "A",
-        "judul": "Pengertian Daur Biogeokimia",
+        "judul": "Siklus Materi dalam Ekosistem",
         "paragraf": [
-          "Daur biogeokimia adalah proses perpindahan dan penggunaan kembali unsur atau senyawa kimia antara komponen biotik dan komponen abiotik. Komponen biotik meliputi seluruh makhluk hidup, sedangkan komponen abiotik meliputi atmosfer, air, tanah, batuan, dan lingkungan fisik lainnya. Melalui daur ini, materi yang dibutuhkan organisme tidak langsung habis, tetapi terus berpindah dan digunakan kembali dalam ekosistem.",
-          "Air, karbon, dan oksigen dapat berada di udara, tanah, perairan, tumbuhan, hewan, serta mikroorganisme. Ketiganya berpindah melalui berbagai proses, seperti penguapan, hujan, fotosintesis, respirasi, penguraian, pembakaran, penyerapan oleh tumbuhan, dan aliran air. Walaupun dipelajari secara terpisah, daur air, karbon, dan oksigen sebenarnya saling berkaitan.",
-          "Daur biogeokimia berperan penting dalam menjaga ketersediaan materi bagi kehidupan. Apabila salah satu proses terganggu dalam skala besar, keseimbangan lingkungan juga dapat berubah. Penebangan pohon, perubahan penggunaan lahan, kebakaran, dan pencemaran merupakan contoh aktivitas yang dapat memengaruhi jalannya daur tersebut."
+          "Komponen biotik dan abiotik saling berhubungan melalui siklus materi dan aliran energi. Siklus materi adalah perputaran materi di antara komponen ekosistem. Materi seperti air, karbon, oksigen, nitrogen, dan unsur lain dapat berpindah dari lingkungan ke makhluk hidup dan kembali lagi ke lingkungan.",
+          "Berbeda dari energi yang mengalir satu arah, materi dapat digunakan kembali melalui berbagai proses biologis, kimia, dan fisik."
         ]
       },
       {
         "huruf": "B",
-        "judul": "Daur Air",
+        "judul": "Daur Air sebagai Konteks",
         "paragraf": [
-          "Daur air adalah pergerakan air secara terus-menerus dari permukaan bumi menuju atmosfer dan kembali lagi ke permukaan bumi. Energi matahari menyebabkan air dari laut, sungai, danau, tanah, serta permukaan lainnya menguap menjadi uap air. Tumbuhan juga melepaskan uap air melalui transpirasi. Uap air bergerak naik ke atmosfer dan mengalami pendinginan.",
-          "Ketika suhu udara menurun, uap air mengalami kondensasi dan membentuk titik-titik air di dalam awan. Titik air yang semakin banyak akan bergabung dan menjadi lebih berat. Air kemudian turun ke permukaan bumi sebagai presipitasi, misalnya hujan. Setelah mencapai permukaan, sebagian air mengalir menuju sungai dan laut, sedangkan sebagian lainnya meresap ke dalam tanah.",
-          "Air yang masuk ke tanah melalui infiltrasi dapat tersimpan sebagai kelembapan tanah atau bergerak lebih dalam melalui perkolasi untuk mengisi air tanah. Air yang tidak sempat meresap akan mengalir di atas permukaan sebagai limpasan. Besarnya infiltrasi dan limpasan dipengaruhi oleh kemiringan lahan, jenis tanah, curah hujan, tutupan vegetasi, dan penggunaan lahan."
+          "Air berpindah antara permukaan bumi dan atmosfer melalui proses seperti evaporasi, transpirasi, kondensasi, presipitasi, infiltrasi, dan limpasan permukaan. Tumbuhan menjadi salah satu komponen biotik yang berhubungan dengan pergerakan air melalui akar, tajuk, dan transpirasi.",
+          "Dalam penyelidikan, infiltrasi dan limpasan digunakan sebagai dua parameter untuk membaca perubahan pergerakan air ketika kondisi tutupan vegetasi diubah."
         ],
         "poin": [
-          "Evaporasi: perubahan air cair menjadi uap air akibat pemanasan.",
-          "Transpirasi: pelepasan uap air dari tumbuhan melalui stomata daun.",
-          "Kondensasi: perubahan uap air menjadi titik-titik air yang membentuk awan.",
-          "Presipitasi: turunnya air dari atmosfer, misalnya dalam bentuk hujan.",
-          "Infiltrasi: masuknya air dari permukaan ke dalam tanah.",
-          "Perkolasi: gerakan air menuju lapisan tanah yang lebih dalam.",
-          "Limpasan permukaan: aliran air di atas permukaan menuju saluran, sungai, danau, atau laut.",
-          "Pengumpulan air: tersimpannya air di sungai, danau, laut, tanah, dan air bawah tanah."
+          "Evaporasi: perubahan air menjadi uap air.",
+          "Transpirasi: pelepasan uap air dari tumbuhan.",
+          "Kondensasi: perubahan uap air menjadi titik-titik air.",
+          "Presipitasi: jatuhnya air dari atmosfer, misalnya sebagai hujan.",
+          "Infiltrasi: masuknya air ke dalam tanah.",
+          "Limpasan permukaan: aliran air di atas permukaan tanah."
         ]
       },
       {
         "huruf": "C",
-        "judul": "Peran Tumbuhan dalam Daur Air",
+        "judul": "Karbon, Oksigen, dan Peran Tumbuhan",
         "paragraf": [
-          "Tumbuhan mempunyai peran penting dalam mengatur pergerakan air. Tajuk dan daun menahan sebagian air hujan sehingga air tidak langsung menghantam permukaan tanah dengan kuat. Air yang tertahan dapat menguap kembali atau jatuh secara perlahan ke tanah. Kondisi ini membantu mengurangi pengikisan permukaan tanah.",
-          "Akar tumbuhan membentuk ruang dan saluran kecil di dalam tanah sehingga air lebih mudah meresap. Serasah daun dan bahan organik di permukaan juga membantu mempertahankan struktur serta daya serap tanah. Pada wilayah yang ditutupi vegetasi, infiltrasi umumnya lebih baik dan limpasan permukaan dapat berkurang dibandingkan lahan terbuka atau permukaan yang tertutup bangunan.",
-          "Tumbuhan menyerap air dari tanah untuk menjalankan proses kehidupan. Sebagian air digunakan dalam fotosintesis dan berbagai reaksi metabolisme, sedangkan sebagian besar dilepaskan kembali ke atmosfer melalui transpirasi. Oleh karena itu, tumbuhan menghubungkan cadangan air di dalam tanah dengan uap air di atmosfer."
+          "Karbon merupakan bagian penting senyawa organik, sedangkan oksigen digunakan banyak organisme dalam respirasi. Tumbuhan menghubungkan kedua materi tersebut melalui fotosintesis, yaitu penggunaan karbon dioksida dan air untuk membentuk bahan organik dengan bantuan energi cahaya serta menghasilkan oksigen.",
+          "Respirasi, penguraian, pembakaran, pertukaran gas, dan fotosintesis membantu memindahkan karbon dan oksigen antara organisme dan lingkungan."
         ]
       },
       {
         "huruf": "D",
-        "judul": "Daur Karbon",
+        "judul": "Konteks Penyelidikan: Perubahan Tutupan Vegetasi",
         "paragraf": [
-          "Karbon merupakan unsur utama penyusun senyawa organik, seperti karbohidrat, lemak, protein, dan asam nukleat. Di atmosfer, karbon banyak ditemukan dalam bentuk karbon dioksida atau CO₂. Karbon juga tersimpan dalam tubuh makhluk hidup, tanah, sedimen, batuan karbonat, laut, serta bahan bakar fosil.",
-          "Tumbuhan menyerap karbon dioksida dari udara melalui fotosintesis. Dengan bantuan cahaya matahari dan air, karbon dioksida diubah menjadi senyawa organik yang digunakan untuk pertumbuhan. Karbon kemudian berpindah kepada hewan ketika hewan memakan tumbuhan atau organisme lain. Dengan demikian, karbon bergerak melalui komponen-komponen dalam ekosistem.",
-          "Respirasi tumbuhan, hewan, dan mikroorganisme melepaskan kembali karbon dioksida ke lingkungan. Penguraian sisa organisme juga mengembalikan karbon ke tanah, air, dan udara. Selain proses alami, pembakaran kayu dan bahan bakar fosil melepaskan karbon dioksida dalam jumlah besar. Berkurangnya vegetasi dapat mengurangi kemampuan lingkungan menyerap karbon dioksida melalui fotosintesis."
+          "Perubahan tutupan vegetasi dapat berkaitan dengan lebih dari satu proses dalam ekosistem. Karena itu, simulasi menggunakan beberapa parameter sekaligus: infiltrasi, limpasan permukaan, penyerapan karbon dioksida, dan produksi oksigen.",
+          "Bahan ini tidak menetapkan hasil simulasi terlebih dahulu. Gunakan konsep peran tumbuhan dan siklus materi untuk menyusun hipotesis, kemudian uji dugaan tersebut dengan membandingkan data pada beberapa tingkat tutupan vegetasi."
         ]
-      },
-      {
-        "huruf": "E",
-        "judul": "Daur Oksigen",
-        "paragraf": [
-          "Oksigen terdapat di atmosfer dalam bentuk gas O₂ dan terlarut di dalam air. Oksigen dibutuhkan oleh manusia, hewan, tumbuhan, dan banyak mikroorganisme untuk respirasi sel. Melalui respirasi, energi yang tersimpan dalam bahan makanan dapat dilepaskan dan digunakan untuk menjalankan aktivitas kehidupan.",
-          "Salah satu sumber utama oksigen adalah fotosintesis. Tumbuhan darat, tumbuhan air, alga, dan fitoplankton menggunakan karbon dioksida serta air untuk membentuk bahan organik, kemudian melepaskan oksigen. Oksigen tersebut masuk ke udara atau larut di dalam air dan dapat digunakan oleh organisme lain.",
-          "Oksigen juga digunakan dalam penguraian bahan organik, pembakaran, dan berbagai proses kimia. Karena terus digunakan, ketersediaan oksigen perlu dipertahankan melalui proses yang menghasilkan oksigen, terutama fotosintesis. Jumlah tumbuhan, intensitas cahaya, kualitas lingkungan, dan aktivitas organisme dapat memengaruhi keseimbangan antara produksi dan penggunaan oksigen."
-        ]
-      },
-      {
-        "huruf": "F",
-        "judul": "Hubungan Daur Air, Karbon, dan Oksigen",
-        "paragraf": [
-          "Daur air, karbon, dan oksigen tidak berlangsung secara terpisah. Ketiganya saling bertemu dalam fotosintesis. Tumbuhan menyerap air melalui akar dan mengambil karbon dioksida dari udara. Dengan bantuan energi cahaya, tumbuhan membentuk bahan organik dan menghasilkan oksigen.",
-          "Bahan organik hasil fotosintesis menyimpan karbon sekaligus menjadi sumber energi bagi tumbuhan dan organisme yang memakannya. Ketika organisme melakukan respirasi, oksigen digunakan dan karbon dioksida serta air dihasilkan. Penguraian sisa organisme juga menggunakan atau menghasilkan senyawa yang menjadi bagian dari ketiga daur tersebut.",
-          "Tumbuhan berperan sebagai penghubung penting karena memengaruhi pergerakan air melalui penyerapan dan transpirasi, menyerap karbon dioksida melalui fotosintesis, serta menghasilkan oksigen. Oleh sebab itu, perubahan jumlah dan kondisi vegetasi dapat memengaruhi daur air, karbon, dan oksigen secara bersamaan."
-        ]
-      },
-      {
-        "huruf": "G",
-        "judul": "Dampak Berkurangnya Jumlah Pohon",
-        "paragraf": [
-          "Berkurangnya jumlah pohon menyebabkan permukaan tanah kehilangan pelindung berupa tajuk, akar, dan serasah. Air hujan menjadi lebih cepat mencapai permukaan dan mengalir ke tempat yang lebih rendah. Akibatnya, infiltrasi dapat menurun, sedangkan limpasan permukaan, erosi, sedimentasi, genangan, dan risiko banjir dapat meningkat.",
-          "Penurunan infiltrasi menyebabkan lebih sedikit air tersimpan dalam tanah dan mengisi air bawah tanah. Pada musim kering, cadangan air menjadi lebih cepat berkurang. Hilangnya vegetasi juga mengurangi transpirasi sehingga perpindahan uap air dari daratan menuju atmosfer dapat berubah.",
-          "Jumlah pohon yang berkurang juga menurunkan luas daun yang melakukan fotosintesis. Penyerapan karbon dioksida dan produksi oksigen ikut berkurang. Jika penebangan diikuti pembakaran, karbon yang tersimpan dalam biomassa dapat dilepaskan kembali ke atmosfer sebagai karbon dioksida. Oleh karena itu, perubahan vegetasi dapat memengaruhi kondisi tanah, air, udara, dan makhluk hidup sekaligus."
-        ],
-        "poin": [
-          "Infiltrasi dan pengisian air tanah dapat menurun.",
-          "Limpasan permukaan, erosi, dan risiko banjir dapat meningkat.",
-          "Cadangan air tanah pada musim kering dapat berkurang.",
-          "Penyerapan karbon dioksida melalui fotosintesis menurun.",
-          "Produksi oksigen oleh tumbuhan ikut berkurang.",
-          "Suhu permukaan dan kondisi mikroklimat dapat berubah."
-        ],
-        "callout": "Berkurangnya jumlah pohon tidak hanya memengaruhi satu proses lingkungan. Perubahan vegetasi dapat mengurangi peresapan air, meningkatkan limpasan permukaan, menurunkan penyerapan karbon dioksida, dan mengurangi produksi oksigen secara bersamaan. Pada simulasi, setiap perubahan variabel perlu dianalisis sebagai bagian dari hubungan tersebut."
       }
     ],
     "referensi": [
@@ -321,8 +210,8 @@
   },
   {
     "kode": "materi_4_daur_nitrogen_fosfor",
-    "judul": "Bahan Penyelidikan 4: Daur Nitrogen dan Daur Fosfor",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari perputaran nitrogen dan fosfor serta manfaatnya sebagai unsur hara. Pembahasan difokuskan pada masuknya pupuk berlebih ke sungai, pertumbuhan alga, penurunan oksigen terlarut, dan dampaknya terhadap organisme perairan.",
+    "judul": "Bahan Penyelidikan 4: Siklus Materi dan Gangguan Ekosistem — Nitrogen, Fosfor, dan Eutrofikasi",
+    "ringkasan": "Bagian ini merupakan materi pendukung untuk menghubungkan siklus materi dengan masalah lingkungan. Nitrogen dan fosfor dipelajari secukupnya sebagai unsur hara, kemudian eutrofikasi digunakan sebagai konteks guided inquiry tentang perubahan zat hara, pertumbuhan alga, oksigen terlarut, dan organisme perairan.",
     "gambar_utama": {
       "path": "assets/images/daur_nitrogen_fosfor.png",
       "judul": "Gambar 1. Diagram daur nitrogen, daur fosfor, dan dampak kelebihan zat hara pada perairan"
@@ -332,109 +221,47 @@
         "huruf": "A",
         "judul": "Nitrogen dan Fosfor sebagai Unsur Hara",
         "paragraf": [
-          "Nitrogen dan fosfor merupakan unsur hara yang dibutuhkan makhluk hidup. Unsur hara adalah unsur kimia yang digunakan organisme untuk membentuk bagian tubuh dan menjalankan proses kehidupan. Walaupun dibutuhkan, nitrogen dan fosfor harus tersedia dalam jumlah yang sesuai. Kekurangan unsur hara dapat menghambat pertumbuhan, sedangkan jumlah yang berlebihan dapat mengganggu keseimbangan lingkungan.",
-          "Nitrogen menjadi bagian penting dari asam amino, protein, klorofil, serta asam nukleat berupa DNA dan RNA. Tumbuhan menggunakan nitrogen untuk membentuk jaringan baru dan mendukung pertumbuhan daun. Hewan memperoleh nitrogen dengan memakan tumbuhan atau organisme lain karena sebagian besar hewan tidak dapat mengambil nitrogen langsung dari udara.",
-          "Fosfor berperan dalam pembentukan ATP sebagai pembawa energi, DNA, RNA, membran sel, tulang, dan gigi. Pada tumbuhan, fosfor mendukung pertumbuhan akar, pembelahan sel, pembungaan, dan pembentukan biji. Fosfor diperoleh tumbuhan terutama dalam bentuk ion fosfat yang tersedia di tanah atau air."
+          "Nitrogen dan fosfor merupakan unsur yang dibutuhkan organisme. Tumbuhan memperoleh nitrogen dan fosfor dalam bentuk yang tersedia di tanah atau air, kemudian unsur tersebut dapat berpindah ke organisme lain melalui hubungan makan dan dimakan.",
+          "Dalam konteks ekosistem, yang penting diamati bukan hanya keberadaan unsur hara, tetapi juga jumlah dan perpindahannya. Perubahan masukan unsur hara dapat berhubungan dengan perubahan produsen dan kondisi perairan."
         ]
       },
       {
         "huruf": "B",
-        "judul": "Daur Nitrogen",
+        "judul": "Gambaran Singkat Daur Nitrogen dan Fosfor",
         "paragraf": [
-          "Sebagian besar nitrogen di bumi terdapat di atmosfer sebagai gas N₂. Meskipun jumlahnya melimpah, nitrogen dalam bentuk tersebut tidak dapat langsung digunakan oleh sebagian besar tumbuhan dan hewan. Nitrogen harus diubah lebih dahulu menjadi senyawa yang dapat diserap atau dimanfaatkan oleh organisme.",
-          "Bakteri pengikat nitrogen mengubah gas nitrogen menjadi amonia atau senyawa terkait melalui fiksasi nitrogen. Amonia kemudian dapat diubah oleh bakteri nitrifikasi menjadi nitrit dan nitrat. Tumbuhan menyerap nitrat atau amonium melalui akar dan menggunakannya untuk membentuk senyawa organik. Nitrogen berpindah kepada hewan melalui proses makan dan dimakan.",
-          "Sisa metabolisme, daun gugur, bangkai, dan bahan organik lainnya diuraikan oleh mikroorganisme. Melalui amonifikasi, nitrogen organik dikembalikan menjadi amonia atau amonium. Sebagian nitrat selanjutnya diubah kembali menjadi gas nitrogen oleh bakteri denitrifikasi dan dilepaskan ke atmosfer. Rangkaian proses ini menjaga nitrogen terus berputar antara atmosfer, tanah, perairan, dan makhluk hidup."
-        ],
-        "poin": [
-          "Fiksasi nitrogen: perubahan gas nitrogen menjadi senyawa yang dapat memasuki daur biologis.",
-          "Nitrifikasi: perubahan amonia atau amonium menjadi nitrit dan kemudian nitrat.",
-          "Asimilasi: penyerapan nitrogen anorganik oleh tumbuhan untuk membentuk senyawa organik.",
-          "Perpindahan melalui makanan: nitrogen berpindah dari tumbuhan kepada hewan dan organisme lain.",
-          "Amonifikasi: penguraian nitrogen organik menjadi amonia atau amonium.",
-          "Denitrifikasi: perubahan nitrat menjadi gas nitrogen yang kembali ke atmosfer."
+          "Pada daur nitrogen, nitrogen atmosfer memasuki daur biologis melalui proses yang melibatkan mikroorganisme, diserap tumbuhan dalam bentuk senyawa nitrogen yang tersedia, berpindah melalui makanan, kembali ke lingkungan melalui sisa organisme dan penguraian, lalu sebagian dapat kembali ke atmosfer.",
+          "Pada daur fosfor, fosfat terutama berasal dari batuan, tanah, sedimen, air, dan organisme. Fosfat dapat diserap tumbuhan, berpindah melalui makanan, dikembalikan melalui penguraian, terbawa ke perairan, dan tersimpan dalam sedimen. Rincian setiap reaksi kimia tidak menjadi fokus utama media ini."
         ]
       },
       {
         "huruf": "C",
-        "judul": "Daur Fosfor",
+        "judul": "Aktivitas Manusia dan Masuknya Zat Hara ke Perairan",
         "paragraf": [
-          "Fosfor banyak tersimpan dalam batuan, mineral, tanah, sedimen, air, dan tubuh makhluk hidup. Berbeda dengan daur nitrogen, daur fosfor tidak mempunyai fase gas di atmosfer yang dominan. Karena melibatkan pelapukan batuan dan pembentukan sedimen, sebagian proses dalam daur fosfor berlangsung sangat lambat.",
-          "Pelapukan batuan melepaskan ion fosfat ke tanah dan perairan. Tumbuhan menyerap fosfat melalui akar, kemudian menggunakannya untuk membentuk senyawa penting. Fosfor berpindah kepada hewan ketika hewan memakan tumbuhan atau organisme lain. Setelah organisme mengeluarkan sisa metabolisme atau mati, pengurai mengembalikan fosfat ke lingkungan.",
-          "Sebagian fosfat terbawa oleh aliran air menuju sungai, danau, atau laut. Fosfat dapat digunakan organisme perairan, mengendap di dasar, dan tersimpan sebagai sedimen. Dalam waktu geologis yang panjang, sedimen dapat membentuk batuan baru. Pengangkatan batuan dan pelapukan kemudian mengulangi perputaran fosfor."
-        ],
-        "poin": [
-          "Pelapukan batuan melepaskan fosfat ke tanah dan air.",
-          "Tumbuhan menyerap fosfat melalui akar.",
-          "Fosfor berpindah kepada hewan melalui makanan.",
-          "Penguraian sisa organisme mengembalikan fosfat ke lingkungan.",
-          "Sebagian fosfat terbawa ke perairan dan mengendap sebagai sedimen.",
-          "Sedimen dapat membentuk batuan dan kembali mengalami pelapukan dalam waktu yang sangat lama."
+          "Pupuk dapat menambah nitrogen dan fosfor pada lahan pertanian. Sebagian unsur hara yang tidak dimanfaatkan tanaman dapat berpindah bersama limpasan atau aliran air menuju sungai dan danau.",
+          "Pada penyelidikan ini, nitrogen dan fosfor digunakan sebagai variabel untuk mengamati perubahan beberapa komponen ekosistem perairan. Siswa perlu membandingkan data pada kadar yang berbeda sebelum membuat kesimpulan."
         ]
       },
       {
         "huruf": "D",
-        "judul": "Penggunaan Pupuk dalam Pertanian",
+        "judul": "Eutrofikasi sebagai Fenomena Ekosistem",
         "paragraf": [
-          "Pupuk digunakan untuk menambah unsur hara yang dibutuhkan tanaman. Pupuk nitrogen dapat mendukung pertumbuhan daun dan pembentukan protein, sedangkan pupuk fosfat membantu perkembangan akar, pembelahan sel, pembungaan, dan pembentukan biji. Penggunaan pupuk yang sesuai kebutuhan dapat meningkatkan pertumbuhan serta hasil tanaman.",
-          "Tanaman tidak selalu menyerap seluruh unsur hara yang diberikan. Sebagian nitrogen dapat menguap, tercuci ke lapisan tanah yang lebih dalam, atau terbawa aliran air. Fosfor dapat terikat pada partikel tanah dan ikut terbawa ketika terjadi erosi. Risiko kehilangan unsur hara meningkat apabila pupuk diberikan terlalu banyak, pada waktu yang tidak tepat, atau menjelang hujan lebat.",
-          "Pupuk yang hilang dari lahan bukan hanya mengurangi efisiensi pemupukan, tetapi juga dapat memasuki sungai, danau, waduk, atau perairan lain. Oleh karena itu, jumlah, jenis, waktu, dan cara pemberian pupuk perlu disesuaikan dengan kebutuhan tanaman serta kondisi tanah dan cuaca."
+          "Eutrofikasi adalah peningkatan kesuburan perairan akibat bertambahnya unsur hara, terutama nitrogen dan fosfor. Fenomena ini dapat berkaitan dengan pertumbuhan alga, perubahan cahaya di dalam air, proses penguraian, perubahan oksigen terlarut, dan kondisi organisme perairan.",
+          "Hubungan tersebut sebaiknya dianalisis sebagai rangkaian perubahan antarkomponen, bukan sebagai satu gejala tunggal. Dalam simulasi, siswa akan mengubah kadar nitrogen dan fosfor lalu mengamati respons alga, oksigen air, dan organisme perairan."
+        ],
+        "poin": [
+          "Variabel yang diubah: kadar nitrogen dan fosfor.",
+          "Parameter yang diamati: pertumbuhan alga, oksigen air, dan kondisi organisme.",
+          "Bandingkan sedikitnya dua atau tiga kondisi sebelum menguji hipotesis.",
+          "Gunakan data hasil simulasi sebagai dasar kesimpulan."
         ]
       },
       {
         "huruf": "E",
-        "judul": "Masuknya Zat Hara ke Sungai",
+        "judul": "Sikap Peduli Lingkungan dalam Konteks Penyelidikan",
         "paragraf": [
-          "Ketika hujan turun, air yang tidak meresap ke tanah mengalir di atas permukaan sebagai limpasan. Limpasan dapat membawa pupuk terlarut, partikel tanah, kotoran ternak, dan bahan organik menuju parit, saluran air, dan sungai. Nitrogen juga dapat mencapai perairan melalui aliran air bawah tanah setelah nitrat tercuci dari lapisan tanah.",
-          "Masuknya nitrogen dan fosfor menyebabkan konsentrasi zat hara di sungai meningkat. Dalam jumlah terbatas, zat hara mendukung pertumbuhan tumbuhan air dan alga. Namun, masukan yang terlalu besar dapat membuat pertumbuhan produsen perairan berlangsung lebih cepat daripada kemampuan ekosistem mempertahankan keseimbangan.",
-          "Besarnya zat hara yang mencapai sungai dipengaruhi oleh jumlah pupuk, waktu pemupukan, intensitas hujan, kemiringan lahan, tutupan vegetasi, jarak lahan dari sungai, dan keberadaan daerah penyangga. Vegetasi di tepi sungai dapat membantu menahan sedimen serta menyerap sebagian unsur hara sebelum mencapai perairan."
+          "Hasil penyelidikan dapat digunakan untuk mendiskusikan tindakan yang membantu menjaga ekosistem perairan, misalnya penggunaan pupuk sesuai kebutuhan, pengurangan pembuangan limbah ke perairan, perlindungan vegetasi di sekitar badan air, dan pengelolaan limbah yang lebih baik.",
+          "Saat menentukan tindakan, hubungkan pilihan tersebut dengan bukti yang diperoleh dari data. Dengan demikian, sikap peduli lingkungan tidak hanya berupa pernyataan setuju atau tidak setuju, tetapi didukung oleh pemahaman terhadap akibat suatu tindakan pada ekosistem."
         ]
-      },
-      {
-        "huruf": "F",
-        "judul": "Eutrofikasi",
-        "paragraf": [
-          "Eutrofikasi adalah peningkatan kesuburan perairan akibat bertambahnya unsur hara, terutama nitrogen dan fosfor. Proses ini dapat terjadi secara alami dalam waktu lama, tetapi aktivitas manusia dapat mempercepatnya melalui penggunaan pupuk berlebihan, pembuangan air limbah, kotoran ternak, dan bahan organik.",
-          "Kelebihan zat hara dapat memicu pertumbuhan alga secara cepat atau ledakan alga. Air dapat berubah warna dan menjadi lebih keruh. Lapisan alga di permukaan mengurangi cahaya yang masuk ke dalam air sehingga fotosintesis tumbuhan yang hidup di bagian lebih dalam terganggu.",
-          "Alga mempunyai masa hidup terbatas. Ketika banyak alga dan tumbuhan air mati, sisa-sisanya diuraikan oleh bakteri serta mikroorganisme lain. Proses penguraian membutuhkan oksigen. Semakin banyak bahan organik yang diuraikan, semakin banyak oksigen terlarut yang digunakan.",
-          "Apabila penggunaan oksigen lebih besar daripada penambahannya, kadar oksigen terlarut akan menurun. Kondisi kekurangan oksigen dapat menyebabkan ikan mengalami stres, naik ke permukaan, berpindah, atau mati. Dengan demikian, peningkatan zat hara tidak selalu memperbaiki ekosistem, tetapi dapat menimbulkan rangkaian perubahan yang merusak perairan."
-        ],
-        "poin": [
-          "Pupuk atau limbah kaya nitrogen dan fosfor masuk ke sungai.",
-          "Konsentrasi zat hara di dalam air meningkat.",
-          "Alga dan tumbuhan air tumbuh secara berlebihan.",
-          "Air menjadi keruh dan cahaya ke bagian dalam berkurang.",
-          "Alga serta organisme lain mati dan menjadi bahan organik.",
-          "Mikroorganisme pengurai menggunakan banyak oksigen.",
-          "Kadar oksigen terlarut menurun.",
-          "Ikan dan organisme air lainnya mengalami gangguan atau kematian."
-        ]
-      },
-      {
-        "huruf": "G",
-        "judul": "Dampak terhadap Ekosistem Sungai",
-        "paragraf": [
-          "Kelebihan zat hara dapat mengubah kondisi fisik, kimia, dan biologis sungai. Secara fisik, air dapat menjadi lebih keruh, berubah warna, berbau, atau tertutup oleh kumpulan alga. Secara kimia, kadar oksigen terlarut dan pH dapat mengalami perubahan, terutama antara siang dan malam.",
-          "Secara biologis, organisme yang membutuhkan air bersih dan oksigen tinggi dapat berkurang. Jenis yang lebih tahan terhadap kondisi tercemar mungkin menjadi lebih dominan. Ikan dapat kehilangan habitat, sumber makanan, dan tempat berkembang biak. Jika kekurangan oksigen berlangsung lama, jumlah populasi dan keanekaragaman organisme dapat menurun.",
-          "Dampak tersebut menunjukkan bahwa pertumbuhan alga tidak boleh diamati sebagai perubahan tunggal. Siswa perlu menganalisis hubungan antara konsentrasi zat hara, jumlah alga, kadar oksigen terlarut, dan kondisi organisme air secara bersamaan."
-        ],
-        "poin": [
-          "Perubahan warna, bau, dan kejernihan air.",
-          "Penurunan cahaya yang masuk ke bagian dalam perairan.",
-          "Perubahan pH dan penurunan oksigen terlarut.",
-          "Gangguan respirasi, pertumbuhan, dan reproduksi ikan.",
-          "Penurunan jumlah organisme yang peka terhadap pencemaran.",
-          "Perubahan komposisi komunitas dan keseimbangan ekosistem."
-        ]
-      },
-      {
-        "huruf": "H",
-        "judul": "Hubungan Daur Nitrogen dan Fosfor dengan Aktivitas Manusia",
-        "paragraf": [
-          "Aktivitas manusia tidak menghentikan daur nitrogen dan fosfor, tetapi dapat mengubah jumlah, bentuk, lokasi, dan kecepatan perpindahannya. Pembuatan serta penggunaan pupuk menambah nitrogen dan fosfor reaktif ke lahan. Limbah rumah tangga, peternakan, industri pangan, dan erosi tanah juga dapat meningkatkan masukan unsur hara ke perairan.",
-          "Ketika masukan unsur hara lebih besar daripada kemampuan tanaman, tanah, dan perairan untuk menyerap atau mengolahnya, zat hara akan menumpuk atau terbawa ke tempat lain. Masalah yang terjadi di sungai dapat berasal dari kegiatan di wilayah daratan yang cukup jauh karena air menghubungkan lahan pertanian, permukiman, saluran drainase, dan badan sungai.",
-          "Pengelolaan pupuk sesuai kebutuhan, penanaman vegetasi penyangga, pengendalian erosi, pengolahan limbah, dan perlindungan daerah tepi sungai dapat mengurangi masukan nitrogen serta fosfor. Upaya tersebut membantu menjaga manfaat unsur hara bagi pertumbuhan tanpa menimbulkan kerusakan ekosistem perairan."
-        ],
-        "callout": "Nitrogen dan fosfor dibutuhkan makhluk hidup, tetapi jumlah yang berlebihan di sungai dapat memicu pertumbuhan alga secara tidak terkendali. Penguraian alga yang mati menggunakan banyak oksigen sehingga kadar oksigen terlarut menurun dan kehidupan ikan serta organisme air lainnya dapat terganggu."
       }
     ],
     "referensi": [
