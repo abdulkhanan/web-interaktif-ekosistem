@@ -283,6 +283,25 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+
+st.markdown(
+    """
+    <div class="cp-card" style="border-left-color:#16a34a;">
+        <div class="cp-title">📌 Tujuan Pembelajaran (TP)</div>
+        <div class="cp-text">
+            <ol>
+                <li>Menganalisis hubungan komponen biotik dan abiotik pada ekosistem sungai melalui simulasi pencemaran akibat limbah industri.</li>
+                <li>Menganalisis pengaruh berkurangnya produsen dan efisiensi transfer energi terhadap energi pada setiap tingkat trofik saat kemarau.</li>
+                <li>Menganalisis pengaruh curah hujan dan tutupan vegetasi terhadap infiltrasi, limpasan permukaan, penyerapan CO₂, dan produksi O₂.</li>
+                <li>Menganalisis pengaruh nitrogen dan fosfor dari pupuk terhadap pertumbuhan alga, oksigen air, dan kondisi organisme perairan.</li>
+                <li>Merumuskan masalah dan hipotesis, menguji hipotesis menggunakan data simulasi dan materi pembelajaran.</li>
+            </ol>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 df_tanggapan = get_tanggapan_by_nama_df(nama_siswa)
 df_feedback = get_feedback_by_nama_df(nama_siswa)
 df_progress = get_progress_by_nama(nama_siswa)
