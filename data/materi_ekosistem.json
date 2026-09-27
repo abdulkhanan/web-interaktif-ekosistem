@@ -256,14 +256,14 @@
       },
       {
         "huruf": "B",
-        "judul": "Jaring-Jaring Makanan",
+        "judul": "Aliran Energi",
         "paragraf": [
           "Energi dalam ekosistem berasal dari cahaya matahari yang dimanfaatkan oleh organisme produsen melalui proses fotosintesis. Energi tersebut kemudian berpindah melalui berbagai tingkat trofik berdasarkan hubungan makan dan dimakan antarorganisme (Krisdianti et al., 2023).","Produsen memiliki peran penting sebagai sumber energi awal karena mampu mengubah energi cahaya menjadi energi kimia yang tersimpan dalam bahan organik. Energi tersebut kemudian diteruskan kepada konsumen tingkat I, konsumen tingkat II, konsumen tingkat III, hingga konsumen puncak. Namun, jumlah energi yang berpindah dari satu tingkat trofik ke tingkat berikutnya mengalami penurunan karena sebagian energi digunakan organisme untuk aktivitas metabolisme, seperti bergerak, bernapas, tumbuh, dan berkembang biak (Krisdianti et al., 2023).","Oleh karena itu, semakin tinggi tingkat trofik suatu organisme, semakin kecil energi yang tersedia untuk mendukung kehidupannya. Kondisi tersebut menyebabkan organisme pada tingkat trofik tinggi umumnya memiliki jumlah populasi lebih sedikit dibandingkan organisme pada tingkat trofik rendah (Krisdianti et al., 2023)."
         ]
       },
       {
         "huruf": "C",
-        "judul": "Jaring-Jaring Makanan",
+        "judul": "Piramida Energi",
         "paragraf": [
         "Piramida energi merupakan gambaran jumlah energi yang tersedia pada setiap tingkat trofik dalam suatu ekosistem. Piramida energi menunjukkan bahwa energi mengalami penurunan pada setiap perpindahan dari satu tingkat trofik menuju tingkat trofik berikutnya (Krisdianti et al., 2023).","Pada suatu ekosistem, produsen memiliki jumlah energi terbesar karena memperoleh energi langsung dari cahaya matahari melalui fotosintesis. Energi tersebut kemudian dimanfaatkan oleh konsumen tingkat I, konsumen tingkat II, konsumen tingkat III, hingga konsumen puncak. Setiap perpindahan energi menyebabkan sebagian energi hilang dalam bentuk panas akibat aktivitas metabolisme organisme (Krisdianti et al., 2023).","Sebagai contoh, dalam ilustrasi piramida energi suatu ekosistem dapat digunakan nilai perkiraan berupa 10.000 kkal pada tingkat produsen, 1.000 kkal pada konsumen tingkat I, 100 kkal pada konsumen tingkat II, 10 kkal pada konsumen tingkat III, dan 1 kkal pada konsumen puncak. Nilai tersebut bukan menunjukkan bahwa seluruh produsen atau konsumen selalu memiliki jumlah energi yang sama, tetapi hanya digunakan sebagai model untuk menjelaskan pola penurunan energi pada setiap tingkat trofik.","Jumlah energi sebenarnya pada suatu ekosistem dapat berbeda-beda karena dipengaruhi oleh berbagai faktor, seperti jenis organisme, jumlah biomassa, kondisi lingkungan, dan produktivitas ekosistem. Oleh sebab itu, angka pada piramida energi digunakan sebagai representasi konsep aliran energi, bukan nilai tetap yang berlaku untuk semua ekosistem (Krisdianti et al., 2023)."
         ]
@@ -275,8 +275,7 @@
   },
   {
     "kode": "materi_3_daur_air_karbon_oksigen",
-    "judul": "Bahan Penyelidikan 3: Daur Air, Daur Karbon, dan Daur Oksigen",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari perputaran air, karbon, dan oksigen antara makhluk hidup dan lingkungan. Pembahasan difokuskan pada peran tumbuhan serta dampak berkurangnya jumlah pohon terhadap infiltrasi, limpasan permukaan, penyerapan karbon dioksida, dan produksi oksigen.",
+    "judul": "Bahan Penyelidikan 3: Daur Biogeokimia (Daur Air, Daur Karbon, Daur Oksigen, Daur Nitrogen, dan Daur Fosfor)",
     "gambar_utama": {
       "path": "assets/images/daur_air_co2_o2.png",
       "judul": "Gambar 1. Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen"
