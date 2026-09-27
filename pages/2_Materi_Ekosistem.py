@@ -259,10 +259,15 @@ def normalize_paragraphs(content):
 
 
 def render_text_block(paragraphs, points=None):
-    safe_paragraphs = "".join(
-        f"<p>{escape(paragraph)}</p>"
-        for paragraph in normalize_paragraphs(paragraphs)
-    )
+    safe_paragraphs = ""
+
+    for paragraph in normalize_paragraphs(paragraphs):
+        if paragraph.startswith("##"):
+            safe_paragraphs += f"<h3>{escape(paragraph.replace('##','').strip())}</h3>"
+        elif paragraph.startswith("#"):
+            safe_paragraphs += f"<h4>{escape(paragraph.replace('#','').strip())}</h4>"
+        else:
+            safe_paragraphs += f"<p>{escape(paragraph)}</p>"
 
     safe_points = ""
     if points:
