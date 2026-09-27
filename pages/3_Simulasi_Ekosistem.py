@@ -783,7 +783,7 @@ with tab2:
         Rumput berperan sebagai produsen yang menjadi sumber energi bagi konsumen. Perubahan pada produsen
         dapat memengaruhi aliran energi pada tingkat trofik berikutnya.
         """,
-        image_path=os.path.join("assets", "images", "jaring_makanan_piramida_energi"),
+        image_path=os.path.join("assets", "images", "jaring_makanan_piramida_energi.png"),
         caption="Piramida energi digunakan untuk membantu membaca aliran energi antar tingkat trofik.",
         fokus_penyelidikan="Selidiki pengaruh berkurangnya produsen dan efisiensi transfer energi terhadap energi pada tiap tingkat trofik.",
         urgensi_fenomena="Rumput merupakan produsen yang menjadi sumber energi awal dalam ekosistem. Pada musim kemarau, berkurangnya ketersediaan air dapat menyebabkan penurunan produktivitas tumbuhan sehingga jumlah energi yang tersedia bagi tingkat trofik berikutnya mengalami perubahan. Melalui simulasi ini, peserta didik dapat menyelidiki pengaruh perubahan energi pada setiap tingkat trofik dalam ekosistem.",
