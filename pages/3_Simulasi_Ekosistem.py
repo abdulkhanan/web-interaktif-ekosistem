@@ -772,8 +772,8 @@ with tab1:
 # ============================================================
 
 with tab2:
-    jenis_simulasi = "Rantai Makanan Saat Kemarau"
-    section_title("Investigasi Rantai Makanan Saat Kemarau")
+    jenis_simulasi = "Aliran Energi Makanan Saat Kemarau"
+    section_title("Investigasi Aliran Energi Makanan Saat Kemarau")
 
     investigasi, siap, umpan_balik = tampilkan_kasus_awal(
         key_prefix="rantai",
@@ -783,10 +783,10 @@ with tab2:
         Rumput berperan sebagai produsen yang menjadi sumber energi bagi konsumen. Perubahan pada produsen
         dapat memengaruhi aliran energi pada tingkat trofik berikutnya.
         """,
-        image_path=os.path.join("assets", "images", "rantai_makanan_piramida_energi.png"),
+        image_path=os.path.join("assets", "images", "jaring_makanan_piramida_energi"),
         caption="Piramida energi digunakan untuk membantu membaca aliran energi antar tingkat trofik.",
         fokus_penyelidikan="Selidiki pengaruh berkurangnya produsen dan efisiensi transfer energi terhadap energi pada tiap tingkat trofik.",
-        urgensi_fenomena="Rumput merupakan produsen dan sumber awal energi dalam rantai makanan. Ketika musim kemarau menyebabkan jumlah rumput berkurang, energi yang tersedia bagi konsumen tingkat I, II, dan III juga dapat berubah. Hubungan antara ketersediaan produsen dan aliran energi perlu diselidiki melalui data simulasi.",
+        urgensi_fenomena="Rumput merupakan produsen yang menjadi sumber energi awal dalam ekosistem. Pada musim kemarau, berkurangnya ketersediaan air dapat menyebabkan penurunan produktivitas tumbuhan sehingga jumlah energi yang tersedia bagi tingkat trofik berikutnya mengalami perubahan. Melalui simulasi ini, peserta didik dapat menyelidiki pengaruh perubahan energi pada setiap tingkat trofik dalam ekosistem.",
         contoh_rumusan="Bagaimana berkurangnya rumput akibat musim kemarau dan efisiensi transfer energi memengaruhi jumlah energi pada setiap tingkat trofik?",
         contoh_hipotesis="Jika jumlah rumput berkurang akibat musim kemarau, maka energi yang tersedia bagi konsumen diperkirakan ikut menurun. Semakin tinggi tingkat trofik, energi yang diterima diperkirakan semakin sedikit.",
         arahan_rumusan="Jawabanmu sudah mengarah pada fenomena rantai makanan. Agar lebih terukur, rumusan masalah dapat menyebutkan perubahan jumlah rumput, efisiensi transfer, dan energi pada setiap tingkat trofik.",
