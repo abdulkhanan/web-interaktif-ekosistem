@@ -1,29 +1,71 @@
 [
   {
     "kode": "materi_1_komponen_ekosistem",
-    "judul": "Bahan Penyelidikan 1: Analisis Komponen dan Interaksi dalam Ekosistem Perairan",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa menganalisis komponen biotik dan abiotik dalam ekosistem perairan serta hubungan antar komponen yang memengaruhi keseimbangan ekosistem.",
+    "judul": "Bahan Penyelidikan 1: Ekosistem, Satuan Makhluk Hidup, Komponen Biotik dan Abiotik, serta Pencemaran Perairan",
+    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari ekosistem sebagai satu kesatuan antara makhluk hidup dan lingkungan fisiknya. Pembahasan difokuskan pada konsep yang mendukung simulasi pencemaran sungai, terutama hubungan kualitas air, oksigen terlarut, pH, populasi ikan, dan kondisi organisme perairan.",
     "gambar_utama": {
       "path": "assets/images/komponen_ekosistem.png",
       "judul": "Gambar 1. Komponen biotik dan abiotik pada ekosistem perairan"
     },
     "bagian": [
-      
       {
-        "huruf": "A",
-        "judul": "Pengertian Ekosistem",
+        "huruf": "F",
+        "judul": "Hubungan Komponen Biotik dan Biotik",
         "paragraf": [
-          "Ekosistem adalah suatu kesatuan yang terbentuk dari hubungan timbal balik antara makhluk hidup dan lingkungan tidak hidup di sekitarnya. Makhluk hidup yang terdapat dalam ekosistem tidak berdiri sendiri. Setiap organisme membutuhkan organisme lain atau kondisi lingkungan tertentu agar dapat tumbuh, berkembang, memperoleh makanan, bernapas, dan mempertahankan kehidupannya (Oktaviana & Sari, 2024).",
-          "Sebuah kolam, sungai, sawah, kebun, dan hutan dapat disebut ekosistem karena di dalamnya terdapat komponen biotik dan komponen abiotik yang saling berhubungan. Ikan di sungai, misalnya, membutuhkan air sebagai habitat, oksigen terlarut untuk respirasi, suhu yang sesuai, makanan, serta tempat berlindung. Apabila salah satu kondisi tersebut berubah secara berlebihan, kehidupan ikan dan organisme lain dapat terganggu (Oktaviana & Sari, 2024).",
-          "Ekosistem bersifat dinamis. Jumlah organisme, kualitas air, suhu, cahaya, kadar zat hara, dan kondisi lingkungan lainnya dapat mengalami perubahan. Meskipun demikian, ekosistem yang sehat mempunyai kemampuan untuk mempertahankan hubungan antarkomponennya dalam batas tertentu. Oleh karena itu, keadaan suatu ekosistem dapat dipahami dengan mengamati perubahan komponen biotik dan abiotiknya secara bersamaan (Oktaviana & Sari, 2024)."
+          "Interaksi Antarorganisme dalam Ekosistem",
+          "Komponen biotik dalam ekosistem tidak hidup secara terpisah. Setiap organisme memiliki hubungan dengan organisme lain untuk memperoleh energi, mempertahankan kehidupan, dan melanjutkan keturunan. Hubungan antarorganisme tersebut disebut interaksi biotik. Interaksi ini terjadi karena setiap organisme memiliki kebutuhan yang sama maupun berbeda terhadap sumber daya lingkungan, seperti makanan, ruang hidup, tempat berlindung, dan pasangan berkembang biak (Oktaviana & Sari, 2024).",
+          "Dalam suatu ekosistem, interaksi antarorganisme dapat terjadi antara individu dalam spesies yang sama maupun antara spesies yang berbeda. Interaksi antarindividu dalam satu spesies disebut interaksi intraspesifik, sedangkan hubungan antara organisme dari spesies berbeda disebut interaksi interspesifik. Kedua bentuk interaksi tersebut berpengaruh terhadap jumlah populasi, persebaran organisme, dan struktur komunitas dalam ekosistem (Oktaviana & Sari, 2024).",
+          "Pada ekosistem sungai, hubungan antarorganisme dapat terlihat melalui aktivitas ikan yang memakan organisme kecil, burung yang memangsa ikan, tumbuhan air yang menjadi sumber makanan dan tempat berlindung, serta mikroorganisme yang menguraikan sisa organisme. Setiap organisme memiliki peran tertentu sehingga perubahan pada satu populasi dapat memengaruhi organisme lain yang memiliki hubungan dengannya.",
+          "1. Predasi",
+          "Predasi merupakan bentuk interaksi ketika satu organisme menangkap dan memakan organisme lain untuk memperoleh energi. Organisme yang melakukan pemangsaan disebut predator, sedangkan organisme yang dimakan disebut mangsa. Hubungan predator dan mangsa merupakan bagian penting dalam pengaturan jumlah populasi dalam ekosistem (Oktaviana & Sari, 2024).",
+          "Keberadaan predator membantu mengendalikan jumlah mangsa agar tidak mengalami peningkatan yang terlalu tinggi. Jika populasi mangsa meningkat secara berlebihan, sumber daya lingkungan seperti makanan dan ruang hidup dapat berkurang. Kondisi tersebut dapat menyebabkan persaingan meningkat dan mengganggu keseimbangan komunitas.",
+          "Hubungan predator dan mangsa bersifat dinamis. Ketika jumlah mangsa meningkat, predator memperoleh lebih banyak sumber makanan sehingga jumlah predator dapat meningkat. Namun, peningkatan jumlah predator dapat menyebabkan jumlah mangsa menurun. Penurunan mangsa kemudian dapat menyebabkan berkurangnya sumber makanan bagi predator sehingga populasi predator juga dapat mengalami penurunan.",
+          "Contoh pada ekosistem sungai adalah hubungan antara ikan predator dengan ikan kecil. Ikan predator membantu mengontrol populasi ikan kecil sehingga komunitas organisme air tetap seimbang. Apabila pencemaran menyebabkan jumlah ikan predator menurun, populasi ikan kecil dapat meningkat dan memengaruhi organisme lain yang memiliki hubungan dalam jaring-jaring makanan.",
+          "2. Kompetisi",
+          "Kompetisi merupakan interaksi antarorganisme yang terjadi ketika organisme membutuhkan sumber daya yang sama, sedangkan jumlah sumber daya tersebut terbatas. Persaingan dapat terjadi untuk memperoleh makanan, ruang hidup, cahaya, air, tempat berlindung, maupun lokasi berkembang biak (Oktaviana & Sari, 2024).",
+          "Kompetisi dibedakan menjadi dua jenis, yaitu kompetisi intraspesifik dan kompetisi interspesifik.",
+          "a. Kompetisi Intraspesifik",
+          "Kompetisi intraspesifik terjadi antara individu yang berasal dari spesies yang sama. Organisme tersebut memiliki kebutuhan yang hampir sama sehingga persaingan dapat terjadi ketika sumber daya tidak mencukupi. Contohnya adalah beberapa ikan dari spesies yang sama yang bersaing memperoleh makanan atau tempat berlindung di wilayah sungai yang terbatas.",
+          "b. Kompetisi Interspesifik",
+          "Kompetisi interspesifik terjadi antara organisme dari spesies berbeda yang menggunakan sumber daya yang sama. Persaingan ini dapat menyebabkan perubahan jumlah populasi karena organisme yang lebih mampu memperoleh sumber daya memiliki peluang bertahan hidup lebih besar. Contohnya adalah ikan dan organisme air lain yang memanfaatkan sumber makanan yang sama.",
+          "Kompetisi memiliki peran dalam menjaga keseimbangan populasi. Namun, apabila gangguan lingkungan menyebabkan sumber daya semakin terbatas, kompetisi dapat menyebabkan penurunan jumlah organisme tertentu dan mengubah struktur komunitas.",
+          "3. Simbiosis",
+          "Simbiosis merupakan hubungan erat antara dua organisme berbeda spesies yang berlangsung dalam waktu tertentu. Hubungan ini menunjukkan bahwa keberadaan suatu organisme dapat memberikan pengaruh terhadap organisme lain dalam ekosistem (Oktaviana & Sari, 2024).",
+          "a. Mutualisme",
+          "Mutualisme adalah hubungan antara dua organisme yang memberikan keuntungan bagi kedua pihak. Dalam hubungan ini, masing-masing organisme memperoleh manfaat yang membantu keberlangsungan hidupnya. Contohnya hubungan tumbuhan berbunga dan serangga penyerbuk.",
+          "b. Komensalisme",
+          "Komensalisme adalah hubungan ketika salah satu organisme memperoleh keuntungan, sedangkan organisme lain tidak mengalami keuntungan maupun kerugian yang berarti. Contohnya organisme kecil yang menggunakan tumbuhan air sebagai tempat berlindung dari predator.",
+          "c. Parasitisme",
+          "Parasitisme adalah hubungan ketika satu organisme memperoleh keuntungan dengan mengambil sumber daya dari organisme lain yang disebut inang. Dalam hubungan ini, organisme parasit memperoleh makanan atau tempat hidup, sedangkan organisme inang mengalami kerugian.",
+          "4. Pengaruh Interaksi Biotik terhadap Keseimbangan Ekosistem",
+          "Interaksi antarorganisme membentuk jaringan kehidupan yang saling berhubungan. Setiap organisme memiliki peran tertentu sehingga perubahan pada satu organisme dapat memberikan pengaruh terhadap organisme lain.",
+          "Sebagai contoh, jika populasi ikan predator menurun akibat pencemaran sungai, jumlah ikan kecil yang menjadi mangsanya dapat meningkat. Perubahan ini menunjukkan bahwa gangguan pada satu tingkat populasi dapat menyebar ke tingkat populasi lainnya.",
+          "Selain itu, perubahan lingkungan juga dapat mengubah bentuk interaksi antarorganisme. Pencemaran yang menyebabkan berkurangnya makanan atau habitat dapat meningkatkan kompetisi antarorganisme. Organisme yang tidak mampu beradaptasi dapat mengalami penurunan populasi.",
+          "Dengan demikian, keseimbangan ekosistem tidak hanya dipengaruhi oleh kondisi lingkungan abiotik, tetapi juga oleh hubungan kompleks antarorganisme yang membentuk komunitas kehidupan."
+        ],
+        "poin": [
+          "Interaksi biotik memengaruhi jumlah dan persebaran organisme dalam ekosistem.",
+          "Predasi membantu mengendalikan populasi melalui hubungan predator dan mangsa.",
+          "Kompetisi terjadi karena organisme membutuhkan sumber daya yang terbatas.",
+          "Simbiosis menunjukkan hubungan ketergantungan antarorganisme.",
+          "Perubahan satu populasi dapat memengaruhi populasi lain dalam ekosistem."
         ]
       },
       {
         "huruf": "B",
+        "judul": "Pengertian Ekosistem",
+        "paragraf": [
+          "Ekosistem adalah suatu kesatuan yang terbentuk dari hubungan timbal balik antara makhluk hidup dan lingkungan tidak hidup di sekitarnya. Makhluk hidup yang terdapat dalam ekosistem tidak berdiri sendiri. Setiap organisme membutuhkan organisme lain atau kondisi lingkungan tertentu agar dapat tumbuh, berkembang, memperoleh makanan, bernapas, dan mempertahankan kehidupannya.",
+          "Sebuah kolam, sungai, sawah, kebun, dan hutan dapat disebut ekosistem karena di dalamnya terdapat komponen biotik dan komponen abiotik yang saling berhubungan. Ikan di sungai, misalnya, membutuhkan air sebagai habitat, oksigen terlarut untuk respirasi, suhu yang sesuai, makanan, serta tempat berlindung. Apabila salah satu kondisi tersebut berubah secara berlebihan, kehidupan ikan dan organisme lain dapat terganggu.",
+          "Ekosistem bersifat dinamis. Jumlah organisme, kualitas air, suhu, cahaya, kadar zat hara, dan kondisi lingkungan lainnya dapat mengalami perubahan. Meskipun demikian, ekosistem yang sehat mempunyai kemampuan untuk mempertahankan hubungan antarkomponennya dalam batas tertentu. Oleh karena itu, keadaan suatu ekosistem dapat dipahami dengan mengamati perubahan komponen biotik dan abiotiknya secara bersamaan."
+        ]
+      },
+      {
+        "huruf": "C",
         "judul": "Tingkat Organisasi Kehidupan dalam Ekosistem",
         "paragraf": [
           "Makhluk hidup di alam dapat dipelajari melalui beberapa tingkatan organisasi. Tingkatan tersebut dimulai dari satu organisme, kemudian berkembang menjadi kelompok organisme, kumpulan berbagai kelompok, hingga seluruh wilayah bumi yang mendukung kehidupan. Urutannya adalah individu, populasi, komunitas, ekosistem, bioma, dan biosfer.",
-          "Setiap tingkatan mempunyai cakupan yang berbeda, tetapi saling berhubungan. Individu sejenis membentuk populasi, beberapa populasi membentuk komunitas, dan komunitas yang berinteraksi dengan lingkungan abiotik membentuk ekosistem. Berbagai ekosistem dengan kondisi iklim dan organisme dominan yang serupa membentuk bioma, sedangkan seluruh bioma dan ekosistem di bumi menjadi bagian dari biosfer (Oktaviana & Sari, 2024).."
+          "Setiap tingkatan mempunyai cakupan yang berbeda, tetapi saling berhubungan. Individu sejenis membentuk populasi, beberapa populasi membentuk komunitas, dan komunitas yang berinteraksi dengan lingkungan abiotik membentuk ekosistem. Berbagai ekosistem dengan kondisi iklim dan organisme dominan yang serupa membentuk bioma, sedangkan seluruh bioma dan ekosistem di bumi menjadi bagian dari biosfer."
         ],
         "subbagian": [
           {
@@ -96,12 +138,12 @@
         "alur": "Individu → Populasi → Komunitas → Ekosistem → Bioma → Biosfer"
       },
       {
-        "huruf": "C",
+        "huruf": "D",
         "judul": "Komponen Biotik",
         "paragraf": [
-          "Komponen biotik adalah seluruh makhluk hidup yang terdapat dalam suatu ekosistem. Komponen ini mencakup manusia, hewan, tumbuhan, alga, jamur, bakteri, dan berbagai mikroorganisme. Dalam ekosistem perairan, komponen biotik dapat berupa ikan, tumbuhan air, fitoplankton, zooplankton, serangga air, moluska, dan bakteri pengurai (Oktaviana & Sari, 2024).",
-          "Berdasarkan perannya, komponen biotik dapat dikelompokkan menjadi produsen, konsumen, pengurai, dan detritivor. Produsen mampu membentuk bahan organik melalui fotosintesis, seperti tumbuhan air dan alga. Konsumen memperoleh energi dengan memanfaatkan organisme atau bahan organik lain. Pengurai, seperti bakteri dan jamur, menguraikan sisa makhluk hidup menjadi zat yang lebih sederhana. Detritivor memakan serpihan bahan organik atau detritus (Oktaviana & Sari, 2024).",
-          "Keberadaan organisme tertentu dapat menjadi petunjuk kondisi lingkungan. Beberapa jenis invertebrata air hanya dapat hidup pada air yang bersih dan memiliki oksigen cukup, sedangkan jenis lain lebih tahan terhadap pencemaran. Oleh sebab itu, perubahan indeks invertebrata dalam simulasi dapat digunakan untuk membantu menggambarkan perubahan kualitas ekosistem sungai (Oktaviana & Sari, 2024)."
+          "Komponen biotik adalah seluruh makhluk hidup yang terdapat dalam suatu ekosistem. Komponen ini mencakup manusia, hewan, tumbuhan, alga, jamur, bakteri, dan berbagai mikroorganisme. Dalam ekosistem perairan, komponen biotik dapat berupa ikan, tumbuhan air, fitoplankton, zooplankton, serangga air, moluska, dan bakteri pengurai.",
+          "Berdasarkan perannya, komponen biotik dapat dikelompokkan menjadi produsen, konsumen, pengurai, dan detritivor. Produsen mampu membentuk bahan organik melalui fotosintesis, seperti tumbuhan air dan alga. Konsumen memperoleh energi dengan memanfaatkan organisme atau bahan organik lain. Pengurai, seperti bakteri dan jamur, menguraikan sisa makhluk hidup menjadi zat yang lebih sederhana. Detritivor memakan serpihan bahan organik atau detritus.",
+          "Keberadaan organisme tertentu dapat menjadi petunjuk kondisi lingkungan. Beberapa jenis invertebrata air hanya dapat hidup pada air yang bersih dan memiliki oksigen cukup, sedangkan jenis lain lebih tahan terhadap pencemaran. Oleh sebab itu, perubahan indeks invertebrata dalam simulasi dapat digunakan untuk membantu menggambarkan perubahan kualitas ekosistem sungai."
         ],
         "poin": [
           "Produsen: tumbuhan air, alga, dan fitoplankton.",
@@ -111,12 +153,12 @@
         ]
       },
       {
-        "huruf": "D",
+        "huruf": "E",
         "judul": "Komponen Abiotik",
         "paragraf": [
-          "Komponen abiotik adalah unsur tidak hidup yang memengaruhi kehidupan organisme. Walaupun tidak hidup, komponen abiotik menentukan apakah suatu habitat sesuai bagi organisme tertentu. Perubahan yang terlalu besar pada satu komponen abiotik dapat mengganggu proses kehidupan makhluk hidup (Oktaviana & Sari, 2024).",
-          "Pada ekosistem perairan, air menjadi medium utama tempat organisme hidup. Suhu air memengaruhi aktivitas metabolisme serta jumlah oksigen yang dapat terlarut. Cahaya matahari mendukung fotosintesis tumbuhan air dan alga. pH menunjukkan tingkat keasaman atau kebasaan air, sedangkan oksigen terlarut dibutuhkan ikan dan banyak organisme air untuk melakukan respirasi (Oktaviana & Sari, 2024).",
-          "Tanah, batuan, sedimen, arus, mineral, dan zat hara juga termasuk komponen abiotik. Dalam jumlah yang seimbang, zat hara mendukung pertumbuhan produsen. Namun, masukan zat atau limbah yang terlalu banyak dapat mengubah kondisi fisik dan kimia air sehingga habitat tidak lagi sesuai bagi organisme yang hidup di dalamnya (Oktaviana & Sari, 2024)."
+          "Komponen abiotik adalah unsur tidak hidup yang memengaruhi kehidupan organisme. Walaupun tidak hidup, komponen abiotik menentukan apakah suatu habitat sesuai bagi organisme tertentu. Perubahan yang terlalu besar pada satu komponen abiotik dapat mengganggu proses kehidupan makhluk hidup.",
+          "Pada ekosistem perairan, air menjadi medium utama tempat organisme hidup. Suhu air memengaruhi aktivitas metabolisme serta jumlah oksigen yang dapat terlarut. Cahaya matahari mendukung fotosintesis tumbuhan air dan alga. pH menunjukkan tingkat keasaman atau kebasaan air, sedangkan oksigen terlarut dibutuhkan ikan dan banyak organisme air untuk melakukan respirasi.",
+          "Tanah, batuan, sedimen, arus, mineral, dan zat hara juga termasuk komponen abiotik. Dalam jumlah yang seimbang, zat hara mendukung pertumbuhan produsen. Namun, masukan zat atau limbah yang terlalu banyak dapat mengubah kondisi fisik dan kimia air sehingga habitat tidak lagi sesuai bagi organisme yang hidup di dalamnya."
         ],
         "poin": [
           "Air: habitat dan medium berlangsungnya proses kehidupan organisme perairan.",
@@ -128,118 +170,34 @@
         ]
       },
       {
-        "huruf": "E",
+        "huruf": "F",
         "judul": "Hubungan Komponen Biotik dan Abiotik",
         "paragraf": [
-        "Komponen biotik dan abiotik tidak dapat dipisahkan karena keduanya saling berhubungan dan saling memengaruhi. Dalam ekosistem sungai, komponen biotik meliputi berbagai makhluk hidup, seperti ikan, tumbuhan air, alga, serangga air, plankton, bakteri, dan organisme pengurai. Sementara itu, komponen abiotik meliputi unsur tidak hidup, seperti air, cahaya matahari, suhu, arus, pH, oksigen terlarut, mineral, dan dasar sungai. Setiap organisme membutuhkan kondisi lingkungan tertentu agar dapat bertahan hidup, tumbuh, memperoleh makanan, dan berkembang biak (Oktaviana & Sari, 2024; Krisdianti et al., 2023).",
-        "Tumbuhan air dan alga membutuhkan cahaya matahari, air, karbon dioksida, serta mineral untuk melakukan fotosintesis. Melalui proses tersebut, tumbuhan menghasilkan bahan makanan dan oksigen yang mendukung kehidupan organisme lain dalam ekosistem perairan (Oktaviana & Sari, 2024).",
-        "Ikan sangat dipengaruhi oleh kondisi abiotik di sekitarnya. Faktor seperti suhu, pH, arus, dan kadar oksigen terlarut menentukan kemampuan ikan untuk bertahan hidup. Apabila kualitas air mengalami penurunan akibat pencemaran, organisme perairan dapat mengalami gangguan pertumbuhan, aktivitas, hingga kematian (Clark et al., 2018).",
-        "Hubungan komponen biotik dan abiotik juga berlangsung secara timbal balik. Aktivitas organisme dapat memengaruhi kondisi lingkungan melalui proses fotosintesis, penguraian bahan organik, dan perpindahan unsur dalam ekosistem. Dengan demikian, perubahan pada satu komponen dapat memengaruhi keseimbangan komponen lainnya (Urry et al., 2020).",
-        "Daun, ranting, bangkai organisme, dan sisa makhluk hidup yang masuk ke sungai akan diuraikan oleh bakteri, jamur, dan organisme pengurai lainnya. Proses penguraian membantu mengembalikan unsur hara ke lingkungan. Namun, jumlah bahan organik yang berlebihan dapat meningkatkan aktivitas pengurai sehingga kadar oksigen terlarut menurun dan mengganggu kehidupan organisme air (Clark et al., 2018; Urry et al., 2020).",
-        "Apabila salah satu komponen mengalami gangguan, keseimbangan ekosistem sungai dapat berubah. Pencemaran akibat limbah dapat menyebabkan perubahan kualitas air dan memengaruhi jumlah serta keberadaan organisme yang hidup di dalamnya."
+          "Komponen biotik dan abiotik tidak dapat dipisahkan karena keduanya saling berhubungan dan saling memengaruhi. Dalam ekosistem sungai, komponen biotik meliputi berbagai makhluk hidup, seperti ikan, tumbuhan air, alga, serangga air, plankton, bakteri, dan organisme pengurai. Sementara itu, komponen abiotik meliputi unsur tidak hidup, seperti air, cahaya matahari, suhu, arus, pH, oksigen terlarut, mineral, dan dasar sungai. Setiap organisme membutuhkan kondisi lingkungan tertentu agar dapat bertahan hidup, tumbuh, bergerak, memperoleh makanan, dan berkembang biak.",
+          "Tumbuhan air dan alga membutuhkan cahaya matahari, air, karbon dioksida, serta mineral untuk melakukan fotosintesis. Melalui proses tersebut, tumbuhan menghasilkan bahan makanan untuk mendukung pertumbuhannya dan melepaskan oksigen ke dalam lingkungan perairan. Tumbuhan air juga dapat menjadi tempat berlindung, tempat menempel, tempat berkembang biak, serta sumber makanan bagi ikan dan organisme sungai lainnya.",
+          "Ikan sangat dipengaruhi oleh kondisi abiotik di sekitarnya. Ikan membutuhkan air dengan suhu, pH, arus, dan kadar oksigen terlarut yang sesuai. Apabila air sungai tercemar oleh limbah, kualitas air dapat menurun, warna dan bau air dapat berubah, serta kadar oksigen terlarut dapat berkurang. Kondisi tersebut dapat menyebabkan ikan mengalami stres, kesulitan bernapas, bergerak lebih lambat, kehilangan sumber makanan, berpindah ke bagian sungai yang lebih bersih, atau mati. Hal ini menunjukkan bahwa perubahan pada komponen abiotik dapat menimbulkan perubahan pada komponen biotik.",
+          "Hubungan tersebut juga berlangsung sebaliknya karena aktivitas makhluk hidup dapat memengaruhi kondisi lingkungan sungai. Tumbuhan air dapat membantu menghasilkan oksigen, memperlambat aliran air pada bagian tertentu, dan menjadi tempat hidup bagi organisme kecil. Ikan dan hewan air lainnya juga berperan dalam perpindahan bahan organik dan mineral melalui aktivitas makan, bergerak, dan mengeluarkan sisa metabolisme. Dengan demikian, keberadaan organisme turut memengaruhi kondisi fisik dan kimia air sungai.",
+          "Daun, ranting, bangkai organisme, dan sisa makhluk hidup yang masuk ke sungai akan diuraikan oleh bakteri, jamur, dan organisme pengurai lainnya. Dalam jumlah yang wajar, proses penguraian membantu mengembalikan unsur hara ke lingkungan. Namun, apabila bahan organik yang masuk terlalu banyak, organisme pengurai akan menggunakan lebih banyak oksigen selama proses penguraian. Akibatnya, kadar oksigen terlarut dapat menurun dan kehidupan ikan serta organisme air lainnya dapat terganggu.",
+          "Apabila salah satu komponen mengalami gangguan, keseimbangan ekosistem sungai juga dapat berubah. Pembuangan limbah rumah tangga, limbah pertanian, sampah, atau limbah kegiatan usaha ke sungai tidak hanya mengubah kondisi air, tetapi juga dapat mengurangi jumlah ikan, tumbuhan air, serangga air, dan organisme lainnya. Oleh karena itu, keseimbangan ekosistem sungai bergantung pada hubungan yang selaras antara komponen biotik dan komponen abiotik serta kualitas lingkungan yang mendukung kehidupan organisme."
         ],
         "callout": "Fokus simulasi: tingkat limbah industri memengaruhi kualitas air; perubahan kualitas air kemudian berkaitan dengan oksigen terlarut, populasi ikan, indeks invertebrata, dan kondisi ekosistem sungai."
       },
-      
-      {
-      "huruf": "F",
-      "judul": "Hubungan Komponen Biotik dan Biotik",
-      "paragraf": [
-        "**Interaksi Antarorganisme dalam Ekosistem**",
-
-        "Komponen biotik dalam ekosistem tidak hidup secara terpisah. Setiap organisme memiliki hubungan dengan organisme lain untuk memperoleh energi, mempertahankan kehidupan, dan melanjutkan keturunan. Hubungan antarorganisme tersebut disebut interaksi biotik. Interaksi ini terjadi karena setiap organisme memiliki kebutuhan yang sama maupun berbeda terhadap sumber daya lingkungan, seperti makanan, ruang hidup, tempat berlindung, dan pasangan berkembang biak (Oktaviana & Sari, 2024).",
-
-        "Dalam suatu ekosistem, interaksi antarorganisme dapat terjadi antara individu dalam spesies yang sama maupun antara spesies yang berbeda. Interaksi antarindividu dalam satu spesies disebut interaksi intraspesifik, sedangkan hubungan antara organisme dari spesies berbeda disebut interaksi interspesifik. Kedua bentuk interaksi tersebut berpengaruh terhadap jumlah populasi, persebaran organisme, dan struktur komunitas dalam ekosistem (Oktaviana & Sari, 2024).",
-
-        "Pada ekosistem sungai, hubungan antarorganisme dapat terlihat melalui aktivitas ikan yang memakan organisme kecil, burung yang memangsa ikan, tumbuhan air yang menjadi sumber makanan dan tempat berlindung, serta mikroorganisme yang menguraikan sisa organisme. Setiap organisme memiliki peran tertentu sehingga perubahan pada satu populasi dapat memengaruhi organisme lain yang memiliki hubungan dengannya.",
-
-        "**1. Predasi**",
-
-        "Predasi merupakan bentuk interaksi ketika satu organisme menangkap dan memakan organisme lain untuk memperoleh energi. Organisme yang melakukan pemangsaan disebut predator, sedangkan organisme yang dimakan disebut mangsa. Hubungan predator dan mangsa merupakan bagian penting dalam pengaturan jumlah populasi dalam ekosistem (Oktaviana & Sari, 2024).",
-
-        "Keberadaan predator membantu mengendalikan jumlah mangsa agar tidak mengalami peningkatan yang terlalu tinggi. Jika populasi mangsa meningkat secara berlebihan, sumber daya lingkungan seperti makanan dan ruang hidup dapat berkurang. Kondisi tersebut dapat menyebabkan persaingan meningkat dan mengganggu keseimbangan komunitas.",
-
-        "Hubungan predator dan mangsa bersifat dinamis. Ketika jumlah mangsa meningkat, predator memperoleh lebih banyak sumber makanan sehingga jumlah predator dapat meningkat. Namun, peningkatan jumlah predator dapat menyebabkan jumlah mangsa menurun. Penurunan mangsa kemudian dapat menyebabkan berkurangnya sumber makanan bagi predator sehingga populasi predator juga dapat mengalami penurunan.",
-
-        "Contoh pada ekosistem sungai adalah hubungan antara ikan predator dengan ikan kecil. Ikan predator membantu mengontrol populasi ikan kecil sehingga komunitas organisme air tetap seimbang. Apabila pencemaran menyebabkan jumlah ikan predator menurun, populasi ikan kecil dapat meningkat dan memengaruhi organisme lain yang memiliki hubungan dalam jaring-jaring makanan.",
-
-        "**2. Kompetisi**",
-
-        "Kompetisi merupakan interaksi antarorganisme yang terjadi ketika organisme membutuhkan sumber daya yang sama, sedangkan jumlah sumber daya tersebut terbatas. Persaingan dapat terjadi untuk memperoleh makanan, ruang hidup, cahaya, air, tempat berlindung, maupun lokasi berkembang biak (Oktaviana & Sari, 2024).",
-
-        "Kompetisi dibedakan menjadi dua jenis, yaitu kompetisi intraspesifik dan kompetisi interspesifik.",
-
-        "**a. Kompetisi Intraspesifik**",
-
-        "Kompetisi intraspesifik terjadi antara individu yang berasal dari spesies yang sama. Organisme tersebut memiliki kebutuhan yang hampir sama sehingga persaingan dapat terjadi ketika sumber daya tidak mencukupi.",
-
-        "Contohnya adalah beberapa ikan dari spesies yang sama yang bersaing memperoleh makanan atau tempat berlindung di wilayah sungai yang terbatas.",
-
-        "**b. Kompetisi Interspesifik**",
-
-        "Kompetisi interspesifik terjadi antara organisme dari spesies berbeda yang menggunakan sumber daya yang sama. Persaingan ini dapat menyebabkan perubahan jumlah populasi karena organisme yang lebih mampu memperoleh sumber daya memiliki peluang bertahan hidup lebih besar.",
-
-        "Contohnya adalah ikan dan organisme air lain yang memanfaatkan sumber makanan yang sama. Jika jumlah makanan berkurang akibat perubahan lingkungan, kompetisi antarorganisme dapat meningkat.",
-
-        "Kompetisi memiliki peran dalam menjaga keseimbangan populasi. Namun, apabila gangguan lingkungan menyebabkan sumber daya semakin terbatas, kompetisi dapat menyebabkan penurunan jumlah organisme tertentu dan mengubah struktur komunitas.",
-
-        "**3. Simbiosis**",
-
-        "Simbiosis merupakan hubungan erat antara dua organisme berbeda spesies yang berlangsung dalam waktu tertentu. Hubungan ini menunjukkan bahwa keberadaan suatu organisme dapat memberikan pengaruh terhadap organisme lain dalam ekosistem (Oktaviana & Sari, 2024).",
-
-        "Berdasarkan pengaruh yang diterima oleh organisme yang terlibat, simbiosis dibedakan menjadi tiga bentuk.",
-
-        "**a. Mutualisme**",
-
-        "Mutualisme adalah hubungan antara dua organisme yang memberikan keuntungan bagi kedua pihak. Dalam hubungan ini, masing-masing organisme memperoleh manfaat yang membantu keberlangsungan hidupnya.",
-
-        "Contohnya adalah hubungan antara tumbuhan berbunga dan serangga penyerbuk. Serangga memperoleh makanan berupa nektar, sedangkan tumbuhan memperoleh bantuan dalam proses penyerbukan.",
-
-        "Dalam ekosistem perairan, hubungan mutualisme dapat terjadi ketika organisme tertentu saling membantu memperoleh sumber daya atau perlindungan.",
-
-        "**b. Komensalisme**",
-
-        "Komensalisme adalah hubungan ketika salah satu organisme memperoleh keuntungan, sedangkan organisme lain tidak mengalami keuntungan maupun kerugian yang berarti.",
-
-        "Contohnya adalah organisme kecil yang menggunakan tumbuhan air sebagai tempat berlindung dari predator. Organisme tersebut memperoleh perlindungan, sedangkan tumbuhan air tidak mengalami perubahan besar akibat keberadaannya.",
-
-        "**c. Parasitisme**",
-
-        "Parasitisme adalah hubungan ketika satu organisme memperoleh keuntungan dengan mengambil sumber daya dari organisme lain yang disebut inang. Dalam hubungan ini, organisme parasit memperoleh makanan atau tempat hidup, sedangkan organisme inang mengalami kerugian.",
-
-        "Parasitisme dapat menyebabkan gangguan terhadap pertumbuhan, kesehatan, atau kemampuan reproduksi organisme inang.",
-
-        "**4. Pengaruh Interaksi Biotik terhadap Keseimbangan Ekosistem**",
-
-        "Interaksi antarorganisme membentuk jaringan kehidupan yang saling berhubungan. Setiap organisme memiliki peran tertentu sehingga perubahan pada satu organisme dapat memberikan pengaruh terhadap organisme lain.",
-
-        "Sebagai contoh, jika populasi ikan predator menurun akibat pencemaran sungai, jumlah ikan kecil yang menjadi mangsanya dapat meningkat. Peningkatan ikan kecil dapat menyebabkan berkurangnya organisme yang menjadi sumber makanan ikan tersebut. Perubahan ini menunjukkan bahwa gangguan pada satu tingkat populasi dapat menyebar ke tingkat populasi lainnya.",
-
-        "Selain itu, perubahan lingkungan juga dapat mengubah bentuk interaksi antarorganisme. Pencemaran yang menyebabkan berkurangnya makanan atau habitat dapat meningkatkan kompetisi antarorganisme. Organisme yang tidak mampu beradaptasi dapat mengalami penurunan populasi.",
-
-        "Dengan demikian, keseimbangan ekosistem tidak hanya dipengaruhi oleh kondisi lingkungan abiotik, tetapi juga oleh hubungan kompleks antarorganisme yang membentuk komunitas kehidupan."
-      ]
-    },
       {
         "huruf": "G",
         "judul": "Keseimbangan Ekosistem",
         "paragraf": [
-          "Keseimbangan ekosistem adalah keadaan ketika komponen biotik dan abiotik dapat menjalankan fungsinya serta mempertahankan hubungan yang relatif stabil. Kondisi seimbang bukan berarti ekosistem tidak mengalami perubahan, tetapi perubahan yang terjadi masih berada dalam batas kemampuan ekosistem untuk mempertahankan keberlangsungannya (Krisdianti et al., 2023).",
-
-          "Ekosistem memiliki kemampuan untuk menyesuaikan diri terhadap gangguan melalui proses pemulihan alami. Namun, kemampuan tersebut memiliki batas tertentu. Gangguan yang berlangsung terus-menerus atau memiliki intensitas tinggi dapat menyebabkan penurunan jumlah organisme, perubahan struktur komunitas, dan terganggunya fungsi ekosistem (Krisdianti et al., 2023).",
-
-          "Keseimbangan ekosistem dapat diamati melalui berbagai indikator, seperti kondisi kualitas air, keberadaan organisme, kestabilan populasi, dan hubungan antarorganisme. Pengamatan beberapa indikator secara bersamaan memberikan gambaran yang lebih akurat mengenai kondisi suatu ekosistem."
+          "Keseimbangan ekosistem adalah keadaan ketika komponen biotik dan abiotik dapat menjalankan fungsinya serta mempertahankan hubungan yang relatif stabil. Seimbang bukan berarti tidak pernah terjadi perubahan. Populasi organisme dan kondisi lingkungan tetap dapat berubah, tetapi perubahan tersebut masih berada dalam batas yang dapat ditoleransi oleh ekosistem.",
+          "Ekosistem memiliki kemampuan tertentu untuk menyesuaikan diri terhadap gangguan. Namun, kemampuan ini tidak terbatas. Apabila pencemaran terjadi terus-menerus atau jumlah limbah terlalu besar, ekosistem dapat kehilangan kemampuan untuk memulihkan kondisinya. Akibatnya, jumlah organisme peka menurun, kualitas habitat memburuk, dan fungsi ekosistem terganggu.",
+          "Keseimbangan dapat diamati melalui beberapa indikator, seperti kejernihan dan bau air, nilai pH, kadar oksigen terlarut, keberadaan organisme air, serta kestabilan populasi. Pengamatan terhadap beberapa indikator sekaligus memberikan gambaran yang lebih baik daripada hanya melihat satu komponen."
         ]
       },
       {
         "huruf": "H",
         "judul": "Gangguan terhadap Ekosistem",
         "paragraf": [
-          "Gangguan ekosistem merupakan perubahan yang menyebabkan terganggunya hubungan antar komponen dalam suatu ekosistem. Gangguan dapat berasal dari faktor alami seperti banjir, kekeringan, dan perubahan suhu ekstrem maupun akibat aktivitas manusia seperti pembuangan limbah, penggunaan bahan kimia, perubahan habitat, dan penumpukan sampah (Krisdianti et al., 2023).",
-
-          "Besarnya dampak gangguan dipengaruhi oleh jenis gangguan, tingkat keparahan, luas wilayah yang terdampak, serta lama waktu gangguan berlangsung. Gangguan ringan masih dapat dipulihkan oleh ekosistem, sedangkan gangguan berat dapat menyebabkan perubahan populasi, hilangnya organisme tertentu, dan penurunan kualitas habitat (Krisdianti et al., 2023).",
-
-          "Pada ekosistem sungai, masuknya limbah dari kegiatan industri maupun rumah tangga dapat mengubah kondisi lingkungan perairan. Perubahan tersebut tidak hanya terlihat secara fisik, tetapi juga dapat memengaruhi kondisi kimia air dan keberadaan organisme yang hidup di dalamnya."
+          "Gangguan ekosistem adalah peristiwa yang menyebabkan perubahan pada komponen atau hubungan di dalam ekosistem. Gangguan dapat terjadi secara alami, seperti banjir, kekeringan, letusan gunung api, dan perubahan suhu ekstrem. Gangguan juga dapat berasal dari aktivitas manusia, seperti pembuangan limbah, penggunaan bahan kimia berlebihan, penebangan hutan, perubahan habitat, dan penumpukan sampah.",
+          "Besarnya dampak gangguan dipengaruhi oleh jenis, intensitas, luas wilayah, dan lamanya gangguan. Gangguan ringan dan berlangsung singkat mungkin masih dapat dipulihkan. Sebaliknya, gangguan berat dan terjadi terus-menerus dapat menyebabkan perubahan populasi, hilangnya organisme tertentu, penurunan kualitas habitat, dan kerusakan fungsi ekosistem.",
+          "Dalam ekosistem sungai, limbah yang masuk dari kegiatan industri atau rumah tangga dapat mengubah sifat air. Perubahan tersebut tidak hanya terlihat dari warna dan bau, tetapi juga dapat terjadi pada suhu, pH, kandungan bahan organik, zat beracun, dan oksigen terlarut."
         ]
       },
       {
@@ -251,13 +209,10 @@
           "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor"
         },
         "paragraf": [
-          "Pencemaran air adalah masuknya zat, energi, atau komponen lain ke dalam perairan sehingga menyebabkan perubahan kualitas air dan mengganggu kehidupan organisme. Sumber pencemaran dapat berasal dari limbah industri, limbah rumah tangga, kegiatan pertanian, peternakan, pertambangan, dan sampah (Clark et al., 2018).",
-
-          "Limbah industri dapat membawa bahan organik, zat kimia, logam, atau panas ke dalam sungai. Bahan organik dalam jumlah besar dapat meningkatkan aktivitas mikroorganisme pengurai sehingga penggunaan oksigen meningkat dan kadar oksigen terlarut menurun. Beberapa bahan kimia juga dapat mengubah kondisi air dan bersifat berbahaya bagi organisme perairan (Clark et al., 2018).",
-
-          "Penurunan oksigen terlarut menyebabkan organisme air mengalami gangguan respirasi. Ikan dapat mengalami stres, bergerak lebih lambat, berpindah dari daerah tercemar, atau mengalami kematian. Perubahan kondisi tersebut juga dapat memengaruhi organisme lain dalam komunitas perairan (Clark et al., 2018).",
-
-          "Pada simulasi, perubahan tingkat limbah tidak diamati sebagai angka yang berdiri sendiri. Siswa perlu menganalisis hubungan antara tingkat limbah, oksigen terlarut, populasi ikan, indeks invertebrata, dan kondisi ekosistem. Semakin besar gangguan terhadap kualitas air, semakin besar kemungkinan perubahan terjadi pada organisme yang bergantung pada lingkungan tersebut."
+          "Pencemaran air adalah masuknya makhluk hidup, zat, energi, atau komponen lain ke dalam perairan sehingga kualitas air menurun dan tidak lagi sesuai dengan fungsi atau kebutuhan organisme. Sumber pencemaran dapat berasal dari limbah industri, limbah rumah tangga, kegiatan pertanian, peternakan, pertambangan, dan sampah.",
+          "Limbah industri dapat membawa bahan organik, zat kimia, logam, atau panas ke sungai. Bahan organik yang terurai dalam jumlah besar dapat meningkatkan penggunaan oksigen oleh mikroorganisme. Akibatnya, kadar oksigen terlarut menurun. Beberapa bahan kimia juga dapat mengubah pH atau bersifat toksik bagi ikan dan organisme air lainnya.",
+          "Penurunan oksigen terlarut menyebabkan organisme air kesulitan melakukan respirasi. Ikan dapat mengalami stres, muncul ke permukaan untuk memperoleh oksigen, berpindah dari daerah tercemar, atau mati. Organisme invertebrata yang peka juga dapat menghilang, sehingga indeks invertebrata menurun dan menunjukkan kondisi sungai yang semakin terganggu.",
+          "Pada simulasi, perubahan tingkat limbah tidak boleh diamati sebagai angka yang berdiri sendiri. Siswa perlu memperhatikan pola hubungan antara limbah, oksigen terlarut, populasi ikan, indeks invertebrata, dan kondisi ekosistem. Semakin besar gangguan pada kualitas air, semakin besar kemungkinan perubahan terjadi pada organisme yang bergantung pada air tersebut."
         ],
         "poin": [
           "Perubahan fisik: warna, bau, kekeruhan, dan suhu air.",
@@ -266,7 +221,6 @@
           "Dampak ekosistem: penurunan kualitas habitat dan terganggunya keseimbangan antarkomponen."
         ]
       }
-
     ],
     "referensi": [
       "Krisdianti, Niken Resminingpuri, Elizabeth Tjahjadarmawan, dan Ayuk Ratna Puspaningsih. 2023. Ilmu Pengetahuan Alam untuk SMA/MA Kelas X (Edisi Revisi). Jakarta: Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.",
