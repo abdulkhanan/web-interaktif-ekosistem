@@ -237,8 +237,8 @@
   },
   {
     "kode": "materi_2_aliran_energi",
-    "judul": "Bahan Penyelidikan 2: Aliran Energi dalam Ekosistem, Piramida Ekologi, Tipe Ekosistem, dan Produktivitas Ekosistem",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari sumber dan perpindahan energi dalam ekosistem, tingkat trofik, piramida ekologi, produktivitas produsen, serta dampak musim kemarau terhadap ketersediaan energi pada rantai makanan.",
+    "judul": "Bahan Penyelidikan 2: Jaring-Jaring Makanan, Aliran Energi, dan Piramida Energi dalam Ekosistem",
+    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari sumber dan perpindahan energi dalam ekosistem, tingkat trofik, piramida ekologi, produktivitas produsen, serta dampak perubahan lingkungan terhadap ketersediaan energi dan keseimbangan hubungan makan-dimakan dalam jaring-jaring makanan",
     "gambar_utama": {
       "path": "assets/images/jaring_makanan_piramida_energi.png",
       "judul": "Gambar 1. Diagram rantai makanan dan piramida energi pada ekosistem"
@@ -246,23 +246,31 @@
     "bagian": [
       {
         "huruf": "A",
-        "judul": "Aliran Energi dalam Ekosistem",
+        "judul": "Jaring-Jaring Makanan",
         "paragraf": [
-          "Energi dalam ekosistem berasal dari matahari. Tumbuhan hijau menangkap energi matahari melalui proses fotosintesis. Energi tersebut digunakan tumbuhan untuk membuat makanan. Tumbuhan berperan sebagai produsen karena mampu menghasilkan makanan sendiri. Hewan yang memakan tumbuhan memperoleh energi dari produsen. Hewan pemakan tumbuhan kemudian dapat dimakan oleh hewan lain. Perpindahan energi dari satu makhluk hidup ke makhluk hidup lain membentuk aliran energi.",
-          "Aliran energi dapat diamati melalui rantai makanan. Rantai makanan adalah urutan makan dan dimakan dalam ekosistem. Contohnya, rumput dimakan belalang, belalang dimakan katak, lalu katak dimakan ular. Rumput berperan sebagai produsen. Belalang berperan sebagai konsumen I. Katak berperan sebagai konsumen II. Ular berperan sebagai konsumen III. Setiap tingkatan dalam rantai makanan disebut tingkat trofik, tetapi dalam pembelajaran dapat dipahami sebagai tingkatan dalam rantai makanan.",
-          "Energi yang berpindah dari satu tingkat ke tingkat berikutnya tidak seluruhnya diteruskan. Sebagian energi digunakan makhluk hidup untuk bergerak, tumbuh, bernapas, berkembang biak, dan mempertahankan hidup. Sebagian energi juga hilang sebagai panas. Akibatnya, energi yang diterima konsumen I lebih kecil daripada energi pada produsen. Energi pada konsumen II lebih kecil daripada konsumen I. Energi pada konsumen III juga semakin kecil. Pola ini menyebabkan jumlah energi makin berkurang pada tingkatan rantai makanan yang lebih tinggi.",
-          "Piramida ekologi menggambarkan perbandingan jumlah organisme, biomassa, atau energi pada setiap tingkatan ekosistem. Pada piramida energi, bagian dasar biasanya ditempati oleh produsen karena produsen memiliki energi paling besar. Bagian di atasnya ditempati oleh konsumen I, konsumen II, dan konsumen III. Semakin tinggi tingkatannya, energi yang tersedia semakin kecil. Bentuk piramida ini menunjukkan bahwa produsen memiliki peran besar dalam menopang kehidupan konsumen di atasnya.",
-          "Produktivitas ekosistem berkaitan dengan kemampuan produsen menghasilkan bahan organik melalui fotosintesis. Semakin tinggi produktivitas produsen, semakin besar energi yang tersedia dalam ekosistem. Tumbuhan yang subur dapat menyediakan lebih banyak makanan bagi herbivor. Herbivor yang cukup makanan dapat mendukung keberadaan karnivor. Sebaliknya, jika jumlah produsen menurun, energi yang tersedia untuk konsumen juga ikut menurun.",
-          "Musim kemarau panjang dapat menjadi contoh fenomena yang memengaruhi aliran energi. Saat air berkurang, pertumbuhan rumput dapat menurun. Rumput sebagai produsen menjadi lebih sedikit. Akibatnya, energi yang tersedia untuk hewan pemakan rumput juga berkurang. Hewan pemakan hewan lain juga dapat terkena dampaknya. Fenomena ini menunjukkan bahwa perubahan pada produsen dapat memengaruhi seluruh rantai makanan.",
-          "Tipe ekosistem juga memengaruhi bentuk aliran energi. Ekosistem darat seperti hutan, padang rumput, dan sawah memiliki produsen utama berupa tumbuhan darat. Ekosistem perairan seperti sungai, danau, dan laut memiliki produsen berupa fitoplankton, alga, dan tumbuhan air. Meskipun jenis organisme berbeda, prinsip aliran energi tetap sama. Energi mengalir dari produsen ke konsumen dan jumlahnya berkurang pada setiap perpindahan.",
-          "Melalui simulasi rantai makanan saat kemarau, siswa dapat menyelidiki pengaruh penurunan produsen terhadap energi pada setiap tingkatan rantai makanan. Siswa dapat mengubah jumlah energi produsen dan melihat bagaimana perubahan tersebut memengaruhi konsumen I, konsumen II, dan konsumen III. Simulasi ini membantu siswa memahami bahwa keseimbangan ekosistem sangat dipengaruhi oleh ketersediaan energi dari produsen."
+          "Dalam suatu ekosistem, setiap organisme memiliki hubungan saling ketergantungan melalui proses makan dan dimakan. Hubungan tersebut menunjukkan perpindahan energi dari organisme satu ke organisme lainnya. Hubungan makan dan dimakan dalam ekosistem tidak hanya berlangsung dalam satu jalur, tetapi dapat membentuk hubungan yang lebih kompleks yang disebut jaring-jaring makanan (Krisdianti et al., 2023)..",
+          "Jaring-jaring makanan merupakan kumpulan beberapa rantai makanan yang saling berhubungan dalam suatu ekosistem. Berbeda dengan rantai makanan yang hanya menunjukkan satu jalur perpindahan energi, jaring-jaring makanan menggambarkan berbagai kemungkinan hubungan antarorganisme. Hal ini terjadi karena suatu organisme dapat memiliki lebih dari satu sumber makanan dan dapat dimanfaatkan oleh lebih dari satu jenis konsumen (Krisdianti et al., 2023)..",
+          "Sebagai contoh, pada ekosistem padang rumput, rumput berperan sebagai produsen yang menghasilkan energi melalui proses fotosintesis. Energi dari rumput dapat dimanfaatkan oleh berbagai konsumen tingkat I seperti belalang, tikus, dan kelinci. Selanjutnya, belalang dapat dimakan oleh katak dan burung kecil, sedangkan tikus dan kelinci dapat menjadi sumber makanan bagi elang. Hubungan tersebut membentuk suatu jaring-jaring makanan yang menunjukkan keterkaitan antarorganisme dalam ekosistem (Krisdianti et al., 2023).",
+          "Keberadaan berbagai hubungan makan dan dimakan menyebabkan perubahan pada satu populasi dapat memengaruhi populasi organisme lainnya. Misalnya, apabila populasi ular mengalami penurunan, jumlah tikus dapat meningkat karena tekanan predasi berkurang. Peningkatan jumlah tikus dapat menyebabkan penurunan populasi tumbuhan karena meningkatnya aktivitas herbivori. Hal tersebut menunjukkan bahwa keseimbangan ekosistem dipengaruhi oleh hubungan antarorganisme dalam jaring-jaring makanan (Krisdianti et al., 2023)."
+        ]
+      },
+      {
+        "huruf": "B",
+        "judul": "Jaring-Jaring Makanan",
+        "paragraf": [
+          "Energi dalam ekosistem berasal dari cahaya matahari yang dimanfaatkan oleh organisme produsen melalui proses fotosintesis. Energi tersebut kemudian berpindah melalui berbagai tingkat trofik berdasarkan hubungan makan dan dimakan antarorganisme (Krisdianti et al., 2023).","Produsen memiliki peran penting sebagai sumber energi awal karena mampu mengubah energi cahaya menjadi energi kimia yang tersimpan dalam bahan organik. Energi tersebut kemudian diteruskan kepada konsumen tingkat I, konsumen tingkat II, konsumen tingkat III, hingga konsumen puncak. Namun, jumlah energi yang berpindah dari satu tingkat trofik ke tingkat berikutnya mengalami penurunan karena sebagian energi digunakan organisme untuk aktivitas metabolisme, seperti bergerak, bernapas, tumbuh, dan berkembang biak (Krisdianti et al., 2023).","Oleh karena itu, semakin tinggi tingkat trofik suatu organisme, semakin kecil energi yang tersedia untuk mendukung kehidupannya. Kondisi tersebut menyebabkan organisme pada tingkat trofik tinggi umumnya memiliki jumlah populasi lebih sedikit dibandingkan organisme pada tingkat trofik rendah (Krisdianti et al., 2023)."
+        ]
+      },
+      {
+        "huruf": "C",
+        "judul": "Jaring-Jaring Makanan",
+        "paragraf": [
+        "Piramida energi merupakan gambaran jumlah energi yang tersedia pada setiap tingkat trofik dalam suatu ekosistem. Piramida energi menunjukkan bahwa energi mengalami penurunan pada setiap perpindahan dari satu tingkat trofik menuju tingkat trofik berikutnya (Krisdianti et al., 2023).","Pada suatu ekosistem, produsen memiliki jumlah energi terbesar karena memperoleh energi langsung dari cahaya matahari melalui fotosintesis. Energi tersebut kemudian dimanfaatkan oleh konsumen tingkat I, konsumen tingkat II, konsumen tingkat III, hingga konsumen puncak. Setiap perpindahan energi menyebabkan sebagian energi hilang dalam bentuk panas akibat aktivitas metabolisme organisme (Krisdianti et al., 2023).","Sebagai contoh, dalam ilustrasi piramida energi suatu ekosistem dapat digunakan nilai perkiraan berupa 10.000 kkal pada tingkat produsen, 1.000 kkal pada konsumen tingkat I, 100 kkal pada konsumen tingkat II, 10 kkal pada konsumen tingkat III, dan 1 kkal pada konsumen puncak. Nilai tersebut bukan menunjukkan bahwa seluruh produsen atau konsumen selalu memiliki jumlah energi yang sama, tetapi hanya digunakan sebagai model untuk menjelaskan pola penurunan energi pada setiap tingkat trofik.","Jumlah energi sebenarnya pada suatu ekosistem dapat berbeda-beda karena dipengaruhi oleh berbagai faktor, seperti jenis organisme, jumlah biomassa, kondisi lingkungan, dan produktivitas ekosistem. Oleh sebab itu, angka pada piramida energi digunakan sebagai representasi konsep aliran energi, bukan nilai tetap yang berlaku untuk semua ekosistem (Krisdianti et al., 2023)."
         ]
       }
     ],
     "referensi": [
-      "Krisdianti, Niken Resminingpuri, Elizabeth Tjahjadarmawan, dan Ayuk Ratna Puspaningsih. 2023. Ilmu Pengetahuan Alam untuk SMA/MA Kelas X (Edisi Revisi). Jakarta: Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.",
-      "Clark, M. A., Douglas, M., & Choi, J. (2018). Biology 2e (Bagian 46.2: Energy Flow through Ecosystems). Houston, Texas: OpenStax, Rice University.",
-      "Urry, L. A., Cain, M. L., Wasserman, S. A., Minorsky, P. V., & Orr, R. B. (2020). Campbell Biology (12th ed.). Pearson."
+      "Krisdianti, Niken Resminingpuri, Elizabeth Tjahjadarmawan, dan Ayuk Ratna Puspaningsih. 2023. Ilmu Pengetahuan Alam untuk SMA/MA Kelas X (Edisi Revisi). Jakarta: Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi."
     ]
   },
   {
