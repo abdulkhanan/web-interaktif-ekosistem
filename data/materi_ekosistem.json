@@ -141,6 +141,83 @@
       },
       {
         "huruf": "F",
+        "judul": "Interaksi Antar Komponen Biotik",
+        "paragraf": [
+          "Komponen biotik dalam ekosistem tidak hidup secara terpisah. Setiap organisme memiliki hubungan dengan organisme lain melalui berbagai bentuk interaksi yang memengaruhi kehidupan, pertumbuhan, reproduksi, dan keberlangsungan populasi. Hubungan antarorganisme terjadi karena makhluk hidup membutuhkan sumber daya seperti makanan, ruang hidup, perlindungan, dan pasangan untuk berkembang biak.",
+
+          "Interaksi antarorganisme dapat terjadi dalam satu spesies maupun antarspesies yang berbeda. Interaksi dalam satu spesies disebut interaksi intraspesifik, sedangkan interaksi antarspesies disebut interaksi interspesifik. Kedua bentuk interaksi tersebut berperan dalam menentukan jumlah populasi, persebaran organisme, dan struktur komunitas dalam suatu ekosistem.",
+
+          "Pada ekosistem sungai, interaksi biotik dapat diamati melalui hubungan antara ikan, tumbuhan air, alga, serangga air, plankton, burung pemakan ikan, dan organisme pengurai. Setiap organisme memiliki peran tertentu dalam jaringan kehidupan. Perubahan jumlah satu organisme dapat memengaruhi organisme lain yang memiliki hubungan langsung maupun tidak langsung."
+        ],
+        "submateri": [
+          {
+            "judul": "1. Predasi",
+            "paragraf": [
+              "Predasi merupakan interaksi antarorganisme ketika satu organisme menangkap dan memakan organisme lain untuk memperoleh energi. Organisme yang melakukan pemangsaan disebut predator, sedangkan organisme yang dimakan disebut mangsa. Hubungan predator dan mangsa menjadi salah satu faktor yang mengatur keseimbangan populasi dalam ekosistem.",
+
+              "Keberadaan predator dapat mencegah populasi mangsa meningkat secara berlebihan. Jika jumlah mangsa terlalu tinggi, sumber makanan dan ruang hidup dapat menjadi terbatas sehingga persaingan meningkat. Sebaliknya, jika jumlah predator mengalami penurunan, populasi mangsa dapat meningkat karena tekanan pemangsaan berkurang.",
+
+              "Hubungan predator dan mangsa berlangsung secara dinamis. Ketika jumlah mangsa meningkat, ketersediaan makanan bagi predator juga meningkat sehingga populasi predator dapat bertambah. Namun, ketika jumlah mangsa menurun akibat meningkatnya pemangsaan, sumber makanan predator menjadi lebih sedikit sehingga populasi predator juga dapat mengalami penurunan.",
+
+              "Contoh predasi pada ekosistem sungai adalah hubungan antara ikan predator dengan ikan kecil. Ikan predator membantu mengendalikan jumlah ikan kecil agar tidak mendominasi ekosistem. Apabila pencemaran sungai menyebabkan ikan predator berkurang karena sensitif terhadap perubahan kualitas air, jumlah ikan kecil dapat meningkat dan memengaruhi organisme lain dalam komunitas sungai."
+            ]
+          },
+          {
+            "judul": "2. Kompetisi",
+            "paragraf": [
+              "Kompetisi merupakan interaksi yang terjadi ketika dua organisme atau lebih membutuhkan sumber daya yang sama, sedangkan sumber daya tersebut jumlahnya terbatas. Organisme dapat bersaing memperoleh makanan, ruang hidup, cahaya, oksigen, tempat berlindung, dan lokasi berkembang biak.",
+
+              "Kompetisi dibedakan menjadi kompetisi intraspesifik dan kompetisi interspesifik. Kompetisi intraspesifik terjadi antara individu dari spesies yang sama, sedangkan kompetisi interspesifik terjadi antara organisme dari spesies yang berbeda yang menggunakan sumber daya yang sama.",
+
+              "Tingkat kompetisi dipengaruhi oleh jumlah organisme dan ketersediaan sumber daya. Apabila jumlah organisme meningkat sementara sumber daya tetap terbatas, persaingan akan semakin tinggi. Kondisi tersebut dapat menyebabkan sebagian organisme mengalami pertumbuhan lebih lambat, berpindah habitat, mengalami penurunan kemampuan berkembang biak, atau jumlah populasinya berkurang.",
+
+              "Dalam ekosistem sungai, kompetisi dapat terjadi antara ikan yang memanfaatkan jenis makanan yang sama atau antara tumbuhan air yang bersaing memperoleh cahaya matahari. Ketika pencemaran menyebabkan jumlah makanan atau ruang hidup berkurang, kompetisi antarorganisme dapat meningkat dan mengubah komposisi komunitas sungai."
+            ]
+          },
+          {
+            "judul": "3. Simbiosis",
+            "paragraf": [
+              "Simbiosis merupakan hubungan erat antara dua organisme berbeda spesies yang berlangsung dalam waktu tertentu. Hubungan simbiosis menunjukkan bahwa keberadaan suatu organisme dapat memengaruhi organisme lain dalam komunitas.",
+
+              "Berdasarkan pengaruhnya terhadap organisme yang terlibat, simbiosis dibedakan menjadi tiga bentuk, yaitu mutualisme, komensalisme, dan parasitisme."
+            ],
+            "jenis": [
+              {
+                "nama": "Mutualisme",
+                "penjelasan": "Mutualisme merupakan hubungan ketika kedua organisme memperoleh keuntungan dari interaksi yang terjadi. Contohnya hubungan antara tumbuhan berbunga dan serangga penyerbuk. Serangga memperoleh makanan berupa nektar, sedangkan tumbuhan memperoleh bantuan dalam proses penyerbukan."
+              },
+              {
+                "nama": "Komensalisme",
+                "penjelasan": "Komensalisme merupakan hubungan ketika satu organisme memperoleh keuntungan, sedangkan organisme lain tidak mengalami keuntungan maupun kerugian yang berarti. Contohnya organisme kecil yang menggunakan tumbuhan air sebagai tempat berlindung dari predator."
+              },
+              {
+                "nama": "Parasitisme",
+                "penjelasan": "Parasitisme merupakan hubungan ketika satu organisme memperoleh keuntungan dengan mengambil sumber daya dari organisme lain yang disebut inang. Organisme parasit memperoleh makanan atau tempat hidup, sedangkan organisme inang mengalami kerugian."
+              }
+            ]
+          },
+          {
+            "judul": "4. Pengaruh Interaksi Biotik terhadap Keseimbangan Ekosistem",
+            "paragraf": [
+              "Interaksi antarorganisme membentuk jaringan hubungan yang menjaga kestabilan ekosistem. Tidak ada organisme yang benar-benar berdiri sendiri karena setiap organisme memiliki hubungan dengan organisme lain melalui pemangsaan, persaingan, maupun simbiosis.",
+
+              "Gangguan terhadap satu organisme dapat menyebabkan perubahan pada organisme lain. Misalnya, pencemaran sungai dapat mengurangi jumlah ikan tertentu yang sensitif terhadap perubahan kualitas air. Penurunan ikan tersebut dapat memengaruhi predator yang bergantung pada ikan sebagai sumber makanan.",
+
+              "Oleh karena itu, keseimbangan ekosistem tidak hanya dipengaruhi oleh kondisi lingkungan abiotik, tetapi juga oleh hubungan kompleks antarorganisme yang membentuk komunitas."
+            ]
+          }
+        ],
+        "poin": [
+          "Interaksi biotik terjadi antarorganisme dalam satu spesies maupun antarspesies.",
+          "Predasi mengatur jumlah populasi melalui hubungan predator dan mangsa.",
+          "Kompetisi terjadi karena organisme menggunakan sumber daya yang terbatas.",
+          "Simbiosis menunjukkan hubungan ketergantungan antarorganisme.",
+          "Perubahan satu populasi dapat memengaruhi keseimbangan seluruh komunitas ekosistem."
+        ],
+        "callout": "Dalam ekosistem sungai, perubahan jumlah satu organisme akibat pencemaran dapat memengaruhi organisme lain melalui hubungan predasi, kompetisi, dan simbiosis."
+      },
+      {
+        "huruf": "F",
         "judul": "Keseimbangan Ekosistem",
         "paragraf": [
           "Keseimbangan ekosistem adalah keadaan ketika komponen biotik dan abiotik dapat menjalankan fungsinya serta mempertahankan hubungan yang relatif stabil. Seimbang bukan berarti tidak pernah terjadi perubahan. Populasi organisme dan kondisi lingkungan tetap dapat berubah, tetapi perubahan tersebut masih berada dalam batas yang dapat ditoleransi oleh ekosistem.",
