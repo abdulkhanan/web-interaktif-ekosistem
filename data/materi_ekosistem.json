@@ -1,13 +1,14 @@
 [
   {
     "kode": "materi_1_komponen_ekosistem",
-    "judul": "Bahan Penyelidikan 1: Ekosistem, Satuan Makhluk Hidup, Komponen Biotik dan Abiotik, serta Pencemaran Perairan",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari ekosistem sebagai satu kesatuan antara makhluk hidup dan lingkungan fisiknya. Pembahasan difokuskan pada konsep yang mendukung simulasi pencemaran sungai, terutama hubungan kualitas air, oksigen terlarut, pH, populasi ikan, dan kondisi organisme perairan.",
+    "judul": "Bahan Penyelidikan 1: Analisis Komponen dan Interaksi dalam Ekosistem Perairan",
+    "ringkasan": "Pada bahan penyelidikan ini, siswa menganalisis komponen biotik dan abiotik dalam ekosistem perairan serta hubungan antar komponen yang memengaruhi keseimbangan ekosistem.",
     "gambar_utama": {
       "path": "assets/images/komponen_ekosistem.png",
       "judul": "Gambar 1. Komponen biotik dan abiotik pada ekosistem perairan"
     },
     "bagian": [
+      
       {
         "huruf": "A",
         "judul": "Pengertian Ekosistem",
