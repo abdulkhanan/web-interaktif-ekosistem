@@ -249,7 +249,8 @@ st.markdown(
         <div class="cp-title">📌 Tujuan Pembelajaran (TP)</div>
         <div class="cp-text">
             <ol>
-                <li>Menganalisis hubungan komponen biotik dan abiotik pada ekosistem sungai melalui simulasi pencemaran akibat limbah industri.</li>
+                <li>Menganalisis hubungan komponen biotik dan abiotik pada ekosistem. </li>
+                <li>Menganalisis hubungan komponen biotik dan biotik pada ekosistem. </li>
                 <li>Menganalisis pengaruh berkurangnya produsen dan efisiensi transfer energi terhadap energi pada setiap tingkat trofik saat kemarau.</li>
                 <li>Menganalisis pengaruh curah hujan dan tutupan vegetasi terhadap infiltrasi, limpasan permukaan, penyerapan CO₂, dan produksi O₂.</li>
                 <li>Menganalisis pengaruh nitrogen dan fosfor dari pupuk terhadap pertumbuhan alga, oksigen air, dan kondisi organisme perairan.</li>
