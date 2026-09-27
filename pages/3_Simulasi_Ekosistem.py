@@ -674,17 +674,30 @@ with tab1:
         with col_kiri:
             st.subheader("Ubah Variabel")
             tingkat_limbah = st.slider(
-                "Tingkat Limbah Industri",
-                min_value=0.0,
-                max_value=1.0,
-                value=0.50,
-                step=0.01,
+                "Tingkat Limbah Industri (%)",
+                min_value=0,
+                max_value=100,
+                value=50,
+                step=1,
                 key="slider_limbah_final"
             )
-            st.caption("Coba beberapa kondisi sebelum menyimpan hasil: rendah, sedang, dan tinggi.")
+
+            if tingkat_limbah <= 30:
+                kategori = "Rendah"
+            elif tingkat_limbah <= 60:
+                kategori = "Sedang"
+            else:
+                kategori = "Tinggi"
+
+            st.info(f"Kategori tingkat limbah saat ini: {kategori}")
+
+            st.caption(
+                "Coba beberapa kondisi sebelum menyimpan hasil: "
+                "rendah, sedang, dan tinggi."
+            )
 
         with col_kanan:
-            hasil = hitung_pencemaran_sungai(tingkat_limbah)
+            hasil = hitung_pencemaran_sungai(tingkat_limbah/100)
             df_tren = pd.DataFrame(buat_tren_pencemaran_sungai(tingkat_limbah))
 
             st.markdown("### Hasil Pengamatan")
