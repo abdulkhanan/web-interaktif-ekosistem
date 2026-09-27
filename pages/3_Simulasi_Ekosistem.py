@@ -682,15 +682,6 @@ with tab1:
                 key="slider_limbah_final"
             )
 
-            if tingkat_limbah <= 30:
-                kategori = "Rendah"
-            elif tingkat_limbah <= 60:
-                kategori = "Sedang"
-            else:
-                kategori = "Tinggi"
-
-            st.info(f"Kategori tingkat limbah saat ini: {kategori}")
-
             st.caption(
                 "Coba beberapa kondisi sebelum menyimpan hasil: "
                 "rendah, sedang, dan tinggi."
