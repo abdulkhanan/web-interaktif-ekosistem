@@ -338,15 +338,25 @@ def render_image_with_source(image_data):
         )
 
 def render_section_heading(letter, title):
-    st.markdown(
-        f"""
-        <div class="materi-section-title">
-            <span class="materi-section-letter">{escape(letter)}</span>
-            <span class="materi-section-name">{escape(title)}</span>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    if letter:
+        st.markdown(
+            f"""
+            <div class="materi-section-title">
+                <span class="materi-section-letter">{escape(letter)}</span>
+                <span class="materi-section-name">{escape(title)}</span>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    else:
+        st.markdown(
+            f"""
+            <div class="materi-section-title">
+                <span class="materi-section-name">{escape(title)}</span>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 
 def render_subsection(subsection):
