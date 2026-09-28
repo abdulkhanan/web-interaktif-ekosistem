@@ -2,7 +2,7 @@
   {
   "kode": "materi_1_komponen_ekosistem",
   "judul": "Bahan Penyelidikan 1: Analisis Komponen Ekosistem dan Interaksinya serta Dampak Pencemaran Perairan terhadap Keseimbangan Ekosistem",
-  "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari hubungan antar komponen ekosistem perairan melalui analisis komponen biotik, abiotik, serta interaksi antarorganisme. Pembahasan difokuskan pada pengaruh perubahan kualitas lingkungan akibat pencemaran perairan terhadap keseimbangan ekosistem, terutama melalui indikator kualitas air, oksigen terlarut, pH, populasi ikan, dan kondisi organisme perairan.",
+  "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari hubungan antar komponen ekosistem melalui analisis komponen biotik, abiotik, serta interaksi antarorganisme. ",
     "gambar_utama": {
       "path": "assets/images/komponen_ekosistem.png",
       "judul": "Gambar 1. Komponen biotik dan abiotik pada ekosistem perairan"
@@ -274,6 +274,7 @@
   {
     "kode": "materi_3_daur_air_karbon_oksigen",
     "judul": "Bahan Penyelidikan 3: Daur Biogeokimia (Daur Air, Daur Karbon, Daur Oksigen, Daur Nitrogen, dan Daur Fosfor)",
+    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari proses perpindahan dan penggunaan kembali unsur kimia dalam ekosistem melalui daur biogeokimia. Daur biogeokimia meliputi daur air, karbon, oksigen, nitrogen, dan fosfor yang saling berhubungan dalam menjaga keseimbangan lingkungan.",
     "bagian": [
       {
         "judul": "Pengertian Daur Biogeokimia",
@@ -364,8 +365,8 @@
   },
   {
     "kode": "materi_4_daur_nitrogen_fosfor",
-    "judul": "Bahan Penyelidikan 4: Daur Nitrogen dan Daur Fosfor",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari perputaran nitrogen dan fosfor serta manfaatnya sebagai unsur hara. Pembahasan difokuskan pada masuknya pupuk berlebih ke sungai, pertumbuhan alga, penurunan oksigen terlarut, dan dampaknya terhadap organisme perairan.",
+    "judul": "Bahan Penyelidikan 4: Daur Biogeokimia (Daur Air, Daur Karbon, Daur Oksigen, Daur Nitrogen, dan Daur Fosfor)",
+    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari proses perpindahan dan penggunaan kembali unsur kimia dalam ekosistem melalui daur biogeokimia. Daur biogeokimia meliputi daur air, karbon, oksigen, nitrogen, dan fosfor yang saling berhubungan dalam menjaga keseimbangan lingkungan.",
     "gambar_utama": {
       "path": "assets/images/daur_nitrogen_fosfor.png",
       "judul": "Gambar 1. Diagram daur nitrogen, daur fosfor, dan dampak kelebihan zat hara pada perairan"
