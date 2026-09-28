@@ -249,12 +249,13 @@ st.markdown(
         <div class="cp-title">📌 Tujuan Pembelajaran (TP)</div>
         <div class="cp-text">
             <ol>
-                <li>Menganalisis hubungan komponen biotik dan abiotik pada ekosistem. </li>
-                <li>Menganalisis hubungan komponen biotik dan biotik pada ekosistem. </li>
-                <li>Menganalisis pengaruh berkurangnya produsen dan efisiensi transfer energi terhadap energi pada setiap tingkat trofik saat kemarau.</li>
-                <li>Menganalisis pengaruh curah hujan dan tutupan vegetasi terhadap infiltrasi, limpasan permukaan, penyerapan CO₂, dan produksi O₂.</li>
-                <li>Menganalisis pengaruh nitrogen dan fosfor dari pupuk terhadap pertumbuhan alga, oksigen air, dan kondisi organisme perairan.</li>
-                <li>Merumuskan masalah dan hipotesis, menguji hipotesis menggunakan data simulasi dan materi pembelajaran.</li>
+                <li>Mengidentifikasi komponen biotik dan abiotik penyusun ekosistem serta menjelaskan hubungan antara kedua komponen tersebut dalam suatu lingkungan. </li>
+                <li>Menganalisis bentuk-bentuk interaksi antarorganisme (biotik dengan biotik) dalam ekosistem dan menjelaskan pengaruhnya terhadap keseimbangan populasi organisme.</li>
+                <li>Menganalisis hubungan makan dan dimakan dalam ekosistem melalui penyusunan jaring-jaring makanan serta menjelaskan keterkaitan antarorganisme pada berbagai tingkat trofik.</li>
+                <li>Menganalisis proses transfer energi dalam ekosistem melalui aliran energi, tingkat trofik, dan piramida energi serta menjelaskan alasan berkurangnya energi pada setiap perpindahan tingkat trofik.</li>
+                <li>Menganalisis proses daur biogeokimia yang meliputi daur air, karbon, oksigen, nitrogen, dan fosfor serta menjelaskan peran daur tersebut dalam mempertahankan keseimbangan ekosistem.</li>
+                <li>Menganalisis pengaruh aktivitas manusia terhadap keseimbangan ekosistem berdasarkan perubahan interaksi organisme, transfer energi, dan gangguan daur biogeokimia.</li>
+                <li>Menyajikan hasil penyelidikan mengenai permasalahan ekosistem berdasarkan hubungan antara komponen ekosistem, aliran energi, dan siklus materi.</li>
             </ol>
         </div>
     </div>
