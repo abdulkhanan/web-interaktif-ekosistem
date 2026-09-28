@@ -287,7 +287,7 @@ st.markdown(
 st.markdown(
     """
     <div class="cp-card" style="border-left-color:#16a34a;">
-        <div class="cp-title">📌 Tujuan Pembelajaran (TP)</div>
+        <div class="cp-title">📌 Alur Tujuan Pembelajaran (TP)</div>
         <div class="cp-text">
             <ol>
                 <li>Mengidentifikasi komponen biotik dan abiotik penyusun ekosistem serta menjelaskan hubungan antara kedua komponen tersebut dalam suatu lingkungan. </li>
