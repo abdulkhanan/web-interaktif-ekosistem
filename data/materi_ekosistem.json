@@ -276,20 +276,19 @@
   {
     "kode": "materi_3_daur_air_karbon_oksigen",
     "judul": "Bahan Penyelidikan 3: Daur Biogeokimia (Daur Air, Daur Karbon, Daur Oksigen, Daur Nitrogen, dan Daur Fosfor)",
-    "gambar_utama": {
-      "path": "assets/images/daur_air_co2_o2.png",
-      "judul": "Gambar 1. Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen"
-    },
     "bagian": [
       {
-        "huruf": "",
         "judul": "Pengertian Daur Biogeokimia",
         "paragraf": [
        "Daur biogeokimia adalah proses perpindahan dan penggunaan kembali unsur atau senyawa kimia antara komponen biotik dan komponen abiotik dalam suatu ekosistem. Komponen biotik meliputi seluruh makhluk hidup, sedangkan komponen abiotik meliputi atmosfer, air, tanah, batuan, dan lingkungan fisik lainnya. Melalui proses ini, materi yang dibutuhkan oleh organisme tidak akan habis, tetapi terus mengalami perpindahan dan digunakan kembali dalam ekosistem (Krisdianti et al., 2023).",
        "Dalam ekosistem, terdapat beberapa jenis daur biogeokimia utama, yaitu daur air, daur karbon, daur oksigen, daur nitrogen, dan daur fosfor. Setiap daur memiliki jalur perpindahan materi yang berbeda, tetapi seluruhnya saling berhubungan dalam menjaga keseimbangan ekosistem. Daur air berperan dalam perpindahan air melalui atmosfer, permukaan bumi, dan organisme. Daur karbon berkaitan dengan perpindahan karbon antara atmosfer, organisme, tanah, dan laut. Daur oksigen berhubungan dengan keseimbangan oksigen melalui proses fotosintesis dan respirasi. Sementara itu, daur nitrogen dan fosfor berperan dalam menyediakan unsur hara yang diperlukan untuk pertumbuhan dan pembentukan senyawa penting dalam tubuh organisme (Clark et al., 2018; Urry et al., 2020).",
        "Air, karbon, oksigen, nitrogen, dan fosfor dapat ditemukan pada berbagai komponen ekosistem, seperti udara, tanah, perairan, tumbuhan, hewan, dan mikroorganisme. Unsur-unsur tersebut berpindah melalui berbagai proses, seperti penguapan, presipitasi, fotosintesis, respirasi, penguraian, penyerapan oleh tumbuhan, serta aktivitas mikroorganisme. Walaupun setiap daur dipelajari secara terpisah, seluruh daur tersebut sebenarnya saling berkaitan dan bekerja bersama untuk mempertahankan keberlangsungan kehidupan.",
        "Gangguan terhadap salah satu proses dalam daur biogeokimia dapat memengaruhi keseimbangan lingkungan. Aktivitas manusia seperti penebangan hutan, perubahan penggunaan lahan, pembakaran bahan bakar fosil, penggunaan pupuk berlebihan, dan pencemaran dapat mengubah jumlah maupun kecepatan perpindahan unsur dalam ekosistem. Oleh karena itu, pemahaman mengenai daur biogeokimia penting untuk mengetahui bagaimana perubahan lingkungan dapat memengaruhi kehidupan organisme."
-        ]
+        ],
+        "gambar": {
+        "path": "assets/images/daur_air_co2_o2.png",
+        "judul": "Gambar 1. Diagram daur air serta hubungan tumbuhan dengan karbon dioksida dan oksigen"
+        }
       },
       {
         "huruf": "A",
