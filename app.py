@@ -3,7 +3,7 @@ import streamlit as st
 
 from database.init_db import init_db
 from modules.auth import init_auth, handle_google_callback, make_google_login_url, login_with_email_password, is_google_login_available
-from database.queries import create_user_manual
+from database.queries import create_user_manual, is_auto_aktivasi
 
 from components.ui import global_page_loader
 
@@ -395,15 +395,20 @@ def render_login_page(google_login_url=None):
                             st.error("Konfirmasi password tidak sama.")
                         else:
                             try:
+                                auto_aktif = is_auto_aktivasi()
+                                status_akun = "aktif" if auto_aktif else "nonaktif"
                                 create_user_manual(
                                     nama=nama_daftar,
                                     email=email_daftar,
                                     role=role_daftar,
                                     kelas=kelas_daftar,
-                                    status="nonaktif",
+                                    status=status_akun,
                                     password=password_daftar,
                                 )
-                                st.success("Pendaftaran berhasil. Akun Anda menunggu aktivasi admin sebelum dapat digunakan.")
+                                if auto_aktif:
+                                    st.success("Pendaftaran berhasil! Akun Anda langsung aktif. Silakan login untuk masuk ke dashboard.")
+                                else:
+                                    st.success("Pendaftaran berhasil. Akun Anda menunggu aktivasi admin sebelum dapat digunakan.")
                             except Exception as error:
                                 st.error(f"Pendaftaran gagal: {error}")
 

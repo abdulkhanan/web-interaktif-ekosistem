@@ -1,7 +1,7 @@
 import streamlit as st
 from authlib.integrations.requests_client import OAuth2Session
 
-from database.queries import get_or_create_google_user, get_user_by_email
+from database.queries import get_or_create_google_user, get_user_by_email, is_auto_aktivasi
 
 # Kompatibilitas dengan database/queries.py versi lama pada deployment.
 try:
@@ -325,7 +325,8 @@ def handle_google_callback():
 
         user = get_or_create_google_user(
             profile=profile,
-            default_admin_email=config["default_admin_email"]
+            default_admin_email=config["default_admin_email"],
+            auto_aktivasi=is_auto_aktivasi(),
         )
 
         if user["status"] != "aktif":

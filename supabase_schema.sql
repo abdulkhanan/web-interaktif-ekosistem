@@ -62,6 +62,19 @@ create index if not exists idx_feedback_nama_siswa on public.feedback_guru(nama_
 create index if not exists idx_progress_siswa_nama on public.progress_siswa(nama);
 create index if not exists idx_progress_materi_nama on public.progress_materi(nama);
 
+-- Tabel pengaturan aplikasi (digunakan oleh admin untuk mengaktifkan/menonaktifkan
+-- fitur seperti aktivasi otomatis pendaftaran akun baru).
+create table if not exists public.app_settings (
+    setting_key text primary key,
+    setting_value text not null default '',
+    updated_at text
+);
+
+-- Default: aktivasi otomatis NONAKTIF (pendaftaran baru perlu persetujuan admin).
+insert into public.app_settings (setting_key, setting_value, updated_at)
+values ('auto_aktivasi', 'false', now()::text)
+on conflict (setting_key) do nothing;
+
 -- Jalankan baris ini juga pada database lama yang tabel users-nya sudah pernah dibuat
 -- agar login email & password bisa berjalan tanpa membuat ulang tabel.
 alter table public.users add column if not exists password_hash text;
