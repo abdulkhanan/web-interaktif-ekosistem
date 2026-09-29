@@ -26,8 +26,6 @@ from database.queries import (
     update_user_data as update_user_data_db,
     create_user_manual,
     update_user_password,
-    is_auto_aktivasi,
-    set_app_setting,
 )
 
 # Kompatibilitas deploy: beberapa deployment lama masih memakai
@@ -1173,115 +1171,6 @@ if st.session_state["admin_menu"] == "Dashboard":
     except Exception:
         import pandas as pd
         progress_df = pd.DataFrame()
-
-    # ---- Pengaturan Aktivasi Otomatis ----
-    auto_aktif = is_auto_aktivasi()
-
-    st.markdown(
-        '''
-        <style>
-            .auto-aktivasi-card {
-                background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-                border: 1px solid rgba(226, 232, 240, 0.9);
-                border-radius: 20px;
-                box-shadow: 0 10px 25px -10px rgba(15, 23, 42, 0.06);
-                padding: 24px 28px;
-                margin-bottom: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            .auto-aktivasi-info {
-                flex: 1;
-                min-width: 260px;
-            }
-            .auto-aktivasi-title {
-                font-family: "Outfit", sans-serif;
-                font-size: 17px;
-                font-weight: 800;
-                color: #0f172a;
-                margin-bottom: 4px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-            .auto-aktivasi-desc {
-                font-size: 13.5px;
-                color: #64748b;
-                font-weight: 600;
-                line-height: 1.55;
-            }
-            .auto-aktivasi-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                padding: 7px 16px;
-                border-radius: 999px;
-                font-size: 13px;
-                font-weight: 800;
-            }
-            .badge-on {
-                background: rgba(16, 185, 129, 0.12);
-                color: #059669;
-            }
-            .badge-off {
-                background: rgba(239, 68, 68, 0.1);
-                color: #dc2626;
-            }
-
-            /* Toggle switch styling */
-            .st-key-toggle_auto_aktivasi div[data-testid="stCheckbox"] {
-                background: rgba(5, 150, 105, 0.06);
-                border-radius: 14px;
-                padding: 10px 16px;
-            }
-            .st-key-toggle_auto_aktivasi div[data-testid="stCheckbox"] label p {
-                font-weight: 800 !important;
-                font-size: 14px !important;
-                color: #0f172a !important;
-            }
-        </style>
-        ''',
-        unsafe_allow_html=True
-    )
-
-    badge_cls = "badge-on" if auto_aktif else "badge-off"
-    badge_icon = "✅" if auto_aktif else "🚫"
-    badge_text = "Aktif — Pendaftaran langsung masuk" if auto_aktif else "Nonaktif — Perlu aktivasi admin"
-    desc_text = (
-        "Siswa/guru yang mendaftar akan <strong>langsung berstatus aktif</strong> dan dapat mengakses dashboard tanpa menunggu persetujuan admin."
-        if auto_aktif
-        else "Siswa/guru yang mendaftar akan berstatus <strong>nonaktif</strong> dan harus diaktifkan secara manual oleh admin sebelum dapat login."
-    )
-
-    st.markdown(
-        f'''
-        <div class="auto-aktivasi-card">
-            <div class="auto-aktivasi-info">
-                <div class="auto-aktivasi-title">⚡ Mode Aktivasi Otomatis</div>
-                <div class="auto-aktivasi-desc">{desc_text}</div>
-            </div>
-            <div class="auto-aktivasi-badge {badge_cls}">{badge_icon} {badge_text}</div>
-        </div>
-        ''',
-        unsafe_allow_html=True
-    )
-
-    with st.container(key="toggle_auto_aktivasi"):
-        toggle_value = st.checkbox(
-            "Aktifkan Mode Aktivasi Otomatis",
-            value=auto_aktif,
-            key="cb_auto_aktivasi",
-            help="Jika dicentang, akun baru yang mendaftar langsung aktif tanpa perlu persetujuan admin."
-        )
-
-        if toggle_value != auto_aktif:
-            set_app_setting("auto_aktivasi", "true" if toggle_value else "false")
-            st.rerun()
-
-    st.write("")
 
     # ---- Alert Banner ----
     if jml_belum_fb > 0:

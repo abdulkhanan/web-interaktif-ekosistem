@@ -147,7 +147,7 @@ def delete_user_account(id_user):
     return user
 
 
-def get_or_create_google_user(profile, default_admin_email="", auto_aktivasi=False):
+def get_or_create_google_user(profile, default_admin_email=""):
     email = _normalize_email(profile.get("email", ""))
     nama = _normalize_text(profile.get("name", ""))
     google_sub = _normalize_text(profile.get("sub", ""))
@@ -174,8 +174,7 @@ def get_or_create_google_user(profile, default_admin_email="", auto_aktivasi=Fal
         return get_user_by_email(email)
 
     role = "admin" if email == default_admin_email else "siswa"
-    # Admin selalu langsung aktif. Untuk role lain, ikuti pengaturan auto_aktivasi.
-    status = "aktif" if role == "admin" else ("aktif" if auto_aktivasi else "nonaktif")
+    status = "aktif" if role == "admin" else "nonaktif"
 
     payload = {
         "nama": nama,
@@ -611,68 +610,3 @@ def get_progress_materi_by_nama_df(nama):
         .execute()
     )
     return _df(_data(response), ["id_progress_materi", "nama", "kode_materi", "judul_materi", "status_selesai", "updated_at"])
-
-
-# =====================================================
-# PENGATURAN APLIKASI (APP SETTINGS)
-# =====================================================
-
-def get_app_setting(key, default=""):
-    """Baca satu nilai pengaturan dari tabel app_settings.
-
-    Mengembalikan *default* jika tabel belum dibuat atau key tidak ditemukan.
-    """
-    try:
-        response = (
-            client()
-            .table("app_settings")
-            .select("setting_value")
-            .eq("setting_key", key)
-            .limit(1)
-            .execute()
-        )
-        row = _first(_data(response))
-        if row is not None:
-            return row["setting_value"]
-        return default
-    except Exception:
-        # Tabel belum dibuat — kembalikan default tanpa error.
-        return default
-
-
-def set_app_setting(key, value):
-    """Simpan/perbarui satu nilai pengaturan di tabel app_settings."""
-    waktu = now()
-    try:
-        existing = (
-            client()
-            .table("app_settings")
-            .select("setting_key")
-            .eq("setting_key", key)
-            .limit(1)
-            .execute()
-        )
-        if _data(existing):
-            client().table("app_settings").update({
-                "setting_value": str(value),
-                "updated_at": waktu,
-            }).eq("setting_key", key).execute()
-        else:
-            client().table("app_settings").insert({
-                "setting_key": key,
-                "setting_value": str(value),
-                "updated_at": waktu,
-            }).execute()
-    except Exception:
-        # Tabel belum dibuat — abaikan tanpa menghentikan aplikasi.
-        pass
-
-
-def is_auto_aktivasi():
-    """Cek apakah mode aktivasi otomatis aktif.
-
-    True  → akun baru langsung berstatus 'aktif' (tidak perlu persetujuan admin).
-    False → akun baru berstatus 'nonaktif' (default, perlu aktivasi admin).
-    """
-    return get_app_setting("auto_aktivasi", "false").lower() == "true"
-
