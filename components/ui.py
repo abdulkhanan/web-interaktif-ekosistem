@@ -1460,7 +1460,7 @@ def role_navigation():
             ("🔬 Simulasi", "pages/3_Simulasi_Ekosistem.py"),
             ("📚 Materi", "pages/2_Materi_Ekosistem.py"),
             ("✍️ Tanggapan", "pages/4_Tanggapan_Siswa.py"),
-            ("💬 Feedback", "pages/5_Feedback_Siswa.py"),
+            ("💬 Feedback Guru", "pages/5_Feedback_Siswa.py"),
         ],
     }
 

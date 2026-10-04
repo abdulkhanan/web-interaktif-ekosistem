@@ -290,7 +290,7 @@ st.markdown(
         <div class="cp-title">📌 Alur Tujuan Pembelajaran (TP)</div>
         <div class="cp-text">
             <ol>
-                <li>Mengidentifikasi komponen biotik dan abiotik penyusun ekosistem serta menjelaskan hubungan antara kedua komponen tersebut dalam suatu lingkungan. </li>
+                <li>Menganalisis komponen biotik dan abiotik penyusun ekosistem serta menjelaskan hubungan antara kedua komponen tersebut dalam suatu lingkungan. </li>
                 <li>Menganalisis bentuk-bentuk interaksi antarorganisme (biotik dengan biotik) dalam ekosistem dan menjelaskan pengaruhnya terhadap keseimbangan populasi organisme.</li>
                 <li>Menganalisis hubungan makan dan dimakan dalam ekosistem melalui penyusunan jaring-jaring makanan serta menjelaskan keterkaitan antarorganisme pada berbagai tingkat trofik.</li>
                 <li>Menganalisis proses transfer energi dalam ekosistem melalui aliran energi, tingkat trofik, dan piramida energi serta menjelaskan alasan berkurangnya energi pada setiap perpindahan tingkat trofik.</li>
