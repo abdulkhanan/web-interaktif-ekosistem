@@ -866,6 +866,12 @@ with tab2:
 
             st.dataframe(data, width="stretch", hide_index=True)
 
+            tampilkan_referensi_simulasi(
+            "Food Chains and Food Webs",
+            "https://www.nationalgeographic.org/encyclopedia/food-chain/",
+            "Artikel ini mendukung konsep perpindahan energi dari produsen menuju konsumen dalam ekosistem."
+             )
+
             info_card("Keterangan", hasil["keterangan"], "yellow-card")
 
         hasil_pengamatan = tampilkan_hasil_pengamatan_singkat(
@@ -1051,8 +1057,12 @@ with tab3:
                 df_tren_air,
                 width="stretch",
                 hide_index=True
-            )
-
+            ),
+        tampilkan_referensi_simulasi(
+            "Forests and Climate Change",
+            "https://www.fao.org/climate-change/en/",
+            "Artikel ini mendukung hubungan vegetasi dengan siklus air, karbon, dan oksigen."
+        )
         hasil_pengamatan = tampilkan_hasil_pengamatan_singkat(
             "daur_air",
             umpan_balik["pertanyaan_pengamatan"]
@@ -1170,6 +1180,12 @@ with tab4:
             )
 
             st.dataframe(df_tren, width="stretch", hide_index=True)
+
+            tampilkan_referensi_simulasi(
+                "Nutrient Pollution and Eutrophication",
+                "https://www.epa.gov/nutrientpollution",
+                "Artikel ini mendukung hubungan nitrogen, fosfor, pertumbuhan alga, dan perubahan oksigen perairan."
+            )
 
             info_card(
                 "Status Peningkatan Alga",
