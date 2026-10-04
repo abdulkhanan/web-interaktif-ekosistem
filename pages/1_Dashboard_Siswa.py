@@ -344,7 +344,7 @@ if not step1_done:
     next_action = "Menjalankan <strong>Simulasi Ekosistem</strong>"
     next_link = "Simulasi Ekosistem"
 elif not step2_done:
-    next_action = "Membaca <strong>Materi Ekosistem sebagai Bahan Penyelidikan</strong>"
+    next_action = "Membaca <strong>Materi Ekosistem sebagai Materi Penyelidikan</strong>"
     next_link = "Materi Ekosistem"
 elif not step3_done:
     next_action = "Mengirim <strong>Tanggapan Analisis</strong>"

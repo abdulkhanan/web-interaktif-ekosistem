@@ -1,8 +1,8 @@
 [
   {
   "kode": "materi_1_komponen_ekosistem",
-  "judul": "Bahan Penyelidikan 1: Analisis Komponen Ekosistem dan Interaksinya serta Dampak Pencemaran Perairan terhadap Keseimbangan Ekosistem",
-  "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari hubungan antar komponen ekosistem melalui analisis komponen biotik, abiotik, serta interaksi antarorganisme. ",
+  "judul": "Materi Penyelidikan 1: Komponen Ekosistem dan Interaksinya serta Dampak Pencemaran Perairan terhadap Keseimbangan Ekosistem",
+  "ringkasan": "Pada materi penyelidikan ini, siswa mempelajari hubungan antar komponen ekosistem melalui analisis komponen biotik, abiotik, serta interaksi antarorganisme. ",
     "gambar_utama": {
       "path": "assets/images/komponen_ekosistem.png",
       "judul": "Gambar 1. Komponen biotik dan abiotik pada ekosistem perairan"
@@ -196,32 +196,25 @@
         "judul": "Pencemaran Ekosistem Perairan",
         "subbagian": [
           {
-            "nomor": "H.1",
-            "judul": "Limbah Tekstil",
+            "nomor": "1",
+            "judul": "Limbah Sampah",
             "gambar": "assets/images/satuan_ekosistem/pencemaran.jpeg",
-            "caption": "Gambar 8. Pencemaran air akibat limbah tekstil",
-            "sumber": "https://www.contohsumber.com"
+            "caption": "Gambar 8. Pencemaran air akibat limbah sampah",
+            "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor."
           },
           {
-            "nomor": "H.2",
-            "judul": "Limbah Tambang",
-            "gambar": "assets/images/pencemaran/tambang.jpg",
-            "caption": "Gambar 9. Pencemaran perairan akibat aktivitas tambang",
-            "sumber": "https://www.contohsumber.com"
+            "nomor": "2",
+            "judul": "Limbah Tambang Minyak",
+            "gambar": "assets/images/minyak.jpg",
+            "caption": "Gambar 9. Pencemaran perairan akibat aktivitas tambang minyak",
+            "sumber": "https://www.ecowatch.com/oil-spill-clean-up-2646956969.html"
           },
           {
-            "nomor": "H.3",
-            "judul": "Tumpahan Minyak",
-            "gambar": "assets/images/pencemaran/minyak.jpg",
-            "caption": "Gambar 10. Tumpahan minyak pada ekosistem perairan",
-            "sumber": "https://www.contohsumber.com"
-          },
-          {
-            "nomor": "H.4",
-            "judul": "Limbah Pertanian",
-            "gambar": "assets/images/pencemaran/pertanian.jpg",
-            "caption": "Gambar 11. Pencemaran akibat limbah pertanian",
-            "sumber": "https://www.contohsumber.com"
+            "nomor": "3",
+            "judul": "Limbah Tekstil",
+            "gambar": "assets/images/batik.jpg",
+            "caption": "Gambar 10. Pencemaran perairan akibat limbah pewarna batik",
+            "sumber": "https://jateng.tribunnews.com/2019/08/14/hasil-survei-tiap-hari-ada-24-juta-liter-limbah-pewarna-batik-masuk-saluran-air-di-pekalongan"
           }
         ],
           "paragraf": [
@@ -260,8 +253,8 @@
   },
   {
     "kode": "materi_2_aliran_energi",
-    "judul": "Bahan Penyelidikan 2: Jaring-Jaring Makanan, Aliran Energi, dan Piramida Energi dalam Ekosistem",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari sumber dan perpindahan energi dalam ekosistem, tingkat trofik, piramida ekologi, produktivitas produsen, serta dampak perubahan lingkungan terhadap ketersediaan energi dan keseimbangan hubungan makan-dimakan dalam jaring-jaring makanan",
+    "judul": "Materi Penyelidikan 2: Jaring-Jaring Makanan, Aliran Energi, dan Piramida Energi dalam Ekosistem",
+    "ringkasan": "Pada materi penyelidikan ini, siswa mempelajari sumber dan perpindahan energi dalam ekosistem, tingkat trofik, piramida ekologi, produktivitas produsen, serta dampak perubahan lingkungan terhadap ketersediaan energi dan keseimbangan hubungan makan-dimakan dalam jaring-jaring makanan",
     "gambar_utama": {
       "path": "assets/images/jaring_makanan_piramida_energi.png",
       "judul": "Gambar 1. Diagram rantai makanan dan piramida energi pada ekosistem"
@@ -298,8 +291,8 @@
   },
   {
     "kode": "materi_3_daur_air_karbon_oksigen",
-    "judul": "Bahan Penyelidikan 3: Daur Biogeokimia (Daur Air, Daur Karbon, Daur Oksigen, Daur Nitrogen, dan Daur Fosfor)",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari proses perpindahan dan penggunaan kembali unsur kimia dalam ekosistem melalui daur biogeokimia. Daur biogeokimia meliputi daur air, karbon, oksigen, nitrogen, dan fosfor yang saling berhubungan dalam menjaga keseimbangan lingkungan.",
+    "judul": "Materi Penyelidikan 3: Daur Biogeokimia (Daur Air, Daur Karbon, dan Daur Oksigen)",
+    "ringkasan": "Pada materi penyelidikan ini, siswa mempelajari proses perpindahan dan penggunaan kembali unsur kimia dalam ekosistem melalui daur biogeokimia. Daur biogeokimia meliputi daur air, karbon, oksigen, nitrogen, dan fosfor yang saling berhubungan dalam menjaga keseimbangan lingkungan.",
     "bagian": [
       {
         "judul": "Pengertian Daur Biogeokimia",
@@ -390,8 +383,8 @@
   },
   {
     "kode": "materi_4_daur_nitrogen_fosfor",
-    "judul": "Bahan Penyelidikan 4: Daur Biogeokimia (Daur Air, Daur Karbon, Daur Oksigen, Daur Nitrogen, dan Daur Fosfor)",
-    "ringkasan": "Pada bahan penyelidikan ini, siswa mempelajari proses perpindahan dan penggunaan kembali unsur kimia dalam ekosistem melalui daur biogeokimia. Daur biogeokimia meliputi daur air, karbon, oksigen, nitrogen, dan fosfor yang saling berhubungan dalam menjaga keseimbangan lingkungan.",
+    "judul": "Materi Penyelidikan 4: Daur Biogeokimia (Daur Nitrogen dan Daur Fosfor)",
+    "ringkasan": "Materi penyelidikan ini, siswa mempelajari proses perpindahan dan penggunaan kembali unsur kimia dalam ekosistem melalui daur biogeokimia. Daur biogeokimia meliputi daur air, karbon, oksigen, nitrogen, dan fosfor yang saling berhubungan dalam menjaga keseimbangan lingkungan.",
     "gambar_utama": {
       "path": "assets/images/daur_nitrogen_fosfor.png",
       "judul": "Gambar 1. Diagram daur nitrogen, daur fosfor, dan dampak kelebihan zat hara pada perairan"

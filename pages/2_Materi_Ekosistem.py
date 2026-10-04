@@ -11,7 +11,7 @@ from components.ui import load_css, page_title, section_title, info_card, role_n
 
 
 st.set_page_config(
-    page_title="Bahan Penyelidikan",
+    page_title="Materi Penyelidikan",
     page_icon="📘",
     layout="wide"
 )
@@ -31,8 +31,8 @@ nama_siswa = (
 
 
 page_title(
-    "📘 Bahan Penyelidikan",
-    "Baca bahan penyelidikan berikut untuk membantu memahami fenomena sebelum menjalankan simulasi ekosistem."
+    "📘 Materi Penyelidikan",
+    "Baca Materi penyelidikan berikut untuk membantu memahami fenomena sebelum menjalankan simulasi ekosistem."
 )
 
 
@@ -461,7 +461,7 @@ def render_legacy_materi(materi):
 
 def render_materi_item(materi, nomor):
     kode = materi.get("kode", "")
-    judul = materi.get("judul", f"Bahan Penyelidikan {nomor}")
+    judul = materi.get("judul", f"Materi Penyelidikan {nomor}")
     sudah_dibaca = is_materi_done(nama_siswa, kode)
 
     section_title(judul)
@@ -526,7 +526,7 @@ st.markdown(
     ">
         <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
             <div>
-                <div style="font-size:13px; color:#64748b; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Progress Bahan Penyelidikan</div>
+                <div style="font-size:13px; color:#64748b; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Progress Materi Penyelidikan</div>
                 <div style="font-size:28px; font-weight:800; color:#047857; font-family:'Outfit',sans-serif; margin-top:4px;">{jumlah_selesai} dari {jumlah_total} Selesai</div>
             </div>
             <div style="
@@ -551,7 +551,7 @@ st.markdown(
     """
     <div class="materi-helper">
         <strong>Petunjuk:</strong>
-        Pilih bahan penyelidikan sesuai urutan materi. Amati setiap gambar dan sumbernya,
+        Pilih materi penyelidikan sesuai urutan materi. Amati setiap gambar dan sumbernya,
         baca penjelasan pada setiap subbagian, lalu lanjutkan ke halaman Simulasi Ekosistem.
     </div>
     """,
@@ -563,7 +563,7 @@ tab_labels = []
 for index, material in enumerate(materi_list):
     kode = material.get("kode", "")
     status = "✅" if kode in materi_selesai_codes else "⏳"
-    tab_labels.append(f"{status} {index + 1}. Bahan Penyelidikan")
+    tab_labels.append(f"{status} {index + 1}. Materi Penyelidikan")
 
 tabs = st.tabs(tab_labels)
 
