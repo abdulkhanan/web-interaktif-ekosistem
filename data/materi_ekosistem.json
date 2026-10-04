@@ -200,18 +200,14 @@
             "judul": "Limbah Tekstil",
             "gambar": "assets/images/pencemaran/tekstil.jpg",
             "caption": "Gambar 8. Pencemaran air akibat limbah tekstil",
-            "paragraf": [
-              "Limbah tekstil berasal dari kegiatan industri pakaian dan pewarnaan kain. Zat kimia dari pewarna dapat menurunkan kualitas air serta mengganggu kehidupan organisme perairan."
-            ]
+
           },
           {
             "nomor": "H.2",
             "judul": "Limbah Tambang",
             "gambar": "assets/images/pencemaran/tambang.jpg",
             "caption": "Gambar 9. Pencemaran perairan akibat aktivitas tambang",
-            "paragraf": [
-              "Aktivitas pertambangan dapat menghasilkan logam berat yang berbahaya bagi organisme air karena dapat terakumulasi dalam tubuh makhluk hidup."
-            ]
+            "sumber":"https://akuakulturunhas.blogspot.com/2010/08/"
           },
           {
             "nomor": "H.3",
