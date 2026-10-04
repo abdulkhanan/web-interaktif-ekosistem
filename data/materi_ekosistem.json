@@ -194,16 +194,44 @@
       {
         "huruf": "H",
         "judul": "Pencemaran Ekosistem Perairan",
-        "gambar": {
-          "path": "assets/images/satuan_ekosistem/pencemaran.jpeg",
-          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai",
-          "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor"
-        },
-        "gambar": {
-          "path": "assets/images/satuan_ekosistem/pencemaran.jpeg",
-          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai",
-          "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor"
-        },
+        "subbagian": [
+          {
+            "nomor": "H.1",
+            "judul": "Limbah Tekstil",
+            "gambar": "assets/images/pencemaran/tekstil.jpg",
+            "caption": "Gambar 8. Pencemaran air akibat limbah tekstil",
+            "paragraf": [
+              "Limbah tekstil berasal dari kegiatan industri pakaian dan pewarnaan kain. Zat kimia dari pewarna dapat menurunkan kualitas air serta mengganggu kehidupan organisme perairan."
+            ]
+          },
+          {
+            "nomor": "H.2",
+            "judul": "Limbah Tambang",
+            "gambar": "assets/images/pencemaran/tambang.jpg",
+            "caption": "Gambar 9. Pencemaran perairan akibat aktivitas tambang",
+            "paragraf": [
+              "Aktivitas pertambangan dapat menghasilkan logam berat yang berbahaya bagi organisme air karena dapat terakumulasi dalam tubuh makhluk hidup."
+            ]
+          },
+          {
+            "nomor": "H.3",
+            "judul": "Tumpahan Minyak",
+            "gambar": "assets/images/pencemaran/minyak.jpg",
+            "caption": "Gambar 10. Tumpahan minyak pada ekosistem perairan",
+            "paragraf": [
+              "Tumpahan minyak membentuk lapisan di permukaan air sehingga menghambat pertukaran oksigen dan mengganggu organisme perairan."
+            ]
+          },
+          {
+            "nomor": "H.4",
+            "judul": "Limbah Pertanian",
+            "gambar": "assets/images/pencemaran/pertanian.jpg",
+            "caption": "Gambar 11. Pencemaran akibat limbah pertanian",
+            "paragraf": [
+              "Pupuk dan pestisida yang masuk ke perairan dapat meningkatkan zat hara dan menyebabkan eutrofikasi."
+            ]
+          }
+        ],
         "paragraf": [
           "Pencemaran air adalah masuknya makhluk hidup, zat, energi, atau komponen lain ke dalam perairan sehingga kualitas air menurun dan tidak lagi sesuai dengan fungsi atau kebutuhan organisme. Sumber pencemaran dapat berasal dari limbah industri, limbah rumah tangga, kegiatan pertanian, peternakan, pertambangan, dan sampah.",
           "Limbah industri dapat membawa bahan organik, zat kimia, logam, atau panas ke sungai. Bahan organik yang terurai dalam jumlah besar dapat meningkatkan penggunaan oksigen oleh mikroorganisme. Akibatnya, kadar oksigen terlarut menurun. Beberapa bahan kimia juga dapat mengubah pH atau bersifat toksik bagi ikan dan organisme air lainnya.",
