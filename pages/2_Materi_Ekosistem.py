@@ -270,6 +270,8 @@ def render_text_block(paragraphs, points=None):
             safe_paragraphs += f"<p>{escape(paragraph)}</p>"
 
     safe_points = ""
+    if not safe_paragraphs and not points:
+        return
     if points:
         list_items = "".join(
             f"<li>{escape(str(point))}</li>"
