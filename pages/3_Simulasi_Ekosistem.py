@@ -50,7 +50,7 @@ page_title(
 
 
 info_card(
-    "Bahan Penyelidikan",
+    "Materi Penyelidikan",
     """
     Sebelum menjalankan simulasi, siswa dapat membaca materi terlebih dahulu sebagai bahan pengetahuan.
     Materi tidak menjadi syarat untuk membuka simulasi, tetapi digunakan untuk membantu siswa memahami konsep dasar sebelum melakukan penyelidikan.
