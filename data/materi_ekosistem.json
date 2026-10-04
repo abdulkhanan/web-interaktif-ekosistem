@@ -194,27 +194,16 @@
       {
         "huruf": "H",
         "judul": "Pencemaran Ekosistem Perairan",
-        "gambar_list": [
-          {
-            "path": "assets/images/satuan_ekosistem/pencemaran.jpeg",
-            "judul": "Limbah Industri",
-            "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor"
-          
-          },
-          {
-            "path": "assets/images/pencemaran/tambang.jpg",
-            "judul": "Limbah Tekstil"
-          },
-          {
-            "path": "assets/images/pencemaran/minyak.jpg",
-            "judul": "Limbah Tambang Minyak"
-          },
-          {
-            "path": "assets/images/pencemaran/pertanian.jpg",
-            "judul": "Limbah Pertanian"
-          }
-          
-        ],
+        "gambar": {
+          "path": "assets/images/satuan_ekosistem/pencemaran.jpeg",
+          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai",
+          "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor"
+        },
+        "gambar": {
+          "path": "assets/images/satuan_ekosistem/pencemaran.jpeg",
+          "judul": "Gambar 8. Gambaran pencemaran pada ekosistem sungai",
+          "sumber": "https://news.detik.com/foto-news/d-5904759/ikan-ikan-ini-mati-diduga-tercemar-limbah-di-situ-citongtut-bogor"
+        },
         "paragraf": [
           "Pencemaran air adalah masuknya makhluk hidup, zat, energi, atau komponen lain ke dalam perairan sehingga kualitas air menurun dan tidak lagi sesuai dengan fungsi atau kebutuhan organisme. Sumber pencemaran dapat berasal dari limbah industri, limbah rumah tangga, kegiatan pertanian, peternakan, pertambangan, dan sampah.",
           "Limbah industri dapat membawa bahan organik, zat kimia, logam, atau panas ke sungai. Bahan organik yang terurai dalam jumlah besar dapat meningkatkan penggunaan oksigen oleh mikroorganisme. Akibatnya, kadar oksigen terlarut menurun. Beberapa bahan kimia juga dapat mengubah pH atau bersifat toksik bagi ikan dan organisme air lainnya.",
