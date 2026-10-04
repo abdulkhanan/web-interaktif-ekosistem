@@ -81,6 +81,18 @@ def simpan_hasil_simulasi(jenis_simulasi, input_simulasi, hasil_simulasi):
     update_progress(nama_siswa, "simulasi_dijalankan")
     st.session_state["simulasi_tersimpan"] = jenis_simulasi
 
+def tampilkan_referensi_simulasi(judul, link, deskripsi):
+
+    with st.expander("📖 Referensi Ilmiah Simulasi"):
+
+        st.markdown(f"**{judul}**")
+
+        st.write(deskripsi)
+
+        st.link_button(
+            "Buka Artikel Penelitian",
+            link
+        )
 
 def tampilkan_grafik_kurva(df, x_col, y_cols, warna_map, judul, ylabel="Nilai Parameter"):
     """Menampilkan grafik garis interaktif yang cepat menggunakan st.altair_chart tanpa zoom/pan."""
@@ -726,6 +738,11 @@ with tab1:
                 if hasil["tingkat_pencemaran"] <= 70
                 else "danger-card"
             )
+            tampilkan_referensi_simulasi(
+            "Nutrient Pollution dan Dampaknya terhadap Kualitas Air",
+            "https://www.epa.gov/nutrientpollution",
+            "Artikel ini mendukung hubungan antara pencemaran air, perubahan kualitas air, oksigen terlarut, dan kondisi organisme perairan."
+        )
 
         hasil_pengamatan = tampilkan_hasil_pengamatan_singkat(
             "pencemaran",
