@@ -61,7 +61,7 @@ info_card(
 col_bahan, col_keterangan = st.columns([1, 3])
 
 with col_bahan:
-    if st.button("📘 Pelajari Bahan Penyelidikan"):
+    if st.button("📘 Pelajari Materi Penyelidikan"):
         st.switch_page("pages/2_Materi_Ekosistem.py")
 
 st.divider()
